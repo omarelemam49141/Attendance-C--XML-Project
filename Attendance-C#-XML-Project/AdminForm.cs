@@ -17,6 +17,8 @@ namespace Attendance_C__XML_Project
         List<Class> classes;
         List<Teacher> teachersList;
         List<Student> studentsList;
+
+        User selectedUser = null;
         // Import the necessary Windows API methods
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -134,14 +136,134 @@ namespace Attendance_C__XML_Project
             addNewUser.ShowDialog();
         }
 
+        //Display a user details
         private void listUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            User user =  (sender as ListBox)?.SelectedItem as User;
+            User user = (sender as ListBox)?.SelectedItem as User;
             if (user != null)
             {
+                selectedUser = user;
+                lblID.Text = user.ID.ToString();
                 txtUsername.Text = user.Username;
                 txtPassword.Text = user.Password;
                 txtEmail.Text = user.Mail;
+            }
+        }
+
+        //Search for a user by username
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearch.Text.Trim() != "")
+            {
+                //Search for a teacher with the search box text
+                var teacher = teachersList.Find(teacher => teacher.Username.ToLower() == txtSearch.Text.Trim().ToLower());
+                if (teacher != null)
+                {
+                    listUsers.SelectedItem = teacher;
+                    return;
+                }
+                //Search for a student with the search box text
+                var student = studentsList.Find(student => student.Username.ToLower() == txtSearch.Text.Trim().ToLower());
+                if (student != null)
+                {
+                    listUsers.SelectedItem = student;
+                    return;
+                }
+                //Not found
+                MessageBox.Show("user not found!");
+            }
+        }
+
+        //update the user information
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (selectedUser != null)
+            {
+                //check if the data is changed
+                if (userDataChanged())
+                {
+                    if (selectedUser is Teacher)
+                    {
+                        //find the index of the teacher to remove
+                        int index = teachersList.FindIndex(teacher => teacher.ID == selectedUser.ID);
+                        //get the old teacher object
+                        Teacher updatedTeacher = teachersList[index];
+                        //remove the teacher
+                        teachersList.RemoveAt(index);
+                        //update the old teacher from the list
+                        updatedTeacher.Username = txtUsername.Text;
+                        updatedTeacher.Mail = txtEmail.Text;
+                        updatedTeacher.Password = txtPassword.Text;
+                        //add it to the teacher list at the old index
+                        teachersList.Insert(index, updatedTeacher);
+                        //update the teacher in the list box
+                        listUsers.Items[listUsers.SelectedIndex] = updatedTeacher;
+
+                        MessageBox.Show("Teacher updated successfully");
+                    }
+                    else if (selectedUser is Student)
+                    {
+                        //find the index of the student to remove
+                        int index = studentsList.FindIndex(student => student.ID == selectedUser.ID);
+                        //get the old student object
+                        Student updatedStudent = studentsList[index];
+                        //remove the student from the list
+                        studentsList.RemoveAt(index);
+                        //update the old student and 
+                        updatedStudent.Username = txtUsername.Text;
+                        updatedStudent.Mail = txtEmail.Text;
+                        updatedStudent.Password = txtPassword.Text;
+                        //add it to the student list at the old index
+                        studentsList.Insert(index, updatedStudent);
+                        //update the student in the list box
+                        listUsers.Items[listUsers.SelectedIndex] = updatedStudent;
+
+                        MessageBox.Show("Student updated successfully");
+                    }
+                }
+            }
+        }
+
+        //return true if the user data has been changed
+        private bool userDataChanged()
+        {
+            return (selectedUser.Username.ToLower() != txtUsername.Text.ToLower()
+                || selectedUser.Password.ToLower() != txtPassword.Text.ToLower()
+                || selectedUser.Mail.ToLower() != txtEmail.Text.ToLower());
+        }
+
+        //Delete the selected user
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            //Check if a user is selected
+            if (selectedUser!=null)
+            {
+                //confirm the deleting process
+                if(MessageBox.Show($"Are you sure you want to delete {selectedUser.Username}?", "Deleting confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (selectedUser is Teacher)
+                    {
+                        //find the index of the teacher to remove
+                        int index = teachersList.FindIndex(teacher => teacher.ID == selectedUser.ID);
+                        //remove the teacher from teachers list
+                        teachersList.RemoveAt(index);
+                        //remove the teacher from the list box
+                        listUsers.Items.RemoveAt(listUsers.SelectedIndex);
+
+                        MessageBox.Show("Teacher deleted successfully");
+                    }
+                    else if (selectedUser is Student)
+                    {
+                        //find the index of the student to remove
+                        int index = studentsList.FindIndex(student => student.ID == selectedUser.ID);
+                        //remove the student from the students list
+                        studentsList.RemoveAt(index);
+                        //remove the student from the list box
+                        listUsers.Items.RemoveAt(listUsers.SelectedIndex);
+
+                        MessageBox.Show("Student deleted successfully");
+                    }
+                }
             }
         }
     }
