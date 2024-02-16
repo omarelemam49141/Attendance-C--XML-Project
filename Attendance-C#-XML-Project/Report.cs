@@ -8,11 +8,20 @@ namespace Attendance_C__XML_Project
 {
     internal class GenerateReport
     {
+        //private fields
+        static int lastID = 0;
         int id;
         List<AttendanceRecord> attendanceRecords;
-        public GenerateReport(int _id) 
+
+        public GenerateReport() 
         {
-            ID = _id;   
+            id = ++lastID;
+        }
+
+        //properties
+        public int ID //readonly
+        {
+            get => id;
         }
 
         //methods
@@ -44,9 +53,13 @@ namespace Attendance_C__XML_Project
             attendanceRecords.Add(attendanceRecord);
         }
 
-        public void removeAttendanceRecord(AttendanceRecord attendanceRecord)
+        public void removeAttendanceRecord(int attendanceRecordID)
         {
-            attendanceRecords.Remove(attendanceRecord);
+            AttendanceRecord? attendanceRecord = attendanceRecords.Find(item => item.ID == attendanceRecordID);
+            if (attendanceRecord != null)
+            {
+                attendanceRecords.Remove(attendanceRecord);
+            }
         }
 
         //get all the attendance records for a specific student by his id
@@ -117,23 +130,6 @@ namespace Attendance_C__XML_Project
                 }
             }
             return classReport;
-        }
-
-        //properties
-        public int ID
-        {
-            get => id;
-            set
-            {
-                if (value < 1)
-                {
-                    Console.WriteLine("ID can't be less than 1");
-                }
-                else
-                {
-                    id = value;
-                }
-            }
         }
     }
 }

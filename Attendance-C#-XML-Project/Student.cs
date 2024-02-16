@@ -14,8 +14,8 @@ namespace Attendance_C__XML_Project
         int classID;
 
         //constructor
-        public Student(int id, string username, string password, string phone, string mail, string address, int _classId, int _absenceDays=0, int _numberOfWarnings=0, bool _dismissal=false)
-            : base(id, username, password, phone, mail, address)
+        public Student(string username, string password, string phone, string mail, string address, int _classId, int _absenceDays=0, int _numberOfWarnings=0, bool _dismissal=false)
+            : base(username, password, phone, mail, address)
         {
             ClassID = _classId;
             AbsenceDays = _absenceDays;
@@ -29,7 +29,7 @@ namespace Attendance_C__XML_Project
             {
                 if (value < 0)
                 {
-                    Console.WriteLine("Absence days can't be less than zero");
+                    throw new Exception("Absence days can't be less than zero");
                 }
                 else
                 {
@@ -55,7 +55,7 @@ namespace Attendance_C__XML_Project
             {
                 if (value < 1)
                 {
-                    Console.WriteLine("ID can't be less than 1");
+                    throw new Exception("ID can't be less than 1");
                 }
                 else
                 {
@@ -71,7 +71,7 @@ namespace Attendance_C__XML_Project
             {
                 if (value < 0)
                 {
-                    Console.WriteLine("Absence days can't be less than zero");
+                    throw new Exception("Absence days can't be less than zero");
                 } 
                 else
                 {

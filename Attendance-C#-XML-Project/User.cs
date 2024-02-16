@@ -11,6 +11,8 @@ namespace Attendance_C__XML_Project
     internal class User
     {
         //private fields
+        static int lastID = 0;
+
         int id;
         string username;
         string password;
@@ -19,9 +21,9 @@ namespace Attendance_C__XML_Project
         string address;
 
         //constructors
-        public User(int _id, string _username, string _password, string _phone, string _mail, string _address) 
+        public User( string _username, string _password, string _phone, string _mail, string _address) 
         {
-            ID = _id;
+            id = ++lastID;
             Username = _username;
             Password = _password;
             Phone = _phone;
@@ -30,20 +32,9 @@ namespace Attendance_C__XML_Project
         }
 
         //properties with validation
-        public int ID 
+        public int ID //readonly
         { 
             get=>id;
-            set 
-            {
-                if (value < 1)
-                {
-                    Console.WriteLine("ID can't be less than 1");
-                }
-                else
-                {
-                    id=value;
-                }
-            } 
         }
 
         public string Username
@@ -53,7 +44,7 @@ namespace Attendance_C__XML_Project
             { 
                 if(value.Trim().Length < 3)
                 {
-                    Console.WriteLine("Name length can't be less than 3");
+                    throw new Exception("Name length can't be less than 3");
                 }
                 else { username=value; }
             }
@@ -72,7 +63,7 @@ namespace Attendance_C__XML_Project
                 }
                 else
                 {
-                    Console.WriteLine("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character.");
+                    throw new Exception("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character.");
                 }
             }
         }
@@ -90,7 +81,7 @@ namespace Attendance_C__XML_Project
                 }
                 else
                 {
-                    Console.WriteLine("Invalid Egyptian phone number.");
+                    throw new Exception("Invalid Egyptian phone number.");
                 }
             } 
         }
@@ -109,7 +100,7 @@ namespace Attendance_C__XML_Project
                 }
                 else
                 {
-                    Console.WriteLine("Invalid email format");
+                    throw new Exception("Invalid email format");
                 }
             }
         }
@@ -119,7 +110,7 @@ namespace Attendance_C__XML_Project
             {
                 if (value.Trim().Length < 5)
                 {
-                    Console.WriteLine("Address can't be less than 5 characters");
+                    throw new Exception("Address can't be less than 5 characters");
                 }
                 else { address=value; }
             } 

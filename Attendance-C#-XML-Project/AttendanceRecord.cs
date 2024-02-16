@@ -31,7 +31,7 @@ namespace Attendance_C__XML_Project
             {
                 if (value < 1)
                 {
-                    Console.WriteLine("ID can't be less than 1");
+                    throw new Exception("ID can't be less than 1");
                 }
                 else
                 {

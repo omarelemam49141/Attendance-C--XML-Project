@@ -9,29 +9,23 @@ namespace Attendance_C__XML_Project
 {
     internal class Class
     {
+        //private fields
+        static int lastID = 0;
+
         int id;
         string name;
 
+        //constructor
         public Class(int _id, string _name) 
         {
-            ID = _id;
+            id = ++lastID;
             Name = _name;
         }
 
+        //properties
         public int ID
         {
             get => id;
-            set
-            {
-                if (value < 1)
-                {
-                    Console.WriteLine("ID can't be less than 1");
-                }
-                else
-                {
-                    id = value;
-                }
-            }
         }
 
         public string Name
