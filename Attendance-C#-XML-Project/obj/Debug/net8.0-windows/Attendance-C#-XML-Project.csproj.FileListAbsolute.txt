@@ -14,3 +14,6 @@ D:\ITI\C#\Attendance-C#-XML-Project\Attendance-C#-XML-Project\obj\Debug\net8.0-w
 D:\ITI\C#\Attendance-C#-XML-Project\Attendance-C#-XML-Project\obj\Debug\net8.0-windows\Attendance-C#-XML-Project.pdb
 D:\ITI\C#\Attendance-C#-XML-Project\Attendance-C#-XML-Project\obj\Debug\net8.0-windows\Attendance-C#-XML-Project.genruntimeconfig.cache
 D:\ITI\C#\Attendance-C#-XML-Project\Attendance-C#-XML-Project\obj\Debug\net8.0-windows\ref\Attendance-C#-XML-Project.dll
+D:\ITI\C#\Attendance-C#-XML-Project\Attendance-C#-XML-Project\obj\Debug\net8.0-windows\Attendance_C__XML_Project.LoginForm.resources
+D:\ITI\C#\Attendance-C#-XML-Project\Attendance-C#-XML-Project\obj\Debug\net8.0-windows\Attendance_C__XML_Project.Properties.Resources.resources
+D:\ITI\C#\Attendance-C#-XML-Project\Attendance-C#-XML-Project\obj\Debug\net8.0-windows\Attendance-C#-XML-Project.sourcelink.json
