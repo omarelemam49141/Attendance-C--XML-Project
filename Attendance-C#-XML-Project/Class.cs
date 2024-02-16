@@ -16,7 +16,7 @@ namespace Attendance_C__XML_Project
         string name;
 
         //constructor
-        public Class(int _id, string _name) 
+        public Class(string _name) 
         {
             id = ++lastID;
             Name = _name;

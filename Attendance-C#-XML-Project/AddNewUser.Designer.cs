@@ -270,7 +270,7 @@
             btnAddUser.FlatStyle = FlatStyle.Flat;
             btnAddUser.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAddUser.ForeColor = SystemColors.Control;
-            btnAddUser.Location = new Point(555, 428);
+            btnAddUser.Location = new Point(554, 441);
             btnAddUser.Name = "btnAddUser";
             btnAddUser.Size = new Size(115, 39);
             btnAddUser.TabIndex = 17;
@@ -320,7 +320,7 @@
             checkedListClass.Items.AddRange(new object[] { "Class A", "Class B", "Class C" });
             checkedListClass.Location = new Point(634, 388);
             checkedListClass.Name = "checkedListClass";
-            checkedListClass.Size = new Size(133, 22);
+            checkedListClass.Size = new Size(133, 40);
             checkedListClass.TabIndex = 9;
             // 
             // AddNewUser

@@ -15,6 +15,10 @@ namespace Attendance_C__XML_Project
 {
     public partial class LoginForm : Form
     {
+        List<Class> classes;
+        List<Teacher> teachersList;
+        List<Student> studentsList;
+        List<User> admins;
         // Import the necessary Windows API methods
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -35,6 +39,24 @@ namespace Attendance_C__XML_Project
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            //Dummy data for testing
+            classes = new List<Class>();
+            classes.Add(new Class("B1"));
+            classes.Add(new Class("B2"));
+
+            teachersList = new List<Teacher>();
+            teachersList.Add(new Teacher("Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", classes));
+            teachersList.Add(new Teacher("Omar", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", classes));
+            teachersList.Add(new Teacher("Ahmed", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", classes));
+
+            studentsList = new List<Student>();
+            studentsList.Add(new Student("Ahmed Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 1));
+            studentsList.Add(new Student("Osame Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2));
+
+            admins = new List<User>();
+            admins.Add(new User("admin", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"));
+            //end dummy data
+
             GraphicsPath path = new GraphicsPath();
             Rectangle bounds = new Rectangle(0, 0, this.Width, this.Height);
             int radius = 10; // Change this value to adjust the roundness of the corners
@@ -70,6 +92,59 @@ namespace Attendance_C__XML_Project
                 // Send the message to move the form
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (IsAdmin())
+            {
+                AdminForm adminForm = new AdminForm();
+                adminForm.Show();
+                this.Hide();
+            }
+            else if (IsTeacher())
+            {
+
+            }
+            else if (IsStudent())
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password");
+            }
+            
+        }
+
+        //Check if the loggedin user is an admin then navigate him to the admin page (return true)
+        private bool IsAdmin()
+        {
+            foreach (User admin in admins)
+            {
+                return (admin.Username.ToLower() == txtUsername.Text.ToLower() && admin.Password == txtPassword.Text);
+            }
+            return false;
+        }
+
+        //Check if the loggedin user is a teacher then navigate him to the teacher page (return true)
+        private bool IsTeacher()
+        {
+            foreach (Teacher teacher in teachersList)
+            {
+                return (teacher.Username.ToLower() == txtUsername.Text.ToLower() && teacher.Password == txtPassword.Text);
+            }
+            return false;
+        }
+
+        //Check if the loggedin user is a student then navigate him to the student page (return true)
+        private bool IsStudent()
+        {
+            foreach (Student student in studentsList)
+            {
+                return (student.Username.ToLower() == txtUsername.Text.ToLower() && student.Password == txtPassword.Text);
+            }
+            return false;
         }
     }
 }

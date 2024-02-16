@@ -142,6 +142,7 @@
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(248, 23);
             txtUsername.TabIndex = 5;
+            txtUsername.TextAlign = HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -170,8 +171,10 @@
             // 
             txtPassword.Location = new Point(54, 166);
             txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(248, 23);
             txtPassword.TabIndex = 2;
+            txtPassword.TextAlign = HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -194,6 +197,7 @@
             btnLogin.TabIndex = 0;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // pictureBox3
             // 
