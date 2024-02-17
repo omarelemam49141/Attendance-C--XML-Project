@@ -40,5 +40,11 @@ namespace Attendance_C__XML_Project
                 else { name = value; }
             }
         }
+
+        //methods
+        public override string ToString()
+        {
+            return $"{ID} - {Name}";
+        }
     }
 }

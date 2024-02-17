@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewUser));
             panel1 = new Panel();
-            comboSelectRole = new ComboBox();
+            comboRole = new ComboBox();
             lblRole = new Label();
             pictureBox2 = new PictureBox();
             panel2 = new Panel();
@@ -65,7 +65,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Gold;
-            panel1.Controls.Add(comboSelectRole);
+            panel1.Controls.Add(comboRole);
             panel1.Controls.Add(lblRole);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(panel2);
@@ -74,17 +74,17 @@
             panel1.Size = new Size(388, 464);
             panel1.TabIndex = 0;
             // 
-            // comboSelectRole
+            // comboRole
             // 
-            comboSelectRole.FlatStyle = FlatStyle.Flat;
-            comboSelectRole.FormattingEnabled = true;
-            comboSelectRole.Items.AddRange(new object[] { "Student", "Teacher" });
-            comboSelectRole.Location = new Point(126, 389);
-            comboSelectRole.Name = "comboSelectRole";
-            comboSelectRole.Size = new Size(139, 23);
-            comboSelectRole.TabIndex = 19;
-            comboSelectRole.SelectedIndexChanged += comboSelectRole_SelectedIndexChanged;
-            comboSelectRole.KeyPress += comboSelectRole_KeyPress;
+            comboRole.FlatStyle = FlatStyle.Flat;
+            comboRole.FormattingEnabled = true;
+            comboRole.Items.AddRange(new object[] { "Student", "Teacher" });
+            comboRole.Location = new Point(126, 389);
+            comboRole.Name = "comboRole";
+            comboRole.Size = new Size(139, 23);
+            comboRole.TabIndex = 19;
+            comboRole.SelectedIndexChanged += comboSelectRole_SelectedIndexChanged;
+            comboRole.KeyPress += comboSelectRole_KeyPress;
             // 
             // lblRole
             // 
@@ -328,7 +328,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 499);
-            Controls.Add(checkedListClass);
             Controls.Add(panel3);
             Controls.Add(btnAddUser);
             Controls.Add(comboClass);
@@ -347,6 +346,7 @@
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
+            Controls.Add(checkedListClass);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AddNewUser";
             StartPosition = FormStartPosition.CenterScreen;
@@ -385,7 +385,7 @@
         private ComboBox comboClass;
         private Label label8;
         private Button btnAddUser;
-        private ComboBox comboSelectRole;
+        private ComboBox comboRole;
         private Label lblRole;
         private PictureBox pictureBox2;
         private Label label9;

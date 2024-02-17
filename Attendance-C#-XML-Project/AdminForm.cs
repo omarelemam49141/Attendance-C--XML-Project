@@ -18,7 +18,8 @@ namespace Attendance_C__XML_Project
         List<Teacher> teachersList;
         List<Student> studentsList;
 
-        User selectedUser = null;
+        User selectedUser = null; //The user object that the user selects to edit or delete it
+        Class selectedClass = null; //The class object that the user selects to edit or delete it
         // Import the necessary Windows API methods
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -55,7 +56,7 @@ namespace Attendance_C__XML_Project
         private void AdminForm_Load(object sender, EventArgs e)
         {
             //show the users panel and hide the others
-            panelDisplayClass.Visible = false;
+            panelShowClasses.Visible = false;
 
             GraphicsPath path = new GraphicsPath();
             Rectangle bounds = new Rectangle(0, 0, this.Width, this.Height);
@@ -111,13 +112,20 @@ namespace Attendance_C__XML_Project
             (sender as Button).ForeColor = Color.White;
             btnDisplayUsers.ForeColor = Color.DarkGray;
             btnDisplayReports.ForeColor = Color.DarkGray;
-            panelDisplayClass.Visible = true;
+            panelShowClasses.Visible = true;
+
+            //Clear the list box of classes
+            listDisplayClasses.Items.Clear();
+            //display all classes in the list classes
+            foreach (var classItem in classes)
+            {
+                listDisplayClasses.Items.Add(classItem);
+            }
         }
 
         private void btnDisplayUsers_Click(object sender, EventArgs e)
         {
-            panelDisplayClass.Visible = false;
-            panelDisplayUser.Visible = true;
+            panelShowClasses.Visible = false;
             (sender as Button).ForeColor = Color.White;
             btnDisplayClasses.ForeColor = Color.DarkGray;
             btnDisplayReports.ForeColor = Color.DarkGray;
@@ -181,7 +189,7 @@ namespace Attendance_C__XML_Project
             {
                 //check if the data is changed
                 if (userDataChanged())
-                {
+                {////////////////////////-------------------------------Needs refactoring
                     if (selectedUser is Teacher)
                     {
                         //find the index of the teacher to remove
@@ -236,10 +244,10 @@ namespace Attendance_C__XML_Project
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             //Check if a user is selected
-            if (selectedUser!=null)
+            if (selectedUser != null)
             {
                 //confirm the deleting process
-                if(MessageBox.Show($"Are you sure you want to delete {selectedUser.Username}?", "Deleting confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show($"Are you sure you want to delete {selectedUser.Username}?", "Deleting confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     if (selectedUser is Teacher)
                     {
@@ -263,6 +271,70 @@ namespace Attendance_C__XML_Project
 
                         MessageBox.Show("Student deleted successfully");
                     }
+                }
+            }
+        }
+
+        //Display the class information when selecting it
+        private void liatDisplayClasses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedClass = listDisplayClasses.SelectedItem as Class;
+            if (selectedClass != null)
+            {
+                txtClassID.Text = selectedClass.ID.ToString();
+                txtNameOfClass.Text = selectedClass.Name;
+            }
+        }
+
+        //Search for a class by its name
+        private void btnSearchClasses_Click(object sender, EventArgs e)
+        {
+            if (txtSearchClass.Text.Trim().Length > 0)
+            {
+                Class selectedClass = classes.Find(classItem => classItem.Name.ToLower() == txtSearchClass.Text.Trim().ToLower());
+                listDisplayClasses.SelectedItem = selectedClass;
+            }
+        }
+
+        //Edit the selected class information
+        private void btnUpdateClass_Click(object sender, EventArgs e)
+        {
+            if (selectedClass != null)
+            {
+                if (classInfoChanged())
+                {
+                    //Get the updated class from the class list
+                    Class? updatedClass = classes.Find(classItem => classItem.ID == selectedClass.ID);
+                    //update the class name
+                    updatedClass.Name = txtNameOfClass.Text.Trim();
+                    //update the class in the listDisplayClasses with the new info
+                    listDisplayClasses.Items[listDisplayClasses.SelectedIndex] = updatedClass;
+                    //Show success message
+                    MessageBox.Show("Class updated successfully");
+                }
+            }
+        }
+
+        //Check if the class information has been changed (return true)
+        private bool classInfoChanged()
+        {
+            return (selectedClass.Name.ToLower() != txtNameOfClass.Text.Trim().ToLower());
+        }
+
+        //Delete the selected class
+        private void btnRemoveClass_Click(object sender, EventArgs e)
+        {
+            if(selectedClass != null)
+            {
+                //Show confirmation message
+                if (MessageBox.Show($"Are you sure you want to delete {selectedClass.ToString()}?", "Confirm Deleting", MessageBoxButtons.YesNo)==DialogResult.Yes)
+                {
+                    //Get the index of the class to delete
+                    int deletedClassIndex = classes.IndexOf(selectedClass);
+                    //Delete the class from the listDisplayClass 
+                    listDisplayClasses.Items.Remove(selectedClass);
+                    //Delete the class from the classes list
+                    classes.RemoveAt(deletedClassIndex);
                 }
             }
         }
