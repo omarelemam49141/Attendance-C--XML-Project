@@ -14,6 +14,7 @@ namespace Attendance_C__XML_Project
         int classID;
 
         //constructor
+        public Student() { }
         public Student(string username, string password, string phone, string mail, string address, int _classId, int _absenceDays=0, int _numberOfWarnings=0, bool _dismissal=false)
             : base(username, password, phone, mail, address)
         {

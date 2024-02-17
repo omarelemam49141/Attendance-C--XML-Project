@@ -133,7 +133,7 @@
             label3.Location = new Point(143, 11);
             label3.Name = "label3";
             label3.Size = new Size(46, 20);
-            label3.TabIndex = 6;
+            label3.TabIndex = 0;
             label3.Text = "Login";
             // 
             // txtUsername
@@ -141,7 +141,7 @@
             txtUsername.Location = new Point(54, 108);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(248, 23);
-            txtUsername.TabIndex = 5;
+            txtUsername.TabIndex = 2;
             txtUsername.TextAlign = HorizontalAlignment.Center;
             // 
             // label2
@@ -151,7 +151,7 @@
             label2.Location = new Point(54, 90);
             label2.Name = "label2";
             label2.Size = new Size(60, 15);
-            label2.TabIndex = 4;
+            label2.TabIndex = 1;
             label2.Text = "Username";
             // 
             // lnkForgetPassword
@@ -163,7 +163,7 @@
             lnkForgetPassword.Location = new Point(119, 254);
             lnkForgetPassword.Name = "lnkForgetPassword";
             lnkForgetPassword.Size = new Size(94, 15);
-            lnkForgetPassword.TabIndex = 3;
+            lnkForgetPassword.TabIndex = 6;
             lnkForgetPassword.TabStop = true;
             lnkForgetPassword.Text = "Forget password";
             // 
@@ -173,7 +173,7 @@
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(248, 23);
-            txtPassword.TabIndex = 2;
+            txtPassword.TabIndex = 4;
             txtPassword.TextAlign = HorizontalAlignment.Center;
             // 
             // label1
@@ -183,7 +183,7 @@
             label1.Location = new Point(54, 148);
             label1.Name = "label1";
             label1.Size = new Size(57, 15);
-            label1.TabIndex = 1;
+            label1.TabIndex = 3;
             label1.Text = "Password";
             // 
             // btnLogin
@@ -194,7 +194,7 @@
             btnLogin.Location = new Point(101, 205);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(130, 38);
-            btnLogin.TabIndex = 0;
+            btnLogin.TabIndex = 5;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewUser));
             panel1 = new Panel();
+            lblRoleError = new Label();
             comboRole = new ComboBox();
             lblRole = new Label();
             pictureBox2 = new PictureBox();
@@ -55,6 +56,15 @@
             btnClose = new Button();
             panel3 = new Panel();
             checkedListClass = new CheckedListBox();
+            lblUsernameError = new Label();
+            lblPasswordError = new Label();
+            lblEmailError = new Label();
+            lblPhoneError = new Label();
+            lblAddressError = new Label();
+            panel4 = new Panel();
+            lblGenderError = new Label();
+            lblClassError = new Label();
+            lblClassesError = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
@@ -65,14 +75,25 @@
             // panel1
             // 
             panel1.BackColor = Color.Gold;
+            panel1.Controls.Add(lblRoleError);
             panel1.Controls.Add(comboRole);
             panel1.Controls.Add(lblRole);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(panel2);
             panel1.Location = new Point(0, 37);
             panel1.Name = "panel1";
-            panel1.Size = new Size(388, 464);
+            panel1.Size = new Size(388, 592);
             panel1.TabIndex = 0;
+            // 
+            // lblRoleError
+            // 
+            lblRoleError.AutoSize = true;
+            lblRoleError.ForeColor = Color.IndianRed;
+            lblRoleError.Location = new Point(129, 422);
+            lblRoleError.MaximumSize = new Size(139, 0);
+            lblRoleError.Name = "lblRoleError";
+            lblRoleError.Size = new Size(0, 15);
+            lblRoleError.TabIndex = 27;
             // 
             // comboRole
             // 
@@ -157,7 +178,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(449, 142);
+            txtPassword.Location = new Point(449, 157);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(318, 23);
             txtPassword.TabIndex = 5;
@@ -166,7 +187,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(449, 119);
+            label3.Location = new Point(449, 134);
             label3.Name = "label3";
             label3.Size = new Size(79, 20);
             label3.TabIndex = 4;
@@ -174,7 +195,7 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(449, 205);
+            txtEmail.Location = new Point(449, 269);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(318, 23);
             txtEmail.TabIndex = 7;
@@ -183,7 +204,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(449, 182);
+            label4.Location = new Point(449, 246);
             label4.Name = "label4";
             label4.Size = new Size(46, 20);
             label4.TabIndex = 6;
@@ -191,7 +212,7 @@
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(449, 267);
+            txtPhone.Location = new Point(449, 343);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(318, 23);
             txtPhone.TabIndex = 9;
@@ -200,7 +221,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(449, 244);
+            label5.Location = new Point(449, 320);
             label5.Name = "label5";
             label5.Size = new Size(56, 20);
             label5.TabIndex = 8;
@@ -208,7 +229,7 @@
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(449, 328);
+            txtAddress.Location = new Point(449, 413);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(318, 23);
             txtAddress.TabIndex = 11;
@@ -217,7 +238,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(449, 305);
+            label6.Location = new Point(449, 390);
             label6.Name = "label6";
             label6.Size = new Size(67, 20);
             label6.TabIndex = 10;
@@ -227,7 +248,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(449, 365);
+            label7.Location = new Point(449, 460);
             label7.Name = "label7";
             label7.Size = new Size(66, 20);
             label7.TabIndex = 12;
@@ -237,7 +258,7 @@
             // 
             comboGender.FormattingEnabled = true;
             comboGender.Items.AddRange(new object[] { "Male", "Female" });
-            comboGender.Location = new Point(449, 388);
+            comboGender.Location = new Point(449, 483);
             comboGender.Name = "comboGender";
             comboGender.Size = new Size(139, 23);
             comboGender.TabIndex = 14;
@@ -246,8 +267,7 @@
             // comboClass
             // 
             comboClass.FormattingEnabled = true;
-            comboClass.Items.AddRange(new object[] { "Male", "Female" });
-            comboClass.Location = new Point(634, 388);
+            comboClass.Location = new Point(634, 483);
             comboClass.Name = "comboClass";
             comboClass.Size = new Size(133, 23);
             comboClass.TabIndex = 16;
@@ -257,7 +277,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(634, 365);
+            label8.Location = new Point(634, 460);
             label8.Name = "label8";
             label8.Size = new Size(46, 20);
             label8.TabIndex = 15;
@@ -270,12 +290,13 @@
             btnAddUser.FlatStyle = FlatStyle.Flat;
             btnAddUser.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAddUser.ForeColor = SystemColors.Control;
-            btnAddUser.Location = new Point(554, 441);
+            btnAddUser.Location = new Point(554, 571);
             btnAddUser.Name = "btnAddUser";
             btnAddUser.Size = new Size(115, 39);
             btnAddUser.TabIndex = 17;
             btnAddUser.Text = "Add Student";
             btnAddUser.UseVisualStyleBackColor = false;
+            btnAddUser.Click += btnAddUser_Click;
             // 
             // label9
             // 
@@ -317,17 +338,109 @@
             // checkedListClass
             // 
             checkedListClass.FormattingEnabled = true;
-            checkedListClass.Items.AddRange(new object[] { "Class A", "Class B", "Class C" });
-            checkedListClass.Location = new Point(634, 388);
+            checkedListClass.Location = new Point(634, 483);
             checkedListClass.Name = "checkedListClass";
             checkedListClass.Size = new Size(133, 40);
             checkedListClass.TabIndex = 9;
+            // 
+            // lblUsernameError
+            // 
+            lblUsernameError.AutoSize = true;
+            lblUsernameError.ForeColor = Color.IndianRed;
+            lblUsernameError.Location = new Point(449, 110);
+            lblUsernameError.Name = "lblUsernameError";
+            lblUsernameError.Size = new Size(0, 15);
+            lblUsernameError.TabIndex = 19;
+            // 
+            // lblPasswordError
+            // 
+            lblPasswordError.AutoSize = true;
+            lblPasswordError.ForeColor = Color.IndianRed;
+            lblPasswordError.Location = new Point(449, 182);
+            lblPasswordError.MaximumSize = new Size(330, 0);
+            lblPasswordError.Name = "lblPasswordError";
+            lblPasswordError.Size = new Size(0, 15);
+            lblPasswordError.TabIndex = 20;
+            // 
+            // lblEmailError
+            // 
+            lblEmailError.AutoSize = true;
+            lblEmailError.ForeColor = Color.IndianRed;
+            lblEmailError.Location = new Point(451, 298);
+            lblEmailError.Name = "lblEmailError";
+            lblEmailError.Size = new Size(0, 15);
+            lblEmailError.TabIndex = 21;
+            // 
+            // lblPhoneError
+            // 
+            lblPhoneError.AutoSize = true;
+            lblPhoneError.ForeColor = Color.IndianRed;
+            lblPhoneError.Location = new Point(451, 372);
+            lblPhoneError.Name = "lblPhoneError";
+            lblPhoneError.Size = new Size(0, 15);
+            lblPhoneError.TabIndex = 22;
+            // 
+            // lblAddressError
+            // 
+            lblAddressError.AutoSize = true;
+            lblAddressError.ForeColor = Color.IndianRed;
+            lblAddressError.Location = new Point(451, 442);
+            lblAddressError.Name = "lblAddressError";
+            lblAddressError.Size = new Size(0, 15);
+            lblAddressError.TabIndex = 23;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = SystemColors.ActiveBorder;
+            panel4.Location = new Point(449, 236);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(318, 5);
+            panel4.TabIndex = 24;
+            // 
+            // lblGenderError
+            // 
+            lblGenderError.AutoSize = true;
+            lblGenderError.ForeColor = Color.IndianRed;
+            lblGenderError.Location = new Point(454, 513);
+            lblGenderError.MaximumSize = new Size(139, 0);
+            lblGenderError.Name = "lblGenderError";
+            lblGenderError.Size = new Size(0, 15);
+            lblGenderError.TabIndex = 25;
+            // 
+            // lblClassError
+            // 
+            lblClassError.AutoSize = true;
+            lblClassError.ForeColor = Color.IndianRed;
+            lblClassError.Location = new Point(636, 513);
+            lblClassError.MaximumSize = new Size(139, 0);
+            lblClassError.Name = "lblClassError";
+            lblClassError.Size = new Size(0, 15);
+            lblClassError.TabIndex = 26;
+            // 
+            // lblClassesError
+            // 
+            lblClassesError.AutoSize = true;
+            lblClassesError.ForeColor = Color.IndianRed;
+            lblClassesError.Location = new Point(638, 528);
+            lblClassesError.MaximumSize = new Size(139, 0);
+            lblClassesError.Name = "lblClassesError";
+            lblClassesError.Size = new Size(0, 15);
+            lblClassesError.TabIndex = 27;
             // 
             // AddNewUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 499);
+            ClientSize = new Size(800, 628);
+            Controls.Add(lblClassesError);
+            Controls.Add(lblClassError);
+            Controls.Add(lblGenderError);
+            Controls.Add(panel4);
+            Controls.Add(lblAddressError);
+            Controls.Add(lblPhoneError);
+            Controls.Add(lblEmailError);
+            Controls.Add(lblPasswordError);
+            Controls.Add(lblUsernameError);
             Controls.Add(panel3);
             Controls.Add(btnAddUser);
             Controls.Add(comboClass);
@@ -392,5 +505,15 @@
         private Button btnClose;
         private Panel panel3;
         private CheckedListBox checkedListClass;
+        private Label lblUsernameError;
+        private Label lblPasswordError;
+        private Label lblEmailError;
+        private Label lblPhoneError;
+        private Label lblAddressError;
+        private Panel panel4;
+        private Label lblGenderError;
+        private Label lblClassError;
+        private Label lblRoleError;
+        private Label lblClassesError;
     }
 }

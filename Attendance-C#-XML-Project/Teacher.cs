@@ -11,11 +11,10 @@ namespace Attendance_C__XML_Project
         //private fields
         List<Class> classes;
         //constructor
-        public Teacher(string username, string password, string phone, string mail, string address, List<Class> _classes)
+        public Teacher() { }
+        public Teacher(string username, string password, string phone, string mail, string address)
             : base(username, password, phone, mail, address)
-        {
-            classes = _classes;
-        }
+        {}
         //methods
         public void addClass(Class c) { classes.Add(c); }
 

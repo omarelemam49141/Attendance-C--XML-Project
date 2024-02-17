@@ -14,9 +14,11 @@ namespace Attendance_C__XML_Project
 {
     public partial class AdminForm : Form
     {
-        List<Class> classes;
-        List<Teacher> teachersList;
-        List<Student> studentsList;
+        internal List<Class> classes;
+        internal List<Teacher> teachersList;
+        internal List<Student> studentsList;
+
+        public ListBox ListDisplayUsers { get=> listUsers;}
 
         User selectedUser = null; //The user object that the user selects to edit or delete it
         Class selectedClass = null; //The class object that the user selects to edit or delete it
@@ -87,9 +89,9 @@ namespace Attendance_C__XML_Project
             classes.Add(new Class("B2"));
 
             teachersList = new List<Teacher>();
-            teachersList.Add(new Teacher("Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", classes));
-            teachersList.Add(new Teacher("Omar", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", classes));
-            teachersList.Add(new Teacher("Ahmed", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", classes));
+            teachersList.Add(new Teacher("Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"));
+            teachersList.Add(new Teacher("Omar", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"));
+            teachersList.Add(new Teacher("Ahmed", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"));
 
             studentsList = new List<Student>();
             studentsList.Add(new Student("Ahmed Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 1));
@@ -140,7 +142,7 @@ namespace Attendance_C__XML_Project
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AddNewUser addNewUser = new AddNewUser();
+            AddNewUser addNewUser = new AddNewUser(this);
             addNewUser.ShowDialog();
         }
 
@@ -257,6 +259,8 @@ namespace Attendance_C__XML_Project
                         teachersList.RemoveAt(index);
                         //remove the teacher from the list box
                         listUsers.Items.RemoveAt(listUsers.SelectedIndex);
+                        //Removing the selection from the list box
+                        listDisplayClasses.SelectedItem = null;
 
                         MessageBox.Show("Teacher deleted successfully");
                     }
@@ -271,8 +275,20 @@ namespace Attendance_C__XML_Project
 
                         MessageBox.Show("Student deleted successfully");
                     }
+
+                    //Removing the selection from the list box
+                    selectedUser = null;
+                    ResetUserFields();
                 }
             }
+        }
+
+        private void ResetUserFields()
+        {
+            lblID.Text = "-1";
+            txtPassword.Text = "";
+            txtEmail.Text = "";
+            txtUsername.Text = "";
         }
 
         //Display the class information when selecting it
@@ -327,16 +343,26 @@ namespace Attendance_C__XML_Project
             if(selectedClass != null)
             {
                 //Show confirmation message
-                if (MessageBox.Show($"Are you sure you want to delete {selectedClass.ToString()}?", "Confirm Deleting", MessageBoxButtons.YesNo)==DialogResult.Yes)
+                if (MessageBox.Show($"Are you sure you want to delete {selectedClass}?", "Confirm Deleting", MessageBoxButtons.YesNo)==DialogResult.Yes)
                 {
                     //Get the index of the class to delete
                     int deletedClassIndex = classes.IndexOf(selectedClass);
                     //Delete the class from the listDisplayClass 
                     listDisplayClasses.Items.Remove(selectedClass);
+                    //Removing the selection from the list box
+                    listDisplayClasses.SelectedItem = null;
                     //Delete the class from the classes list
-                    classes.RemoveAt(deletedClassIndex);
+                    //Removing the selection from the list box
+                    selectedClass = null;
+                    ResetClassFields();
                 }
             }
+        }
+
+        private void ResetClassFields()
+        {
+            txtNameOfClass.Text = "";
+            txtClassID.Text = "-1";
         }
     }
 }

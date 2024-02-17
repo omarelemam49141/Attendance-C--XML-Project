@@ -21,6 +21,7 @@ namespace Attendance_C__XML_Project
         string address;
 
         //constructors
+        public User() { }
         public User( string _username, string _password, string _phone, string _mail, string _address) 
         {
             id = ++lastID;
