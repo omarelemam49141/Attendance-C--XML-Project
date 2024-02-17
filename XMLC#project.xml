@@ -1,0 +1,79 @@
+<AttendanceManagementSystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="C:\Users\Rahek\OneDrive\المستندات\Desktop\XSDC#project.xsd">
+	<Users>
+		<!-- Admin User -->
+		<Admin>
+			<ID>1</ID>
+			<Username>admin_user</Username>
+			<Password>admin_pass</Password>
+			<Gender>Male</Gender>
+			<Phone>1234567890</Phone>
+			<Mail>admin@example.com</Mail>
+			<Address>123 Admin St, City</Address>
+		</Admin>
+		<!-- Teacher User -->
+		<Teacher>
+			<ID>2</ID>
+			<Username>teacher_user</Username>
+			<Password>teacher_pass</Password>
+			<Gender>Female</Gender>
+			<Phone>9876543210</Phone>
+			<Mail>teacher@example.com</Mail>
+			<Address>456 Teacher Ave, Town</Address>
+			<Classes>
+				<Class>
+					<ID>1</ID>
+					<Name>Math</Name>
+				</Class>
+				<Class>
+					<ID>2</ID>
+					<Name>Science</Name>
+				</Class>
+			</Classes>
+		</Teacher>
+		<!-- Student User -->
+		<Student>
+			<ID>3</ID>
+			<Username>student_user</Username>
+			<Password>student_pass</Password>
+			<Gender>Male</Gender>
+			<Phone>5556667777</Phone>
+			<Mail>student@example.com</Mail>
+			<Address>789 Student Rd, Village</Address>
+			<AbsenceDays>5</AbsenceDays>
+			<NumberOfWarnings>1</NumberOfWarnings>
+			<ClassID>1</ClassID>
+			<Dismissal>false</Dismissal>
+		</Student>
+	</Users>
+	<GenerateReports>
+		<!-- Generate Report Entries -->
+		<GenerateReport>
+			<ID>1</ID>
+			<!-- Include AttendanceRecords here -->
+		</GenerateReport>
+		<!-- Include more GenerateReport entries if needed -->
+	</GenerateReports>
+	<Classes>
+		<!-- Class Entries -->
+		<Class>
+			<ID>1</ID>
+			<Name>Math</Name>
+		</Class>
+		<Class>
+			<ID>2</ID>
+			<Name>Science</Name>
+		</Class>
+		<!-- Include more Class entries if needed -->
+	</Classes>
+	<AttendanceRecords>
+		<!-- Attendance Record Entries -->
+		<AttendanceRecord>
+			<ID>1</ID>
+			<StudentID>3</StudentID>
+			<RecordDate>2024-02-17</RecordDate>
+			<AttendanceStatus>Absence</AttendanceStatus>
+			<ClassID>1</ClassID>
+		</AttendanceRecord>
+		<!-- Include more AttendanceRecord entries if needed -->
+	</AttendanceRecords>
+</AttendanceManagementSystem>

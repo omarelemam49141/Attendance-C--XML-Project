@@ -1,0 +1,126 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <!-- Define complex types -->
+
+  <!-- UserType: Represents common properties for all users (Admin, Teacher, Student) -->
+  <xs:complexType name="UserType">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:int"/>           <!-- Unique identifier for the user -->
+      <xs:element name="Username" type="xs:string"/> <!-- Username of the user -->
+      <xs:element name="Password" type="xs:string"/> <!-- Password of the user -->
+      <xs:element name="Gender" type="xs:string"/>   <!-- Gender of the user -->
+      <xs:element name="Phone" type="xs:string"/>    <!-- Phone number of the user -->
+      <xs:element name="Mail" type="xs:string"/>     <!-- Email address of the user -->
+      <xs:element name="Address" type="xs:string"/>  <!-- Physical address of the user -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- TeacherType: Extends UserType with additional properties for teachers -->
+  <xs:complexType name="TeacherType">
+    <xs:complexContent>
+      <xs:extension base="UserType">
+        <xs:sequence>
+          <!-- Classes: Classes taught by the teacher -->
+          <xs:element name="Classes" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <!-- Class: Individual class taught by the teacher -->
+                <xs:element name="Class" type="ClassType" minOccurs="1" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- StudentType: Extends UserType with additional properties for students -->
+  <xs:complexType name="StudentType">
+    <xs:complexContent>
+      <xs:extension base="UserType">
+        <xs:sequence>
+          <xs:element name="AbsenceDays" type="xs:int"/>         <!-- Number of days absent -->
+          <xs:element name="NumberOfWarnings" type="xs:int"/>    <!-- Number of warnings received -->
+          <xs:element name="ClassID" type="xs:int"/>             <!-- ID of the class the student is enrolled in -->
+          <xs:element name="Dismissal" type="xs:boolean"/>      <!-- Dismissal status -->
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- AttendanceRecordType: Represents attendance records -->
+  <xs:complexType name="AttendanceRecordType">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:int"/>            <!-- Attendance record ID -->
+      <xs:element name="StudentID" type="xs:int"/>     <!-- ID of the student -->
+      <xs:element name="RecordDate" type="xs:date"/>   <!-- Date of the attendance record -->
+      <xs:element name="AttendanceStatus" type="xs:string"/>  <!-- Attendance status (e.g., Absence, Presence) -->
+      <xs:element name="ClassID" type="xs:int"/>       <!-- ID of the class -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- GenerateReportType: Represents reports generated based on attendance records -->
+  <xs:complexType name="GenerateReportType">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:int"/>                       <!-- Report ID -->
+      <xs:element name="AttendanceRecords" type="AttendanceRecordType" minOccurs="0" maxOccurs="unbounded"/>  <!-- Attendance records included in the report -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- ClassType: Represents classes offered -->
+  <xs:complexType name="ClassType">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:int"/>        <!-- Class ID -->
+      <xs:element name="Name" type="xs:string"/>  <!-- Class name -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Define elements -->
+  <xs:element name="AttendanceManagementSystem">
+    <xs:complexType>
+      <xs:sequence>
+        <!-- Users section -->
+        <xs:element name="Users">
+          <xs:complexType>
+            <xs:sequence>
+              <!-- Admin user -->
+              <xs:element name="Admin" type="UserType"/>
+              <!-- Teacher users -->
+              <xs:element name="Teacher" type="TeacherType" maxOccurs="unbounded"/>
+              <!-- Student users -->
+              <xs:element name="Student" type="StudentType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!-- GenerateReports section -->
+        <xs:element name="GenerateReports">
+          <xs:complexType>
+            <xs:sequence>
+              <!-- GenerateReport entries -->
+              <xs:element name="GenerateReport" type="GenerateReportType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!-- Classes section -->
+        <xs:element name="Classes">
+          <xs:complexType>
+            <xs:sequence>
+              <!-- Class entries -->
+              <xs:element name="Class" type="ClassType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!-- AttendanceRecords section -->
+        <xs:element name="AttendanceRecords">
+          <xs:complexType>
+            <xs:sequence>
+              <!-- AttendanceRecord entries -->
+              <xs:element name="AttendanceRecord" type="AttendanceRecordType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
