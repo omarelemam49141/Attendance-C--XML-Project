@@ -32,6 +32,9 @@
             label4 = new Label();
             btnClose = new Button();
             panel1 = new Panel();
+            linkLogout = new LinkLabel();
+            lblRole = new Label();
+            label17 = new Label();
             panelDisplayClass = new Panel();
             tableLayoutPanel3 = new TableLayoutPanel();
             label22 = new Label();
@@ -49,6 +52,7 @@
             panel6 = new Panel();
             label25 = new Label();
             panel2 = new Panel();
+            lblUsername = new Label();
             button3 = new Button();
             btnDisplayReports = new Button();
             btnDisplayClasses = new Button();
@@ -147,6 +151,9 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 7, 95);
+            panel1.Controls.Add(linkLogout);
+            panel1.Controls.Add(lblRole);
+            panel1.Controls.Add(label17);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(btnClose);
             panel1.Dock = DockStyle.Top;
@@ -155,6 +162,42 @@
             panel1.Size = new Size(800, 37);
             panel1.TabIndex = 1;
             panel1.MouseDown += panel1_MouseDown;
+            // 
+            // linkLogout
+            // 
+            linkLogout.AutoSize = true;
+            linkLogout.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkLogout.LinkColor = Color.IndianRed;
+            linkLogout.Location = new Point(434, 6);
+            linkLogout.Name = "linkLogout";
+            linkLogout.Size = new Size(59, 21);
+            linkLogout.TabIndex = 24;
+            linkLogout.TabStop = true;
+            linkLogout.Text = "Logout";
+            linkLogout.LinkClicked += linkLogout_LinkClicked;
+            // 
+            // lblRole
+            // 
+            lblRole.AutoSize = true;
+            lblRole.BackColor = Color.Teal;
+            lblRole.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRole.ForeColor = Color.WhiteSmoke;
+            lblRole.Location = new Point(366, 7);
+            lblRole.Name = "lblRole";
+            lblRole.Size = new Size(60, 21);
+            lblRole.TabIndex = 26;
+            lblRole.Text = "admin";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label17.ForeColor = Color.White;
+            label17.Location = new Point(198, 6);
+            label17.Name = "label17";
+            label17.Size = new Size(169, 21);
+            label17.TabIndex = 9;
+            label17.Text = "You are logged in as";
             // 
             // panelDisplayClass
             // 
@@ -356,6 +399,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(0, 7, 95);
+            panel2.Controls.Add(lblUsername);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(btnDisplayReports);
             panel2.Controls.Add(btnDisplayClasses);
@@ -368,6 +412,18 @@
             panel2.Size = new Size(200, 463);
             panel2.TabIndex = 9;
             // 
+            // lblUsername
+            // 
+            lblUsername.AutoSize = true;
+            lblUsername.BackColor = Color.Teal;
+            lblUsername.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblUsername.ForeColor = Color.WhiteSmoke;
+            lblUsername.Location = new Point(23, 10);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(160, 22);
+            lblUsername.TabIndex = 25;
+            lblUsername.Text = "Welcome Admin";
+            // 
             // button3
             // 
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
@@ -377,7 +433,7 @@
             button3.Font = new Font("Segoe UI", 11F);
             button3.ForeColor = Color.DarkGray;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(-110, 362);
+            button3.Location = new Point(-110, 382);
             button3.Name = "button3";
             button3.Size = new Size(324, 36);
             button3.TabIndex = 13;
@@ -394,7 +450,7 @@
             btnDisplayReports.Font = new Font("Segoe UI", 11F);
             btnDisplayReports.ForeColor = Color.DarkGray;
             btnDisplayReports.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDisplayReports.Location = new Point(-110, 298);
+            btnDisplayReports.Location = new Point(-110, 318);
             btnDisplayReports.Name = "btnDisplayReports";
             btnDisplayReports.Size = new Size(324, 36);
             btnDisplayReports.TabIndex = 12;
@@ -411,7 +467,7 @@
             btnDisplayClasses.Font = new Font("Segoe UI", 11F);
             btnDisplayClasses.ForeColor = Color.DarkGray;
             btnDisplayClasses.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDisplayClasses.Location = new Point(-110, 234);
+            btnDisplayClasses.Location = new Point(-110, 254);
             btnDisplayClasses.Name = "btnDisplayClasses";
             btnDisplayClasses.Size = new Size(324, 36);
             btnDisplayClasses.TabIndex = 11;
@@ -428,7 +484,7 @@
             btnDisplayUsers.Font = new Font("Segoe UI", 11F);
             btnDisplayUsers.ForeColor = Color.White;
             btnDisplayUsers.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDisplayUsers.Location = new Point(-110, 170);
+            btnDisplayUsers.Location = new Point(-110, 190);
             btnDisplayUsers.Name = "btnDisplayUsers";
             btnDisplayUsers.Size = new Size(324, 36);
             btnDisplayUsers.TabIndex = 10;
@@ -439,7 +495,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(27, 23);
+            pictureBox1.Location = new Point(27, 43);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(150, 141);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -981,6 +1037,7 @@
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel4.ResumeLayout(false);
             tableLayoutPanel4.PerformLayout();
@@ -1078,5 +1135,9 @@
         private Panel panel7;
         private Label label16;
         private MaskedTextBox txtNameOfClass;
+        private Label lblRole;
+        private Label label17;
+        private Label lblUsername;
+        private LinkLabel linkLogout;
     }
 }

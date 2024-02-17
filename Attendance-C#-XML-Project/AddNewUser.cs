@@ -24,7 +24,7 @@ namespace Attendance_C__XML_Project
         private const int HT_CAPTION = 0x2;
 
         //the parent form
-        private AdminForm adminForm; 
+        private AdminForm adminForm;
 
         public AddNewUser(AdminForm? _adminForm)
         {
@@ -34,6 +34,13 @@ namespace Attendance_C__XML_Project
 
         private void AddNewUser_Load(object sender, EventArgs e)
         {
+            //type the role of the logged in user
+            LoggedInUser loggedInUser = adminForm.loggedInUser;
+            if (loggedInUser != null)
+            {
+                lblLoggedInRole.Text = loggedInUser.userRole.ToString();
+            }
+
             this.Controls.Remove(checkedListClass);
             GraphicsPath path = new GraphicsPath();
             Rectangle bounds = new Rectangle(0, 0, this.Width, this.Height);
@@ -218,7 +225,7 @@ namespace Attendance_C__XML_Project
                 }
 
                 lblRoleError.Text = "";
-            } 
+            }
             else
             {
                 lblRoleError.Text = "You must select a role";
@@ -247,7 +254,7 @@ namespace Attendance_C__XML_Project
                 }
 
                 //add the new student if no errors
-                if(errors == 0)
+                if (errors == 0)
                 {
                     //add the student to the parent students list
                     adminForm.studentsList.Add(newStudent);
@@ -255,7 +262,7 @@ namespace Attendance_C__XML_Project
                     adminForm.ListDisplayUsers.Items.Add(newStudent);
                     MessageBox.Show("Student Added Successfully");
                 }
-            } 
+            }
             //If the role is teacher then try to add his list of classes
             else if (comboRole.SelectedItem == "Teacher")
             {
@@ -291,6 +298,14 @@ namespace Attendance_C__XML_Project
                     MessageBox.Show("Teacher Added Successfully");
                 }
             }
+        }
+
+        private void linkLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
+            adminForm.Hide();
         }
     }
 }

@@ -15,10 +15,15 @@ namespace Attendance_C__XML_Project
 {
     public partial class LoginForm : Form
     {
+        //private fields
         List<Class> classes;
         List<Teacher> teachersList;
         List<Student> studentsList;
         List<User> admins;
+
+        //internal fields
+        internal LoggedInUser loggedInUser;
+
         // Import the necessary Windows API methods
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -34,6 +39,8 @@ namespace Attendance_C__XML_Project
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+            Application.Exit();
             this.Close();
         }
 
@@ -81,6 +88,7 @@ namespace Attendance_C__XML_Project
             this.Region = new Region(path);
         }
 
+        //drag the form
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             // Check if the left mouse button is pressed
@@ -94,21 +102,23 @@ namespace Attendance_C__XML_Project
             }
         }
 
+        //login process
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (IsAdmin())
             {
-                AdminForm adminForm = new AdminForm();
+                loggedInUser = new LoggedInUser(txtUsername.Text.ToLower(), Role.Admin);
+                AdminForm adminForm = new AdminForm(this);
                 adminForm.Show();
                 this.Hide();
             }
             else if (IsTeacher())
             {
-
+                loggedInUser = new LoggedInUser(txtUsername.Text.ToLower(), Role.Teacher);
             }
             else if (IsStudent())
             {
-
+                loggedInUser = new LoggedInUser(txtUsername.Text.ToLower(), Role.Student);
             }
             else
             {

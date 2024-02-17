@@ -18,7 +18,13 @@ namespace Attendance_C__XML_Project
         internal List<Teacher> teachersList;
         internal List<Student> studentsList;
 
-        public ListBox ListDisplayUsers { get=> listUsers;}
+        //the reference that will refer to the loggedIn information
+        internal LoggedInUser loggedInUser;
+
+        //The parent form
+        LoginForm loginForm;
+
+        public ListBox ListDisplayUsers { get => listUsers; }
 
         User selectedUser = null; //The user object that the user selects to edit or delete it
         Class selectedClass = null; //The class object that the user selects to edit or delete it
@@ -30,8 +36,10 @@ namespace Attendance_C__XML_Project
 
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
-        public AdminForm()
+        public AdminForm(LoginForm _loginForm)
         {
+            //get the parent form
+            loginForm = _loginForm;
             InitializeComponent();
         }
 
@@ -59,6 +67,12 @@ namespace Attendance_C__XML_Project
         {
             //show the users panel and hide the others
             panelShowClasses.Visible = false;
+
+            //Show the role and the user name of the logged in user
+            loggedInUser = loginForm.loggedInUser;
+
+            lblRole.Text = loggedInUser.userRole.ToString();
+            lblUsername.Text = $"Welcome {loggedInUser.Name}";
 
             GraphicsPath path = new GraphicsPath();
             Rectangle bounds = new Rectangle(0, 0, this.Width, this.Height);
@@ -109,6 +123,7 @@ namespace Attendance_C__XML_Project
             }
         }
 
+        //display classes
         private void btnDisplayClasses_Click(object sender, EventArgs e)
         {
             (sender as Button).ForeColor = Color.White;
@@ -125,6 +140,7 @@ namespace Attendance_C__XML_Project
             }
         }
 
+        //display users
         private void btnDisplayUsers_Click(object sender, EventArgs e)
         {
             panelShowClasses.Visible = false;
@@ -133,6 +149,7 @@ namespace Attendance_C__XML_Project
             btnDisplayReports.ForeColor = Color.DarkGray;
         }
 
+        //open display reports
         private void btnDisplayReports_Click(object sender, EventArgs e)
         {
             (sender as Button).ForeColor = Color.White;
@@ -140,6 +157,7 @@ namespace Attendance_C__XML_Project
             btnDisplayUsers.ForeColor = Color.DarkGray;
         }
 
+        //Open Add new user form
         private void button3_Click(object sender, EventArgs e)
         {
             AddNewUser addNewUser = new AddNewUser(this);
@@ -340,10 +358,10 @@ namespace Attendance_C__XML_Project
         //Delete the selected class
         private void btnRemoveClass_Click(object sender, EventArgs e)
         {
-            if(selectedClass != null)
+            if (selectedClass != null)
             {
                 //Show confirmation message
-                if (MessageBox.Show($"Are you sure you want to delete {selectedClass}?", "Confirm Deleting", MessageBoxButtons.YesNo)==DialogResult.Yes)
+                if (MessageBox.Show($"Are you sure you want to delete {selectedClass}?", "Confirm Deleting", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     //Get the index of the class to delete
                     int deletedClassIndex = classes.IndexOf(selectedClass);
@@ -363,6 +381,13 @@ namespace Attendance_C__XML_Project
         {
             txtNameOfClass.Text = "";
             txtClassID.Text = "-1";
+        }
+
+        private void linkLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
         }
     }
 }

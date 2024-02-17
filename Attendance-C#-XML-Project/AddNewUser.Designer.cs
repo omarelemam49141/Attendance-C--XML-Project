@@ -65,6 +65,9 @@
             lblGenderError = new Label();
             lblClassError = new Label();
             lblClassesError = new Label();
+            linkLogout = new LinkLabel();
+            lblLoggedInRole = new Label();
+            label17 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
@@ -326,6 +329,9 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(73, 178, 202);
+            panel3.Controls.Add(linkLogout);
+            panel3.Controls.Add(lblLoggedInRole);
+            panel3.Controls.Add(label17);
             panel3.Controls.Add(label9);
             panel3.Controls.Add(btnClose);
             panel3.Dock = DockStyle.Top;
@@ -427,6 +433,42 @@
             lblClassesError.Size = new Size(0, 15);
             lblClassesError.TabIndex = 27;
             // 
+            // linkLogout
+            // 
+            linkLogout.AutoSize = true;
+            linkLogout.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkLogout.LinkColor = Color.Brown;
+            linkLogout.Location = new Point(489, 7);
+            linkLogout.Name = "linkLogout";
+            linkLogout.Size = new Size(59, 21);
+            linkLogout.TabIndex = 28;
+            linkLogout.TabStop = true;
+            linkLogout.Text = "Logout";
+            linkLogout.LinkClicked += linkLogout_LinkClicked;
+            // 
+            // lblLoggedInRole
+            // 
+            lblLoggedInRole.AutoSize = true;
+            lblLoggedInRole.BackColor = Color.Teal;
+            lblLoggedInRole.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblLoggedInRole.ForeColor = Color.WhiteSmoke;
+            lblLoggedInRole.Location = new Point(421, 8);
+            lblLoggedInRole.Name = "lblLoggedInRole";
+            lblLoggedInRole.Size = new Size(60, 21);
+            lblLoggedInRole.TabIndex = 29;
+            lblLoggedInRole.Text = "admin";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label17.ForeColor = Color.White;
+            label17.Location = new Point(253, 7);
+            label17.Name = "label17";
+            label17.Size = new Size(169, 21);
+            label17.TabIndex = 27;
+            label17.Text = "You are logged in as";
+            // 
             // AddNewUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -515,5 +557,8 @@
         private Label lblClassError;
         private Label lblRoleError;
         private Label lblClassesError;
+        private LinkLabel linkLogout;
+        private Label lblLoggedInRole;
+        private Label label17;
     }
 }
