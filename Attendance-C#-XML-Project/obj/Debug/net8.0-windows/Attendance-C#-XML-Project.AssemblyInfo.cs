@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Attendance-C#-XML-Project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb79a6741e78138c500890f2de178884bee43294")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb61cff5641cedc4d5dd0be25597145192e70979")]
 [assembly: System.Reflection.AssemblyProductAttribute("Attendance-C#-XML-Project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Attendance-C#-XML-Project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -19,3 +19,4 @@ D:\ITI\C#\Attendance-C#-XML-Project\Attendance-C#-XML-Project\obj\Debug\net8.0-w
 D:\ITI\C#\Attendance-C#-XML-Project\Attendance-C#-XML-Project\obj\Debug\net8.0-windows\Attendance-C#-XML-Project.sourcelink.json
 D:\ITI\C#\Attendance-C#-XML-Project\Attendance-C#-XML-Project\obj\Debug\net8.0-windows\Attendance_C__XML_Project.AddNewUser.resources
 D:\ITI\C#\Attendance-C#-XML-Project\Attendance-C#-XML-Project\obj\Debug\net8.0-windows\Attendance_C__XML_Project.AdminForm.resources
+D:\ITI\C#\Attendance-C#-XML-Project\Attendance-C#-XML-Project\obj\Debug\net8.0-windows\Attendance_C__XML_Project.StudentForm.resources
