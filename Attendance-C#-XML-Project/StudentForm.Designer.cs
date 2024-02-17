@@ -83,7 +83,6 @@
             // 
             // btnClose
             // 
-            btnClose.BackgroundImage = (Image)resources.GetObject("btnClose.BackgroundImage");
             btnClose.BackgroundImageLayout = ImageLayout.Zoom;
             btnClose.Cursor = Cursors.Hand;
             btnClose.Dock = DockStyle.Right;
@@ -106,7 +105,7 @@
             btnShowReport.Location = new Point(356, 22);
             btnShowReport.Margin = new Padding(3, 4, 3, 4);
             btnShowReport.Name = "btnShowReport";
-            btnShowReport.Size = new Size(192, 80);
+            btnShowReport.Size = new Size(178, 80);
             btnShowReport.TabIndex = 20;
             btnShowReport.Text = "Show Report";
             btnShowReport.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -167,11 +166,10 @@
             btnExportExcel.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExportExcel.ForeColor = SystemColors.Control;
             btnExportExcel.Image = (Image)resources.GetObject("btnExportExcel.Image");
-            btnExportExcel.ImageAlign = ContentAlignment.MiddleLeft;
-            btnExportExcel.Location = new Point(603, 411);
+            btnExportExcel.Location = new Point(609, 411);
             btnExportExcel.Margin = new Padding(3, 4, 3, 4);
             btnExportExcel.Name = "btnExportExcel";
-            btnExportExcel.Size = new Size(217, 80);
+            btnExportExcel.Size = new Size(189, 80);
             btnExportExcel.TabIndex = 26;
             btnExportExcel.Text = "Export Excel";
             btnExportExcel.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -189,7 +187,7 @@
             btnPrintReport.Location = new Point(96, 411);
             btnPrintReport.Margin = new Padding(3, 4, 3, 4);
             btnPrintReport.Name = "btnPrintReport";
-            btnPrintReport.Size = new Size(184, 80);
+            btnPrintReport.Size = new Size(176, 80);
             btnPrintReport.TabIndex = 27;
             btnPrintReport.Text = "Print Pdf";
             btnPrintReport.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -265,7 +263,7 @@
             button4.ForeColor = Color.Black;
             button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(854, 48);
+            button4.Location = new Point(851, 49);
             button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
             button4.Size = new Size(42, 36);
@@ -280,11 +278,10 @@
             button3.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.Black;
             button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(856, 8);
+            button3.Location = new Point(851, 8);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(37, 36);
+            button3.Size = new Size(39, 37);
             button3.TabIndex = 30;
             button3.UseVisualStyleBackColor = false;
             // 
