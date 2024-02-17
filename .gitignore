@@ -1,1 +1,68 @@
+# Ignore Visual Studio files
 .vs/
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.pdb
+*.user
+*.log
+*.sln.docstates
+ipch/
+obj/
+[Bb]in/
+[Dd]ebug/
+[Rr]elease/
+_ReSharper*/
+[Tt]est[Rr]esult*/
+*.resharper*
+*.dotCover
+
+# Ignore build output
+*.dll
+*.exe
+*.exe.manifest
+*.pdb
+*.dll.config
+*.cache
+*.log
+*.xml
+*.htm
+*.html
+*.ruleset
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+bin/
+obj/
+*.dbmdl
+
+# Ignore NuGet packages
+packages/
+
+# Ignore Visual Studio code files
+.vscode/
+
+# Ignore Rider files
+.idea/
+*.sln.iml
+*.iml
+
+# Ignore user-specific files
+*.userprefs
+*.usertasks
+*.userprops
+*.usersettings
+
+# Ignore build results and Resharper files
+*.ReSharper*
+*.[Rr]e[Ss]harper
+*.DotSettings
