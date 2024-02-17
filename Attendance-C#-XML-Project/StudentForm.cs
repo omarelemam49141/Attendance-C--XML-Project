@@ -58,7 +58,10 @@ namespace Attendance_C__XML_Project
         {
             throw new NotImplementedException();
         }
-
+        private void StudentLogout()
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }
