@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentForm));
             panel3 = new Panel();
+            btnExit = new Button();
             label9 = new Label();
-            btnClose = new Button();
             btnShowReport = new Button();
             lblAttended = new Label();
             lblAbsent = new Label();
@@ -61,14 +61,29 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(73, 178, 202);
+            panel3.Controls.Add(btnExit);
             panel3.Controls.Add(label9);
-            panel3.Controls.Add(btnClose);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
             panel3.Size = new Size(896, 49);
             panel3.TabIndex = 19;
+            // 
+            // btnExit
+            // 
+            btnExit.BackgroundImage = (Image)resources.GetObject("btnExit.BackgroundImage");
+            btnExit.BackgroundImageLayout = ImageLayout.Zoom;
+            btnExit.Cursor = Cursors.Hand;
+            btnExit.Dock = DockStyle.Right;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Location = new Point(851, 0);
+            btnExit.Margin = new Padding(3, 4, 3, 4);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(45, 49);
+            btnExit.TabIndex = 9;
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // label9
             // 
@@ -80,19 +95,6 @@
             label9.Size = new Size(124, 25);
             label9.TabIndex = 8;
             label9.Text = "Student Form";
-            // 
-            // btnClose
-            // 
-            btnClose.BackgroundImageLayout = ImageLayout.Zoom;
-            btnClose.Cursor = Cursors.Hand;
-            btnClose.Dock = DockStyle.Right;
-            btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.Location = new Point(851, 0);
-            btnClose.Margin = new Padding(3, 4, 3, 4);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(45, 49);
-            btnClose.TabIndex = 0;
-            btnClose.UseVisualStyleBackColor = true;
             // 
             // btnShowReport
             // 
@@ -138,7 +140,7 @@
             lblAbsentNum.BackColor = Color.Transparent;
             lblAbsentNum.Font = new Font("Segoe UI", 14F);
             lblAbsentNum.ForeColor = Color.Black;
-            lblAbsentNum.Location = new Point(642, 50);
+            lblAbsentNum.Location = new Point(642, 49);
             lblAbsentNum.Name = "lblAbsentNum";
             lblAbsentNum.Size = new Size(40, 32);
             lblAbsentNum.TabIndex = 24;
@@ -360,7 +362,6 @@
 
         private Panel panel3;
         private Label label9;
-        private Button btnClose;
         private Button btnShowReport;
         private Label lblAttended;
         private Label lblAbsent;
@@ -380,5 +381,6 @@
         private Label lblClassName;
         private Label lblClass;
         private Label lblWelcome;
+        private Button btnExit;
     }
 }

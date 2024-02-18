@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Attendance_C__XML_Project
 {
-    enum Role {Admin, Student, Teacher}
+    public enum Role {Admin, Student, Teacher}
     internal class LoggedInUser
     {
         public LoggedInUser(string name, Role role)
@@ -18,4 +18,10 @@ namespace Attendance_C__XML_Project
         public Role userRole { get; set; }
 
     }
+    public static class MyLoggedInUser
+    {
+        public static string Name { get; set; }
+        public static Role UserRole { get; set; }
+    }
+
 }

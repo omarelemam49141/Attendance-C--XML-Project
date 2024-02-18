@@ -114,11 +114,23 @@ namespace Attendance_C__XML_Project
             }
             else if (IsTeacher())
             {
-                loggedInUser = new LoggedInUser(txtUsername.Text.ToLower(), Role.Teacher);
+                //loggedInUser = new LoggedInUser(txtUsername.Text.ToLower(), Role.Teacher);
+
+                MyLoggedInUser.Name = txtUsername.Text.ToLower();
+                MyLoggedInUser.UserRole = Role.Teacher;
+                TeacherForm teacherForm = new TeacherForm();
+                teacherForm.Show();
+                this.Hide();
             }
             else if (IsStudent())
             {
-                loggedInUser = new LoggedInUser(txtUsername.Text.ToLower(), Role.Student);
+                //loggedInUser = new LoggedInUser(txtUsername.Text.ToLower(), Role.Student);
+
+                MyLoggedInUser.Name = txtUsername.Text.ToLower();
+                MyLoggedInUser.UserRole = Role.Student;
+                StudentForm studentForm = new StudentForm();
+                studentForm.Show();
+                this.Hide();
             }
             else
             {
