@@ -134,7 +134,6 @@
             // 
             comboClasses.FlatStyle = FlatStyle.Flat;
             comboClasses.FormattingEnabled = true;
-            comboClasses.Items.AddRange(new object[] { "Student", "Teacher" });
             comboClasses.Location = new Point(195, 70);
             comboClasses.Margin = new Padding(3, 4, 3, 4);
             comboClasses.Name = "comboClasses";
@@ -298,6 +297,7 @@
             btnExit.Size = new Size(45, 49);
             btnExit.TabIndex = 9;
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // label9
             // 
@@ -342,7 +342,7 @@
             button5.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button5.ForeColor = SystemColors.Control;
             button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.Location = new Point(689, 627);
+            button5.Location = new Point(685, 648);
             button5.Margin = new Padding(3, 4, 3, 4);
             button5.Name = "button5";
             button5.Size = new Size(131, 80);
@@ -354,7 +354,7 @@
             // listBox2
             // 
             listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(31, 226);
+            listBox2.Location = new Point(45, 236);
             listBox2.Name = "listBox2";
             listBox2.Size = new Size(839, 384);
             listBox2.TabIndex = 28;
@@ -368,7 +368,7 @@
             button1.ForeColor = SystemColors.Control;
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(94, 627);
+            button1.Location = new Point(91, 648);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(176, 80);
@@ -385,7 +385,7 @@
             button2.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.Control;
             button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(355, 627);
+            button2.Location = new Point(371, 648);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(189, 80);

@@ -12,21 +12,12 @@ namespace Attendance_C__XML_Project
 {
     public partial class StudentForm : Form
     {
-        List<Student> studentsList;
-        List<Class> classes;
+        
         public StudentForm()
         {
             InitializeComponent();
 
-            // *** Static Data ***
-            classes = new List<Class>();
-            classes.Add(new Class("B1"));
-            classes.Add(new Class("B2"));
-
-            studentsList = new List<Student>();
-            studentsList.Add(new Student("Ahmed Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 3));
-            studentsList.Add(new Student("Osame Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2));
-
+        
             //**************** GUI Init *************
             panelAttendanceTable.Hide();
 
@@ -85,11 +76,11 @@ namespace Attendance_C__XML_Project
         {
 
             var studentName = LoggedInUser.Name;
-            var classID = studentsList.Find(s =>s.Username.ToLower() == studentName.ToLower())?.ClassID;
+            var classID = Lists.studentsList.Find(s =>s.Username.ToLower() == studentName.ToLower())?.ClassID;
 
             if(classID != null)
             {
-                var className = classes.Find(c =>c.ID == classID)?.Name;
+                var className = Lists.classes.Find(c =>c.ID == classID)?.Name;
                 if(className != null)
                 {
                     return className;
@@ -116,6 +107,8 @@ namespace Attendance_C__XML_Project
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+            Application.Exit();
             this.Close();
         }
     }
