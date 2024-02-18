@@ -75,16 +75,16 @@ namespace Attendance_C__XML_Project
 
         private string GetStudentName()
         {
-            if (MyLoggedInUser.Name != "")
+            if (LoggedInUser.Name != "")
             {
-                return  MyLoggedInUser.Name;
+                return  LoggedInUser.Name;
             }
             throw new Exception("Can't Find UserName");
         }
         private string GetStudentClassName()
         {
 
-            var studentName = MyLoggedInUser.Name;
+            var studentName = LoggedInUser.Name;
             var classID = studentsList.Find(s =>s.Username.ToLower() == studentName.ToLower())?.ClassID;
 
             if(classID != null)

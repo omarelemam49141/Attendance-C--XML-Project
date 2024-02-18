@@ -84,16 +84,16 @@ namespace Attendance_C__XML_Project
         }
         private string GetTeacherName()
         {
-            if (MyLoggedInUser.Name != "")
+            if (LoggedInUser.Name != "")
             {
-                return MyLoggedInUser.Name;
+                return LoggedInUser.Name;
             }
             throw new Exception("Can't Find UserName");
         }
         private string GetTeacherRole()
         {
 
-            var role= MyLoggedInUser.UserRole.ToString();
+            var role= LoggedInUser.userRole.ToString();
 
             if (role != null)
             {
