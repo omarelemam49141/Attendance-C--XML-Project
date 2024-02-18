@@ -15,14 +15,6 @@ namespace Attendance_C__XML_Project
 {
     public partial class LoginForm : Form
     {
-        //private fields
-        List<Class> classes;
-        List<Teacher> teachersList;
-        List<Student> studentsList;
-        List<User> admins;
-
-        //internal fields
-        internal LoggedInUser loggedInUser;
 
         // Import the necessary Windows API methods
         [DllImport("user32.dll")]
@@ -47,22 +39,13 @@ namespace Attendance_C__XML_Project
         private void LoginForm_Load(object sender, EventArgs e)
         {
             //Dummy data for testing
-            classes = new List<Class>();
-            classes.Add(new Class("B1"));
-            classes.Add(new Class("B2"));
-
-            teachersList = new List<Teacher>();
-            teachersList.Add(new Teacher("Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"));
-            teachersList.Add(new Teacher("Omar", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"));
-            teachersList.Add(new Teacher("Ahmed", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"));
-
-            studentsList = new List<Student>();
-            studentsList.Add(new Student("Ahmed Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 1));
-            studentsList.Add(new Student("Osame Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2));
-
-            admins = new List<User>();
-            admins.Add(new User("admin", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"));
-            //end dummy data
+            Lists.classes = [new Class("B1"), new Class("B2")];
+            Lists.teachersList = [new Teacher("Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"),
+            new Teacher("Omar", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"),
+            new Teacher("Ahmed", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo")];
+            Lists.studentsList = [new Student("Ahmed Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 1),
+            new Student("Osame Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2)];
+            Lists.admins = [new User("admin", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo")];
 
             GraphicsPath path = new GraphicsPath();
             Rectangle bounds = new Rectangle(0, 0, this.Width, this.Height);
@@ -107,18 +90,21 @@ namespace Attendance_C__XML_Project
         {
             if (IsAdmin())
             {
-                loggedInUser = new LoggedInUser(txtUsername.Text.ToLower(), Role.Admin);
+                LoggedInUser.Name = txtUsername.Text.ToLower();
+                LoggedInUser.userRole = Role.Admin;
                 AdminForm adminForm = new AdminForm(this);
                 adminForm.Show();
                 this.Hide();
             }
             else if (IsTeacher())
             {
-                loggedInUser = new LoggedInUser(txtUsername.Text.ToLower(), Role.Teacher);
+                LoggedInUser.Name = txtUsername.Text.ToLower();
+                LoggedInUser.userRole = Role.Teacher;
             }
             else if (IsStudent())
             {
-                loggedInUser = new LoggedInUser(txtUsername.Text.ToLower(), Role.Student);
+                LoggedInUser.Name = txtUsername.Text.ToLower();
+                LoggedInUser.userRole = Role.Student;
             }
             else
             {
@@ -130,7 +116,7 @@ namespace Attendance_C__XML_Project
         //Check if the loggedin user is an admin then navigate him to the admin page (return true)
         private bool IsAdmin()
         {
-            foreach (User admin in admins)
+            foreach (User admin in Lists.admins)
             {
                 return (admin.Username.ToLower() == txtUsername.Text.ToLower() && admin.Password == txtPassword.Text);
             }
@@ -140,7 +126,7 @@ namespace Attendance_C__XML_Project
         //Check if the loggedin user is a teacher then navigate him to the teacher page (return true)
         private bool IsTeacher()
         {
-            foreach (Teacher teacher in teachersList)
+            foreach (Teacher teacher in Lists.teachersList)
             {
                 return (teacher.Username.ToLower() == txtUsername.Text.ToLower() && teacher.Password == txtPassword.Text);
             }
@@ -150,7 +136,7 @@ namespace Attendance_C__XML_Project
         //Check if the loggedin user is a student then navigate him to the student page (return true)
         private bool IsStudent()
         {
-            foreach (Student student in studentsList)
+            foreach (Student student in Lists.studentsList)
             {
                 return (student.Username.ToLower() == txtUsername.Text.ToLower() && student.Password == txtPassword.Text);
             }

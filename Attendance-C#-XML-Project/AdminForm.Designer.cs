@@ -66,6 +66,8 @@
             panelDisplayUser = new Panel();
             panelShowClasses = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
+            label14 = new Label();
+            pictureBox5 = new PictureBox();
             txtNameOfClass = new MaskedTextBox();
             label11 = new Label();
             label12 = new Label();
@@ -80,6 +82,7 @@
             txtSearchClass = new MaskedTextBox();
             panel7 = new Panel();
             label16 = new Label();
+            lblAddError = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             label7 = new Label();
             label6 = new Label();
@@ -112,6 +115,7 @@
             panelDisplayUser.SuspendLayout();
             panelShowClasses.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnUpdateClass).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnRemoveClass).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -581,6 +585,7 @@
             panelShowClasses.Controls.Add(btnSearchClasses);
             panelShowClasses.Controls.Add(txtSearchClass);
             panelShowClasses.Controls.Add(panel7);
+            panelShowClasses.Controls.Add(lblAddError);
             panelShowClasses.Location = new Point(0, 0);
             panelShowClasses.Name = "panelShowClasses";
             panelShowClasses.Size = new Size(599, 463);
@@ -588,11 +593,14 @@
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.ColumnCount = 4;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.0001965F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.0002F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.0002F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.0002F));
+            tableLayoutPanel2.ColumnCount = 5;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 28.572258F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 28.5722523F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2846947F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2846947F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2860975F));
+            tableLayoutPanel2.Controls.Add(label14, 4, 0);
+            tableLayoutPanel2.Controls.Add(pictureBox5, 4, 1);
             tableLayoutPanel2.Controls.Add(txtNameOfClass, 1, 1);
             tableLayoutPanel2.Controls.Add(label11, 3, 0);
             tableLayoutPanel2.Controls.Add(label12, 2, 0);
@@ -606,16 +614,40 @@
             tableLayoutPanel2.RowCount = 2;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 49.99936F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50.0006371F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Size = new Size(582, 94);
             tableLayoutPanel2.TabIndex = 10;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.BackColor = Color.Teal;
+            label14.Dock = DockStyle.Fill;
+            label14.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label14.ForeColor = Color.White;
+            label14.Location = new Point(501, 0);
+            label14.Name = "label14";
+            label14.Size = new Size(78, 46);
+            label14.TabIndex = 28;
+            label14.Text = "Add";
+            label14.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(501, 49);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(78, 42);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 25;
+            pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
             // 
             // txtNameOfClass
             // 
             txtNameOfClass.Dock = DockStyle.Bottom;
-            txtNameOfClass.Location = new Point(148, 68);
+            txtNameOfClass.Location = new Point(169, 68);
             txtNameOfClass.Name = "txtNameOfClass";
-            txtNameOfClass.Size = new Size(139, 23);
+            txtNameOfClass.Size = new Size(160, 23);
             txtNameOfClass.TabIndex = 24;
             // 
             // label11
@@ -625,9 +657,9 @@
             label11.Dock = DockStyle.Fill;
             label11.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(438, 0);
+            label11.Location = new Point(418, 0);
             label11.Name = "label11";
-            label11.Size = new Size(141, 46);
+            label11.Size = new Size(77, 46);
             label11.TabIndex = 27;
             label11.Text = "Delete";
             label11.TextAlign = ContentAlignment.MiddleCenter;
@@ -639,9 +671,9 @@
             label12.Dock = DockStyle.Fill;
             label12.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(293, 0);
+            label12.Location = new Point(335, 0);
             label12.Name = "label12";
-            label12.Size = new Size(139, 46);
+            label12.Size = new Size(77, 46);
             label12.TabIndex = 26;
             label12.Text = "Edit";
             label12.TextAlign = ContentAlignment.MiddleCenter;
@@ -653,9 +685,9 @@
             label13.Dock = DockStyle.Fill;
             label13.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             label13.ForeColor = Color.White;
-            label13.Location = new Point(148, 0);
+            label13.Location = new Point(169, 0);
             label13.Name = "label13";
-            label13.Size = new Size(139, 46);
+            label13.Size = new Size(160, 46);
             label13.TabIndex = 1;
             label13.Text = "Class name";
             label13.TextAlign = ContentAlignment.MiddleCenter;
@@ -669,7 +701,7 @@
             txtClassID.ForeColor = Color.Black;
             txtClassID.Location = new Point(3, 46);
             txtClassID.Name = "txtClassID";
-            txtClassID.Size = new Size(139, 48);
+            txtClassID.Size = new Size(160, 48);
             txtClassID.TabIndex = 12;
             txtClassID.Text = "-1";
             txtClassID.TextAlign = ContentAlignment.MiddleCenter;
@@ -683,7 +715,7 @@
             label15.ForeColor = Color.White;
             label15.Location = new Point(3, 0);
             label15.Name = "label15";
-            label15.Size = new Size(139, 46);
+            label15.Size = new Size(160, 46);
             label15.TabIndex = 0;
             label15.Text = "Class ID";
             label15.TextAlign = ContentAlignment.MiddleCenter;
@@ -692,9 +724,9 @@
             // 
             btnUpdateClass.Dock = DockStyle.Fill;
             btnUpdateClass.Image = (Image)resources.GetObject("btnUpdateClass.Image");
-            btnUpdateClass.Location = new Point(293, 49);
+            btnUpdateClass.Location = new Point(335, 49);
             btnUpdateClass.Name = "btnUpdateClass";
-            btnUpdateClass.Size = new Size(139, 42);
+            btnUpdateClass.Size = new Size(77, 42);
             btnUpdateClass.SizeMode = PictureBoxSizeMode.Zoom;
             btnUpdateClass.TabIndex = 24;
             btnUpdateClass.TabStop = false;
@@ -704,9 +736,9 @@
             // 
             btnRemoveClass.Dock = DockStyle.Fill;
             btnRemoveClass.Image = (Image)resources.GetObject("btnRemoveClass.Image");
-            btnRemoveClass.Location = new Point(438, 49);
+            btnRemoveClass.Location = new Point(418, 49);
             btnRemoveClass.Name = "btnRemoveClass";
-            btnRemoveClass.Size = new Size(141, 42);
+            btnRemoveClass.Size = new Size(77, 42);
             btnRemoveClass.SizeMode = PictureBoxSizeMode.Zoom;
             btnRemoveClass.TabIndex = 25;
             btnRemoveClass.TabStop = false;
@@ -774,6 +806,18 @@
             label16.Size = new Size(150, 54);
             label16.TabIndex = 21;
             label16.Text = "Classes";
+            // 
+            // lblAddError
+            // 
+            lblAddError.AutoSize = true;
+            lblAddError.BackColor = Color.IndianRed;
+            lblAddError.ForeColor = Color.White;
+            lblAddError.Location = new Point(173, 435);
+            lblAddError.Name = "lblAddError";
+            lblAddError.Padding = new Padding(10, 5, 10, 5);
+            lblAddError.Size = new Size(20, 25);
+            lblAddError.TabIndex = 29;
+            lblAddError.Visible = false;
             // 
             // tableLayoutPanel1
             // 
@@ -1047,6 +1091,7 @@
             panelShowClasses.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnUpdateClass).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnRemoveClass).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
@@ -1139,5 +1184,8 @@
         private Label label17;
         private Label lblUsername;
         private LinkLabel linkLogout;
+        private PictureBox pictureBox5;
+        private Label label14;
+        private Label lblAddError;
     }
 }

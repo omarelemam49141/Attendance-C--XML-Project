@@ -14,13 +14,6 @@ namespace Attendance_C__XML_Project
 {
     public partial class AdminForm : Form
     {
-        internal List<Class> classes;
-        internal List<Teacher> teachersList;
-        internal List<Student> studentsList;
-
-        //the reference that will refer to the loggedIn information
-        internal LoggedInUser loggedInUser;
-
         //The parent form
         LoginForm loginForm;
 
@@ -68,11 +61,9 @@ namespace Attendance_C__XML_Project
             //show the users panel and hide the others
             panelShowClasses.Visible = false;
 
-            //Show the role and the user name of the logged in user
-            loggedInUser = loginForm.loggedInUser;
 
-            lblRole.Text = loggedInUser.userRole.ToString();
-            lblUsername.Text = $"Welcome {loggedInUser.Name}";
+            lblRole.Text = LoggedInUser.userRole.ToString();
+            lblUsername.Text = $"Welcome {LoggedInUser.Name}";
 
             GraphicsPath path = new GraphicsPath();
             Rectangle bounds = new Rectangle(0, 0, this.Width, this.Height);
@@ -97,27 +88,12 @@ namespace Attendance_C__XML_Project
             // Draw the form using the path
             this.Region = new Region(path);
 
-            //Dummy data for testing
-            classes = new List<Class>();
-            classes.Add(new Class("B1"));
-            classes.Add(new Class("B2"));
-
-            teachersList = new List<Teacher>();
-            teachersList.Add(new Teacher("Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"));
-            teachersList.Add(new Teacher("Omar", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"));
-            teachersList.Add(new Teacher("Ahmed", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"));
-
-            studentsList = new List<Student>();
-            studentsList.Add(new Student("Ahmed Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 1));
-            studentsList.Add(new Student("Osame Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2));
-            //end dummy data
-
             //Load all the users in the list box
-            foreach (var teacher in teachersList)
+            foreach (var teacher in Lists.teachersList)
             {
                 listUsers.Items.Add(teacher);
             }
-            foreach (var student in studentsList)
+            foreach (var student in Lists.studentsList)
             {
                 listUsers.Items.Add(student);
             }
@@ -134,7 +110,7 @@ namespace Attendance_C__XML_Project
             //Clear the list box of classes
             listDisplayClasses.Items.Clear();
             //display all classes in the list classes
-            foreach (var classItem in classes)
+            foreach (var classItem in Lists.classes)
             {
                 listDisplayClasses.Items.Add(classItem);
             }
@@ -184,14 +160,14 @@ namespace Attendance_C__XML_Project
             if (txtSearch.Text.Trim() != "")
             {
                 //Search for a teacher with the search box text
-                var teacher = teachersList.Find(teacher => teacher.Username.ToLower() == txtSearch.Text.Trim().ToLower());
+                var teacher = Lists.teachersList.Find(teacher => teacher.Username.ToLower() == txtSearch.Text.Trim().ToLower());
                 if (teacher != null)
                 {
                     listUsers.SelectedItem = teacher;
                     return;
                 }
                 //Search for a student with the search box text
-                var student = studentsList.Find(student => student.Username.ToLower() == txtSearch.Text.Trim().ToLower());
+                var student = Lists.studentsList.Find(student => student.Username.ToLower() == txtSearch.Text.Trim().ToLower());
                 if (student != null)
                 {
                     listUsers.SelectedItem = student;
@@ -213,17 +189,17 @@ namespace Attendance_C__XML_Project
                     if (selectedUser is Teacher)
                     {
                         //find the index of the teacher to remove
-                        int index = teachersList.FindIndex(teacher => teacher.ID == selectedUser.ID);
+                        int index = Lists.teachersList.FindIndex(teacher => teacher.ID == selectedUser.ID);
                         //get the old teacher object
-                        Teacher updatedTeacher = teachersList[index];
+                        Teacher updatedTeacher = Lists.teachersList[index];
                         //remove the teacher
-                        teachersList.RemoveAt(index);
+                        Lists.teachersList.RemoveAt(index);
                         //update the old teacher from the list
                         updatedTeacher.Username = txtUsername.Text;
                         updatedTeacher.Mail = txtEmail.Text;
                         updatedTeacher.Password = txtPassword.Text;
                         //add it to the teacher list at the old index
-                        teachersList.Insert(index, updatedTeacher);
+                        Lists.teachersList.Insert(index, updatedTeacher);
                         //update the teacher in the list box
                         listUsers.Items[listUsers.SelectedIndex] = updatedTeacher;
 
@@ -232,17 +208,17 @@ namespace Attendance_C__XML_Project
                     else if (selectedUser is Student)
                     {
                         //find the index of the student to remove
-                        int index = studentsList.FindIndex(student => student.ID == selectedUser.ID);
+                        int index = Lists.studentsList.FindIndex(student => student.ID == selectedUser.ID);
                         //get the old student object
-                        Student updatedStudent = studentsList[index];
+                        Student updatedStudent = Lists.studentsList[index];
                         //remove the student from the list
-                        studentsList.RemoveAt(index);
+                        Lists.studentsList.RemoveAt(index);
                         //update the old student and 
                         updatedStudent.Username = txtUsername.Text;
                         updatedStudent.Mail = txtEmail.Text;
                         updatedStudent.Password = txtPassword.Text;
                         //add it to the student list at the old index
-                        studentsList.Insert(index, updatedStudent);
+                        Lists.studentsList.Insert(index, updatedStudent);
                         //update the student in the list box
                         listUsers.Items[listUsers.SelectedIndex] = updatedStudent;
 
@@ -272,9 +248,9 @@ namespace Attendance_C__XML_Project
                     if (selectedUser is Teacher)
                     {
                         //find the index of the teacher to remove
-                        int index = teachersList.FindIndex(teacher => teacher.ID == selectedUser.ID);
+                        int index = Lists.teachersList.FindIndex(teacher => teacher.ID == selectedUser.ID);
                         //remove the teacher from teachers list
-                        teachersList.RemoveAt(index);
+                        Lists.teachersList.RemoveAt(index);
                         //remove the teacher from the list box
                         listUsers.Items.RemoveAt(listUsers.SelectedIndex);
                         //Removing the selection from the list box
@@ -285,9 +261,9 @@ namespace Attendance_C__XML_Project
                     else if (selectedUser is Student)
                     {
                         //find the index of the student to remove
-                        int index = studentsList.FindIndex(student => student.ID == selectedUser.ID);
+                        int index = Lists.studentsList.FindIndex(student => student.ID == selectedUser.ID);
                         //remove the student from the students list
-                        studentsList.RemoveAt(index);
+                        Lists.studentsList.RemoveAt(index);
                         //remove the student from the list box
                         listUsers.Items.RemoveAt(listUsers.SelectedIndex);
 
@@ -325,7 +301,7 @@ namespace Attendance_C__XML_Project
         {
             if (txtSearchClass.Text.Trim().Length > 0)
             {
-                Class selectedClass = classes.Find(classItem => classItem.Name.ToLower() == txtSearchClass.Text.Trim().ToLower());
+                Class selectedClass = Lists.classes.Find(classItem => classItem.Name.ToLower() == txtSearchClass.Text.Trim().ToLower());
                 listDisplayClasses.SelectedItem = selectedClass;
             }
         }
@@ -338,7 +314,7 @@ namespace Attendance_C__XML_Project
                 if (classInfoChanged())
                 {
                     //Get the updated class from the class list
-                    Class? updatedClass = classes.Find(classItem => classItem.ID == selectedClass.ID);
+                    Class? updatedClass = Lists.classes.Find(classItem => classItem.ID == selectedClass.ID);
                     //update the class name
                     updatedClass.Name = txtNameOfClass.Text.Trim();
                     //update the class in the listDisplayClasses with the new info
@@ -364,7 +340,7 @@ namespace Attendance_C__XML_Project
                 if (MessageBox.Show($"Are you sure you want to delete {selectedClass}?", "Confirm Deleting", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     //Get the index of the class to delete
-                    int deletedClassIndex = classes.IndexOf(selectedClass);
+                    int deletedClassIndex = Lists.classes.IndexOf(selectedClass);
                     //Delete the class from the listDisplayClass 
                     listDisplayClasses.Items.Remove(selectedClass);
                     //Removing the selection from the list box
@@ -388,6 +364,31 @@ namespace Attendance_C__XML_Project
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
             this.Hide();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            if(txtNameOfClass.Text.Trim() == "")
+            {
+                MessageBox.Show("The class name can't be empty");
+                return;
+            }
+            try
+            {
+                Class newClass = new Class(txtNameOfClass.Text.Trim());
+                Lists.classes.Add(newClass);
+                listDisplayClasses.Items.Add(newClass);
+                MessageBox.Show("Class added successfully");
+                if(lblAddError.Visible)
+                {
+                    lblAddError.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                lblAddError.Visible = true;
+                lblAddError.Text = ex.Message;
+            }
         }
     }
 }

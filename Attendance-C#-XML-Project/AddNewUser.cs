@@ -34,11 +34,9 @@ namespace Attendance_C__XML_Project
 
         private void AddNewUser_Load(object sender, EventArgs e)
         {
-            //type the role of the logged in user
-            LoggedInUser loggedInUser = adminForm.loggedInUser;
-            if (loggedInUser != null)
+            if (LoggedInUser.userRole != null)
             {
-                lblLoggedInRole.Text = loggedInUser.userRole.ToString();
+                lblLoggedInRole.Text = LoggedInUser.userRole.ToString();
             }
 
             this.Controls.Remove(checkedListClass);
@@ -66,11 +64,11 @@ namespace Attendance_C__XML_Project
             this.Region = new Region(path);
 
             //Dummy classes data
-            adminForm.classes = [new Class("B1"), new Class("B2"), new Class("B3")
+            Lists.classes = [new Class("B1"), new Class("B2"), new Class("B3")
                 ,new Class("B4"), new Class("B5"), new Class("B6")];
 
             //provide the classes for the comboClass students and teacher
-            foreach (var classItem in adminForm.classes)
+            foreach (var classItem in Lists.classes)
             {
                 comboClass.Items.Add(classItem.Name);
                 checkedListClass.Items.Add(classItem.Name);
@@ -140,14 +138,14 @@ namespace Attendance_C__XML_Project
                 try
                 {
                     //check the uniquness of the username
-                    foreach (var student in adminForm.studentsList)
+                    foreach (var student in Lists.studentsList)
                     {
                         if (student.Username.ToLower() == txtUsername.Text.Trim().ToLower())
                         {
                             throw new Exception("This username is taken");
                         }
                     }
-                    foreach (var teacher in adminForm.teachersList)
+                    foreach (var teacher in Lists.teachersList)
                     {
                         if (teacher.Username.ToLower() == txtUsername.Text.Trim().ToLower())
                         {
@@ -235,14 +233,22 @@ namespace Attendance_C__XML_Project
             //Check if the role is student then try to add his class
             if (comboRole.SelectedItem == "Student")
             {
-                //Make a new object of student
-                Student newStudent = new Student(newUser.Username, newUser.Password, newUser.Phone, newUser.Mail, newUser.Address, 1);
-                newStudent.gender = newUser.gender;
+                Student newStudent = null;
                 //Validate the class
                 try
                 {
+                    newStudent = new Student(newUser.Username, newUser.Password, newUser.Phone, newUser.Mail, newUser.Address, 1);
+                    newStudent.gender = newUser.gender;
+                }
+                catch
+                {
+                    MessageBox.Show("Invalid form info");
+                    return;
+                }
+
+                try { 
                     //Get the class from the classes list
-                    Class selectedClass = adminForm.classes.Find(classItem => classItem.Name.ToLower() == comboClass.SelectedItem.ToString().Trim().ToLower());
+                    Class selectedClass = Lists.classes.Find(classItem => classItem.Name.ToLower() == comboClass.SelectedItem.ToString().Trim().ToLower());
                     //add the class id to the new student
                     newStudent.ClassID = selectedClass.ID;
                     lblClassError.Text = "";
@@ -257,7 +263,7 @@ namespace Attendance_C__XML_Project
                 if (errors == 0)
                 {
                     //add the student to the parent students list
-                    adminForm.studentsList.Add(newStudent);
+                    Lists.studentsList.Add(newStudent);
                     //add the student to the parent list box
                     adminForm.ListDisplayUsers.Items.Add(newStudent);
                     MessageBox.Show("Student Added Successfully");
@@ -266,16 +272,26 @@ namespace Attendance_C__XML_Project
             //If the role is teacher then try to add his list of classes
             else if (comboRole.SelectedItem == "Teacher")
             {
-                //Make a new object of teacher
-                Teacher newTeacher = new Teacher(newUser.Username, newUser.Password, newUser.Phone, newUser.Mail, newUser.Address);
-                newTeacher.gender = newUser.gender;
+                Teacher newTeacher = null;
+                //Try to Make a new object of teacher
+                try
+                {
+                    newTeacher = new Teacher(newUser.Username, newUser.Password, newUser.Phone, newUser.Mail, newUser.Address);
+                    newTeacher.gender = newUser.gender;
+                }
+                catch 
+                {
+                    MessageBox.Show("Invalid form info");
+                    return;
+                }
+               
                 //Validate the class
                 try
                 {
                     foreach (string className in checkedListClass.Items)
                     {
                         //Get the class from the classes list
-                        Class selectedClass = adminForm.classes.Find(classItem => classItem.Name.ToLower() == className.Trim().ToLower());
+                        Class selectedClass = Lists.classes.Find(classItem => classItem.Name.ToLower() == className.Trim().ToLower());
                         //add the class id to the new student
                         newTeacher.addClass(selectedClass);
                     }
@@ -292,7 +308,7 @@ namespace Attendance_C__XML_Project
                 if (errors == 0)
                 {
                     //add the teacher to the student list
-                    adminForm.teachersList.Add(newTeacher);
+                    Lists.teachersList.Add(newTeacher);
                     //add the teacher to the parent list box
                     adminForm.ListDisplayUsers.Items.Add(newTeacher);
                     MessageBox.Show("Teacher Added Successfully");

@@ -35,7 +35,7 @@ namespace Attendance_C__XML_Project
             {
                 if (value.Trim().Length < 2)
                 {
-                    Console.WriteLine("Class name length can't be less than 2");
+                    throw new Exception("Class name length can't be less than 2");
                 }
                 else { name = value; }
             }
