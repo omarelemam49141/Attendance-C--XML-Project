@@ -101,5 +101,12 @@ namespace Attendance_C__XML_Project
             Application.Exit();
             this.Close();
         }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            PreferencesForm preferencesForm = new PreferencesForm();
+            preferencesForm.Show();
+            this.Hide();
+        }
     }
 }

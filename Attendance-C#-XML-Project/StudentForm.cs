@@ -12,17 +12,17 @@ namespace Attendance_C__XML_Project
 {
     public partial class StudentForm : Form
     {
-        
+
         public StudentForm()
         {
             InitializeComponent();
 
-        
+
             //**************** GUI Init *************
             panelAttendanceTable.Hide();
 
             //**************** End Of GUI Init *************
-            
+
             // Load Student Name
             try
             {
@@ -68,7 +68,7 @@ namespace Attendance_C__XML_Project
         {
             if (LoggedInUser.Name != "")
             {
-                return  LoggedInUser.Name;
+                return LoggedInUser.Name;
             }
             throw new Exception("Can't Find UserName");
         }
@@ -76,12 +76,12 @@ namespace Attendance_C__XML_Project
         {
 
             var studentName = LoggedInUser.Name;
-            var classID = Lists.studentsList.Find(s =>s.Username.ToLower() == studentName.ToLower())?.ClassID;
+            var classID = Lists.studentsList.Find(s => s.Username.ToLower() == studentName.ToLower())?.ClassID;
 
-            if(classID != null)
+            if (classID != null)
             {
-                var className = Lists.classes.Find(c =>c.ID == classID)?.Name;
-                if(className != null)
+                var className = Lists.classes.Find(c => c.ID == classID)?.Name;
+                if (className != null)
                 {
                     return className;
                 }
@@ -110,6 +110,13 @@ namespace Attendance_C__XML_Project
             System.Diagnostics.Process.GetCurrentProcess().Kill();
             Application.Exit();
             this.Close();
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            PreferencesForm preferencesForm = new PreferencesForm();
+            preferencesForm.Show();
+            this.Hide();
         }
     }
 }
