@@ -7,7 +7,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Attendance_C__XML_Project
 {
-    internal class Class
+    public class Class
     {
         //private fields
         static int lastID = 0;
@@ -16,6 +16,10 @@ namespace Attendance_C__XML_Project
         string name;
 
         //constructor
+        public Class() 
+        {
+            
+        }
         public Class(string _name) 
         {
             id = ++lastID;
@@ -26,6 +30,7 @@ namespace Attendance_C__XML_Project
         public int ID
         {
             get => id;
+            set => id = value; //just for the xml to set the ID
         }
 
         public string Name

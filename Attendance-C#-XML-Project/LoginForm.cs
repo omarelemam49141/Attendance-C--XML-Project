@@ -39,7 +39,6 @@ namespace Attendance_C__XML_Project
         private void LoginForm_Load(object sender, EventArgs e)
         {
             //Dummy data for testing
-            Lists.classes = [new Class("B1"), new Class("B2")];
             Lists.teachersList = [new Teacher("Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"),
             new Teacher("Omar", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"),
             new Teacher("Ahmed", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo")];

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Attendance_C__XML_Project
 {
-    enum Gender { Male, Female}
-    internal class User
+    public enum Gender { Male, Female}
+    public class User
     {
         //private fields
         static int lastID = 0;

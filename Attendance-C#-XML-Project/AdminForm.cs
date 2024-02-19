@@ -9,6 +9,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Schema;
+using System.Xml.Serialization;
 
 namespace Attendance_C__XML_Project
 {
@@ -16,6 +19,7 @@ namespace Attendance_C__XML_Project
     {
         //The parent form
         LoginForm loginForm;
+        public XmlSerializer serializer;
 
         public ListBox ListDisplayUsers { get => listUsers; }
 
@@ -58,6 +62,8 @@ namespace Attendance_C__XML_Project
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
+            Lists.classes = new List<Class>();
+            FileManagment.LoadClassesFromFile("classes.xml", ref Lists.classes);
             //show the users panel and hide the others
             panelShowClasses.Visible = false;
 
@@ -366,9 +372,10 @@ namespace Attendance_C__XML_Project
             this.Hide();
         }
 
+        //add new class
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            if(txtNameOfClass.Text.Trim() == "")
+            if (txtNameOfClass.Text.Trim() == "")
             {
                 MessageBox.Show("The class name can't be empty");
                 return;
@@ -377,9 +384,23 @@ namespace Attendance_C__XML_Project
             {
                 Class newClass = new Class(txtNameOfClass.Text.Trim());
                 Lists.classes.Add(newClass);
+                //Save the classes into an xml file
+                // Validate the classes against the XSD schema
+                bool isValid = FileManagment.ValidateAgainstXsd(Lists.classes, "classes.xsd");
+
+                // If the classes are valid, serialize them to an XML file
+                if (isValid)
+                {
+                    FileManagment.SerializeClassesToXml(Lists.classes, "classes.xml");
+                }
+                else
+                {
+                    throw new Exception("Classes are not valid against XSD schema. Unable to save.");
+                }
+
                 listDisplayClasses.Items.Add(newClass);
                 MessageBox.Show("Class added successfully");
-                if(lblAddError.Visible)
+                if (lblAddError.Visible)
                 {
                     lblAddError.Visible = false;
                 }
@@ -389,6 +410,7 @@ namespace Attendance_C__XML_Project
                 lblAddError.Visible = true;
                 lblAddError.Text = ex.Message;
             }
+
         }
     }
 }

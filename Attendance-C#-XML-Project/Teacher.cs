@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Attendance_C__XML_Project
 {
-    internal class Teacher:User
+    public class Teacher:User
     {
         //private fields
         List<Class> classes;
@@ -23,5 +24,12 @@ namespace Attendance_C__XML_Project
             Class? _class = classes.Find(c => c.ID == classID);
             if (_class != null) { classes.Remove(_class); }
         }
+
+        //properties
+        //make a public property of the classes for xml requirments
+        [XmlArray("classes")]
+        [XmlArrayItem("class")]
+        public List<Class> Classes
+        { get { return classes; } set { classes = value; } }
     }
 }

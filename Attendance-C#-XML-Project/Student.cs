@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Attendance_C__XML_Project
 {
-    internal class Student : User
+    public class Student : User
     {
         //private fields
         int absenceDays;
