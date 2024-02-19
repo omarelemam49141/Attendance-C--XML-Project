@@ -44,7 +44,7 @@
             lblClass = new Label();
             lblWelcome = new Label();
             lblClassName = new Label();
-            button4 = new Button();
+            btnSetting = new Button();
             button3 = new Button();
             lblUserName = new Label();
             lblRoleError = new Label();
@@ -210,7 +210,7 @@
             panel1.Controls.Add(lblClass);
             panel1.Controls.Add(lblWelcome);
             panel1.Controls.Add(lblClassName);
-            panel1.Controls.Add(button4);
+            panel1.Controls.Add(btnSetting);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(lblUserName);
             panel1.Controls.Add(lblRoleError);
@@ -256,21 +256,22 @@
             lblClassName.TabIndex = 32;
             lblClassName.Text = "class name";
             // 
-            // button4
+            // btnSetting
             // 
-            button4.BackColor = Color.Transparent;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.Black;
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(851, 49);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(42, 36);
-            button4.TabIndex = 31;
-            button4.UseVisualStyleBackColor = false;
+            btnSetting.BackColor = Color.Transparent;
+            btnSetting.FlatAppearance.BorderSize = 0;
+            btnSetting.FlatStyle = FlatStyle.Flat;
+            btnSetting.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSetting.ForeColor = Color.Black;
+            btnSetting.Image = (Image)resources.GetObject("btnSetting.Image");
+            btnSetting.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSetting.Location = new Point(851, 49);
+            btnSetting.Margin = new Padding(3, 4, 3, 4);
+            btnSetting.Name = "btnSetting";
+            btnSetting.Size = new Size(42, 36);
+            btnSetting.TabIndex = 31;
+            btnSetting.UseVisualStyleBackColor = false;
+            btnSetting.Click += btnSetting_Click;
             // 
             // button3
             // 
@@ -374,7 +375,7 @@
         private Label lblRoleError;
         private Button button3;
         private Label lblUserName;
-        private Button button4;
+        private Button btnSetting;
         private Panel panelShow;
         private Panel panelAttendanceTable;
         private ListBox listBox1;
