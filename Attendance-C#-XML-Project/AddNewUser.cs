@@ -326,7 +326,7 @@ namespace Attendance_C__XML_Project
                     Lists.teachersList.Add(newTeacher);
                     //Add the teacher from the xml file
                     // Validate the teachersList against the XSD schema
-                    bool isValid = FileManagment.ValidateAgainstXsd(Lists.teachersList, "teachers.xml");
+                    bool isValid = FileManagment.ValidateAgainstXsd(Lists.teachersList, "teachers.xsd");
 
                     // If the classes are valid, serialize them to an XML file
                     if (isValid)

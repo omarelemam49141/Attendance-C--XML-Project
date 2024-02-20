@@ -211,16 +211,12 @@ namespace Attendance_C__XML_Project
                         //find the index of the teacher to remove
                         int index = Lists.teachersList.FindIndex(teacher => teacher.ID == selectedUser.ID);
                         //get the old teacher object
-                        Teacher updatedTeacher = Lists.teachersList[index];
+                        Teacher oldTeacher = Lists.teachersList[index];
+                        Teacher updatedTeacher = (Teacher)oldTeacher.Clone();
                         //update the old teacher from the list
                         updatedTeacher.Username = txtUsername.Text;
                         updatedTeacher.Mail = txtEmail.Text;
                         updatedTeacher.Password = txtPassword.Text;
-                        //update the new teacher with the old teacher info
-                        updatedTeacher.ID = selectedUser.ID;
-                        updatedTeacher.Phone = selectedUser.Phone;
-                        updatedTeacher.Address = selectedUser.Address;
-                        updatedTeacher.Classes = (selectedUser as Teacher).Classes;
                         //remove the old teacher
                         Lists.teachersList.RemoveAt(index);
                         //update the teacher in the xml file
@@ -273,7 +269,7 @@ namespace Attendance_C__XML_Project
                         }
                         else
                         {
-                            throw new Exception("TeacherLists is not valid against XSD schema. Unable to save.");
+                            throw new Exception("StudentLists is not valid against XSD schema. Unable to save.");
                         }
                         
                         

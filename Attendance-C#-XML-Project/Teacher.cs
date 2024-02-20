@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace Attendance_C__XML_Project
 {
-    public class Teacher:User
+    public class Teacher:User, ICloneable
     {
         //private fields
         List<Class> teacherClasses;
@@ -27,6 +27,19 @@ namespace Attendance_C__XML_Project
         {  
             Class? _class = teacherClasses.Find(c => c.ID == classID);
             if (_class != null) { teacherClasses.Remove(_class); }
+        }
+
+        public object Clone()
+        {
+            Teacher teacher = new Teacher();
+            teacher.ID = ID;
+            teacher.Phone = Phone;
+            teacher.gender = gender;
+            teacher.Address = Address;
+            teacher.Username = Username;
+            teacher.Classes = Classes;
+            teacher.Mail = Mail;
+            return teacher;
         }
 
         //properties
