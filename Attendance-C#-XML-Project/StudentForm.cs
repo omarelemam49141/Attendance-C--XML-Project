@@ -10,6 +10,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OfficeOpenXml;
 
 
 namespace Attendance_C__XML_Project
@@ -168,10 +169,9 @@ namespace Attendance_C__XML_Project
             this.Hide();
         }
 
-    
-        private void ExportasExcel()
-        {
 
+        private void ExportToExcel()
+        {
         }
         private void ExportPDF()
         {
@@ -248,6 +248,44 @@ namespace Attendance_C__XML_Project
         private void btnPrintReport_Click(object sender, EventArgs e)
         {
             ExportPDF();
+        }
+
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+            ExportToExcel(dgvStudentReports);
+        }
+        private void ExportToExcel(DataGridView dataGridView)
+        {
+            using (ExcelPackage excelPackage = new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet1");
+
+                // Export DataGridView headers to Excel
+                for (int i = 0; i < dataGridView.Columns.Count; i++)
+                {
+                    worksheet.Cells[1, i + 1].Value = dataGridView.Columns[i].HeaderText;
+                }
+
+                // Export DataGridView rows to Excel
+                for (int i = 0; i < dataGridView.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dataGridView.Columns.Count; j++)
+                    {
+                        worksheet.Cells[i + 2, j + 1].Value = dataGridView.Rows[i].Cells[j].Value?.ToString();
+                    }
+                }
+
+                // Save the Excel file
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Workbook (*.xlsx)|*.xlsx";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    FileInfo fileInfo = new FileInfo(saveFileDialog.FileName);
+                    excelPackage.SaveAs(fileInfo);
+                    MessageBox.Show("Exported to Excel successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }
