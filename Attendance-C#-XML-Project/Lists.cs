@@ -13,5 +13,6 @@ namespace Attendance_C__XML_Project
         static internal List<Teacher> teachersList;
         static internal List<Student> studentsList;
         static internal List<User> admins;
+        static internal List<AttendanceRecord> attendanceRecords;
     }
 }

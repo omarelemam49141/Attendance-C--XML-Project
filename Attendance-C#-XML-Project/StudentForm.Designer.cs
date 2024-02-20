@@ -50,12 +50,13 @@
             lblRoleError = new Label();
             panelShow = new Panel();
             panelAttendanceTable = new Panel();
-            listBox1 = new ListBox();
+            dgvStudentReports = new DataGridView();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picStudent).BeginInit();
             panel1.SuspendLayout();
             panelShow.SuspendLayout();
             panelAttendanceTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvStudentReports).BeginInit();
             SuspendLayout();
             // 
             // panel3
@@ -176,6 +177,7 @@
             btnExportExcel.Text = "Export Excel";
             btnExportExcel.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnExportExcel.UseVisualStyleBackColor = false;
+            btnExportExcel.Click += btnExportExcel_Click;
             // 
             // btnPrintReport
             // 
@@ -194,6 +196,7 @@
             btnPrintReport.Text = "Print Pdf";
             btnPrintReport.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnPrintReport.UseVisualStyleBackColor = false;
+            btnPrintReport.Click += btnPrintReport_Click;
             // 
             // picStudent
             // 
@@ -281,7 +284,7 @@
             button3.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.Black;
             button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(851, 8);
+            button3.Location = new Point(845, 8);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
             button3.Size = new Size(39, 37);
@@ -319,7 +322,7 @@
             // 
             // panelAttendanceTable
             // 
-            panelAttendanceTable.Controls.Add(listBox1);
+            panelAttendanceTable.Controls.Add(dgvStudentReports);
             panelAttendanceTable.Controls.Add(btnPrintReport);
             panelAttendanceTable.Controls.Add(btnExportExcel);
             panelAttendanceTable.Dock = DockStyle.Fill;
@@ -328,13 +331,16 @@
             panelAttendanceTable.Size = new Size(896, 525);
             panelAttendanceTable.TabIndex = 31;
             // 
-            // listBox1
+            // dgvStudentReports
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(31, 20);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(839, 384);
-            listBox1.TabIndex = 28;
+            dgvStudentReports.BackgroundColor = SystemColors.Control;
+            dgvStudentReports.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvStudentReports.Dock = DockStyle.Top;
+            dgvStudentReports.Location = new Point(0, 0);
+            dgvStudentReports.Name = "dgvStudentReports";
+            dgvStudentReports.RowHeadersWidth = 51;
+            dgvStudentReports.Size = new Size(896, 394);
+            dgvStudentReports.TabIndex = 28;
             // 
             // StudentForm
             // 
@@ -356,6 +362,7 @@
             panel1.PerformLayout();
             panelShow.ResumeLayout(false);
             panelAttendanceTable.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvStudentReports).EndInit();
             ResumeLayout(false);
         }
 
@@ -378,10 +385,10 @@
         private Button btnSetting;
         private Panel panelShow;
         private Panel panelAttendanceTable;
-        private ListBox listBox1;
         private Label lblClassName;
         private Label lblClass;
         private Label lblWelcome;
         private Button btnExit;
+        private DataGridView dgvStudentReports;
     }
 }
