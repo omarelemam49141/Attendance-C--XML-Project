@@ -36,6 +36,7 @@ namespace Attendance_C__XML_Project
         public int ID //readonly
         { 
             get=>id;
+            set => id = value;//setting the id just for Xml
         }
 
         public string Username

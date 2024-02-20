@@ -63,10 +63,6 @@ namespace Attendance_C__XML_Project
             // Draw the form using the path
             this.Region = new Region(path);
 
-            //Dummy classes data
-            Lists.classes = [new Class("B1"), new Class("B2"), new Class("B3")
-                ,new Class("B4"), new Class("B5"), new Class("B6")];
-
             //provide the classes for the comboClass students and teacher
             foreach (var classItem in Lists.classes)
             {
@@ -109,6 +105,7 @@ namespace Attendance_C__XML_Project
             e.Handled = true;
         }
 
+        //change the role (student or teracher)
         private void comboSelectRole_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblRole.Text = (sender as ComboBox)?.SelectedItem?.ToString();
@@ -264,6 +261,20 @@ namespace Attendance_C__XML_Project
                 {
                     //add the student to the parent students list
                     Lists.studentsList.Add(newStudent);
+                    //Add the student to the xml file
+                    // Validate the studendsList against the XSD schema
+                    bool isValid = FileManagment.ValidateAgainstXsd(Lists.studentsList, "students.xsd");
+
+                    // If the classes are valid, serialize them to an XML file
+                    if (isValid)
+                    {
+                        FileManagment.SerializeClassesToXml(Lists.studentsList, "students.xml");
+                    }
+                    else
+                    {
+                        throw new Exception("StudenstList is not valid against XSD schema. Unable to save.");
+                    }
+
                     //add the student to the parent list box
                     adminForm.ListDisplayUsers.Items.Add(newStudent);
                     MessageBox.Show("Student Added Successfully");
@@ -288,18 +299,22 @@ namespace Attendance_C__XML_Project
                 //Validate the class
                 try
                 {
-                    foreach (string className in checkedListClass.Items)
+                    foreach (string className in checkedListClass.SelectedItems)
                     {
                         //Get the class from the classes list
-                        Class selectedClass = Lists.classes.Find(classItem => classItem.Name.ToLower() == className.Trim().ToLower());
-                        //add the class id to the new student
+                        Class selectedClass = new Class();
+                        selectedClass = Lists.classes.Find(classItem => classItem.Name.ToLower() == className.ToString().Trim().ToLower());
+                        //add the class to the new teacher
+                        
                         newTeacher.addClass(selectedClass);
+                        
                     }
                     //newStudent.ClassID = comboClass.slec.Trim();
                     lblClassesError.Text = "";
                 }
                 catch (Exception ex)
                 {
+                    MessageBox.Show(ex.Message);
                     lblClassesError.Text = "You must select at least one class from the list";
                     errors++;
                 }
@@ -309,6 +324,19 @@ namespace Attendance_C__XML_Project
                 {
                     //add the teacher to the student list
                     Lists.teachersList.Add(newTeacher);
+                    //Add the teacher from the xml file
+                    // Validate the teachersList against the XSD schema
+                    bool isValid = FileManagment.ValidateAgainstXsd(Lists.teachersList, "teachers.xml");
+
+                    // If the classes are valid, serialize them to an XML file
+                    if (isValid)
+                    {
+                        FileManagment.SerializeClassesToXml(Lists.teachersList, "teachers.xml");
+                    }
+                    else
+                    {
+                        throw new Exception("TeacherLists is not valid against XSD schema. Unable to save.");
+                    }
                     //add the teacher to the parent list box
                     adminForm.ListDisplayUsers.Items.Add(newTeacher);
                     MessageBox.Show("Teacher Added Successfully");

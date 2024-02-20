@@ -26,7 +26,7 @@ namespace Attendance_C__XML_Project
 
             // Create a string writer to serialize classes to XML string
             StringWriter stringWriter = new StringWriter();
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Class>));
+            XmlSerializer serializer = new XmlSerializer(typeof(List<T>));
             serializer.Serialize(stringWriter, loistOfObjects);
 
             // Create XML reader for validation
@@ -68,7 +68,7 @@ namespace Attendance_C__XML_Project
             {
                 try
                 {
-                    XmlSerializer serializer = new XmlSerializer(typeof(List<Class>));
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<T>));
                     using (FileStream fileStream = new FileStream(filePath, FileMode.Open))
                     {
                         listOfObjects = (List<T>)serializer.Deserialize(fileStream);

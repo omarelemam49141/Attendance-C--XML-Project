@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -39,11 +40,15 @@ namespace Attendance_C__XML_Project
         private void LoginForm_Load(object sender, EventArgs e)
         {
             //Dummy data for testing
-            Lists.teachersList = [new Teacher("Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"),
-            new Teacher("Omar", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"),
-            new Teacher("Ahmed", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo")];
-            Lists.studentsList = [new Student("Ahmed Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 1),
-            new Student("Osame Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2)];
+            Lists.teachersList = new List<Teacher>();
+            FileManagment.LoadClassesFromFile("teachers.xml", ref Lists.teachersList);
+
+            Lists.studentsList = new List<Student>();
+            FileManagment.LoadClassesFromFile("students.xml", ref Lists.studentsList);
+
+            Lists.classes = new List<Class>();
+            FileManagment.LoadClassesFromFile("classes.xml", ref Lists.classes);
+
             Lists.admins = [new User("admin", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo")];
 
             GraphicsPath path = new GraphicsPath();

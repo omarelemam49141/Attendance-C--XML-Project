@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Attendance_C__XML_Project
 {
-    public class Student : User
+    public class Student : User, ICloneable
     {
         //private fields
         int absenceDays;
@@ -86,5 +86,18 @@ namespace Attendance_C__XML_Project
         }
 
         public bool Dismissal { get; set; }
+
+        public object Clone()
+        {
+            Student student = new Student();
+            student.ID = ID;
+            student.Phone = Phone;
+            student.gender = gender;
+            student.Address = Address;
+            student.Username = Username;
+            student.ClassID = ClassID;
+            student.Mail = Mail;
+            return student;
+        }
     }
 }

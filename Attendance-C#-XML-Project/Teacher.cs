@@ -10,19 +10,23 @@ namespace Attendance_C__XML_Project
     public class Teacher:User
     {
         //private fields
-        List<Class> classes;
+        List<Class> teacherClasses;
         //constructor
-        public Teacher() { }
+        public Teacher() {
+            teacherClasses=new List<Class>();
+        }
         public Teacher(string username, string password, string phone, string mail, string address)
             : base(username, password, phone, mail, address)
-        {}
+        {
+            teacherClasses = new List<Class>();
+        }
         //methods
-        public void addClass(Class c) { classes.Add(c); }
+        public void addClass(Class c) { teacherClasses.Add(c); }
 
         public void removeClass(int classID) 
         {  
-            Class? _class = classes.Find(c => c.ID == classID);
-            if (_class != null) { classes.Remove(_class); }
+            Class? _class = teacherClasses.Find(c => c.ID == classID);
+            if (_class != null) { teacherClasses.Remove(_class); }
         }
 
         //properties
@@ -30,6 +34,6 @@ namespace Attendance_C__XML_Project
         [XmlArray("classes")]
         [XmlArrayItem("class")]
         public List<Class> Classes
-        { get { return classes; } set { classes = value; } }
+        { get { return teacherClasses; } set { teacherClasses = value; } }
     }
 }

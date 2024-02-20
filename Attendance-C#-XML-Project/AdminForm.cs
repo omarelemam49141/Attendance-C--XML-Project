@@ -62,8 +62,19 @@ namespace Attendance_C__XML_Project
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
+            //read the data from the xml files
+            //read the classes data
             Lists.classes = new List<Class>();
             FileManagment.LoadClassesFromFile("classes.xml", ref Lists.classes);
+
+            //read the teachers data
+            Lists.teachersList = new List<Teacher>();
+            FileManagment.LoadClassesFromFile("teachers.xml", ref Lists.teachersList);
+
+            //read the students data
+            Lists.studentsList = new List<Student>();
+            FileManagment.LoadClassesFromFile("students.xml", ref Lists.studentsList);
+
             //show the users panel and hide the others
             panelShowClasses.Visible = false;
 
@@ -137,6 +148,9 @@ namespace Attendance_C__XML_Project
             (sender as Button).ForeColor = Color.White;
             btnDisplayClasses.ForeColor = Color.DarkGray;
             btnDisplayUsers.ForeColor = Color.DarkGray;
+
+            DisplayReportsForm fr = new DisplayReportsForm();
+            fr.ShowDialog();
         }
 
         //Open Add new user form
@@ -198,14 +212,36 @@ namespace Attendance_C__XML_Project
                         int index = Lists.teachersList.FindIndex(teacher => teacher.ID == selectedUser.ID);
                         //get the old teacher object
                         Teacher updatedTeacher = Lists.teachersList[index];
-                        //remove the teacher
-                        Lists.teachersList.RemoveAt(index);
                         //update the old teacher from the list
                         updatedTeacher.Username = txtUsername.Text;
                         updatedTeacher.Mail = txtEmail.Text;
                         updatedTeacher.Password = txtPassword.Text;
+                        //update the new teacher with the old teacher info
+                        updatedTeacher.ID = selectedUser.ID;
+                        updatedTeacher.Phone = selectedUser.Phone;
+                        updatedTeacher.Address = selectedUser.Address;
+                        updatedTeacher.Classes = (selectedUser as Teacher).Classes;
+                        //remove the old teacher
+                        Lists.teachersList.RemoveAt(index);
+                        //update the teacher in the xml file
+                        // Validate the teachersList against the XSD schema
+                        
                         //add it to the teacher list at the old index
                         Lists.teachersList.Insert(index, updatedTeacher);
+                        
+                        bool isValid = FileManagment.ValidateAgainstXsd(Lists.teachersList, "teachers.xsd");
+                        
+                        
+                        // If the classes are valid, serialize them to an XML file
+                        if (isValid)
+                        {
+                            FileManagment.SerializeClassesToXml(Lists.teachersList, "teachers.xml");
+                        }
+                        else
+                        {
+                            throw new Exception("TeacherLists is not valid against XSD schema. Unable to save.");
+                        }
+
                         //update the teacher in the list box
                         listUsers.Items[listUsers.SelectedIndex] = updatedTeacher;
 
@@ -216,15 +252,31 @@ namespace Attendance_C__XML_Project
                         //find the index of the student to remove
                         int index = Lists.studentsList.FindIndex(student => student.ID == selectedUser.ID);
                         //get the old student object
-                        Student updatedStudent = Lists.studentsList[index];
+                        Student oldStudent = Lists.studentsList[index];
+                        Student updatedStudent = (Student)oldStudent.Clone();
                         //remove the student from the list
                         Lists.studentsList.RemoveAt(index);
+                        //add it to the student list at the old index
                         //update the old student and 
                         updatedStudent.Username = txtUsername.Text;
                         updatedStudent.Mail = txtEmail.Text;
                         updatedStudent.Password = txtPassword.Text;
-                        //add it to the student list at the old index
                         Lists.studentsList.Insert(index, updatedStudent);
+                        //update the student in the xml file
+                        // Validate the studendsList against the XSD schema
+                        bool isValid = FileManagment.ValidateAgainstXsd(Lists.studentsList, "students.xsd");
+
+                        // If the classes are valid, serialize them to an XML file
+                        if (true)
+                        {
+                            FileManagment.SerializeClassesToXml(Lists.studentsList, "students.xml");
+                        }
+                        else
+                        {
+                            throw new Exception("TeacherLists is not valid against XSD schema. Unable to save.");
+                        }
+                        
+                        
                         //update the student in the list box
                         listUsers.Items[listUsers.SelectedIndex] = updatedStudent;
 
@@ -257,6 +309,21 @@ namespace Attendance_C__XML_Project
                         int index = Lists.teachersList.FindIndex(teacher => teacher.ID == selectedUser.ID);
                         //remove the teacher from teachers list
                         Lists.teachersList.RemoveAt(index);
+
+                        //remove the teacher from the xml file
+                        // Validate the teachersList against the XSD schema
+                        bool isValid = FileManagment.ValidateAgainstXsd(Lists.teachersList, "teachers.xsd");
+
+                        // If the classes are valid, serialize them to an XML file
+                        if (isValid)
+                        {
+                            FileManagment.SerializeClassesToXml(Lists.teachersList, "teachers.xml");
+                        }
+                        else
+                        {
+                            throw new Exception("TeacherLists is not valid against XSD schema. Unable to save.");
+                        }
+
                         //remove the teacher from the list box
                         listUsers.Items.RemoveAt(listUsers.SelectedIndex);
                         //Removing the selection from the list box
@@ -270,6 +337,21 @@ namespace Attendance_C__XML_Project
                         int index = Lists.studentsList.FindIndex(student => student.ID == selectedUser.ID);
                         //remove the student from the students list
                         Lists.studentsList.RemoveAt(index);
+
+                        //remove the student from the xml file
+                        // Validate the studendsList against the XSD schema
+                        bool isValid = FileManagment.ValidateAgainstXsd(Lists.studentsList, "students.xsd");
+
+                        // If the classes are valid, serialize them to an XML file
+                        if (isValid)
+                        {
+                            FileManagment.SerializeClassesToXml(Lists.studentsList, "students.xml");
+                        }
+                        else
+                        {
+                            throw new Exception("TeacherLists is not valid against XSD schema. Unable to save.");
+                        }
+
                         //remove the student from the list box
                         listUsers.Items.RemoveAt(listUsers.SelectedIndex);
 
@@ -323,6 +405,21 @@ namespace Attendance_C__XML_Project
                     Class? updatedClass = Lists.classes.Find(classItem => classItem.ID == selectedClass.ID);
                     //update the class name
                     updatedClass.Name = txtNameOfClass.Text.Trim();
+
+                    //update the class in the xml file
+                    // Validate the classes against the XSD schema
+                    bool isValid = FileManagment.ValidateAgainstXsd(Lists.classes, "classes.xsd");
+
+                    // If the classes are valid, serialize them to an XML file
+                    if (isValid)
+                    {
+                        FileManagment.SerializeClassesToXml(Lists.classes, "classes.xml");
+                    }
+                    else
+                    {
+                        throw new Exception("Classes are not valid against XSD schema. Unable to save.");
+                    }
+
                     //update the class in the listDisplayClasses with the new info
                     listDisplayClasses.Items[listDisplayClasses.SelectedIndex] = updatedClass;
                     //Show success message
@@ -347,12 +444,30 @@ namespace Attendance_C__XML_Project
                 {
                     //Get the index of the class to delete
                     int deletedClassIndex = Lists.classes.IndexOf(selectedClass);
+                    Lists.classes.RemoveAt(deletedClassIndex);
+
+                    //delete the class from the xml file
+                    // Validate the classes against the XSD schema
+                    bool isValid = FileManagment.ValidateAgainstXsd(Lists.classes, "classes.xsd");
+
+                    // If the classes are valid, serialize them to an XML file
+                    if (isValid)
+                    {
+                        FileManagment.SerializeClassesToXml(Lists.classes, "classes.xml");
+                    }
+                    else
+                    {
+                        throw new Exception("Classes are not valid against XSD schema. Unable to save.");
+                    }
+
+
                     //Delete the class from the listDisplayClass 
                     listDisplayClasses.Items.Remove(selectedClass);
                     //Removing the selection from the list box
                     listDisplayClasses.SelectedItem = null;
                     //Delete the class from the classes list
                     //Removing the selection from the list box
+
                     selectedClass = null;
                     ResetClassFields();
                 }
