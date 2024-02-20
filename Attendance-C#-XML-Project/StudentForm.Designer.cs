@@ -177,6 +177,7 @@
             btnExportExcel.Text = "Export Excel";
             btnExportExcel.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnExportExcel.UseVisualStyleBackColor = false;
+            btnExportExcel.Click += btnExportExcel_Click;
             // 
             // btnPrintReport
             // 
