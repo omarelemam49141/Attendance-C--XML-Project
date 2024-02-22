@@ -41,6 +41,8 @@
             lblUserName = new Label();
             lblRoleError = new Label();
             panelShow = new Panel();
+            label4 = new Label();
+            comboThemes = new ComboBox();
             btnSave = new Button();
             label3 = new Label();
             comboColors = new ComboBox();
@@ -50,8 +52,6 @@
             comboDateFormat = new ComboBox();
             lblClassPicker = new Label();
             comboLanguages = new ComboBox();
-            label4 = new Label();
-            comboThemes = new ComboBox();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picStudent).BeginInit();
             panel1.SuspendLayout();
@@ -65,10 +65,9 @@
             btnExit.Cursor = Cursors.Hand;
             btnExit.Dock = DockStyle.Right;
             btnExit.FlatStyle = FlatStyle.Flat;
-            btnExit.Location = new Point(851, 0);
-            btnExit.Margin = new Padding(3, 4, 3, 4);
+            btnExit.Location = new Point(745, 0);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(45, 49);
+            btnExit.Size = new Size(39, 37);
             btnExit.TabIndex = 9;
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
@@ -78,9 +77,9 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(3, 9);
+            label9.Location = new Point(3, 7);
             label9.Name = "label9";
-            label9.Size = new Size(159, 25);
+            label9.Size = new Size(123, 20);
             label9.TabIndex = 8;
             label9.Text = "Preferences Form";
             // 
@@ -91,17 +90,17 @@
             panel3.Controls.Add(label9);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
-            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(896, 49);
+            panel3.Size = new Size(784, 37);
             panel3.TabIndex = 20;
             // 
             // picStudent
             // 
             picStudent.Image = (Image)resources.GetObject("picStudent.Image");
-            picStudent.Location = new Point(12, 0);
+            picStudent.Location = new Point(10, 0);
+            picStudent.Margin = new Padding(3, 2, 3, 2);
             picStudent.Name = "picStudent";
-            picStudent.Size = new Size(93, 96);
+            picStudent.Size = new Size(81, 72);
             picStudent.TabIndex = 28;
             picStudent.TabStop = false;
             // 
@@ -116,39 +115,38 @@
             panel1.Controls.Add(lblUserName);
             panel1.Controls.Add(lblRoleError);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 49);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(0, 37);
             panel1.Name = "panel1";
-            panel1.Size = new Size(896, 100);
+            panel1.Size = new Size(784, 75);
             panel1.TabIndex = 31;
             // 
             // lblRole
             // 
             lblRole.AutoSize = true;
-            lblRole.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRole.Location = new Point(111, 52);
+            lblRole.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRole.Location = new Point(97, 39);
             lblRole.Name = "lblRole";
-            lblRole.Size = new Size(55, 23);
+            lblRole.Size = new Size(48, 18);
             lblRole.TabIndex = 36;
             lblRole.Text = "Role:";
             // 
             // lblRoleName
             // 
             lblRoleName.AutoSize = true;
-            lblRoleName.Font = new Font("Century Gothic", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblRoleName.Location = new Point(215, 53);
+            lblRoleName.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRoleName.Location = new Point(188, 40);
             lblRoleName.Name = "lblRoleName";
-            lblRoleName.Size = new Size(102, 22);
+            lblRoleName.Size = new Size(74, 18);
             lblRoleName.TabIndex = 35;
             lblRoleName.Text = "role name";
             // 
             // lblWelcome
             // 
             lblWelcome.AutoSize = true;
-            lblWelcome.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblWelcome.Location = new Point(111, 12);
+            lblWelcome.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblWelcome.Location = new Point(97, 9);
             lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(108, 23);
+            lblWelcome.Size = new Size(89, 18);
             lblWelcome.TabIndex = 33;
             lblWelcome.Text = "Welcome: ";
             // 
@@ -157,23 +155,22 @@
             button3.BackColor = Color.Transparent;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.Black;
             button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(851, 8);
-            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.Location = new Point(745, 6);
             button3.Name = "button3";
-            button3.Size = new Size(39, 37);
+            button3.Size = new Size(34, 28);
             button3.TabIndex = 30;
             button3.UseVisualStyleBackColor = false;
             // 
             // lblUserName
             // 
             lblUserName.AutoSize = true;
-            lblUserName.Font = new Font("Century Gothic", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblUserName.Location = new Point(215, 12);
+            lblUserName.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblUserName.Location = new Point(188, 9);
             lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(106, 22);
+            lblUserName.Size = new Size(78, 18);
             lblUserName.TabIndex = 29;
             lblUserName.Text = "user name";
             // 
@@ -181,10 +178,10 @@
             // 
             lblRoleError.AutoSize = true;
             lblRoleError.ForeColor = Color.IndianRed;
-            lblRoleError.Location = new Point(147, 563);
-            lblRoleError.MaximumSize = new Size(159, 0);
+            lblRoleError.Location = new Point(129, 422);
+            lblRoleError.MaximumSize = new Size(139, 0);
             lblRoleError.Name = "lblRoleError";
-            lblRoleError.Size = new Size(0, 20);
+            lblRoleError.Size = new Size(0, 15);
             lblRoleError.TabIndex = 27;
             // 
             // panelShow
@@ -201,23 +198,43 @@
             panelShow.Controls.Add(lblClassPicker);
             panelShow.Controls.Add(comboLanguages);
             panelShow.Dock = DockStyle.Fill;
-            panelShow.Location = new Point(0, 149);
+            panelShow.Location = new Point(0, 112);
+            panelShow.Margin = new Padding(3, 2, 3, 2);
             panelShow.Name = "panelShow";
-            panelShow.Size = new Size(896, 641);
+            panelShow.Size = new Size(784, 479);
             panelShow.TabIndex = 36;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(56, 283);
+            label4.Name = "label4";
+            label4.Size = new Size(62, 18);
+            label4.TabIndex = 46;
+            label4.Text = "Themes";
+            // 
+            // comboThemes
+            // 
+            comboThemes.FlatStyle = FlatStyle.Flat;
+            comboThemes.FormattingEnabled = true;
+            comboThemes.Items.AddRange(new object[] { "Light", "Dark" });
+            comboThemes.Location = new Point(143, 281);
+            comboThemes.Name = "comboThemes";
+            comboThemes.Size = new Size(139, 23);
+            comboThemes.TabIndex = 45;
             // 
             // btnSave
             // 
             btnSave.BackColor = Color.Teal;
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSave.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSave.ForeColor = SystemColors.Control;
             btnSave.Image = (Image)resources.GetObject("btnSave.Image");
-            btnSave.Location = new Point(684, 521);
-            btnSave.Margin = new Padding(3, 4, 3, 4);
+            btnSave.Location = new Point(598, 391);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(131, 62);
+            btnSave.Size = new Size(115, 46);
             btnSave.TabIndex = 44;
             btnSave.Text = "Save";
             btnSave.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -227,10 +244,10 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(64, 300);
+            label3.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(56, 225);
             label3.Name = "label3";
-            label3.Size = new Size(65, 22);
+            label3.Size = new Size(53, 18);
             label3.TabIndex = 43;
             label3.Text = "Colors";
             // 
@@ -239,19 +256,19 @@
             comboColors.FlatStyle = FlatStyle.Flat;
             comboColors.FormattingEnabled = true;
             comboColors.Items.AddRange(new object[] { "Black", "Blue", "Grey" });
-            comboColors.Location = new Point(163, 298);
-            comboColors.Margin = new Padding(3, 4, 3, 4);
+            comboColors.Location = new Point(143, 224);
             comboColors.Name = "comboColors";
-            comboColors.Size = new Size(158, 28);
+            comboColors.Size = new Size(139, 23);
             comboColors.TabIndex = 42;
+            comboColors.SelectedIndexChanged += comboColors_SelectedIndexChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(64, 228);
+            label2.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(56, 171);
             label2.Name = "label2";
-            label2.Size = new Size(87, 22);
+            label2.Size = new Size(71, 18);
             label2.TabIndex = 41;
             label2.Text = "Font Size";
             // 
@@ -260,19 +277,18 @@
             comboFontSize.FlatStyle = FlatStyle.Flat;
             comboFontSize.FormattingEnabled = true;
             comboFontSize.Items.AddRange(new object[] { "Small", "Medium", "Large" });
-            comboFontSize.Location = new Point(181, 226);
-            comboFontSize.Margin = new Padding(3, 4, 3, 4);
+            comboFontSize.Location = new Point(158, 170);
             comboFontSize.Name = "comboFontSize";
-            comboFontSize.Size = new Size(158, 28);
+            comboFontSize.Size = new Size(139, 23);
             comboFontSize.TabIndex = 40;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(64, 154);
+            label1.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(56, 116);
             label1.Name = "label1";
-            label1.Size = new Size(125, 22);
+            label1.Size = new Size(91, 18);
             label1.TabIndex = 39;
             label1.Text = "Date Format";
             // 
@@ -281,19 +297,18 @@
             comboDateFormat.FlatStyle = FlatStyle.Flat;
             comboDateFormat.FormattingEnabled = true;
             comboDateFormat.Items.AddRange(new object[] { "DD/MM/YYYY", "MM/DD/YYYY" });
-            comboDateFormat.Location = new Point(195, 152);
-            comboDateFormat.Margin = new Padding(3, 4, 3, 4);
+            comboDateFormat.Location = new Point(171, 114);
             comboDateFormat.Name = "comboDateFormat";
-            comboDateFormat.Size = new Size(158, 28);
+            comboDateFormat.Size = new Size(139, 23);
             comboDateFormat.TabIndex = 38;
             // 
             // lblClassPicker
             // 
             lblClassPicker.AutoSize = true;
-            lblClassPicker.Font = new Font("Century Gothic", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblClassPicker.Location = new Point(64, 87);
+            lblClassPicker.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblClassPicker.Location = new Point(56, 65);
             lblClassPicker.Name = "lblClassPicker";
-            lblClassPicker.Size = new Size(107, 22);
+            lblClassPicker.Size = new Size(72, 18);
             lblClassPicker.TabIndex = 37;
             lblClassPicker.Text = "Language";
             // 
@@ -302,42 +317,21 @@
             comboLanguages.FlatStyle = FlatStyle.Flat;
             comboLanguages.FormattingEnabled = true;
             comboLanguages.Items.AddRange(new object[] { "English", "العربية" });
-            comboLanguages.Location = new Point(181, 85);
-            comboLanguages.Margin = new Padding(3, 4, 3, 4);
+            comboLanguages.Location = new Point(158, 64);
             comboLanguages.Name = "comboLanguages";
-            comboLanguages.Size = new Size(158, 28);
+            comboLanguages.Size = new Size(139, 23);
             comboLanguages.TabIndex = 36;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(64, 377);
-            label4.Name = "label4";
-            label4.Size = new Size(78, 22);
-            label4.TabIndex = 46;
-            label4.Text = "Themes";
-            // 
-            // comboThemes
-            // 
-            comboThemes.FlatStyle = FlatStyle.Flat;
-            comboThemes.FormattingEnabled = true;
-            comboThemes.Items.AddRange(new object[] { "Light", "Dark" });
-            comboThemes.Location = new Point(163, 375);
-            comboThemes.Margin = new Padding(3, 4, 3, 4);
-            comboThemes.Name = "comboThemes";
-            comboThemes.Size = new Size(158, 28);
-            comboThemes.TabIndex = 45;
             // 
             // PreferencesForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(896, 790);
+            ClientSize = new Size(784, 591);
             Controls.Add(panelShow);
             Controls.Add(panel1);
             Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "PreferencesForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PreferencesForm";
