@@ -51,8 +51,8 @@
             label9 = new Label();
             panelAttendanceTable = new Panel();
             panelShowStudents = new Panel();
+            dgvViewStudents = new DataGridView();
             button5 = new Button();
-            listBox2 = new ListBox();
             button1 = new Button();
             button2 = new Button();
             panel3 = new Panel();
@@ -61,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)picStudent).BeginInit();
             panelAttendanceTable.SuspendLayout();
             panelShowStudents.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvViewStudents).BeginInit();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
@@ -110,7 +111,7 @@
             btnShowReport.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnShowReport.ForeColor = SystemColors.Control;
             btnShowReport.Image = (Image)resources.GetObject("btnShowReport.Image");
-            btnShowReport.Location = new Point(613, 55);
+            btnShowReport.Location = new Point(636, 55);
             btnShowReport.Margin = new Padding(3, 4, 3, 4);
             btnShowReport.Name = "btnShowReport";
             btnShowReport.Size = new Size(140, 53);
@@ -201,6 +202,7 @@
             button3.Size = new Size(39, 37);
             button3.TabIndex = 30;
             button3.UseVisualStyleBackColor = false;
+            button3.Click += btnLogout_Click;
             // 
             // lblUserName
             // 
@@ -325,8 +327,8 @@
             // 
             // panelShowStudents
             // 
+            panelShowStudents.Controls.Add(dgvViewStudents);
             panelShowStudents.Controls.Add(button5);
-            panelShowStudents.Controls.Add(listBox2);
             panelShowStudents.Controls.Add(button1);
             panelShowStudents.Controls.Add(button2);
             panelShowStudents.Dock = DockStyle.Fill;
@@ -334,6 +336,15 @@
             panelShowStudents.Name = "panelShowStudents";
             panelShowStudents.Size = new Size(896, 741);
             panelShowStudents.TabIndex = 32;
+            // 
+            // dgvViewStudents
+            // 
+            dgvViewStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvViewStudents.Location = new Point(78, 248);
+            dgvViewStudents.Name = "dgvViewStudents";
+            dgvViewStudents.RowHeadersWidth = 51;
+            dgvViewStudents.Size = new Size(753, 335);
+            dgvViewStudents.TabIndex = 30;
             // 
             // button5
             // 
@@ -352,14 +363,6 @@
             button5.TextImageRelation = TextImageRelation.TextBeforeImage;
             button5.UseVisualStyleBackColor = false;
             // 
-            // listBox2
-            // 
-            listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(45, 236);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(839, 384);
-            listBox2.TabIndex = 28;
-            // 
             // button1
             // 
             button1.BackColor = Color.Teal;
@@ -377,6 +380,7 @@
             button1.Text = "Print Pdf";
             button1.TextImageRelation = TextImageRelation.TextBeforeImage;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += btnExportPDF;
             // 
             // button2
             // 
@@ -394,6 +398,7 @@
             button2.Text = "Export Excel";
             button2.TextImageRelation = TextImageRelation.TextBeforeImage;
             button2.UseVisualStyleBackColor = false;
+            button2.Click += btnExportExcel_Click;
             // 
             // panel3
             // 
@@ -427,6 +432,7 @@
             ((System.ComponentModel.ISupportInitialize)picStudent).EndInit();
             panelAttendanceTable.ResumeLayout(false);
             panelShowStudents.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvViewStudents).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);
@@ -453,7 +459,6 @@
         private Panel panelAttendanceTable;
         private Panel panel3;
         private Panel panelShowStudents;
-        private ListBox listBox2;
         private Button button1;
         private Button button2;
         private Label lblClassPicker;
@@ -461,5 +466,6 @@
         private Label lblDatePicker;
         private DateTimePicker dateTimePicker;
         private Button button5;
+        private DataGridView dgvViewStudents;
     }
 }

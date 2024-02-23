@@ -169,10 +169,6 @@ namespace Attendance_C__XML_Project
             this.Hide();
         }
 
-
-        private void ExportToExcel()
-        {
-        }
         private void ExportPDF()
         {
             if (dgvStudentReports.Rows.Count > 0)
@@ -286,6 +282,11 @@ namespace Attendance_C__XML_Project
                     MessageBox.Show("Exported to Excel successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            StudentLogout();
         }
     }
 }

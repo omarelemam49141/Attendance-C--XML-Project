@@ -290,6 +290,7 @@
             button3.Size = new Size(39, 37);
             button3.TabIndex = 30;
             button3.UseVisualStyleBackColor = false;
+            button3.Click += btnLogout_Click;
             // 
             // lblUserName
             // 
