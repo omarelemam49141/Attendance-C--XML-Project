@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherForm));
-            listBox1 = new ListBox();
             panelShow = new Panel();
+            checkBox1 = new CheckBox();
             lblDatePicker = new Label();
             dateTimePicker = new DateTimePicker();
             btnShowReport = new Button();
@@ -45,8 +45,6 @@
             lblRoleError = new Label();
             panel1 = new Panel();
             picStudent = new PictureBox();
-            btnPrintReport = new Button();
-            btnExportExcel = new Button();
             btnExit = new Button();
             label9 = new Label();
             panelAttendanceTable = new Panel();
@@ -65,16 +63,9 @@
             panel3.SuspendLayout();
             SuspendLayout();
             // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(12, 269);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(839, 264);
-            listBox1.TabIndex = 28;
-            // 
             // panelShow
             // 
+            panelShow.Controls.Add(checkBox1);
             panelShow.Controls.Add(lblDatePicker);
             panelShow.Controls.Add(dateTimePicker);
             panelShow.Controls.Add(btnShowReport);
@@ -85,6 +76,18 @@
             panelShow.Name = "panelShow";
             panelShow.Size = new Size(896, 125);
             panelShow.TabIndex = 34;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Segoe UI", 11F);
+            checkBox1.Location = new Point(734, 81);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(117, 29);
+            checkBox1.TabIndex = 39;
+            checkBox1.Text = "Attend All";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += AttendAll_CheckedChanged;
             // 
             // lblDatePicker
             // 
@@ -111,7 +114,7 @@
             btnShowReport.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnShowReport.ForeColor = SystemColors.Control;
             btnShowReport.Image = (Image)resources.GetObject("btnShowReport.Image");
-            btnShowReport.Location = new Point(636, 55);
+            btnShowReport.Location = new Point(644, 5);
             btnShowReport.Margin = new Padding(3, 4, 3, 4);
             btnShowReport.Name = "btnShowReport";
             btnShowReport.Size = new Size(140, 53);
@@ -252,41 +255,6 @@
             picStudent.TabIndex = 28;
             picStudent.TabStop = false;
             // 
-            // btnPrintReport
-            // 
-            btnPrintReport.BackColor = Color.Teal;
-            btnPrintReport.FlatAppearance.BorderSize = 0;
-            btnPrintReport.FlatStyle = FlatStyle.Flat;
-            btnPrintReport.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPrintReport.ForeColor = SystemColors.Control;
-            btnPrintReport.Image = (Image)resources.GetObject("btnPrintReport.Image");
-            btnPrintReport.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPrintReport.Location = new Point(78, 585);
-            btnPrintReport.Margin = new Padding(3, 4, 3, 4);
-            btnPrintReport.Name = "btnPrintReport";
-            btnPrintReport.Size = new Size(176, 80);
-            btnPrintReport.TabIndex = 27;
-            btnPrintReport.Text = "Print Pdf";
-            btnPrintReport.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnPrintReport.UseVisualStyleBackColor = false;
-            // 
-            // btnExportExcel
-            // 
-            btnExportExcel.BackColor = Color.Teal;
-            btnExportExcel.FlatAppearance.BorderSize = 0;
-            btnExportExcel.FlatStyle = FlatStyle.Flat;
-            btnExportExcel.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnExportExcel.ForeColor = SystemColors.Control;
-            btnExportExcel.Image = (Image)resources.GetObject("btnExportExcel.Image");
-            btnExportExcel.Location = new Point(613, 585);
-            btnExportExcel.Margin = new Padding(3, 4, 3, 4);
-            btnExportExcel.Name = "btnExportExcel";
-            btnExportExcel.Size = new Size(189, 80);
-            btnExportExcel.TabIndex = 26;
-            btnExportExcel.Text = "Export Excel";
-            btnExportExcel.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnExportExcel.UseVisualStyleBackColor = false;
-            // 
             // btnExit
             // 
             btnExit.BackgroundImage = (Image)resources.GetObject("btnExit.BackgroundImage");
@@ -316,9 +284,6 @@
             // panelAttendanceTable
             // 
             panelAttendanceTable.Controls.Add(panelShowStudents);
-            panelAttendanceTable.Controls.Add(listBox1);
-            panelAttendanceTable.Controls.Add(btnPrintReport);
-            panelAttendanceTable.Controls.Add(btnExportExcel);
             panelAttendanceTable.Dock = DockStyle.Fill;
             panelAttendanceTable.Location = new Point(0, 49);
             panelAttendanceTable.Name = "panelAttendanceTable";
@@ -335,20 +300,19 @@
             panelShowStudents.Location = new Point(0, 0);
             panelShowStudents.Name = "panelShowStudents";
             panelShowStudents.Size = new Size(896, 741);
-            panelShowStudents.TabIndex = 32;
+            panelShowStudents.TabIndex = 33;
             // 
             // dgvViewStudents
             // 
             dgvViewStudents.AllowUserToAddRows = false;
             dgvViewStudents.AllowUserToDeleteRows = false;
             dgvViewStudents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvViewStudents.BackgroundColor = SystemColors.Control;
             dgvViewStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvViewStudents.Dock = DockStyle.Top;
-            dgvViewStudents.Location = new Point(0, 0);
+            dgvViewStudents.Location = new Point(12, 233);
             dgvViewStudents.Name = "dgvViewStudents";
-            dgvViewStudents.ReadOnly = true;
             dgvViewStudents.RowHeadersWidth = 51;
-            dgvViewStudents.Size = new Size(896, 619);
+            dgvViewStudents.Size = new Size(872, 313);
             dgvViewStudents.TabIndex = 30;
             // 
             // button5
@@ -385,7 +349,6 @@
             button1.Text = "Print Pdf";
             button1.TextImageRelation = TextImageRelation.TextBeforeImage;
             button1.UseVisualStyleBackColor = false;
-            button1.Click += btnExportPDF;
             // 
             // button2
             // 
@@ -403,7 +366,6 @@
             button2.Text = "Export Excel";
             button2.TextImageRelation = TextImageRelation.TextBeforeImage;
             button2.UseVisualStyleBackColor = false;
-            button2.Click += btnExportExcel_Click;
             // 
             // panel3
             // 
@@ -444,8 +406,6 @@
         }
 
         #endregion
-
-        private ListBox listBox1;
         private Panel panelShow;
         private Button btnShowReport;
         private Label lblRole;
@@ -457,20 +417,19 @@
         private Label lblRoleError;
         private Panel panel1;
         private PictureBox picStudent;
-        private Button btnPrintReport;
-        private Button btnExportExcel;
         private Button btnExit;
         private Label label9;
         private Panel panelAttendanceTable;
         private Panel panel3;
-        private Panel panelShowStudents;
-        private Button button1;
-        private Button button2;
         private Label lblClassPicker;
         private ComboBox comboClasses;
         private Label lblDatePicker;
         private DateTimePicker dateTimePicker;
-        private Button button5;
+        private CheckBox checkBox1;
+        private Panel panelShowStudents;
         private DataGridView dgvViewStudents;
+        private Button button5;
+        private Button button1;
+        private Button button2;
     }
 }

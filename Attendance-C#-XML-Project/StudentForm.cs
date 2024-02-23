@@ -31,19 +31,19 @@ namespace Attendance_C__XML_Project
             // *** other dummy data ***
             attendanceRecords = new List<AttendanceRecord>
             {
-                new AttendanceRecord(1,Lists.studentsList[0],AttendanceStatus.Absence),
-                new AttendanceRecord(2,Lists.studentsList[0],AttendanceStatus.Absence),
-                new AttendanceRecord(3,Lists.studentsList[0],AttendanceStatus.Presence),
-                new AttendanceRecord(4,Lists.studentsList[1],AttendanceStatus.Presence),
-                new AttendanceRecord(5,Lists.studentsList[0],AttendanceStatus.Absence),
-                new AttendanceRecord(5,Lists.studentsList[0],AttendanceStatus.Absence),
-                new AttendanceRecord(6,Lists.studentsList[0],AttendanceStatus.Absence),
-                new AttendanceRecord(7,Lists.studentsList[0],AttendanceStatus.Absence),
-                new AttendanceRecord(8,Lists.studentsList[0],AttendanceStatus.Absence),
-                new AttendanceRecord(9,Lists.studentsList[0],AttendanceStatus.Absence),
-                new AttendanceRecord(10,Lists.studentsList[0],AttendanceStatus.Absence),
-                new AttendanceRecord(11,Lists.studentsList[0],AttendanceStatus.Absence),
-                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence),
+                new AttendanceRecord(1,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 11)},
+                new AttendanceRecord(2,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 12) },
+                new AttendanceRecord(3,Lists.studentsList[0],AttendanceStatus.Presence){ RecordDate = new DateOnly(2024, 2, 13) },
+                new AttendanceRecord(4,Lists.studentsList[1],AttendanceStatus.Presence){ RecordDate = new DateOnly(2024, 2, 14) },
+                new AttendanceRecord(5,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 15) },
+                new AttendanceRecord(5,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 16) },
+                new AttendanceRecord(6,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 17) },
+                new AttendanceRecord(7,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 18) },
+                new AttendanceRecord(8,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 19) },
+                new AttendanceRecord(9,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 20) },
+                new AttendanceRecord(10,Lists.studentsList[0],AttendanceStatus.Absence) { RecordDate = new DateOnly(2024, 2, 21) },
+                new AttendanceRecord(11,Lists.studentsList[0],AttendanceStatus.Absence) { RecordDate = new DateOnly(2024, 2, 22) },
+                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 23)},
             };
             studentReport = new GenerateReport();
             studentReport.addAttendanceRecords(attendanceRecords);
@@ -127,8 +127,9 @@ namespace Attendance_C__XML_Project
         private void LoadStudentAttendanceReports()
         {
             dgvStudentReports.Columns.Clear();
+            dgvStudentReports.Columns.Add("Column1", "Id");
             dgvStudentReports.Columns.Add("Column1", "Attendance Date");
-            dgvStudentReports.Columns.Add("Column2", "Status");
+            dgvStudentReports.Columns.Add("Column3", "Status");
             var _attendanceRecords = studentReport.getStudentReport(studentId);
 
 
@@ -148,7 +149,8 @@ namespace Attendance_C__XML_Project
                 {
                     if (record.student.Username.ToLower() == LoggedInUser.Name.ToLower())
                     {
-                        dgvStudentReports.Rows.Add(record.RecordDate, record.attendanceStatus);
+                        dgvStudentReports.Rows.Add(record.ID,record.RecordDate + ", "+ record.RecordDate.DayOfWeek, record.attendanceStatus);
+
                     }
                 }
 

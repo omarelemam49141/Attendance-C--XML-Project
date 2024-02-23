@@ -198,7 +198,7 @@
             btnPrintReport.Name = "btnPrintReport";
             btnPrintReport.Size = new Size(176, 80);
             btnPrintReport.TabIndex = 27;
-            btnPrintReport.Text = "Print Pdf";
+            btnPrintReport.Text = "Export Pdf";
             btnPrintReport.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnPrintReport.UseVisualStyleBackColor = false;
             btnPrintReport.Click += btnPrintReport_Click;
