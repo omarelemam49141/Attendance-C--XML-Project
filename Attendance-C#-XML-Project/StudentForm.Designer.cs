@@ -334,11 +334,15 @@
             // 
             // dgvStudentReports
             // 
+            dgvStudentReports.AllowUserToAddRows = false;
+            dgvStudentReports.AllowUserToDeleteRows = false;
+            dgvStudentReports.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvStudentReports.BackgroundColor = SystemColors.Control;
             dgvStudentReports.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvStudentReports.Dock = DockStyle.Top;
             dgvStudentReports.Location = new Point(0, 0);
             dgvStudentReports.Name = "dgvStudentReports";
+            dgvStudentReports.ReadOnly = true;
             dgvStudentReports.RowHeadersWidth = 51;
             dgvStudentReports.Size = new Size(896, 394);
             dgvStudentReports.TabIndex = 28;

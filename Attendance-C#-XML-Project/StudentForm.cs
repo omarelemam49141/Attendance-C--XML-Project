@@ -18,6 +18,8 @@ namespace Attendance_C__XML_Project
     public partial class StudentForm : Form
     {
         List<AttendanceRecord> attendanceRecords;
+        GenerateReport studentReport;
+        int studentId;
         public StudentForm()
         {
             InitializeComponent();
@@ -32,6 +34,8 @@ namespace Attendance_C__XML_Project
                 new AttendanceRecord(4,Lists.studentsList[1],AttendanceStatus.Presence){RecordDate = DateOnly.FromDateTime(DateTime.Now) },
                 new AttendanceRecord(5,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate = DateOnly.FromDateTime(DateTime.Now) },
             };
+            studentReport = new GenerateReport();
+            studentReport.addAttendanceRecords(attendanceRecords);
 
 
             //**************** GUI Init *************
@@ -64,12 +68,15 @@ namespace Attendance_C__XML_Project
                 throw;
             }
 
+            //Load Student Id
+            studentId = GetStudentIdByName(LoggedInUser.Name);
 
             // Load Number Of Attendance
             lblAttendedNum.Text = LoadStudentAttendanceNumber();
 
             // Load Number Of Absence
             lblAbsentNum.Text = LoadStudentAbsenceNumber();
+
 
         }
 
@@ -111,7 +118,9 @@ namespace Attendance_C__XML_Project
             dgvStudentReports.Columns.Add("Column1", "Attendance Date");
             dgvStudentReports.Columns.Add("Column2", "Status");
 
-            foreach (var record in attendanceRecords)
+            var _attendanceRecords = studentReport.getStudentReport(studentId);
+
+            foreach (var record in _attendanceRecords)
             {
                 if (record.student.Username.ToLower() == LoggedInUser.Name.ToLower())
                 {
@@ -128,6 +137,12 @@ namespace Attendance_C__XML_Project
                 return LoggedInUser.Name;
             }
             throw new Exception("Can't Find UserName");
+        }
+
+        private int GetStudentIdByName(string userName)
+        {
+            int studentId = Lists.studentsList.Find(s=>s.Username.ToLower() == userName.ToLower()).ID;
+            return studentId;
         }
         private string GetStudentClassName()
         {

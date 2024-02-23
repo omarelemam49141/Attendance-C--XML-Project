@@ -34,7 +34,7 @@ namespace Attendance_C__XML_Project
             panelShowStudents.Hide();
             //**************** End Of GUI Init *************
             dateTimePicker.Value = DateTime.Now;
-            comboClasses.SelectedIndex = 0;
+      
 
 
             try
@@ -67,7 +67,7 @@ namespace Attendance_C__XML_Project
             {
                 comboClasses.Items.Add(cls);
             }
-
+            comboClasses.SelectedIndex = 0;
 
         }
 
