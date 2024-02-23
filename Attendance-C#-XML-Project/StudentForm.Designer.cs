@@ -50,12 +50,17 @@
             lblRoleError = new Label();
             panelShow = new Panel();
             panelAttendanceTable = new Panel();
+            toolStrip = new ToolStrip();
+            toolStripButton1 = new ToolStripButton();
+            toolStripButton2 = new ToolStripButton();
+            toolStripPageLabel = new ToolStripLabel();
             dgvStudentReports = new DataGridView();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picStudent).BeginInit();
             panel1.SuspendLayout();
             panelShow.SuspendLayout();
             panelAttendanceTable.SuspendLayout();
+            toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvStudentReports).BeginInit();
             SuspendLayout();
             // 
@@ -105,7 +110,7 @@
             btnShowReport.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnShowReport.ForeColor = SystemColors.Control;
             btnShowReport.Image = (Image)resources.GetObject("btnShowReport.Image");
-            btnShowReport.Location = new Point(356, 22);
+            btnShowReport.Location = new Point(356, 8);
             btnShowReport.Margin = new Padding(3, 4, 3, 4);
             btnShowReport.Name = "btnShowReport";
             btnShowReport.Size = new Size(178, 80);
@@ -323,6 +328,7 @@
             // 
             // panelAttendanceTable
             // 
+            panelAttendanceTable.Controls.Add(toolStrip);
             panelAttendanceTable.Controls.Add(dgvStudentReports);
             panelAttendanceTable.Controls.Add(btnPrintReport);
             panelAttendanceTable.Controls.Add(btnExportExcel);
@@ -331,6 +337,43 @@
             panelAttendanceTable.Name = "panelAttendanceTable";
             panelAttendanceTable.Size = new Size(896, 525);
             panelAttendanceTable.TabIndex = 31;
+            // 
+            // toolStrip
+            // 
+            toolStrip.ImageScalingSize = new Size(20, 20);
+            toolStrip.Items.AddRange(new ToolStripItem[] { toolStripButton1, toolStripButton2, toolStripPageLabel });
+            toolStrip.Location = new Point(0, 313);
+            toolStrip.Name = "toolStrip";
+            toolStrip.Size = new Size(896, 27);
+            toolStrip.TabIndex = 21;
+            toolStrip.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            toolStripButton1.BackColor = SystemColors.Control;
+            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
+            toolStripButton1.ImageTransparentColor = Color.Magenta;
+            toolStripButton1.Name = "toolStripButton1";
+            toolStripButton1.Size = new Size(29, 24);
+            toolStripButton1.Text = "previous";
+            toolStripButton1.Click += toolStripButton1_Click;
+            // 
+            // toolStripButton2
+            // 
+            toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
+            toolStripButton2.ImageTransparentColor = Color.Magenta;
+            toolStripButton2.Name = "toolStripButton2";
+            toolStripButton2.Size = new Size(29, 24);
+            toolStripButton2.Text = "next";
+            toolStripButton2.Click += toolStripButton2_Click;
+            // 
+            // toolStripPageLabel
+            // 
+            toolStripPageLabel.Name = "toolStripPageLabel";
+            toolStripPageLabel.Size = new Size(25, 24);
+            toolStripPageLabel.Text = "00";
             // 
             // dgvStudentReports
             // 
@@ -344,7 +387,7 @@
             dgvStudentReports.Name = "dgvStudentReports";
             dgvStudentReports.ReadOnly = true;
             dgvStudentReports.RowHeadersWidth = 51;
-            dgvStudentReports.Size = new Size(896, 394);
+            dgvStudentReports.Size = new Size(896, 313);
             dgvStudentReports.TabIndex = 28;
             // 
             // StudentForm
@@ -367,6 +410,9 @@
             panel1.PerformLayout();
             panelShow.ResumeLayout(false);
             panelAttendanceTable.ResumeLayout(false);
+            panelAttendanceTable.PerformLayout();
+            toolStrip.ResumeLayout(false);
+            toolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvStudentReports).EndInit();
             ResumeLayout(false);
         }
@@ -395,5 +441,9 @@
         private Label lblWelcome;
         private Button btnExit;
         private DataGridView dgvStudentReports;
+        private ToolStrip toolStrip;
+        private ToolStripButton toolStripButton1;
+        private ToolStripButton toolStripButton2;
+        private ToolStripLabel toolStripPageLabel;
     }
 }

@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OfficeOpenXml;
+using System.Drawing.Printing;
 
 
 namespace Attendance_C__XML_Project
@@ -20,6 +21,8 @@ namespace Attendance_C__XML_Project
         List<AttendanceRecord> attendanceRecords;
         GenerateReport studentReport;
         int studentId;
+        private int pageSize = 5; // Number of rows per page
+        private int currentPage = 1; // Current page index
         public StudentForm()
         {
             InitializeComponent();
@@ -28,11 +31,19 @@ namespace Attendance_C__XML_Project
             // *** other dummy data ***
             attendanceRecords = new List<AttendanceRecord>
             {
-                new AttendanceRecord(1,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate = DateOnly.FromDateTime(DateTime.Now) },
-                new AttendanceRecord(2,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate = DateOnly.FromDateTime(DateTime.Now) },
-                new AttendanceRecord(3,Lists.studentsList[0],AttendanceStatus.Presence){RecordDate = DateOnly.FromDateTime(DateTime.Now) },
-                new AttendanceRecord(4,Lists.studentsList[1],AttendanceStatus.Presence){RecordDate = DateOnly.FromDateTime(DateTime.Now) },
-                new AttendanceRecord(5,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate = DateOnly.FromDateTime(DateTime.Now) },
+                new AttendanceRecord(1,Lists.studentsList[0],AttendanceStatus.Absence),
+                new AttendanceRecord(2,Lists.studentsList[0],AttendanceStatus.Absence),
+                new AttendanceRecord(3,Lists.studentsList[0],AttendanceStatus.Presence),
+                new AttendanceRecord(4,Lists.studentsList[1],AttendanceStatus.Presence),
+                new AttendanceRecord(5,Lists.studentsList[0],AttendanceStatus.Absence),
+                new AttendanceRecord(5,Lists.studentsList[0],AttendanceStatus.Absence),
+                new AttendanceRecord(6,Lists.studentsList[0],AttendanceStatus.Absence),
+                new AttendanceRecord(7,Lists.studentsList[0],AttendanceStatus.Absence),
+                new AttendanceRecord(8,Lists.studentsList[0],AttendanceStatus.Absence),
+                new AttendanceRecord(9,Lists.studentsList[0],AttendanceStatus.Absence),
+                new AttendanceRecord(10,Lists.studentsList[0],AttendanceStatus.Absence),
+                new AttendanceRecord(11,Lists.studentsList[0],AttendanceStatus.Absence),
+                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence),
             };
             studentReport = new GenerateReport();
             studentReport.addAttendanceRecords(attendanceRecords);
@@ -40,7 +51,7 @@ namespace Attendance_C__XML_Project
 
             //**************** GUI Init *************
             panelAttendanceTable.Hide();
-
+            toolStripPageLabel.Text = currentPage.ToString();
             //**************** End Of GUI Init *************
 
             // Load Student Name
@@ -115,20 +126,84 @@ namespace Attendance_C__XML_Project
         }
         private void LoadStudentAttendanceReports()
         {
+            dgvStudentReports.Columns.Clear();
             dgvStudentReports.Columns.Add("Column1", "Attendance Date");
             dgvStudentReports.Columns.Add("Column2", "Status");
-
             var _attendanceRecords = studentReport.getStudentReport(studentId);
 
-            foreach (var record in _attendanceRecords)
+
+            dgvStudentReports.Rows.Clear();
+
+            // Calculate indexes of the items to display on the current page
+            int startIndex = (currentPage - 1) * pageSize;
+            int endIndex = Math.Min(startIndex + pageSize - 1, attendanceRecords.Count - 1);
+
+            // Populate DataGridView with data for the current page
+    
+            for (int i = startIndex; i <= endIndex&& i< _attendanceRecords.Count; i++)
             {
-                if (record.student.Username.ToLower() == LoggedInUser.Name.ToLower())
+                
+                AttendanceRecord? record = _attendanceRecords[i];
+                if (record != null)
                 {
-                    dgvStudentReports.Rows.Add(record.RecordDate, record.attendanceStatus);
+                    if (record.student.Username.ToLower() == LoggedInUser.Name.ToLower())
+                    {
+                        dgvStudentReports.Rows.Add(record.RecordDate, record.attendanceStatus);
+                    }
                 }
+
+            }
+            // Update pagination information
+            toolStripPageLabel.Text = $"Page {currentPage}";
+        }
+        // next button clicked
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if (currentPage < TotalPages)
+            {
+                currentPage++;
+                toolStripPageLabel.Text = currentPage.ToString();
+                LoadStudentAttendanceReports();
+            }
+        }
+
+
+        // previous button clicked
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                toolStripPageLabel.Text = currentPage.ToString();
+                LoadStudentAttendanceReports();
+            }
+        }
+        private void LoadData(DataGridView dataGridView)
+        {
+            // Clear existing rows
+            dataGridView.Rows.Clear();
+
+            // Calculate indexes of the items to display on the current page
+            int startIndex = (currentPage - 1) * pageSize;
+            int endIndex = Math.Min(startIndex + pageSize - 1, attendanceRecords.Count - 1);
+
+            // Populate DataGridView with data for the current page
+            for (int i = startIndex; i <= endIndex; i++)
+            {
+                dataGridView.Rows.Add(attendanceRecords[i]);
             }
 
+            // Update pagination information
+            toolStripPageLabel.Text = $"Page {currentPage}";
         }
+
+
+        private int TotalPages
+        {
+            get { return (int)Math.Ceiling((double)attendanceRecords.Count / pageSize); }
+        }
+
+
 
         private string GetStudentName()
         {
@@ -141,7 +216,7 @@ namespace Attendance_C__XML_Project
 
         private int GetStudentIdByName(string userName)
         {
-            int studentId = Lists.studentsList.Find(s=>s.Username.ToLower() == userName.ToLower()).ID;
+            int studentId = Lists.studentsList.Find(s => s.Username.ToLower() == userName.ToLower()).ID;
             return studentId;
         }
         private string GetStudentClassName()
@@ -303,5 +378,7 @@ namespace Attendance_C__XML_Project
         {
             StudentLogout();
         }
+
+
     }
 }
