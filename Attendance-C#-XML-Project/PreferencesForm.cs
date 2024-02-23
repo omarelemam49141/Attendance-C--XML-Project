@@ -123,5 +123,43 @@ namespace Attendance_C__XML_Project
             }
         }
 
+        private void comboFontSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Get the selected font size from the combo box
+            string selectedFontSize = comboFontSize.SelectedItem.ToString();
+
+            // Set the default font size
+            float fontSize = 10; // Default font size
+
+            // Determine the selected font size
+            switch (selectedFontSize)
+            {
+                case "Small":
+                    fontSize = 8; // Set to a small font size
+                    break;
+                case "Medium":
+                    fontSize = 10; // Set to a medium font size
+                    break;
+                case "Large":
+                    fontSize = 12; // Set to a large font size
+                    break;
+                default:
+                    // If an invalid selection is made, set the font size to medium
+                    MessageBox.Show("Invalid font size selection. Defaulting to medium.");
+                    break;
+            }
+
+            // Iterate through all controls in the form
+            foreach (Control control in Controls)
+            {
+                // Check if the control is a label or button (you can extend this to other types of controls as needed)
+                if (control is Label || control is Button)
+                {
+                    // Set the font size of the control
+                    control.Font = new Font(control.Font.FontFamily, fontSize);
+                }
+            }
+        }
+
     }
 }

@@ -281,6 +281,7 @@
             comboFontSize.Name = "comboFontSize";
             comboFontSize.Size = new Size(139, 23);
             comboFontSize.TabIndex = 40;
+            comboFontSize.SelectedIndexChanged += comboFontSize_SelectedIndexChanged;
             // 
             // label1
             // 
