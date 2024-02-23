@@ -302,6 +302,7 @@
             comboDateFormat.Name = "comboDateFormat";
             comboDateFormat.Size = new Size(139, 23);
             comboDateFormat.TabIndex = 38;
+            comboDateFormat.SelectedIndexChanged += comboDateFormat_SelectedIndexChanged;
             // 
             // lblClassPicker
             // 

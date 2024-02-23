@@ -161,5 +161,40 @@ namespace Attendance_C__XML_Project
             }
         }
 
+        private void comboDateFormat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Get the selected date format from the combo box
+            string selectedFormat = comboDateFormat.SelectedItem.ToString();
+
+            // Determine the format pattern based on the selection
+            string formatPattern;
+            switch (selectedFormat)
+            {
+                case "DD/MM/YYYY":
+                    formatPattern = "dd/MM/yyyy";
+                    break;
+                case "MM/DD/YYYY":
+                    formatPattern = "MM/dd/yyyy";
+                    break;
+                default:
+                    // If an invalid selection is made, set the format to default ("DD/MM/YYYY")
+                    MessageBox.Show("Invalid date format selection. Defaulting to DD/MM/YYYY.");
+                    formatPattern = "dd/MM/yyyy";
+                    break;
+            }
+
+            // Iterate through all controls in the form
+            foreach (Control control in Controls)
+            {
+                // Check if the control is a DateTimePicker (you can extend this to other types of controls as needed)
+                if (control is DateTimePicker)
+                {
+                    // Set the date format of the control
+                    ((DateTimePicker)control).CustomFormat = formatPattern;
+                    ((DateTimePicker)control).Format = DateTimePickerFormat.Custom;
+                }
+            }
+        }
+
     }
 }
