@@ -223,6 +223,7 @@
             comboThemes.Name = "comboThemes";
             comboThemes.Size = new Size(139, 23);
             comboThemes.TabIndex = 45;
+            comboThemes.SelectedIndexChanged += comboThemes_SelectedIndexChanged;
             // 
             // btnSave
             // 
@@ -323,6 +324,7 @@
             comboLanguages.Name = "comboLanguages";
             comboLanguages.Size = new Size(139, 23);
             comboLanguages.TabIndex = 36;
+            comboLanguages.SelectedIndexChanged += comboLanguages_SelectedIndexChanged;
             // 
             // PreferencesForm
             // 
