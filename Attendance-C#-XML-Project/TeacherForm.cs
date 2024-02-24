@@ -11,16 +11,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Attendance_C__XML_Project
 {
     public partial class TeacherForm : Form
     {
         List<AttendanceRecord> attendanceRecords;
+        List<AttendanceRecord>? filteredAttendanceRecords;
         GenerateReport teacherReport;
         int studentId;
-        private int pageSize = 5; // Number of rows per page
+        private int pageSize = 3; // Number of rows per page
         private int currentPage = 1; // Current page index
+        int classId = 1;
+        DateOnly dateOnlyValue;
         public TeacherForm()
         {
             InitializeComponent();
@@ -39,7 +43,12 @@ namespace Attendance_C__XML_Project
                 new AttendanceRecord(9,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 20) },
                 new AttendanceRecord(10,Lists.studentsList[0],AttendanceStatus.Absence) { RecordDate = new DateOnly(2024, 2, 21) },
                 new AttendanceRecord(11,Lists.studentsList[0],AttendanceStatus.Absence) { RecordDate = new DateOnly(2024, 2, 22) },
-                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 23)},
+                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
+                new AttendanceRecord(12,Lists.studentsList[1],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
+                new AttendanceRecord(12,Lists.studentsList[2],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
+                new AttendanceRecord(12,Lists.studentsList[3],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
+                new AttendanceRecord(12,Lists.studentsList[4],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
+                new AttendanceRecord(12,Lists.studentsList[5],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
             };
 
             teacherReport = new GenerateReport();
@@ -93,8 +102,8 @@ namespace Attendance_C__XML_Project
             panelShowStudents.Show();
             // load the students reports
 
-            DateOnly dateOnlyValue = new DateOnly(dateTimePicker.Value.Year, dateTimePicker.Value.Month, dateTimePicker.Value.Day);
-            int classId = getClassIdFromComboBox();
+            dateOnlyValue = new DateOnly(dateTimePicker.Value.Year, dateTimePicker.Value.Month, dateTimePicker.Value.Day);
+            classId = getClassIdFromComboBox();
             LoadStudentReports(dateOnlyValue, classId, null);
 
 
@@ -129,27 +138,39 @@ namespace Attendance_C__XML_Project
             if (classId != null)
             {
                 // Assuming attendanceRecords is a list of records
-                var _attendanceRecords = attendanceRecords.Where(record => (record.ClassID == classId && record.RecordDate == mydate));
+                filteredAttendanceRecords = attendanceRecords.Where(record => (record.ClassID == classId && record.RecordDate == mydate)).ToList();
 
-                if (_attendanceRecords != null)
+                if (filteredAttendanceRecords != null)
                 {
-                    foreach (var record in _attendanceRecords)
+                    int startIndex = (currentPage - 1) * pageSize;
+                    int endIndex = Math.Min(startIndex + pageSize - 1, attendanceRecords.Count - 1);
+
+                    // Populate DataGridView with data for the current page
+
+                    for (int i = startIndex; i <= endIndex && i < filteredAttendanceRecords.Count; i++)
                     {
-                        if (attendAll == true && mydate.Value.Equals(DateOnly.FromDateTime(DateTime.Now)))
+
+                        AttendanceRecord? record = filteredAttendanceRecords[i];
+                        if (record != null)
                         {
-                            dgvViewStudents.Rows.Add(record.ID, record.student?.Username, attendAll);
-                        }
-                        else if (attendAll == false && mydate.Value.Equals(DateOnly.FromDateTime(DateTime.Now)))
-                        {
-                            dgvViewStudents.Rows.Add(record.ID, record.student?.Username, attendAll);
-                        }
-                        else
-                        {
-                            bool isAttended = (record.attendanceStatus == AttendanceStatus.Presence);
-                            dgvViewStudents.Rows.Add(record.ID, record.student?.Username, isAttended);
+                            if (attendAll == true && mydate.Value.Equals(DateOnly.FromDateTime(DateTime.Now)))
+                            {
+                                dgvViewStudents.Rows.Add(record.ID, record.student?.Username, attendAll);
+                            }
+                            else if (attendAll == false && mydate.Value.Equals(DateOnly.FromDateTime(DateTime.Now)))
+                            {
+                                dgvViewStudents.Rows.Add(record.ID, record.student?.Username, attendAll);
+                            }
+                            else
+                            {
+                                bool isAttended = (record.attendanceStatus == AttendanceStatus.Presence);
+                                dgvViewStudents.Rows.Add(record.ID, record.student?.Username, isAttended);
+                            }
                         }
 
                     }
+                    // Update pagination information
+                    toolStripPageLabel.Text = $"Page {currentPage}";
                 }
 
 
@@ -345,7 +366,7 @@ namespace Attendance_C__XML_Project
 
         private void AttendAll_CheckedChanged(object sender, EventArgs e)
         {
-            CheckBox checkBox  = (CheckBox)sender;
+            CheckBox checkBox = (CheckBox)sender;
             panelShowStudents.Show();
             // load the students reports
 
@@ -353,13 +374,60 @@ namespace Attendance_C__XML_Project
             int classId = getClassIdFromComboBox();
             if (checkBox.Checked)
             {
-            
+
                 LoadStudentReports(dateOnlyValue, classId, true);
             }
             else
             {
                 LoadStudentReports(dateOnlyValue, classId, attendAll: false);
             }
+        }
+
+
+        private int TotalPages
+        {
+            get { return (int)Math.Ceiling((double)filteredAttendanceRecords.Count / pageSize); }
+        }
+
+        private void prevPage_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                toolStripPageLabel.Text = currentPage.ToString();
+                LoadStudentReports(dateOnlyValue, classId,null);
+            }
+        }
+
+        private void nextPage_Click(object sender, EventArgs e)
+        {
+            if (currentPage < TotalPages)
+            {
+                currentPage++;
+                toolStripPageLabel.Text = currentPage.ToString();
+                LoadStudentReports(dateOnlyValue,classId,null);
+            }
+        }
+
+
+        private void Date_ValueChanged(object sender, EventArgs e)
+        {
+
+            if (dateTimePicker.Value.Day == DateTime.Now.Day && dateTimePicker.Value.Month == DateTime.Now.Month && dateTimePicker.Value.Year == DateTime.Now.Year)
+            {
+                btnSave.Enabled = true;
+                btnSave.BackColor = Color.Teal;
+            }
+            else
+            {
+                btnSave.Enabled = false;
+                btnSave.BackColor = Color.DarkGray;
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            // Save Data To Xml
         }
     }
 }

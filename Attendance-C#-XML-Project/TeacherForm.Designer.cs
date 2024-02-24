@@ -49,8 +49,12 @@
             label9 = new Label();
             panelAttendanceTable = new Panel();
             panelShowStudents = new Panel();
+            toolStrip = new ToolStrip();
+            toolStripButton1 = new ToolStripButton();
+            toolStripButton2 = new ToolStripButton();
+            toolStripPageLabel = new ToolStripLabel();
             dgvViewStudents = new DataGridView();
-            button5 = new Button();
+            btnSave = new Button();
             button1 = new Button();
             button2 = new Button();
             panel3 = new Panel();
@@ -59,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)picStudent).BeginInit();
             panelAttendanceTable.SuspendLayout();
             panelShowStudents.SuspendLayout();
+            toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvViewStudents).BeginInit();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -105,6 +110,7 @@
             dateTimePicker.Name = "dateTimePicker";
             dateTimePicker.Size = new Size(250, 27);
             dateTimePicker.TabIndex = 36;
+            dateTimePicker.ValueChanged += Date_ValueChanged;
             // 
             // btnShowReport
             // 
@@ -292,8 +298,9 @@
             // 
             // panelShowStudents
             // 
+            panelShowStudents.Controls.Add(toolStrip);
             panelShowStudents.Controls.Add(dgvViewStudents);
-            panelShowStudents.Controls.Add(button5);
+            panelShowStudents.Controls.Add(btnSave);
             panelShowStudents.Controls.Add(button1);
             panelShowStudents.Controls.Add(button2);
             panelShowStudents.Dock = DockStyle.Fill;
@@ -301,6 +308,44 @@
             panelShowStudents.Name = "panelShowStudents";
             panelShowStudents.Size = new Size(896, 741);
             panelShowStudents.TabIndex = 33;
+            // 
+            // toolStrip
+            // 
+            toolStrip.Dock = DockStyle.None;
+            toolStrip.ImageScalingSize = new Size(20, 20);
+            toolStrip.Items.AddRange(new ToolStripItem[] { toolStripButton1, toolStripButton2, toolStripPageLabel });
+            toolStrip.Location = new Point(12, 549);
+            toolStrip.Name = "toolStrip";
+            toolStrip.Size = new Size(96, 27);
+            toolStrip.TabIndex = 31;
+            toolStrip.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            toolStripButton1.BackColor = SystemColors.Control;
+            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
+            toolStripButton1.ImageTransparentColor = Color.Magenta;
+            toolStripButton1.Name = "toolStripButton1";
+            toolStripButton1.Size = new Size(29, 24);
+            toolStripButton1.Text = "previous";
+            toolStripButton1.Click += prevPage_Click;
+            // 
+            // toolStripButton2
+            // 
+            toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
+            toolStripButton2.ImageTransparentColor = Color.Magenta;
+            toolStripButton2.Name = "toolStripButton2";
+            toolStripButton2.Size = new Size(29, 24);
+            toolStripButton2.Text = "next";
+            toolStripButton2.Click += nextPage_Click;
+            // 
+            // toolStripPageLabel
+            // 
+            toolStripPageLabel.Name = "toolStripPageLabel";
+            toolStripPageLabel.Size = new Size(25, 24);
+            toolStripPageLabel.Text = "00";
             // 
             // dgvViewStudents
             // 
@@ -315,22 +360,23 @@
             dgvViewStudents.Size = new Size(872, 313);
             dgvViewStudents.TabIndex = 30;
             // 
-            // button5
+            // btnSave
             // 
-            button5.BackColor = Color.Teal;
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.ForeColor = SystemColors.Control;
-            button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.Location = new Point(685, 648);
-            button5.Margin = new Padding(3, 4, 3, 4);
-            button5.Name = "button5";
-            button5.Size = new Size(131, 80);
-            button5.TabIndex = 29;
-            button5.Text = "Save";
-            button5.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button5.UseVisualStyleBackColor = false;
+            btnSave.BackColor = Color.Teal;
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSave.ForeColor = SystemColors.Control;
+            btnSave.Image = (Image)resources.GetObject("btnSave.Image");
+            btnSave.Location = new Point(685, 648);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(131, 80);
+            btnSave.TabIndex = 29;
+            btnSave.Text = "Save";
+            btnSave.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // button1
             // 
@@ -399,6 +445,9 @@
             ((System.ComponentModel.ISupportInitialize)picStudent).EndInit();
             panelAttendanceTable.ResumeLayout(false);
             panelShowStudents.ResumeLayout(false);
+            panelShowStudents.PerformLayout();
+            toolStrip.ResumeLayout(false);
+            toolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvViewStudents).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -428,8 +477,12 @@
         private CheckBox checkBox1;
         private Panel panelShowStudents;
         private DataGridView dgvViewStudents;
-        private Button button5;
+        private Button btnSave;
         private Button button1;
         private Button button2;
+        private ToolStrip toolStrip;
+        private ToolStripButton toolStripButton1;
+        private ToolStripButton toolStripButton2;
+        private ToolStripLabel toolStripPageLabel;
     }
 }
