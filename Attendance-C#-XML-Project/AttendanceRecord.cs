@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Attendance_C__XML_Project
 {
-    enum AttendanceStatus { Absence, Presence }
-    internal class AttendanceRecord
+    public enum AttendanceStatus { Absence, Presence }
+    public class AttendanceRecord
     {
         int id;
         
@@ -18,6 +18,9 @@ namespace Attendance_C__XML_Project
             ClassID = student.ClassID;
             RecordDate = DateOnly.FromDateTime(DateTime.Now);
             attendanceStatus = _attendanceStatus;
+        }
+        public AttendanceRecord()
+        {
         }
 
         public AttendanceStatus attendanceStatus { get; set; }
