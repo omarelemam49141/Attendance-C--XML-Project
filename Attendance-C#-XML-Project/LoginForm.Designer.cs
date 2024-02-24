@@ -69,7 +69,7 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(3, 7);
             label4.Name = "label4";
-            label4.Size = new Size(123, 20);
+            label4.Size = new Size(156, 25);
             label4.TabIndex = 8;
             label4.Text = "Attendance Form";
             // 
@@ -132,7 +132,7 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(143, 11);
             label3.Name = "label3";
-            label3.Size = new Size(46, 20);
+            label3.Size = new Size(59, 25);
             label3.TabIndex = 0;
             label3.Text = "Login";
             // 
@@ -140,8 +140,9 @@
             // 
             txtUsername.Location = new Point(54, 108);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(248, 23);
+            txtUsername.Size = new Size(248, 27);
             txtUsername.TabIndex = 2;
+            txtUsername.Text = "Ali";
             txtUsername.TextAlign = HorizontalAlignment.Center;
             // 
             // label2
@@ -150,7 +151,7 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(54, 90);
             label2.Name = "label2";
-            label2.Size = new Size(60, 15);
+            label2.Size = new Size(75, 20);
             label2.TabIndex = 1;
             label2.Text = "Username";
             // 
@@ -162,7 +163,7 @@
             lnkForgetPassword.LinkColor = Color.White;
             lnkForgetPassword.Location = new Point(119, 254);
             lnkForgetPassword.Name = "lnkForgetPassword";
-            lnkForgetPassword.Size = new Size(94, 15);
+            lnkForgetPassword.Size = new Size(119, 20);
             lnkForgetPassword.TabIndex = 6;
             lnkForgetPassword.TabStop = true;
             lnkForgetPassword.Text = "Forget password";
@@ -172,8 +173,9 @@
             txtPassword.Location = new Point(54, 166);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(248, 23);
+            txtPassword.Size = new Size(248, 27);
             txtPassword.TabIndex = 4;
+            txtPassword.Text = "Oeams7476386#";
             txtPassword.TextAlign = HorizontalAlignment.Center;
             // 
             // label1
@@ -182,7 +184,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(54, 148);
             label1.Name = "label1";
-            label1.Size = new Size(57, 15);
+            label1.Size = new Size(70, 20);
             label1.TabIndex = 3;
             label1.Text = "Password";
             // 
@@ -212,7 +214,7 @@
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Zoom;
