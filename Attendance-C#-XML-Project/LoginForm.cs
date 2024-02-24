@@ -125,7 +125,7 @@ namespace Attendance_C__XML_Project
             {
                 MessageBox.Show("Invalid username or password");
             }
-            
+
         }
 
         //Check if the loggedin user is an admin then navigate him to the admin page (return true)
@@ -156,6 +156,12 @@ namespace Attendance_C__XML_Project
                 return (student.Username.ToLower() == txtUsername.Text.ToLower() && student.Password == txtPassword.Text);
             }
             return false;
+        }
+
+        private void lnkForgetPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgetPasswordForm forgetPasswordFrom = new ForgetPasswordForm();
+            forgetPasswordFrom.ShowDialog();
         }
     }
 }

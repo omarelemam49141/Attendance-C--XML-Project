@@ -166,6 +166,7 @@
             lnkForgetPassword.TabIndex = 6;
             lnkForgetPassword.TabStop = true;
             lnkForgetPassword.Text = "Forget password";
+            lnkForgetPassword.LinkClicked += lnkForgetPassword_LinkClicked;
             // 
             // txtPassword
             // 
