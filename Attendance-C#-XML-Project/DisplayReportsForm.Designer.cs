@@ -47,9 +47,13 @@
             panelShow = new Panel();
             btnSearchReports = new Button();
             panelShowReports = new Panel();
-            dgvViewStudents = new DataGridView();
-            dgvReports = new Button();
-            button6 = new Button();
+            toolStrip = new ToolStrip();
+            toolStripButton1 = new ToolStripButton();
+            toolStripButton2 = new ToolStripButton();
+            toolStripPageLabel = new ToolStripLabel();
+            dgvViewReports = new DataGridView();
+            btnExportPDF = new Button();
+            btnExportExcel = new Button();
             button5 = new Button();
             button1 = new Button();
             button2 = new Button();
@@ -58,7 +62,8 @@
             ((System.ComponentModel.ISupportInitialize)picStudent).BeginInit();
             panelShow.SuspendLayout();
             panelShowReports.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvViewStudents).BeginInit();
+            toolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvViewReports).BeginInit();
             SuspendLayout();
             // 
             // panel3
@@ -86,6 +91,7 @@
             btnExit.Size = new Size(45, 49);
             btnExit.TabIndex = 9;
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // label9
             // 
@@ -168,6 +174,7 @@
             button3.Size = new Size(39, 37);
             button3.TabIndex = 30;
             button3.UseVisualStyleBackColor = false;
+            button3.Click += btnLogout_Click;
             // 
             // lblUserName
             // 
@@ -244,7 +251,7 @@
             btnSearchReports.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearchReports.ForeColor = SystemColors.Control;
             btnSearchReports.Image = (Image)resources.GetObject("btnSearchReports.Image");
-            btnSearchReports.Location = new Point(669, 94);
+            btnSearchReports.Location = new Point(371, 92);
             btnSearchReports.Margin = new Padding(3, 4, 3, 4);
             btnSearchReports.Name = "btnSearchReports";
             btnSearchReports.Size = new Size(140, 53);
@@ -256,9 +263,10 @@
             // 
             // panelShowReports
             // 
-            panelShowReports.Controls.Add(dgvViewStudents);
-            panelShowReports.Controls.Add(dgvReports);
-            panelShowReports.Controls.Add(button6);
+            panelShowReports.Controls.Add(toolStrip);
+            panelShowReports.Controls.Add(dgvViewReports);
+            panelShowReports.Controls.Add(btnExportPDF);
+            panelShowReports.Controls.Add(btnExportExcel);
             panelShowReports.Controls.Add(button5);
             panelShowReports.Controls.Add(button1);
             panelShowReports.Controls.Add(button2);
@@ -267,54 +275,95 @@
             panelShowReports.Name = "panelShowReports";
             panelShowReports.Size = new Size(896, 480);
             panelShowReports.TabIndex = 43;
+            panelShowReports.Paint += panelShowReports_Paint;
             // 
-            // dgvViewStudents
+            // toolStrip
             // 
-            dgvViewStudents.AllowUserToAddRows = false;
-            dgvViewStudents.AllowUserToDeleteRows = false;
-            dgvViewStudents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvViewStudents.BackgroundColor = SystemColors.Control;
-            dgvViewStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvViewStudents.Location = new Point(12, 9);
-            dgvViewStudents.Name = "dgvViewStudents";
-            dgvViewStudents.RowHeadersWidth = 51;
-            dgvViewStudents.Size = new Size(872, 313);
-            dgvViewStudents.TabIndex = 32;
+            toolStrip.Dock = DockStyle.None;
+            toolStrip.ImageScalingSize = new Size(20, 20);
+            toolStrip.Items.AddRange(new ToolStripItem[] { toolStripButton1, toolStripButton2, toolStripPageLabel });
+            toolStrip.Location = new Point(12, 322);
+            toolStrip.Name = "toolStrip";
+            toolStrip.Size = new Size(135, 27);
+            toolStrip.TabIndex = 33;
+            toolStrip.Text = "toolStrip1";
             // 
-            // dgvReports
+            // toolStripButton1
             // 
-            dgvReports.BackColor = Color.Teal;
-            dgvReports.FlatAppearance.BorderSize = 0;
-            dgvReports.FlatStyle = FlatStyle.Flat;
-            dgvReports.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dgvReports.ForeColor = SystemColors.Control;
-            dgvReports.Image = (Image)resources.GetObject("dgvReports.Image");
-            dgvReports.ImageAlign = ContentAlignment.MiddleLeft;
-            dgvReports.Location = new Point(215, 358);
-            dgvReports.Margin = new Padding(3, 4, 3, 4);
-            dgvReports.Name = "dgvReports";
-            dgvReports.Size = new Size(176, 80);
-            dgvReports.TabIndex = 31;
-            dgvReports.Text = "Export Pdf";
-            dgvReports.TextImageRelation = TextImageRelation.TextBeforeImage;
-            dgvReports.UseVisualStyleBackColor = false;
+            toolStripButton1.BackColor = SystemColors.Control;
+            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
+            toolStripButton1.ImageTransparentColor = Color.Magenta;
+            toolStripButton1.Name = "toolStripButton1";
+            toolStripButton1.Size = new Size(29, 24);
+            toolStripButton1.Text = "previous";
+            toolStripButton1.Click += prevPage_Click;
             // 
-            // button6
+            // toolStripButton2
             // 
-            button6.BackColor = Color.Teal;
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button6.ForeColor = SystemColors.Control;
-            button6.Image = (Image)resources.GetObject("button6.Image");
-            button6.Location = new Point(570, 358);
-            button6.Margin = new Padding(3, 4, 3, 4);
-            button6.Name = "button6";
-            button6.Size = new Size(189, 80);
-            button6.TabIndex = 30;
-            button6.Text = "Export Excel";
-            button6.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button6.UseVisualStyleBackColor = false;
+            toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
+            toolStripButton2.ImageTransparentColor = Color.Magenta;
+            toolStripButton2.Name = "toolStripButton2";
+            toolStripButton2.Size = new Size(29, 24);
+            toolStripButton2.Text = "next";
+            toolStripButton2.Click += nextPage_Click;
+            // 
+            // toolStripPageLabel
+            // 
+            toolStripPageLabel.Name = "toolStripPageLabel";
+            toolStripPageLabel.Size = new Size(25, 24);
+            toolStripPageLabel.Text = "00";
+            // 
+            // dgvViewReports
+            // 
+            dgvViewReports.AllowUserToAddRows = false;
+            dgvViewReports.AllowUserToDeleteRows = false;
+            dgvViewReports.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvViewReports.BackgroundColor = SystemColors.Control;
+            dgvViewReports.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvViewReports.Location = new Point(12, 9);
+            dgvViewReports.Name = "dgvViewReports";
+            dgvViewReports.RowHeadersWidth = 51;
+            dgvViewReports.Size = new Size(872, 313);
+            dgvViewReports.TabIndex = 32;
+            // 
+            // btnExportPDF
+            // 
+            btnExportPDF.BackColor = Color.Teal;
+            btnExportPDF.FlatAppearance.BorderSize = 0;
+            btnExportPDF.FlatStyle = FlatStyle.Flat;
+            btnExportPDF.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExportPDF.ForeColor = SystemColors.Control;
+            btnExportPDF.Image = (Image)resources.GetObject("btnExportPDF.Image");
+            btnExportPDF.ImageAlign = ContentAlignment.MiddleLeft;
+            btnExportPDF.Location = new Point(215, 358);
+            btnExportPDF.Margin = new Padding(3, 4, 3, 4);
+            btnExportPDF.Name = "btnExportPDF";
+            btnExportPDF.Size = new Size(176, 80);
+            btnExportPDF.TabIndex = 31;
+            btnExportPDF.Text = "Export Pdf";
+            btnExportPDF.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnExportPDF.UseVisualStyleBackColor = false;
+            btnExportPDF.Click += btnExportPDF_Click;
+            // 
+            // btnExportExcel
+            // 
+            btnExportExcel.BackColor = Color.Teal;
+            btnExportExcel.FlatAppearance.BorderSize = 0;
+            btnExportExcel.FlatStyle = FlatStyle.Flat;
+            btnExportExcel.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExportExcel.ForeColor = SystemColors.Control;
+            btnExportExcel.Image = (Image)resources.GetObject("btnExportExcel.Image");
+            btnExportExcel.Location = new Point(570, 358);
+            btnExportExcel.Margin = new Padding(3, 4, 3, 4);
+            btnExportExcel.Name = "btnExportExcel";
+            btnExportExcel.Size = new Size(189, 80);
+            btnExportExcel.TabIndex = 30;
+            btnExportExcel.Text = "Export Excel";
+            btnExportExcel.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnExportExcel.UseVisualStyleBackColor = false;
+            btnExportExcel.Click += btnExportExcel_Click;
             // 
             // button5
             // 
@@ -389,7 +438,10 @@
             panelShow.ResumeLayout(false);
             panelShow.PerformLayout();
             panelShowReports.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvViewStudents).EndInit();
+            panelShowReports.PerformLayout();
+            toolStrip.ResumeLayout(false);
+            toolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvViewReports).EndInit();
             ResumeLayout(false);
         }
 
@@ -417,8 +469,12 @@
         private ListBox listBox2;
         private Button button1;
         private Button button2;
-        private Button dgvReports;
-        private Button button6;
-        private DataGridView dgvViewStudents;
+        private Button btnExportPDF;
+        private Button btnExportExcel;
+        private DataGridView dgvViewReports;
+        private ToolStrip toolStrip;
+        private ToolStripButton toolStripButton1;
+        private ToolStripButton toolStripButton2;
+        private ToolStripLabel toolStripPageLabel;
     }
 }
