@@ -53,6 +53,21 @@ namespace Attendance_C__XML_Project
             attendanceRecords.Add(attendanceRecord);
         }
 
+        // Adding a list of Attendance Records
+        public void addAttendanceRecords(List<AttendanceRecord> _attendanceRecords)
+        {
+            attendanceRecords = new List<AttendanceRecord>();
+            foreach (var record in _attendanceRecords)
+            {
+                if (record != null)
+                {
+                    attendanceRecords.Add(record);
+                }
+            }
+            
+
+        }
+
         public void removeAttendanceRecord(int attendanceRecordID)
         {
             AttendanceRecord? attendanceRecord = attendanceRecords.Find(item => item.ID == attendanceRecordID);
@@ -131,5 +146,6 @@ namespace Attendance_C__XML_Project
             }
             return classReport;
         }
+
     }
 }

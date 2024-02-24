@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherForm));
-            listBox1 = new ListBox();
             panelShow = new Panel();
+            checkBox1 = new CheckBox();
             lblDatePicker = new Label();
             dateTimePicker = new DateTimePicker();
             btnShowReport = new Button();
@@ -45,14 +45,16 @@
             lblRoleError = new Label();
             panel1 = new Panel();
             picStudent = new PictureBox();
-            btnPrintReport = new Button();
-            btnExportExcel = new Button();
             btnExit = new Button();
             label9 = new Label();
             panelAttendanceTable = new Panel();
             panelShowStudents = new Panel();
-            button5 = new Button();
-            listBox2 = new ListBox();
+            toolStrip = new ToolStrip();
+            toolStripButton1 = new ToolStripButton();
+            toolStripButton2 = new ToolStripButton();
+            toolStripPageLabel = new ToolStripLabel();
+            dgvViewStudents = new DataGridView();
+            btnSave = new Button();
             button1 = new Button();
             button2 = new Button();
             panel3 = new Panel();
@@ -61,19 +63,14 @@
             ((System.ComponentModel.ISupportInitialize)picStudent).BeginInit();
             panelAttendanceTable.SuspendLayout();
             panelShowStudents.SuspendLayout();
+            toolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvViewStudents).BeginInit();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(12, 269);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(839, 264);
-            listBox1.TabIndex = 28;
-            // 
             // panelShow
             // 
+            panelShow.Controls.Add(checkBox1);
             panelShow.Controls.Add(lblDatePicker);
             panelShow.Controls.Add(dateTimePicker);
             panelShow.Controls.Add(btnShowReport);
@@ -84,6 +81,18 @@
             panelShow.Name = "panelShow";
             panelShow.Size = new Size(896, 125);
             panelShow.TabIndex = 34;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Segoe UI", 11F);
+            checkBox1.Location = new Point(734, 81);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(117, 29);
+            checkBox1.TabIndex = 39;
+            checkBox1.Text = "Attend All";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += AttendAll_CheckedChanged;
             // 
             // lblDatePicker
             // 
@@ -101,6 +110,7 @@
             dateTimePicker.Name = "dateTimePicker";
             dateTimePicker.Size = new Size(250, 27);
             dateTimePicker.TabIndex = 36;
+            dateTimePicker.ValueChanged += Date_ValueChanged;
             // 
             // btnShowReport
             // 
@@ -110,7 +120,7 @@
             btnShowReport.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnShowReport.ForeColor = SystemColors.Control;
             btnShowReport.Image = (Image)resources.GetObject("btnShowReport.Image");
-            btnShowReport.Location = new Point(613, 55);
+            btnShowReport.Location = new Point(644, 5);
             btnShowReport.Margin = new Padding(3, 4, 3, 4);
             btnShowReport.Name = "btnShowReport";
             btnShowReport.Size = new Size(140, 53);
@@ -201,6 +211,7 @@
             button3.Size = new Size(39, 37);
             button3.TabIndex = 30;
             button3.UseVisualStyleBackColor = false;
+            button3.Click += btnLogout_Click;
             // 
             // lblUserName
             // 
@@ -250,41 +261,6 @@
             picStudent.TabIndex = 28;
             picStudent.TabStop = false;
             // 
-            // btnPrintReport
-            // 
-            btnPrintReport.BackColor = Color.Teal;
-            btnPrintReport.FlatAppearance.BorderSize = 0;
-            btnPrintReport.FlatStyle = FlatStyle.Flat;
-            btnPrintReport.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPrintReport.ForeColor = SystemColors.Control;
-            btnPrintReport.Image = (Image)resources.GetObject("btnPrintReport.Image");
-            btnPrintReport.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPrintReport.Location = new Point(78, 585);
-            btnPrintReport.Margin = new Padding(3, 4, 3, 4);
-            btnPrintReport.Name = "btnPrintReport";
-            btnPrintReport.Size = new Size(176, 80);
-            btnPrintReport.TabIndex = 27;
-            btnPrintReport.Text = "Print Pdf";
-            btnPrintReport.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnPrintReport.UseVisualStyleBackColor = false;
-            // 
-            // btnExportExcel
-            // 
-            btnExportExcel.BackColor = Color.Teal;
-            btnExportExcel.FlatAppearance.BorderSize = 0;
-            btnExportExcel.FlatStyle = FlatStyle.Flat;
-            btnExportExcel.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnExportExcel.ForeColor = SystemColors.Control;
-            btnExportExcel.Image = (Image)resources.GetObject("btnExportExcel.Image");
-            btnExportExcel.Location = new Point(613, 585);
-            btnExportExcel.Margin = new Padding(3, 4, 3, 4);
-            btnExportExcel.Name = "btnExportExcel";
-            btnExportExcel.Size = new Size(189, 80);
-            btnExportExcel.TabIndex = 26;
-            btnExportExcel.Text = "Export Excel";
-            btnExportExcel.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnExportExcel.UseVisualStyleBackColor = false;
-            // 
             // btnExit
             // 
             btnExit.BackgroundImage = (Image)resources.GetObject("btnExit.BackgroundImage");
@@ -314,9 +290,6 @@
             // panelAttendanceTable
             // 
             panelAttendanceTable.Controls.Add(panelShowStudents);
-            panelAttendanceTable.Controls.Add(listBox1);
-            panelAttendanceTable.Controls.Add(btnPrintReport);
-            panelAttendanceTable.Controls.Add(btnExportExcel);
             panelAttendanceTable.Dock = DockStyle.Fill;
             panelAttendanceTable.Location = new Point(0, 49);
             panelAttendanceTable.Name = "panelAttendanceTable";
@@ -325,40 +298,85 @@
             // 
             // panelShowStudents
             // 
-            panelShowStudents.Controls.Add(button5);
-            panelShowStudents.Controls.Add(listBox2);
+            panelShowStudents.Controls.Add(toolStrip);
+            panelShowStudents.Controls.Add(dgvViewStudents);
+            panelShowStudents.Controls.Add(btnSave);
             panelShowStudents.Controls.Add(button1);
             panelShowStudents.Controls.Add(button2);
             panelShowStudents.Dock = DockStyle.Fill;
             panelShowStudents.Location = new Point(0, 0);
             panelShowStudents.Name = "panelShowStudents";
             panelShowStudents.Size = new Size(896, 741);
-            panelShowStudents.TabIndex = 32;
+            panelShowStudents.TabIndex = 33;
             // 
-            // button5
+            // toolStrip
             // 
-            button5.BackColor = Color.Teal;
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.ForeColor = SystemColors.Control;
-            button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.Location = new Point(685, 648);
-            button5.Margin = new Padding(3, 4, 3, 4);
-            button5.Name = "button5";
-            button5.Size = new Size(131, 80);
-            button5.TabIndex = 29;
-            button5.Text = "Save";
-            button5.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button5.UseVisualStyleBackColor = false;
+            toolStrip.Dock = DockStyle.None;
+            toolStrip.ImageScalingSize = new Size(20, 20);
+            toolStrip.Items.AddRange(new ToolStripItem[] { toolStripButton1, toolStripButton2, toolStripPageLabel });
+            toolStrip.Location = new Point(12, 549);
+            toolStrip.Name = "toolStrip";
+            toolStrip.Size = new Size(96, 27);
+            toolStrip.TabIndex = 31;
+            toolStrip.Text = "toolStrip1";
             // 
-            // listBox2
+            // toolStripButton1
             // 
-            listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(45, 236);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(839, 384);
-            listBox2.TabIndex = 28;
+            toolStripButton1.BackColor = SystemColors.Control;
+            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
+            toolStripButton1.ImageTransparentColor = Color.Magenta;
+            toolStripButton1.Name = "toolStripButton1";
+            toolStripButton1.Size = new Size(29, 24);
+            toolStripButton1.Text = "previous";
+            toolStripButton1.Click += prevPage_Click;
+            // 
+            // toolStripButton2
+            // 
+            toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
+            toolStripButton2.ImageTransparentColor = Color.Magenta;
+            toolStripButton2.Name = "toolStripButton2";
+            toolStripButton2.Size = new Size(29, 24);
+            toolStripButton2.Text = "next";
+            toolStripButton2.Click += nextPage_Click;
+            // 
+            // toolStripPageLabel
+            // 
+            toolStripPageLabel.Name = "toolStripPageLabel";
+            toolStripPageLabel.Size = new Size(25, 24);
+            toolStripPageLabel.Text = "00";
+            // 
+            // dgvViewStudents
+            // 
+            dgvViewStudents.AllowUserToAddRows = false;
+            dgvViewStudents.AllowUserToDeleteRows = false;
+            dgvViewStudents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvViewStudents.BackgroundColor = SystemColors.Control;
+            dgvViewStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvViewStudents.Location = new Point(12, 233);
+            dgvViewStudents.Name = "dgvViewStudents";
+            dgvViewStudents.RowHeadersWidth = 51;
+            dgvViewStudents.Size = new Size(872, 313);
+            dgvViewStudents.TabIndex = 30;
+            // 
+            // btnSave
+            // 
+            btnSave.BackColor = Color.Teal;
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSave.ForeColor = SystemColors.Control;
+            btnSave.Image = (Image)resources.GetObject("btnSave.Image");
+            btnSave.Location = new Point(685, 648);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(131, 80);
+            btnSave.TabIndex = 29;
+            btnSave.Text = "Save";
+            btnSave.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // button1
             // 
@@ -427,14 +445,16 @@
             ((System.ComponentModel.ISupportInitialize)picStudent).EndInit();
             panelAttendanceTable.ResumeLayout(false);
             panelShowStudents.ResumeLayout(false);
+            panelShowStudents.PerformLayout();
+            toolStrip.ResumeLayout(false);
+            toolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvViewStudents).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private ListBox listBox1;
         private Panel panelShow;
         private Button btnShowReport;
         private Label lblRole;
@@ -446,20 +466,23 @@
         private Label lblRoleError;
         private Panel panel1;
         private PictureBox picStudent;
-        private Button btnPrintReport;
-        private Button btnExportExcel;
         private Button btnExit;
         private Label label9;
         private Panel panelAttendanceTable;
         private Panel panel3;
-        private Panel panelShowStudents;
-        private ListBox listBox2;
-        private Button button1;
-        private Button button2;
         private Label lblClassPicker;
         private ComboBox comboClasses;
         private Label lblDatePicker;
         private DateTimePicker dateTimePicker;
-        private Button button5;
+        private CheckBox checkBox1;
+        private Panel panelShowStudents;
+        private DataGridView dgvViewStudents;
+        private Button btnSave;
+        private Button button1;
+        private Button button2;
+        private ToolStrip toolStrip;
+        private ToolStripButton toolStripButton1;
+        private ToolStripButton toolStripButton2;
+        private ToolStripLabel toolStripPageLabel;
     }
 }
