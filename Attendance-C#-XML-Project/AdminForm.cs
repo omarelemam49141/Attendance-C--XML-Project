@@ -440,6 +440,20 @@ namespace Attendance_C__XML_Project
                 {
                     //Get the index of the class to delete
                     int deletedClassIndex = Lists.classes.IndexOf(selectedClass);
+                    //set students' class to null if they were enroll in the deleted class
+                    List<Student> students = Lists.studentsList.FindAll(student => student.ClassID == selectedClass.ID);
+                    if(students.Count > 0)
+                    {
+                        students.ForEach(student => { student.ClassID = -1; });
+                    }
+                    //set teachers' class to null if they were enroll in the deleted class
+                    List<Teacher> teachers = Lists.teachersList.FindAll(teacher => teacher.Classes.Contains(selectedClass));
+                    if(teachers.Count > 0)
+                    {
+                        teachers.ForEach(teacher => teacher.Classes.Remove(selectedClass));
+                    }
+
+                    //Remove the class itself
                     Lists.classes.RemoveAt(deletedClassIndex);
 
                     //delete the class from the xml file
