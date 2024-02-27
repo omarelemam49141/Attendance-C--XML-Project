@@ -395,7 +395,7 @@ namespace Attendance_C__XML_Project
             {
                 currentPage--;
                 toolStripPageLabel.Text = currentPage.ToString();
-                LoadStudentReports(dateOnlyValue, classId,null);
+                LoadStudentReports(dateOnlyValue, classId, null);
             }
         }
 
@@ -405,7 +405,7 @@ namespace Attendance_C__XML_Project
             {
                 currentPage++;
                 toolStripPageLabel.Text = currentPage.ToString();
-                LoadStudentReports(dateOnlyValue,classId,null);
+                LoadStudentReports(dateOnlyValue, classId, null);
             }
         }
 
@@ -428,6 +428,11 @@ namespace Attendance_C__XML_Project
         private void btnSave_Click(object sender, EventArgs e)
         {
             // Save Data To Xml
+        }
+
+        private void panelShow_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

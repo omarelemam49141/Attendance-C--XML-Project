@@ -41,23 +41,29 @@
             lblUserName = new Label();
             lblRoleError = new Label();
             lblDatePicker = new Label();
-            dateTimePicker = new DateTimePicker();
+            dateTimePickerStart = new DateTimePicker();
             label1 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            dateTimePickerEnd = new DateTimePicker();
             panelShow = new Panel();
             btnSearchReports = new Button();
             panelShowReports = new Panel();
+            toolStrip = new ToolStrip();
+            toolStripButton1 = new ToolStripButton();
+            toolStripButton2 = new ToolStripButton();
+            toolStripPageLabel = new ToolStripLabel();
+            dgvViewReports = new DataGridView();
+            btnExportPDF = new Button();
+            btnExportExcel = new Button();
             button5 = new Button();
-            listBox2 = new ListBox();
             button1 = new Button();
             button2 = new Button();
-            button4 = new Button();
-            button6 = new Button();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picStudent).BeginInit();
             panelShow.SuspendLayout();
             panelShowReports.SuspendLayout();
+            toolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvViewReports).BeginInit();
             SuspendLayout();
             // 
             // panel3
@@ -85,6 +91,7 @@
             btnExit.Size = new Size(45, 49);
             btnExit.TabIndex = 9;
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // label9
             // 
@@ -167,6 +174,7 @@
             button3.Size = new Size(39, 37);
             button3.TabIndex = 30;
             button3.UseVisualStyleBackColor = false;
+            button3.Click += btnLogout_Click;
             // 
             // lblUserName
             // 
@@ -198,12 +206,12 @@
             lblDatePicker.TabIndex = 39;
             lblDatePicker.Text = "Start Date";
             // 
-            // dateTimePicker
+            // dateTimePickerStart
             // 
-            dateTimePicker.Location = new Point(156, 43);
-            dateTimePicker.Name = "dateTimePicker";
-            dateTimePicker.Size = new Size(250, 27);
-            dateTimePicker.TabIndex = 38;
+            dateTimePickerStart.Location = new Point(156, 43);
+            dateTimePickerStart.Name = "dateTimePickerStart";
+            dateTimePickerStart.Size = new Size(250, 27);
+            dateTimePickerStart.TabIndex = 38;
             // 
             // label1
             // 
@@ -215,20 +223,20 @@
             label1.TabIndex = 41;
             label1.Text = "End Date";
             // 
-            // dateTimePicker1
+            // dateTimePickerEnd
             // 
-            dateTimePicker1.Location = new Point(559, 42);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 40;
+            dateTimePickerEnd.Location = new Point(559, 42);
+            dateTimePickerEnd.Name = "dateTimePickerEnd";
+            dateTimePickerEnd.Size = new Size(250, 27);
+            dateTimePickerEnd.TabIndex = 40;
             // 
             // panelShow
             // 
             panelShow.Controls.Add(label1);
-            panelShow.Controls.Add(dateTimePicker1);
+            panelShow.Controls.Add(dateTimePickerEnd);
             panelShow.Controls.Add(btnSearchReports);
             panelShow.Controls.Add(lblDatePicker);
-            panelShow.Controls.Add(dateTimePicker);
+            panelShow.Controls.Add(dateTimePickerStart);
             panelShow.Dock = DockStyle.Top;
             panelShow.Location = new Point(0, 149);
             panelShow.Name = "panelShow";
@@ -243,7 +251,7 @@
             btnSearchReports.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearchReports.ForeColor = SystemColors.Control;
             btnSearchReports.Image = (Image)resources.GetObject("btnSearchReports.Image");
-            btnSearchReports.Location = new Point(669, 94);
+            btnSearchReports.Location = new Point(371, 92);
             btnSearchReports.Margin = new Padding(3, 4, 3, 4);
             btnSearchReports.Name = "btnSearchReports";
             btnSearchReports.Size = new Size(140, 53);
@@ -255,10 +263,11 @@
             // 
             // panelShowReports
             // 
-            panelShowReports.Controls.Add(button4);
-            panelShowReports.Controls.Add(button6);
+            panelShowReports.Controls.Add(toolStrip);
+            panelShowReports.Controls.Add(dgvViewReports);
+            panelShowReports.Controls.Add(btnExportPDF);
+            panelShowReports.Controls.Add(btnExportExcel);
             panelShowReports.Controls.Add(button5);
-            panelShowReports.Controls.Add(listBox2);
             panelShowReports.Controls.Add(button1);
             panelShowReports.Controls.Add(button2);
             panelShowReports.Dock = DockStyle.Fill;
@@ -266,6 +275,95 @@
             panelShowReports.Name = "panelShowReports";
             panelShowReports.Size = new Size(896, 480);
             panelShowReports.TabIndex = 43;
+            panelShowReports.Paint += panelShowReports_Paint;
+            // 
+            // toolStrip
+            // 
+            toolStrip.Dock = DockStyle.None;
+            toolStrip.ImageScalingSize = new Size(20, 20);
+            toolStrip.Items.AddRange(new ToolStripItem[] { toolStripButton1, toolStripButton2, toolStripPageLabel });
+            toolStrip.Location = new Point(12, 322);
+            toolStrip.Name = "toolStrip";
+            toolStrip.Size = new Size(135, 27);
+            toolStrip.TabIndex = 33;
+            toolStrip.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            toolStripButton1.BackColor = SystemColors.Control;
+            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
+            toolStripButton1.ImageTransparentColor = Color.Magenta;
+            toolStripButton1.Name = "toolStripButton1";
+            toolStripButton1.Size = new Size(29, 24);
+            toolStripButton1.Text = "previous";
+            toolStripButton1.Click += prevPage_Click;
+            // 
+            // toolStripButton2
+            // 
+            toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
+            toolStripButton2.ImageTransparentColor = Color.Magenta;
+            toolStripButton2.Name = "toolStripButton2";
+            toolStripButton2.Size = new Size(29, 24);
+            toolStripButton2.Text = "next";
+            toolStripButton2.Click += nextPage_Click;
+            // 
+            // toolStripPageLabel
+            // 
+            toolStripPageLabel.Name = "toolStripPageLabel";
+            toolStripPageLabel.Size = new Size(25, 24);
+            toolStripPageLabel.Text = "00";
+            // 
+            // dgvViewReports
+            // 
+            dgvViewReports.AllowUserToAddRows = false;
+            dgvViewReports.AllowUserToDeleteRows = false;
+            dgvViewReports.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvViewReports.BackgroundColor = SystemColors.Control;
+            dgvViewReports.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvViewReports.Location = new Point(12, 9);
+            dgvViewReports.Name = "dgvViewReports";
+            dgvViewReports.RowHeadersWidth = 51;
+            dgvViewReports.Size = new Size(872, 313);
+            dgvViewReports.TabIndex = 32;
+            // 
+            // btnExportPDF
+            // 
+            btnExportPDF.BackColor = Color.Teal;
+            btnExportPDF.FlatAppearance.BorderSize = 0;
+            btnExportPDF.FlatStyle = FlatStyle.Flat;
+            btnExportPDF.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExportPDF.ForeColor = SystemColors.Control;
+            btnExportPDF.Image = (Image)resources.GetObject("btnExportPDF.Image");
+            btnExportPDF.ImageAlign = ContentAlignment.MiddleLeft;
+            btnExportPDF.Location = new Point(215, 358);
+            btnExportPDF.Margin = new Padding(3, 4, 3, 4);
+            btnExportPDF.Name = "btnExportPDF";
+            btnExportPDF.Size = new Size(176, 80);
+            btnExportPDF.TabIndex = 31;
+            btnExportPDF.Text = "Export Pdf";
+            btnExportPDF.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnExportPDF.UseVisualStyleBackColor = false;
+            btnExportPDF.Click += btnExportPDF_Click;
+            // 
+            // btnExportExcel
+            // 
+            btnExportExcel.BackColor = Color.Teal;
+            btnExportExcel.FlatAppearance.BorderSize = 0;
+            btnExportExcel.FlatStyle = FlatStyle.Flat;
+            btnExportExcel.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExportExcel.ForeColor = SystemColors.Control;
+            btnExportExcel.Image = (Image)resources.GetObject("btnExportExcel.Image");
+            btnExportExcel.Location = new Point(570, 358);
+            btnExportExcel.Margin = new Padding(3, 4, 3, 4);
+            btnExportExcel.Name = "btnExportExcel";
+            btnExportExcel.Size = new Size(189, 80);
+            btnExportExcel.TabIndex = 30;
+            btnExportExcel.Text = "Export Excel";
+            btnExportExcel.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnExportExcel.UseVisualStyleBackColor = false;
+            btnExportExcel.Click += btnExportExcel_Click;
             // 
             // button5
             // 
@@ -283,14 +381,6 @@
             button5.Text = "Save";
             button5.TextImageRelation = TextImageRelation.TextBeforeImage;
             button5.UseVisualStyleBackColor = false;
-            // 
-            // listBox2
-            // 
-            listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(24, 6);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(839, 324);
-            listBox2.TabIndex = 28;
             // 
             // button1
             // 
@@ -327,41 +417,6 @@
             button2.TextImageRelation = TextImageRelation.TextBeforeImage;
             button2.UseVisualStyleBackColor = false;
             // 
-            // button4
-            // 
-            button4.BackColor = Color.Teal;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = SystemColors.Control;
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(215, 373);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(176, 80);
-            button4.TabIndex = 31;
-            button4.Text = "Print Pdf";
-            button4.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            button6.BackColor = Color.Teal;
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button6.ForeColor = SystemColors.Control;
-            button6.Image = (Image)resources.GetObject("button6.Image");
-            button6.Location = new Point(570, 358);
-            button6.Margin = new Padding(3, 4, 3, 4);
-            button6.Name = "button6";
-            button6.Size = new Size(189, 80);
-            button6.TabIndex = 30;
-            button6.Text = "Export Excel";
-            button6.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button6.UseVisualStyleBackColor = false;
-            // 
             // DisplayReportsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -383,6 +438,10 @@
             panelShow.ResumeLayout(false);
             panelShow.PerformLayout();
             panelShowReports.ResumeLayout(false);
+            panelShowReports.PerformLayout();
+            toolStrip.ResumeLayout(false);
+            toolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvViewReports).EndInit();
             ResumeLayout(false);
         }
 
@@ -400,9 +459,9 @@
         private Label lblUserName;
         private Label lblRoleError;
         private Label lblDatePicker;
-        private DateTimePicker dateTimePicker;
+        private DateTimePicker dateTimePickerStart;
         private Label label1;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePickerEnd;
         private Panel panelShow;
         private Button btnSearchReports;
         private Panel panelShowReports;
@@ -410,7 +469,12 @@
         private ListBox listBox2;
         private Button button1;
         private Button button2;
-        private Button button4;
-        private Button button6;
+        private Button btnExportPDF;
+        private Button btnExportExcel;
+        private DataGridView dgvViewReports;
+        private ToolStrip toolStrip;
+        private ToolStripButton toolStripButton1;
+        private ToolStripButton toolStripButton2;
+        private ToolStripLabel toolStripPageLabel;
     }
 }

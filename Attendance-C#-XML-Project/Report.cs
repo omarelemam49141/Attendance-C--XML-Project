@@ -94,15 +94,15 @@ namespace Attendance_C__XML_Project
         //get all the attendance records between two dates
         public List<AttendanceRecord> getReportsBetween(DateOnly date1, DateOnly date2)
         {
-            var dateReport = new List<AttendanceRecord>();
+            List<AttendanceRecord> records=new List<AttendanceRecord>();
             foreach (var attendanceRecord in attendanceRecords)
             {
-                if (attendanceRecord.RecordDate > date1 && attendanceRecord.RecordDate < date2)
+                if (attendanceRecord.RecordDate >= date1 && attendanceRecord.RecordDate <= date2)
                 {
-                    dateReport.Add(attendanceRecord);
+                    records.Add(attendanceRecord);
                 }
             }
-            return dateReport;
+            return records;
         }
 
         //get all the attendance records before certain date
