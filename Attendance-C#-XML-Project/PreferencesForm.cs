@@ -19,7 +19,6 @@ namespace Attendance_C__XML_Project
             InitializeComponent();
 
             // Loading UserName and User Role   
-
             try
             {
                 lblUserName.Text = GetUserName();
@@ -30,7 +29,6 @@ namespace Attendance_C__XML_Project
                 UserLogout();
                 throw;
             }
-
 
             // Load Teacher Role
             try
@@ -45,21 +43,10 @@ namespace Attendance_C__XML_Project
             }
 
             // Loading User Settings
-            // Initialize comboBoxLanguage control
-            comboLanguages = new ComboBox();
-            comboLanguages.Items.Add("English");
-            comboLanguages.Items.Add("العربية");
-
-            // Add event handler for SelectedIndexChanged event
-            comboLanguages.SelectedIndexChanged += comboBoxLanguage_SelectedIndexChanged;
-
-            // Add comboBoxLanguage to the form's Controls collection
-            this.Controls.Add(comboLanguages);
-
-
+            InitializeLanguageComboBox();
         }
 
-
+        #region User Management
 
         private string GetUserName()
         {
@@ -69,9 +56,9 @@ namespace Attendance_C__XML_Project
             }
             throw new Exception("Can't Find UserName");
         }
+
         private string GetUserRole()
         {
-
             var role = LoggedInUser.userRole.ToString();
 
             if (role != null)
@@ -80,10 +67,15 @@ namespace Attendance_C__XML_Project
             }
             throw new Exception("Can't Find Teacher Role");
         }
+
         private void UserLogout()
         {
             throw new NotImplementedException();
         }
+
+        #endregion
+
+        #region Event Handlers
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -94,43 +86,18 @@ namespace Attendance_C__XML_Project
 
         private void comboColors_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Change text color based on the selected color
             string selectedColor = comboColors.SelectedItem.ToString();
             ApplyTextColor(GetColorFromName(selectedColor));
         }
 
-        private void ApplyTextColor(Color color)
-        {
-            foreach (Control control in Controls)
-            {
-                if (control is Label || control is Button)
-                {
-                    control.ForeColor = color;
-                }
-            }
-        }
-
         private void comboFontSize_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Change font size based on the selected font size
             string selectedFontSize = comboFontSize.SelectedItem.ToString();
             ApplyFontSize(GetFontSizeFromName(selectedFontSize));
         }
 
-        private void ApplyFontSize(float size)
-        {
-            foreach (Control control in Controls)
-            {
-                if (control is Label || control is Button)
-                {
-                    control.Font = new Font(control.Font.FontFamily, size);
-                }
-            }
-        }
-
         private void comboDateFormat_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Change date format based on the selected format
             string selectedFormat = comboDateFormat.SelectedItem.ToString();
             string formatPattern;
             switch (selectedFormat)
@@ -149,21 +116,8 @@ namespace Attendance_C__XML_Project
             ApplyDateFormat(formatPattern);
         }
 
-        private void ApplyDateFormat(string format)
-        {
-            foreach (Control control in Controls)
-            {
-                if (control is DateTimePicker)
-                {
-                    ((DateTimePicker)control).CustomFormat = format;
-                    ((DateTimePicker)control).Format = DateTimePickerFormat.Custom;
-                }
-            }
-        }
-
         private void comboThemes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Change theme based on the selected theme
             string selectedTheme = comboThemes.SelectedItem.ToString();
             switch (selectedTheme)
             {
@@ -177,6 +131,71 @@ namespace Attendance_C__XML_Project
                     MessageBox.Show("Invalid theme selection. Defaulting to Light theme.");
                     ApplyLightTheme();
                     break;
+            }
+        }
+
+        private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboLanguages.SelectedItem.ToString() == "English")
+            {
+                SetLanguage("en-US"); // Set language to English
+            }
+            else if (comboLanguages.SelectedItem.ToString() == "العربية")
+            {
+                SetLanguage("ar"); // Set language to Arabic
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SavePreferences();
+            MessageBox.Show("Preferences saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        #endregion
+
+        #region Utility Methods
+
+        private void InitializeLanguageComboBox()
+        {
+            comboLanguages = new ComboBox();
+            comboLanguages.Items.Add("English");
+            comboLanguages.Items.Add("العربية");
+            comboLanguages.SelectedIndexChanged += comboBoxLanguage_SelectedIndexChanged;
+            this.Controls.Add(comboLanguages);
+        }
+
+        private void ApplyTextColor(Color color)
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is Label || control is Button)
+                {
+                    control.ForeColor = color;
+                }
+            }
+        }
+
+        private void ApplyFontSize(float size)
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is Label || control is Button)
+                {
+                    control.Font = new Font(control.Font.FontFamily, size);
+                }
+            }
+        }
+
+        private void ApplyDateFormat(string format)
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is DateTimePicker)
+                {
+                    ((DateTimePicker)control).CustomFormat = format;
+                    ((DateTimePicker)control).Format = DateTimePickerFormat.Custom;
+                }
             }
         }
 
@@ -206,25 +225,11 @@ namespace Attendance_C__XML_Project
             }
         }
 
-        private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboLanguages.SelectedItem.ToString() == "English")
-            {
-                SetLanguage("en-US"); // Set language to English
-            }
-            else if (comboLanguages.SelectedItem.ToString() == "العربية")
-            {
-                SetLanguage("ar"); // Set language to Arabic
-            }
-        }
-
         private void SetLanguage(string cultureCode)
         {
-            // Set current culture and UI culture
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureCode);
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(cultureCode);
 
-            // Update UI controls with localized strings from resource files
             foreach (Control control in this.Controls)
             {
                 ApplyResources(control, cultureCode);
@@ -236,7 +241,6 @@ namespace Attendance_C__XML_Project
             var resources = new System.ComponentModel.ComponentResourceManager(this.GetType());
             resources.ApplyResources(control, control.Name, new CultureInfo(cultureCode));
 
-            // Recursively apply resources to child controls if the control is a container
             if (control.Controls.Count > 0)
             {
                 foreach (Control childControl in control.Controls)
@@ -244,12 +248,6 @@ namespace Attendance_C__XML_Project
                     ApplyResources(childControl, cultureCode);
                 }
             }
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            SavePreferences();
-            MessageBox.Show("Preferences saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void SavePreferences()
@@ -266,25 +264,20 @@ namespace Attendance_C__XML_Project
             SettingsManager.SetSelectedTheme(selectedTheme);
             SettingsManager.SetSelectedLanguage(selectedLanguage);
 
-            // Apply user preferences after saving
             ApplyPreferences();
         }
 
         private void ApplyPreferences()
         {
-            // Apply selected color
             string selectedColor = SettingsManager.GetSelectedColor();
             ApplyTextColor(GetColorFromName(selectedColor));
 
-            // Apply selected font size
             string selectedFontSize = SettingsManager.GetSelectedFontSize();
             ApplyFontSize(GetFontSizeFromName(selectedFontSize));
 
-            // Apply selected date format
             string selectedDateFormat = SettingsManager.GetSelectedDateFormat();
             ApplyDateFormat(selectedDateFormat);
 
-            // Apply selected theme
             string selectedTheme = SettingsManager.GetSelectedTheme();
             if (selectedTheme == "Light")
             {
@@ -300,7 +293,6 @@ namespace Attendance_C__XML_Project
                 ApplyLightTheme();
             }
 
-            // Apply selected language
             string selectedLanguage = SettingsManager.GetSelectedLanguage();
             SetLanguage(selectedLanguage);
         }
@@ -337,5 +329,6 @@ namespace Attendance_C__XML_Project
             }
         }
 
+        #endregion
     }
 }
