@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,13 +45,21 @@ namespace Attendance_C__XML_Project
             }
 
             // Loading User Settings
+            // Initialize comboBoxLanguage control
+            comboLanguages = new ComboBox();
+            comboLanguages.Items.Add("English");
+            comboLanguages.Items.Add("العربية");
 
+            // Add event handler for SelectedIndexChanged event
+            comboLanguages.SelectedIndexChanged += comboBoxLanguage_SelectedIndexChanged;
 
+            // Add comboBoxLanguage to the form's Controls collection
+            this.Controls.Add(comboLanguages);
 
 
         }
 
-        
+
 
         private string GetUserName()
         {
@@ -197,18 +206,44 @@ namespace Attendance_C__XML_Project
             }
         }
 
-        private void comboLanguages_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedLanguage = comboLanguages.SelectedItem.ToString();
-            SetLanguage(selectedLanguage);
+            if (comboLanguages.SelectedItem.ToString() == "English")
+            {
+                SetLanguage("en-US"); // Set language to English
+            }
+            else if (comboLanguages.SelectedItem.ToString() == "العربية")
+            {
+                SetLanguage("ar"); // Set language to Arabic
+            }
         }
 
         private void SetLanguage(string cultureCode)
         {
+            // Set current culture and UI culture
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureCode);
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(cultureCode);
 
-            // Update UI elements here with translated text or resources
+            // Update UI controls with localized strings from resource files
+            foreach (Control control in this.Controls)
+            {
+                ApplyResources(control, cultureCode);
+            }
+        }
+
+        private void ApplyResources(Control control, string cultureCode)
+        {
+            var resources = new System.ComponentModel.ComponentResourceManager(this.GetType());
+            resources.ApplyResources(control, control.Name, new CultureInfo(cultureCode));
+
+            // Recursively apply resources to child controls if the control is a container
+            if (control.Controls.Count > 0)
+            {
+                foreach (Control childControl in control.Controls)
+                {
+                    ApplyResources(childControl, cultureCode);
+                }
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -301,5 +336,6 @@ namespace Attendance_C__XML_Project
                     return 10;
             }
         }
+
     }
-}//
+}
