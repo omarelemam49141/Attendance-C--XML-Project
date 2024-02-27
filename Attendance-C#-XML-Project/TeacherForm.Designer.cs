@@ -81,6 +81,7 @@
             panelShow.Name = "panelShow";
             panelShow.Size = new Size(896, 125);
             panelShow.TabIndex = 34;
+            panelShow.Paint += panelShow_Paint;
             // 
             // checkBox1
             // 

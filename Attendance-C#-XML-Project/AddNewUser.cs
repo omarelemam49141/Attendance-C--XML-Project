@@ -34,10 +34,10 @@ namespace Attendance_C__XML_Project
 
         private void AddNewUser_Load(object sender, EventArgs e)
         {
-            if (LoggedInUser.userRole != null)
-            {
-                lblLoggedInRole.Text = LoggedInUser.userRole.ToString();
-            }
+            
+            
+            lblLoggedInRole.Text = LoggedInUser.userRole.ToString();
+            
 
             this.Controls.Remove(checkedListClass);
             GraphicsPath path = new GraphicsPath();

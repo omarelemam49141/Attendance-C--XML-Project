@@ -38,31 +38,31 @@ namespace Attendance_C__XML_Project
         {
             //Dummy data for testing
             Lists.teachersList = new List<Teacher>();
-            //FileManagment.LoadClassesFromFile("teachers.xml", ref Lists.teachersList);
+            FileManagment.LoadClassesFromFile("data/teachers.xml", ref Lists.teachersList);
 
-            //Lists.studentsList = new List<Student>();
-            //FileManagment.LoadClassesFromFile("students.xml", ref Lists.studentsList);
+            Lists.studentsList = new List<Student>();
+            FileManagment.LoadClassesFromFile("data/students.xml", ref Lists.studentsList);
 
-            //Lists.classes = new List<Class>();
-            //FileManagment.LoadClassesFromFile("classes.xml", ref Lists.classes);
+            Lists.classes = new List<Class>();
+            FileManagment.LoadClassesFromFile("data/classes.xml", ref Lists.classes);
 
-            Lists.teachersList = [new Teacher("Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"),
-            new Teacher("Omar", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"),
-            new Teacher("Ahmed", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo")];
-            Lists.studentsList = [new Student("Ahmed Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 1),
-                                  new Student("Osame Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
-                                  new Student("Hamada Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
-                                  new Student("Mohamed Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
-                                  new Student("Omar Sharkawi", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
-                                  new Student("Hamdy", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
-                                  new Student("Hmaed", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
-            ];
+            //Lists.teachersList = [new Teacher("Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"),
+            //new Teacher("Omar", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"),
+            //new Teacher("Ahmed", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo")];
+            //Lists.studentsList = [new Student("Ahmed Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 1),
+            //                      new Student("Osame Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
+            //                      new Student("Hamada Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
+            //                      new Student("Mohamed Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
+            //                      new Student("Omar Sharkawi", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
+            //                      new Student("Hamdy", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
+            //                      new Student("Hmaed", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
+            //];
 
             Lists.admins = [new User("admin", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo")];
-            Lists.classes = new List<Class>(){
-                new Class() { ID=1,Name="A1"},
-                new Class() { ID=2,Name="A2"},
-            };
+            //Lists.classes = new List<Class>(){
+            //    new Class() { ID=1,Name="A1"},
+            //    new Class() { ID=2,Name="A2"},
+            //};
 
             GraphicsPath path = new GraphicsPath();
             Rectangle bounds = new Rectangle(0, 0, this.Width, this.Height);
@@ -129,7 +129,9 @@ namespace Attendance_C__XML_Project
 
                 LoggedInUser.Name = txtUsername.Text.ToLower();
                 LoggedInUser.userRole = Role.Student;
-                StudentForm studentForm = new StudentForm();
+                //StudentForm studentForm = new StudentForm();
+                //studentForm.Show();
+                DisplayReportsForm studentForm = new DisplayReportsForm();
                 studentForm.Show();
                 this.Hide();
             }
