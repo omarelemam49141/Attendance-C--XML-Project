@@ -212,6 +212,7 @@
             dateTimePickerStart.Name = "dateTimePickerStart";
             dateTimePickerStart.Size = new Size(250, 27);
             dateTimePickerStart.TabIndex = 38;
+            dateTimePickerStart.ValueChanged += startdate_ValueChange;
             // 
             // label1
             // 
@@ -229,6 +230,7 @@
             dateTimePickerEnd.Name = "dateTimePickerEnd";
             dateTimePickerEnd.Size = new Size(250, 27);
             dateTimePickerEnd.TabIndex = 40;
+            dateTimePickerEnd.ValueChanged += enddate_ValueChange;
             // 
             // panelShow
             // 
@@ -284,7 +286,7 @@
             toolStrip.Items.AddRange(new ToolStripItem[] { toolStripButton1, toolStripButton2, toolStripPageLabel });
             toolStrip.Location = new Point(12, 322);
             toolStrip.Name = "toolStrip";
-            toolStrip.Size = new Size(135, 27);
+            toolStrip.Size = new Size(96, 27);
             toolStrip.TabIndex = 33;
             toolStrip.Text = "toolStrip1";
             // 
@@ -324,6 +326,7 @@
             dgvViewReports.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvViewReports.Location = new Point(12, 9);
             dgvViewReports.Name = "dgvViewReports";
+            dgvViewReports.ReadOnly = true;
             dgvViewReports.RowHeadersWidth = 51;
             dgvViewReports.Size = new Size(872, 313);
             dgvViewReports.TabIndex = 32;
