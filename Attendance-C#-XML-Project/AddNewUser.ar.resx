@@ -544,6 +544,9 @@
         CcOZGi3acn8w20HdJQxnK2JcRlEURVEUxS5M0x+93tb4mi4xDAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="panel3.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
   <data name="linkLogout.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 21</value>
   </data>
@@ -567,9 +570,6 @@
   </data>
   <data name="label17.Text" xml:space="preserve">
     <value>قمت بتسجيل الدخول ك</value>
-  </data>
-  <data name="panel3.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
   </data>
   <data name="$this.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>

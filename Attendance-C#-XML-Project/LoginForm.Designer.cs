@@ -52,45 +52,31 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(panel1, "panel1");
             panel1.BackColor = Color.FromArgb(0, 7, 95);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(btnClose);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 37);
-            panel1.TabIndex = 0;
             panel1.MouseDown += panel1_MouseDown;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            resources.ApplyResources(label4, "label4");
             label4.ForeColor = Color.White;
-            label4.Location = new Point(3, 7);
             label4.Name = "label4";
-            label4.Size = new Size(156, 25);
-            label4.TabIndex = 8;
-            label4.Text = "Attendance Form";
             // 
             // btnClose
             // 
-            btnClose.BackgroundImage = (Image)resources.GetObject("btnClose.BackgroundImage");
-            btnClose.BackgroundImageLayout = ImageLayout.Zoom;
+            resources.ApplyResources(btnClose, "btnClose");
             btnClose.Cursor = Cursors.Hand;
-            btnClose.Dock = DockStyle.Right;
-            btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.Location = new Point(761, 0);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(39, 37);
-            btnClose.TabIndex = 0;
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
             // 
             // panel2
             // 
+            resources.ApplyResources(panel2, "panel2");
             panel2.BackColor = Color.Transparent;
-            panel2.BackgroundImageLayout = ImageLayout.Center;
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(label3);
@@ -100,135 +86,83 @@
             panel2.Controls.Add(txtPassword);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(btnLogin);
-            panel2.Location = new Point(26, 106);
             panel2.Name = "panel2";
-            panel2.Size = new Size(318, 293);
-            panel2.TabIndex = 1;
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(17, 164);
+            resources.ApplyResources(pictureBox2, "pictureBox2");
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(31, 25);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 7;
             pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(17, 106);
+            resources.ApplyResources(pictureBox1, "pictureBox1");
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(31, 25);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            resources.ApplyResources(label3, "label3");
             label3.ForeColor = Color.White;
-            label3.Location = new Point(143, 11);
             label3.Name = "label3";
-            label3.Size = new Size(59, 25);
-            label3.TabIndex = 0;
-            label3.Text = "Login";
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(54, 108);
+            resources.ApplyResources(txtUsername, "txtUsername");
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(248, 27);
-            txtUsername.TabIndex = 2;
-            txtUsername.Text = "Ali";
-            txtUsername.TextAlign = HorizontalAlignment.Center;
             // 
             // label2
             // 
-            label2.AutoSize = true;
+            resources.ApplyResources(label2, "label2");
             label2.ForeColor = Color.White;
-            label2.Location = new Point(54, 90);
             label2.Name = "label2";
-            label2.Size = new Size(75, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Username";
             // 
             // lnkForgetPassword
             // 
-            lnkForgetPassword.AutoSize = true;
+            resources.ApplyResources(lnkForgetPassword, "lnkForgetPassword");
             lnkForgetPassword.DisabledLinkColor = Color.White;
             lnkForgetPassword.ForeColor = Color.White;
             lnkForgetPassword.LinkColor = Color.White;
-            lnkForgetPassword.Location = new Point(119, 254);
             lnkForgetPassword.Name = "lnkForgetPassword";
-            lnkForgetPassword.Size = new Size(119, 20);
-            lnkForgetPassword.TabIndex = 6;
             lnkForgetPassword.TabStop = true;
-            lnkForgetPassword.Text = "Forget password";
             lnkForgetPassword.LinkClicked += lnkForgetPassword_LinkClicked;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(54, 166);
+            resources.ApplyResources(txtPassword, "txtPassword");
             txtPassword.Name = "txtPassword";
-            txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(248, 27);
-            txtPassword.TabIndex = 4;
-            txtPassword.Text = "Oeams7476386#";
-            txtPassword.TextAlign = HorizontalAlignment.Center;
             // 
             // label1
             // 
-            label1.AutoSize = true;
+            resources.ApplyResources(label1, "label1");
             label1.ForeColor = Color.White;
-            label1.Location = new Point(54, 148);
             label1.Name = "label1";
-            label1.Size = new Size(70, 20);
-            label1.TabIndex = 3;
-            label1.Text = "Password";
             // 
             // btnLogin
             // 
+            resources.ApplyResources(btnLogin, "btnLogin");
             btnLogin.FlatAppearance.BorderColor = Color.White;
-            btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(101, 205);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(130, 38);
-            btnLogin.TabIndex = 5;
-            btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
             // 
             // pictureBox3
             // 
-            pictureBox3.Dock = DockStyle.Fill;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(0, 0);
+            resources.ApplyResources(pictureBox3, "pictureBox3");
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(800, 513);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(800, 513);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(pictureBox3);
             DoubleBuffered = true;
-            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Name = "LoginForm";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "LoginForm";
             Load += LoginForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

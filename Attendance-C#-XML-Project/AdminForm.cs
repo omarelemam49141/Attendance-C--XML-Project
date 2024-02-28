@@ -125,11 +125,11 @@ namespace Attendance_C__XML_Project
             panelShowClasses.Visible = true;
 
             //Clear the list box of classes
-            listDisplayClasses.Items.Clear();
+            قائمة_الفصول_المعروضة.Items.Clear();
             //display all classes in the list classes
             foreach (var classItem in Lists.classes)
             {
-                listDisplayClasses.Items.Add(classItem);
+                قائمة_الفصول_المعروضة.Items.Add(classItem);
             }
         }
 
@@ -323,7 +323,7 @@ namespace Attendance_C__XML_Project
                         //remove the teacher from the list box
                         listUsers.Items.RemoveAt(listUsers.SelectedIndex);
                         //Removing the selection from the list box
-                        listDisplayClasses.SelectedItem = null;
+                        قائمة_الفصول_المعروضة.SelectedItem = null;
 
                         MessageBox.Show("Teacher deleted successfully");
                     }
@@ -372,7 +372,7 @@ namespace Attendance_C__XML_Project
         //Display the class information when selecting it
         private void liatDisplayClasses_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectedClass = listDisplayClasses.SelectedItem as Class;
+            selectedClass = قائمة_الفصول_المعروضة.SelectedItem as Class;
             if (selectedClass != null)
             {
                 txtClassID.Text = selectedClass.ID.ToString();
@@ -386,7 +386,7 @@ namespace Attendance_C__XML_Project
             if (txtSearchClass.Text.Trim().Length > 0)
             {
                 Class selectedClass = Lists.classes.Find(classItem => classItem.Name.ToLower() == txtSearchClass.Text.Trim().ToLower());
-                listDisplayClasses.SelectedItem = selectedClass;
+                قائمة_الفصول_المعروضة.SelectedItem = selectedClass;
             }
         }
 
@@ -417,7 +417,7 @@ namespace Attendance_C__XML_Project
                     }
 
                     //update the class in the listDisplayClasses with the new info
-                    listDisplayClasses.Items[listDisplayClasses.SelectedIndex] = updatedClass;
+                    قائمة_الفصول_المعروضة.Items[قائمة_الفصول_المعروضة.SelectedIndex] = updatedClass;
                     //Show success message
                     MessageBox.Show("Class updated successfully");
                 }
@@ -472,9 +472,9 @@ namespace Attendance_C__XML_Project
 
 
                     //Delete the class from the listDisplayClass 
-                    listDisplayClasses.Items.Remove(selectedClass);
+                    قائمة_الفصول_المعروضة.Items.Remove(selectedClass);
                     //Removing the selection from the list box
-                    listDisplayClasses.SelectedItem = null;
+                    قائمة_الفصول_المعروضة.SelectedItem = null;
                     //Delete the class from the classes list
                     //Removing the selection from the list box
 
@@ -523,7 +523,7 @@ namespace Attendance_C__XML_Project
                     throw new Exception("Classes are not valid against XSD schema. Unable to save.");
                 }
 
-                listDisplayClasses.Items.Add(newClass);
+                قائمة_الفصول_المعروضة.Items.Add(newClass);
                 MessageBox.Show("Class added successfully");
                 if (lblAddError.Visible)
                 {
