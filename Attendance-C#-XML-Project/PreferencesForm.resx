@@ -869,10 +869,10 @@
     <value>Flat</value>
   </data>
   <data name="comboLanguages.Items" xml:space="preserve">
-    <value>English</value>
+    <value>en-US</value>
   </data>
   <data name="comboLanguages.Items1" xml:space="preserve">
-    <value>العربية</value>
+    <value>ar</value>
   </data>
   <data name="comboLanguages.Location" type="System.Drawing.Point, System.Drawing">
     <value>158, 64</value>

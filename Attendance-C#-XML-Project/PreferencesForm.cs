@@ -79,8 +79,8 @@ namespace Attendance_C__XML_Project
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.GetCurrentProcess().Kill();
-            Application.Exit();
+            //System.Diagnostics.Process.GetCurrentProcess().Kill();
+            //Application.Exit();
             this.Close();
         }
 
@@ -139,11 +139,11 @@ namespace Attendance_C__XML_Project
 
             if (comboLanguages.SelectedItem != null)
             {
-                if (comboLanguages.SelectedItem.ToString() == "English")
+                if (comboLanguages.SelectedItem.ToString() == "en-US")
                 {
                     SetLanguage("en-US"); // Set language to English
                 }
-                else if (comboLanguages.SelectedItem.ToString() == "العربية")
+                else if (comboLanguages.SelectedItem.ToString() == "ar")
                 {
                     SetLanguage("ar"); // Set language to Arabic
                 }
@@ -256,12 +256,15 @@ namespace Attendance_C__XML_Project
 
         private void SavePreferences()
         {
-            string selectedColor = comboColors.SelectedItem.ToString();
-            string selectedFontSize = comboFontSize.SelectedItem.ToString();
-            string selectedDateFormat = comboDateFormat.SelectedItem.ToString();
-            string selectedTheme = comboThemes.SelectedItem.ToString();
-            string selectedLanguage = comboLanguages.SelectedItem.ToString();
-
+            string selectedColor = comboColors.Text.ToString() ?? "Black";
+            string selectedFontSize = comboFontSize.Text.ToString() ?? "11pt";
+            string selectedDateFormat = comboDateFormat.Text.ToString() ?? "DD/MM/YYYY";
+            string selectedTheme = comboThemes.Text.ToString() ?? "light";
+            string selectedLanguage = "en-US";
+            if (comboLanguages.Text != null)
+            {
+                selectedLanguage = comboLanguages.Text.ToString();
+            }
             SettingsManager.SetSelectedColor(selectedColor);
             SettingsManager.SetSelectedFontSize(selectedFontSize);
             SettingsManager.SetSelectedDateFormat(selectedDateFormat);
