@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherForm));
             panelShow = new Panel();
+            btnNewReport = new Button();
             checkBox1 = new CheckBox();
             lblDatePicker = new Label();
             dateTimePicker = new DateTimePicker();
@@ -55,7 +56,7 @@
             toolStripPageLabel = new ToolStripLabel();
             dgvViewStudents = new DataGridView();
             btnSave = new Button();
-            button1 = new Button();
+            btnPrint = new Button();
             button2 = new Button();
             panel3 = new Panel();
             panelShow.SuspendLayout();
@@ -70,7 +71,11 @@
             // 
             // panelShow
             // 
+
+            panelShow.Controls.Add(btnNewReport);
+
             resources.ApplyResources(panelShow, "panelShow");
+
             panelShow.Controls.Add(checkBox1);
             panelShow.Controls.Add(lblDatePicker);
             panelShow.Controls.Add(dateTimePicker);
@@ -79,6 +84,25 @@
             panelShow.Controls.Add(comboClasses);
             panelShow.Name = "panelShow";
             panelShow.Paint += panelShow_Paint;
+            // 
+            // btnNewReport
+            // 
+            btnNewReport.BackColor = Color.Blue;
+            btnNewReport.FlatAppearance.BorderSize = 0;
+            btnNewReport.FlatStyle = FlatStyle.Flat;
+            btnNewReport.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNewReport.ForeColor = SystemColors.Control;
+            btnNewReport.Image = (Image)resources.GetObject("btnNewReport.Image");
+            btnNewReport.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNewReport.Location = new Point(445, 18);
+            btnNewReport.Margin = new Padding(3, 4, 3, 4);
+            btnNewReport.Name = "btnNewReport";
+            btnNewReport.Size = new Size(217, 53);
+            btnNewReport.TabIndex = 32;
+            btnNewReport.Text = "Add New Report";
+            btnNewReport.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnNewReport.UseVisualStyleBackColor = false;
+            btnNewReport.Click += btnNewReport_Click;
             // 
             // checkBox1
             // 
@@ -104,6 +128,11 @@
             btnShowReport.BackColor = Color.Teal;
             btnShowReport.FlatAppearance.BorderSize = 0;
             btnShowReport.ForeColor = SystemColors.Control;
+
+            btnShowReport.Image = (Image)resources.GetObject("btnShowReport.Image");
+            btnShowReport.Location = new Point(685, 18);
+            btnShowReport.Margin = new Padding(3, 4, 3, 4);
+
             btnShowReport.Name = "btnShowReport";
             btnShowReport.UseVisualStyleBackColor = false;
             btnShowReport.Click += btnShowReport_Click;
@@ -211,7 +240,7 @@
             panelShowStudents.Controls.Add(toolStrip);
             panelShowStudents.Controls.Add(dgvViewStudents);
             panelShowStudents.Controls.Add(btnSave);
-            panelShowStudents.Controls.Add(button1);
+            panelShowStudents.Controls.Add(btnPrint);
             panelShowStudents.Controls.Add(button2);
             panelShowStudents.Name = "panelShowStudents";
             // 
@@ -251,17 +280,49 @@
             dgvViewStudents.BackgroundColor = SystemColors.Control;
             dgvViewStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvViewStudents.Name = "dgvViewStudents";
+
+            dgvViewStudents.RowHeadersWidth = 51;
+            dgvViewStudents.Size = new Size(872, 313);
+            dgvViewStudents.TabIndex = 30;
+            dgvViewStudents.CellContentClick += dgvViewStudents_CellContentClick;
+
             // 
             // btnSave
             // 
             resources.ApplyResources(btnSave, "btnSave");
             btnSave.BackColor = Color.Teal;
+
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.ForeColor = SystemColors.Control;
+
+            btnSave.Image = (Image)resources.GetObject("btnSave.Image");
+            btnSave.Location = new Point(694, 648);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
+
             btnSave.Name = "btnSave";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
+
+            // btnPrint
+            // 
+            btnPrint.BackColor = Color.Teal;
+            btnPrint.FlatAppearance.BorderSize = 0;
+            btnPrint.FlatStyle = FlatStyle.Flat;
+            btnPrint.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPrint.ForeColor = SystemColors.Control;
+            btnPrint.Image = (Image)resources.GetObject("btnPrint.Image");
+            btnPrint.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPrint.Location = new Point(91, 648);
+            btnPrint.Margin = new Padding(3, 4, 3, 4);
+            btnPrint.Name = "btnPrint";
+            btnPrint.Size = new Size(176, 80);
+            btnPrint.TabIndex = 27;
+            btnPrint.Text = "Export Pdf";
+            btnPrint.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnPrint.UseVisualStyleBackColor = false;
+            btnPrint.Click += btnExportPDF;
+
             // button1
             // 
             resources.ApplyResources(button1, "button1");
@@ -270,6 +331,7 @@
             button1.ForeColor = SystemColors.Control;
             button1.Name = "button1";
             button1.UseVisualStyleBackColor = false;
+
             // 
             // button2
             // 
@@ -279,6 +341,7 @@
             button2.ForeColor = SystemColors.Control;
             button2.Name = "button2";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += btnExportExcel_Click;
             // 
             // panel3
             // 
@@ -338,11 +401,12 @@
         private Panel panelShowStudents;
         private DataGridView dgvViewStudents;
         private Button btnSave;
-        private Button button1;
+        private Button btnPrint;
         private Button button2;
         private ToolStrip toolStrip;
         private ToolStripButton toolStripButton1;
         private ToolStripButton toolStripButton2;
         private ToolStripLabel toolStripPageLabel;
+        private Button btnNewReport;
     }
 }
