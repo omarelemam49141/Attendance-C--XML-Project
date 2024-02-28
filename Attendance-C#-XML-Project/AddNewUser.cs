@@ -34,10 +34,10 @@ namespace Attendance_C__XML_Project
 
         private void AddNewUser_Load(object sender, EventArgs e)
         {
-            if (LoggedInUser.userRole != null)
-            {
-                lblLoggedInRole.Text = LoggedInUser.userRole.ToString();
-            }
+            
+            
+            lblLoggedInRole.Text = LoggedInUser.userRole.ToString();
+            
 
             this.Controls.Remove(checkedListClass);
             GraphicsPath path = new GraphicsPath();
@@ -129,7 +129,7 @@ namespace Attendance_C__XML_Project
 
             //validate the user data and add them if they are valid
             User newUser = new User();
-            if (comboRole.SelectedItem == "Student" || comboRole.SelectedItem == "Teacher") //check if the role is slected
+            if (comboRole.SelectedItem.ToString() == "Student" || comboRole.SelectedItem.ToString() == "Teacher") //check if the role is slected
             {
                 //Validate the username
                 try
@@ -228,7 +228,7 @@ namespace Attendance_C__XML_Project
             }
 
             //Check if the role is student then try to add his class
-            if (comboRole.SelectedItem == "Student")
+            if (comboRole.SelectedItem.ToString() == "Student")
             {
                 Student newStudent = null;
                 //Validate the class
@@ -281,7 +281,7 @@ namespace Attendance_C__XML_Project
                 }
             }
             //If the role is teacher then try to add his list of classes
-            else if (comboRole.SelectedItem == "Teacher")
+            else if (comboRole.SelectedItem.ToString() == "Teacher")
             {
                 Teacher newTeacher = null;
                 //Try to Make a new object of teacher

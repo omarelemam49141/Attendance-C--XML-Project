@@ -38,13 +38,13 @@ namespace Attendance_C__XML_Project
         {
             //Dummy data for testing
             Lists.teachersList = new List<Teacher>();
-            FileManagment.LoadClassesFromFile("data/teachers.xml", ref Lists.teachersList);
+            FileManagment.LoadClassesFromFile("teachers.xml", ref Lists.teachersList);
 
             Lists.studentsList = new List<Student>();
-            FileManagment.LoadClassesFromFile("data/students.xml", ref Lists.studentsList);
+            FileManagment.LoadClassesFromFile("students.xml", ref Lists.studentsList);
 
             Lists.classes = new List<Class>();
-            FileManagment.LoadClassesFromFile("data/classes.xml", ref Lists.classes);
+            FileManagment.LoadClassesFromFile("classes.xml", ref Lists.classes);
 
             //Lists.attendanceRecords = new List<AttendanceRecord>();
             //FileManagment.LoadClassesFromFile("data/attendance.xml", ref Lists.attendanceRecords);
@@ -142,7 +142,7 @@ namespace Attendance_C__XML_Project
             {
                 MessageBox.Show("Invalid username or password");
             }
-            
+
         }
 
         //Check if the loggedin user is an admin then navigate him to the admin page (return true)
@@ -173,6 +173,12 @@ namespace Attendance_C__XML_Project
                 return (student.Username.ToLower() == txtUsername.Text.ToLower() && student.Password == txtPassword.Text);
             }
             return false;
+        }
+
+        private void lnkForgetPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgetPasswordForm forgetPasswordFrom = new ForgetPasswordForm();
+            forgetPasswordFrom.ShowDialog();
         }
     }
 }
