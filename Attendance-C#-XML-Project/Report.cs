@@ -132,6 +132,18 @@ namespace Attendance_C__XML_Project
             }
             return dateReport;
         }
+        public List<AttendanceRecord> getReportsAt(DateOnly date)
+        {
+            var dateReport = new List<AttendanceRecord>();
+            foreach (var attendanceRecord in attendanceRecords)
+            {
+                if (attendanceRecord.RecordDate == date)
+                {
+                    dateReport.Add(attendanceRecord);
+                }
+            }
+            return dateReport;
+        }
 
         //get reports for a certain Class
         public List<AttendanceRecord> getClassReports(int classID)
@@ -145,6 +157,27 @@ namespace Attendance_C__XML_Project
                 }
             }
             return classReport;
+        }
+        public void ChangeStudentAttendanceStatus(int recordId,ref List<AttendanceRecord> _attendanceRecords, DateOnly changeDate)
+        {
+            if (_attendanceRecords != null)
+            {
+                AttendanceRecord recordToUpdate = _attendanceRecords.Find(r => r.ID == recordId);
+                if (recordToUpdate != null)
+                {
+                    if (recordToUpdate.attendanceStatus==AttendanceStatus.Absence)
+                    {
+                        recordToUpdate.attendanceStatus = AttendanceStatus.Presence;
+                    }
+                    else 
+                    {
+                        recordToUpdate.attendanceStatus = AttendanceStatus.Absence;
+                    }
+
+                    recordToUpdate.RecordDate = changeDate;
+                }
+            }
+          
         }
 
     }

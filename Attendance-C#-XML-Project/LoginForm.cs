@@ -46,6 +46,9 @@ namespace Attendance_C__XML_Project
             Lists.classes = new List<Class>();
             FileManagment.LoadClassesFromFile("classes.xml", ref Lists.classes);
 
+            //Lists.attendanceRecords = new List<AttendanceRecord>();
+            //FileManagment.LoadClassesFromFile("data/attendance.xml", ref Lists.attendanceRecords);
+
             //Lists.teachersList = [new Teacher("Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"),
             //new Teacher("Omar", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"),
             //new Teacher("Ahmed", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo")];
