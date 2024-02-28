@@ -197,7 +197,7 @@
             comboFontSize.FormattingEnabled = true;
             comboFontSize.Items.AddRange(new object[] { resources.GetString("comboFontSize.Items"), resources.GetString("comboFontSize.Items1"), resources.GetString("comboFontSize.Items2") });
             comboFontSize.Name = "comboFontSize";
-            comboFontSize.SelectedIndexChanged += comboFontSize_SelectedIndexChanged;
+            comboFontSize.SelectedIndexChanged += ComboFontSize_SelectedIndexChanged;
             // 
             // label1
             // 
