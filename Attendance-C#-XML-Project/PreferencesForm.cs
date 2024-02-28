@@ -136,7 +136,8 @@ namespace Attendance_C__XML_Project
 
         private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboLanguages.SelectedItem!=null)
+
+            if (comboLanguages.SelectedItem != null)
             {
                 if (comboLanguages.SelectedItem.ToString() == "English")
                 {
