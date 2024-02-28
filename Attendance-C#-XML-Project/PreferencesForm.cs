@@ -136,13 +136,16 @@ namespace Attendance_C__XML_Project
 
         private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboLanguages.SelectedItem.ToString() == "English")
+            if(comboLanguages.SelectedItem!=null)
             {
-                SetLanguage("en-US"); // Set language to English
-            }
-            else if (comboLanguages.SelectedItem.ToString() == "العربية")
-            {
-                SetLanguage("ar"); // Set language to Arabic
+                if (comboLanguages.SelectedItem.ToString() == "English")
+                {
+                    SetLanguage("en-US"); // Set language to English
+                }
+                else if (comboLanguages.SelectedItem.ToString() == "العربية")
+                {
+                    SetLanguage("ar"); // Set language to Arabic
+                }
             }
         }
 

@@ -38,13 +38,13 @@ namespace Attendance_C__XML_Project
         {
             //Dummy data for testing
             Lists.teachersList = new List<Teacher>();
-            FileManagment.LoadClassesFromFile("data/teachers.xml", ref Lists.teachersList);
+            FileManagment.LoadClassesFromFile("teachers.xml", ref Lists.teachersList);
 
             Lists.studentsList = new List<Student>();
-            FileManagment.LoadClassesFromFile("data/students.xml", ref Lists.studentsList);
+            FileManagment.LoadClassesFromFile("students.xml", ref Lists.studentsList);
 
             Lists.classes = new List<Class>();
-            FileManagment.LoadClassesFromFile("data/classes.xml", ref Lists.classes);
+            FileManagment.LoadClassesFromFile("classes.xml", ref Lists.classes);
 
             //Lists.teachersList = [new Teacher("Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"),
             //new Teacher("Omar", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"),

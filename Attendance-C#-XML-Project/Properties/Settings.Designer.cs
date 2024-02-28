@@ -75,6 +75,7 @@ namespace Attendance_C__XML_Project.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string SelectedLanguage {
+
             get {
                 return ((string)(this["SelectedLanguage"]));
             }
