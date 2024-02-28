@@ -98,9 +98,9 @@ namespace Attendance_C__XML_Project
                 dgvViewReports.Columns.Add("Column2", "Class Name");
                 dgvViewReports.Columns.Add("Column3", "Student Id");
                 dgvViewReports.Columns.Add("Column4", "Student Name");
-                dgvViewReports.Columns.Add("Column5", "Total Attendances");
-                dgvViewReports.Columns.Add("Column6", "Total Absences");
-                dgvViewReports.Columns.Add("Column7", "Total Warnings");
+                dgvViewReports.Columns.Add("Column5", "Status");
+                dgvViewReports.Columns.Add("Column6", "Date");
+
 
                 dgvViewReports.Rows.Clear();
 
@@ -118,11 +118,11 @@ namespace Attendance_C__XML_Project
                     if (record != null)
                     {
                         string classname= GetClassNameFromID(record.ClassID);
-                        string numOfAttendance = LoadStudentAttendanceNumber(reports, record.student.Username);
-                        string numOfAbsence = LoadStudentAbsenceNumber(reports,record.student.Username);
-                        int numOfWarnings = int.Parse(numOfAbsence) / 5;
+                        //string numOfAttendance = LoadStudentAttendanceNumber(reports, record.student.Username);
+                        //string numOfAbsence = LoadStudentAbsenceNumber(reports,record.student.Username);
+                        //int numOfWarnings = int.Parse(numOfAbsence) / 5;
 
-                        dgvViewReports.Rows.Add(record.ID, classname, record.student?.ID ,record.student?.Username, numOfAttendance,numOfAbsence, numOfWarnings);
+                        dgvViewReports.Rows.Add(record.ID, classname, record.student?.ID ,record.student?.Username,record.attendanceStatus,record.RecordDate);
                     }
 
                 }

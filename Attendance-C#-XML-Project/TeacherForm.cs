@@ -25,6 +25,7 @@ namespace Attendance_C__XML_Project
         private int currentPage = 1; // Current page index
         int classId = 1;
         DateOnly dateOnlyValue;
+        Dictionary<int, bool> checkboxStates = new Dictionary<int, bool>();
         public TeacherForm()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace Attendance_C__XML_Project
                 new AttendanceRecord(1,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 11)},
                 new AttendanceRecord(2,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 12) },
                 new AttendanceRecord(3,Lists.studentsList[0],AttendanceStatus.Presence){ RecordDate = new DateOnly(2024, 2, 13) },
-                new AttendanceRecord(4,Lists.studentsList[1],AttendanceStatus.Presence){ RecordDate = new DateOnly(2024, 2, 14) },
+                new AttendanceRecord(4,Lists.studentsList[0],AttendanceStatus.Presence){ RecordDate = new DateOnly(2024, 2, 14) },
                 new AttendanceRecord(5,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 15) },
                 new AttendanceRecord(5,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 16) },
                 new AttendanceRecord(6,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 17) },
@@ -43,12 +44,11 @@ namespace Attendance_C__XML_Project
                 new AttendanceRecord(9,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 20) },
                 new AttendanceRecord(10,Lists.studentsList[0],AttendanceStatus.Absence) { RecordDate = new DateOnly(2024, 2, 21) },
                 new AttendanceRecord(11,Lists.studentsList[0],AttendanceStatus.Absence) { RecordDate = new DateOnly(2024, 2, 22) },
-                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
-                new AttendanceRecord(12,Lists.studentsList[1],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
-                new AttendanceRecord(12,Lists.studentsList[2],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
-                new AttendanceRecord(12,Lists.studentsList[3],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
-                new AttendanceRecord(12,Lists.studentsList[4],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
-                new AttendanceRecord(12,Lists.studentsList[5],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
+
+                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Presence){RecordDate=new DateOnly(2024, 2, 27)},
+                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 27)},
+                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 27)},
+                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 27)},
             };
 
             teacherReport = new GenerateReport();
@@ -120,7 +120,7 @@ namespace Attendance_C__XML_Project
             dgvViewStudents.Rows.Clear();
 
             // Add columns
-            dgvViewStudents.Columns.Add("Column1", "StudentId");
+            dgvViewStudents.Columns.Add("Column1", "RecordId");
             dgvViewStudents.Columns.Add("Column2", "Student Name");
             dgvViewStudents.Columns[0].ReadOnly = true;
             dgvViewStudents.Columns[1].ReadOnly = true;
@@ -180,7 +180,18 @@ namespace Attendance_C__XML_Project
                 throw new Exception("No Class with that name");
             }
         }
+        private void dgvViewStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+            // Check if the clicked cell is the checkbox cell
+            if (e.ColumnIndex == dgvViewStudents.Columns["checkBoxColumn"].Index && e.RowIndex >= 0 && dateOnlyValue.Equals(DateOnly.FromDateTime(DateTime.Now)))
+            {
+                // Toggle the checkbox state and update the dictionary
+                int recordId = (int)dgvViewStudents.Rows[e.RowIndex].Cells["Column1"].Value;
+
+                teacherReport.ChangeStudentAttendanceStatus(recordId, ref attendanceRecords, DateOnly.FromDateTime(DateTime.Now));
+            }
+        }
 
         private string GetClassNameFromID(int id)
         {
@@ -369,18 +380,21 @@ namespace Attendance_C__XML_Project
             CheckBox checkBox = (CheckBox)sender;
             panelShowStudents.Show();
             // load the students reports
-
             DateOnly dateOnlyValue = new DateOnly(dateTimePicker.Value.Year, dateTimePicker.Value.Month, dateTimePicker.Value.Day);
             int classId = getClassIdFromComboBox();
-            if (checkBox.Checked)
+            if (dateOnlyValue.Equals(DateOnly.FromDateTime(DateTime.Now)))
             {
+                if (checkBox.Checked)
+                {
 
-                LoadStudentReports(dateOnlyValue, classId, true);
+                    LoadStudentReports(dateOnlyValue, classId, true);
+                }
+                else
+                {
+                    LoadStudentReports(dateOnlyValue, classId, attendAll: false);
+                }
             }
-            else
-            {
-                LoadStudentReports(dateOnlyValue, classId, attendAll: false);
-            }
+
         }
 
 
@@ -417,22 +431,43 @@ namespace Attendance_C__XML_Project
             {
                 btnSave.Enabled = true;
                 btnSave.BackColor = Color.Teal;
+                btnNewReport.Show();
             }
             else
             {
                 btnSave.Enabled = false;
                 btnSave.BackColor = Color.DarkGray;
+                btnNewReport.Hide();
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            // Save Data To Xml
-        }
+      
 
         private void panelShow_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            // Save Data To Xml
+
+            //FileManagment.ValidateAgainstXsd(attendanceRecords);
+
+        }
+        private void btnNewReport_Click(object sender, EventArgs e)
+        {
+            var TodayReports = teacherReport.getReportsAt(dateOnlyValue);
+            var currentClassId = getClassIdFromComboBox();
+            var students = Lists.studentsList.Where(s=>s.ClassID== currentClassId).ToList();
+            if (TodayReports == null)
+            {
+                foreach (var student in students)
+                {
+                    AttendanceRecord attendanceRecord = new AttendanceRecord(_id: 20,student,AttendanceStatus.Absence);
+                    attendanceRecords.Add(attendanceRecord);
+                }
+            }
+            LoadStudentReports(dateOnlyValue, classId, false);
         }
     }
 }
