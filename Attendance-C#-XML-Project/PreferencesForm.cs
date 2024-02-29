@@ -194,13 +194,17 @@ namespace Attendance_C__XML_Project
         }
         private void ApplyDarkTheme()
         {
-            this.BackColor = Color.FromArgb(45, 45, 48); // Dark gray background
+            //this.BackColor = Color.FromArgb(45, 45, 48); // Dark gray background
             foreach (Control control in Controls)
             {
-                control.BackColor = Color.FromArgb(45, 45, 48); // Dark gray background
+                //control.BackColor = Color.FromArgb(45, 45, 48); // Dark gray background
                 if (control is Label || control is Button)
                 {
                     control.ForeColor = Color.White; // Light gray text
+                }
+                if(control is Panel&&control.Tag== "myTheme")
+                {
+                    control.BackColor = Color.FromArgb(45, 45, 48);
                 }
             }
         }

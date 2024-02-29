@@ -45,6 +45,7 @@
             label1 = new Label();
             dateTimePickerEnd = new DateTimePicker();
             panelShow = new Panel();
+            btnSearchReportsByClass = new Button();
             comboClassesList = new ComboBox();
             btnSearchReports = new Button();
             panelShowReports = new Panel();
@@ -55,10 +56,6 @@
             dgvViewReports = new DataGridView();
             btnExportPDF = new Button();
             btnExportExcel = new Button();
-            button5 = new Button();
-            button1 = new Button();
-            button2 = new Button();
-            btnSearchReportsByClass = new Button();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picStudent).BeginInit();
@@ -179,6 +176,16 @@
             panelShow.Controls.Add(dateTimePickerStart);
             panelShow.Name = "panelShow";
             // 
+            // btnSearchReportsByClass
+            // 
+            resources.ApplyResources(btnSearchReportsByClass, "btnSearchReportsByClass");
+            btnSearchReportsByClass.BackColor = Color.Teal;
+            btnSearchReportsByClass.FlatAppearance.BorderSize = 0;
+            btnSearchReportsByClass.ForeColor = SystemColors.Control;
+            btnSearchReportsByClass.Name = "btnSearchReportsByClass";
+            btnSearchReportsByClass.UseVisualStyleBackColor = false;
+            btnSearchReportsByClass.Click += btnSearchReportsByClass_Click;
+            // 
             // comboClassesList
             // 
             resources.ApplyResources(comboClassesList, "comboClassesList");
@@ -202,9 +209,6 @@
             panelShowReports.Controls.Add(dgvViewReports);
             panelShowReports.Controls.Add(btnExportPDF);
             panelShowReports.Controls.Add(btnExportExcel);
-            panelShowReports.Controls.Add(button5);
-            panelShowReports.Controls.Add(button1);
-            panelShowReports.Controls.Add(button2);
             panelShowReports.Name = "panelShowReports";
             panelShowReports.Paint += panelShowReports_Paint;
             // 
@@ -266,43 +270,6 @@
             btnExportExcel.UseVisualStyleBackColor = false;
             btnExportExcel.Click += btnExportExcel_Click;
             // 
-            // button5
-            // 
-            resources.ApplyResources(button5, "button5");
-            button5.BackColor = Color.Teal;
-            button5.FlatAppearance.BorderSize = 0;
-            button5.ForeColor = SystemColors.Control;
-            button5.Name = "button5";
-            button5.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            resources.ApplyResources(button1, "button1");
-            button1.BackColor = Color.Teal;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.ForeColor = SystemColors.Control;
-            button1.Name = "button1";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            resources.ApplyResources(button2, "button2");
-            button2.BackColor = Color.Teal;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.ForeColor = SystemColors.Control;
-            button2.Name = "button2";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // btnSearchReportsByClass
-            // 
-            resources.ApplyResources(btnSearchReportsByClass, "btnSearchReportsByClass");
-            btnSearchReportsByClass.BackColor = Color.Teal;
-            btnSearchReportsByClass.FlatAppearance.BorderSize = 0;
-            btnSearchReportsByClass.ForeColor = SystemColors.Control;
-            btnSearchReportsByClass.Name = "btnSearchReportsByClass";
-            btnSearchReportsByClass.UseVisualStyleBackColor = false;
-            btnSearchReportsByClass.Click += btnSearchReportsByClass_Click;
-            // 
             // DisplayReportsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -348,10 +315,7 @@
         private Panel panelShow;
         private Button btnSearchReports;
         private Panel panelShowReports;
-        private Button button5;
         private ListBox listBox2;
-        private Button button1;
-        private Button button2;
         private Button btnExportPDF;
         private Button btnExportExcel;
         private DataGridView dgvViewReports;
