@@ -110,10 +110,6 @@
             // 
             resources.ApplyResources(txtUsername, "txtUsername");
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(248, 27);
-            txtUsername.TabIndex = 2;
-            txtUsername.Text = "teacher1";
-            txtUsername.TextAlign = HorizontalAlignment.Center;
             // 
             // label2
             // 
