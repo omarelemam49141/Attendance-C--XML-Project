@@ -42,8 +42,7 @@ namespace Attendance_C__XML_Project
                 throw;
             }
 
-            // Loading User Settings
-            InitializeLanguageComboBox();
+
         }
 
         #region User Management
@@ -79,8 +78,8 @@ namespace Attendance_C__XML_Project
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            //System.Diagnostics.Process.GetCurrentProcess().Kill();
-            //Application.Exit();
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+            Application.Exit();
             this.Close();
         }
 
@@ -139,15 +138,19 @@ namespace Attendance_C__XML_Project
 
             if (comboLanguages.SelectedItem != null)
             {
-                if (comboLanguages.SelectedItem.ToString() == "en-US")
+                if (comboLanguages.SelectedItem.ToString() == "English")
                 {
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
                     SetLanguage("en-US"); // Set language to English
                 }
-                else if (comboLanguages.SelectedItem.ToString() == "ar")
+                else if (comboLanguages.SelectedItem.ToString() == "العربية")
                 {
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ar");
                     SetLanguage("ar"); // Set language to Arabic
                 }
             }
+
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -160,14 +163,6 @@ namespace Attendance_C__XML_Project
 
         #region Utility Methods
 
-        private void InitializeLanguageComboBox()
-        {
-            comboLanguages = new ComboBox();
-            comboLanguages.Items.Add("English");
-            comboLanguages.Items.Add("العربية");
-            comboLanguages.SelectedIndexChanged += comboBoxLanguage_SelectedIndexChanged;
-            this.Controls.Add(comboLanguages);
-        }
 
         private void ApplyTextColor(Color color)
         {
@@ -337,5 +332,19 @@ namespace Attendance_C__XML_Project
         }
 
         #endregion
+
+        private void SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserLogout_click(object sender, EventArgs e)
+        {
+            LoggedInUser.Name = string.Empty;
+            LoggedInUser.userRole = (Role)(-1);
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
+        }
     }
 }

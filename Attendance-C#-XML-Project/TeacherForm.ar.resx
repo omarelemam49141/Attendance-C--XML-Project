@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!--
+  <!-- 
     Microsoft ResX Schema 
-
+    
     Version 2.0
-
-    The primary goals of this format is to allow a simple XML format
-    that is mostly human readable. The generation and parsing of the
-    various data types are done through the TypeConverter classes
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
     associated with the data types.
-
+    
     Example:
-
+    
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-
-    There are any number of "resheader" rows that contain simple
+                
+    There are any number of "resheader" rows that contain simple 
     name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a
-    type or mimetype. Type corresponds to a .NET class that support
-    text/value conversion through the TypeConverter architecture.
-    Classes that don't support this are serialized and stored with the
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
     mimetype set.
-
-    The mimetype is used for serialized objects, and tells the
-    ResXResourceReader how to depersist the object. This is currently not
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
     extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format
-    that the ResXResourceWriter will generate, however the reader can
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
     read any of the formats listed below.
-
+    
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with
+    value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with
+    value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array
+    value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -118,14 +118,29 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnNewReport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAjhJREFUWEft
+        l8FqE1EUhoMUFKStoO50p60gqNXiXh+gKH0ToVB1JyguSgUXglUEF3YvbizVTes7SHUhWrpoqQuDii6u
+        x++e+YNJxpm50yaEQr9whpNz/vPnJjPM3DT22VOY2Thxy/7YKrFGbCtivkLvJjEmee/A9CIfsExYYixx
+        vKDxnYPJkAV7iGGQ8SbZAtk14ixxXBHz6/SeoNmSNvCaJxuSXT0YPIJJ61v/wuwe2bDahaAZQXvfZ/79
+        GqNqp8HAQQbfyeATx3NqJcPMeZ/NPFajp1rV8A0WNLjO8YTKtWH2JB4b7hXskcrlIL3MQHz9IJ9Qecfg
+        MYnXT3c0u6RyMcjeuDTYHZV2DV533ZPrQaX/g2Rcwm2O1RdcpjW9LQTVKLqvrjc7rXIemrddFOyxSqWk
+        LiCC51MtYFalPAjeSjSlUim1FhDvE5l+WaU8ND+6yOyUSqXIMHUBrdO7plIemk0XFZx/GVSG5B3QGVH/
+        m0p5aH53kdlhlTqQQWVI3gGdYfWbKuWh+cFFZVdqGzJMPQVnpH+vUh6aA74IzWZcFOyZSqXUWkCw5643
+        u6FSHpqDvRFFEGWP4P7cil+rVAyyCYRxA9Lrh1EgT3usI33AQFxxLx/HcypXg/wAQ6+0iHg9XFErGWau
+        +mzm8TJ6qpUGA91bsjmyo2oXguYY2nmfyWbrb8laMNi9KW2SvSCbJsaIQ4qYT9NbdE2m3d2mtB1MBrMt
+        7wbT9j8mX4jfis9E//6Y7NM/Go2/b7/lVNitOoMAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 24</value>
+    <value>121, 29</value>
   </data>
   <data name="checkBox1.Text" xml:space="preserve">
     <value>حضور الكل</value>
   </data>
   <data name="lblDatePicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 18</value>
+    <value>51, 24</value>
   </data>
   <data name="lblDatePicker.Text" xml:space="preserve">
     <value>التاريخ</value>
@@ -147,25 +162,25 @@
     <value>بحث</value>
   </data>
   <data name="lblClassPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 18</value>
+    <value>74, 24</value>
   </data>
   <data name="lblClassPicker.Text" xml:space="preserve">
     <value>اسم الفصل</value>
   </data>
   <data name="lblRole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 18</value>
+    <value>52, 24</value>
   </data>
   <data name="lblRole.Text" xml:space="preserve">
     <value>الدور:</value>
   </data>
   <data name="lblWelcome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 18</value>
+    <value>62, 24</value>
   </data>
   <data name="lblWelcome.Text" xml:space="preserve">
     <value>مرحبا: </value>
   </data>
   <data name="lblRoleName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 18</value>
+    <value>66, 24</value>
   </data>
   <data name="lblRoleName.Text" xml:space="preserve">
     <value>اسم الدور</value>
@@ -200,7 +215,7 @@
 </value>
   </data>
   <data name="lblUserName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 18</value>
+    <value>87, 24</value>
   </data>
   <data name="lblUserName.Text" xml:space="preserve">
     <value>اسم المستخدم</value>
@@ -313,45 +328,10 @@
 </value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 20</value>
+    <value>126, 25</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>استمارة المعلم</value>
-  </data>
-  <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE/SURBVEhLzZbNSsQwFIUjKNP2+gou9C1cuZ2VMgt1mtbn
-        cHkzzEZwLT6DDyI4+B7iUkX8AUFvOnfQIYeZdozBAx9d3JNzSZsmMTPZwp1U5CZVxg/y/PwVkmGJb0py
-        lcZPJcXLwBwJmcBF08R3RYaYlMRD46eIijGRWV3La+MXVIzJgPjZfx9YjM0/b7TB93XBfbs5OoR1QOdG
-        ltztcTbeapasCHkQHRvx2Z7hde3RCPtCWhkPyL36nUOz54T8iKXGI+K7Mhvtam4gNAax0DjM+cn2eEcz
-        odA4xGKjbI51b7ytmVBwHGCpcZC7xyrnfc0NhMYgWhr5oyzcqeSuTeO/hf0hrY0eWXlXtTkn7dEI+RCd
-        GnkS/bBKii1oVVI2SnTwJTvKk11OdIn+/XVrJn8MSGEivP80roJ8jrf5C6QxX+C7fPgN0A+OAAAAAElF
-        TkSuQmCC
-</value>
-  </data>
-  <data name="toolStripButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEmSURBVEhLY4CBKK6G2GjuhpPRHPUfgPR/ijDQjCju+hOR
-        3A3RUOMhACg5HUMxlTDQA1PBloBsxaaAmjiSuz6CAeRFbJLUxEBfHQUGW/03bJLUxIHc9V9A8YNVktp4
-        EFrEUx8Sw1XvEcba8BKrPAFMtEXgJAoE4RzNslHcDaexqcGHSbYIBOwZ6lmiuRomYlOHC5NlEQxEcdWn
-        AeV+oqvFhimyCARiOOqtwrjrn2HTg4wptggEotjrlSI46z9h0wfDVLEonK9ZOZCz4SM2fTBMsUXRnPV+
-        hCwBYUosYgQWXw1A/A+benRMlkUxDN3cwIJyJTZ1uDDJFtE8w9KtCKIU09MiOlV8dKvK6dY4AQEgh/bN
-        LRgACkAakEQW+/gwMDp+oDYgGRgANQx9GUGZsoQAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAKlJREFUWEft
-        jlEKwkAMRPcIBdsfvf9l/JBSEPQ0MZt9ChVhU3c/quRB2GY6EyYFwS6RPlx0DpzcRsl3YdYZOeunZEVY
-        DaSVlkF+6ayZM+9N58hvHyXXXGDQeZa465yw1CkZX4F3sJlPn0lnMUHkagYPBJoLZPQzlzCQ6uD/WMAL
-        MQPpxwu0wLko8H0B1s0Q/6MCrFWwR4EoEAXaC/SG83Xwd4fzQbAnUnoA2mwQUIdm2VAAAAAASUVORK5C
-        YII=
-</value>
-  </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>حفظ</value>
   </data>
   <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -369,7 +349,41 @@
   <data name="button1.Text" xml:space="preserve">
     <value>Pdf طباعة ملف </value>
   </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        cwAAEnMBjCK5BwAAAT9JREFUSEvNls1KxDAUhSMo0/b6Ci70LVy5nZUyC3Wa1udweTPMRnAtPoMPIjj4
+        HuJSRfwBQW86d9Ahh5l2jMEDH13ck3NJmyYxM9nCnVTkJlXGD/L8/BWSYYlvSnKVxk8lxcvAHAmZwEXT
+        xHdFhpiUxEPjp4iKMZFZXctr4xdUjMmA+Nl/H1iMzT9vtMH3dcF9uzk6hHVA50aW3O1xNt5qlqwIeRAd
+        G/HZnuF17dEI+0JaGQ/IvfqdQ7PnhPyIpcYj4rsyG+1qbiA0BrHQOMz5yfZ4RzOh0DjEYqNsjnVvvK2Z
+        UHAcYKlxkLvHKud9zQ2ExiBaGvmjLNyp5K5N47+F/SGtjR5ZeVe1OSft0Qj5EJ0aeRL9sEqKLWhVUjZK
+        dPAlO8qTXU50if79dWsmfwxIYSK8/zSugnyOt/kLpDFf4Lt8+A3QD44AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="toolStripButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        cwAAEnMBjCK5BwAAASZJREFUSEtjgIEorobYaO6Gk9Ec9R+A9H+KMNCMKO76E5HcDdFQ4yEAKDkdQzGV
+        MNADU8GWgGzFpoCaOJK7PoIB5EVsktTEQF8dBQZb/TdsktTEgdz1X0Dxg1WS2ngQWsRTHxLDVe8Rxtrw
+        Eqs8AUy0ReAkCgThHM2yUdwNp7GpwYdJtggE7BnqWaK5GiZiU4cLk2URDERx1acB5X6iq8WGKbIIBGI4
+        6q3CuOufYdODjCm2CASi2OuVIjjrP2HTB8NUsSicr1k5kLPhIzZ9MEyxRdGc9X6ELAFhSixiBBZfDUD8
+        D5t6dEyWRTEM3dzAgnIlNnW4MMkW0TzD0q0IohTT0yI6VXx0q8rp1jgBASCH9s0tGAAKQBqQRBb7+DAw
+        On6gNiAZGAA1DH0ZQZmyhAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAKlJREFUWEft
+        jlEKwkAMRPcIBdsfvf9l/JBSEPQ0MZt9ChVhU3c/quRB2GY6EyYFwS6RPlx0DpzcRsl3YdYZOeunZEVY
+        DaSVlkF+6ayZM+9N58hvHyXXXGDQeZa465yw1CkZX4F3sJlPn0lnMUHkagYPBJoLZPQzlzCQ6uD/WMAL
+        MQPpxwu0wLko8H0B1s0Q/6MCrFWwR4EoEAXaC/SG83Xwd4fzQbAnUnoA2mwQUIdm2VAAAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="btnExcel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAbhJREFUWEft
         lk8rRFEYh4dMiY1vQBasZEEpGzbyEZQNZWcjWWHtA8jKJxBlgbJUiFKKspCljZBP4N/1vOf87mWmmXPm
@@ -382,14 +396,30 @@
         c7iF9+hQpEGDnBQKH2b15ovmqH/MAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 60</value>
+  <data name="btnPDF.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAaZJREFUSEvt
+        lk0rhFEYhsdOsrOVFbGmLGSplCj8A0pCjb2PvY+98gvExsKODRslNvwAaSLFQmExEa/reec+b+OjznnH
+        kQVXXWVO93M/vceYUfjnV0mSZBDPMZRHnNR47VBSSuvCeZXTqqiNtCofU+iWz6gmP9aUB82M4Ut6kCRz
+        aVFeNByMxmxuHN3yeR2Ho8FgNJbCy+rlCzoOQ0PBaCyDoyK633lRx34I56VXoxmczaItLuvIjzXFRLV+
+        lI+Gav0oHw3V+lE+Gqr1o7xxj33Yhf14jA/YjR0620VjEy3rLGOKav0ob9zq9SoOYTve6WwJJ7Aer3EZ
+        W3BdPmOK5YNQ3nCLT3EH6/BGZydoHxRNuIa22G7mE5YPQnnDLbYnGMVWdE9si41OXERb3IC2fBgzLB+E
+        8oZb3Iw9eIgfF7fhClZf9QZmWD4I5Y3qq3ZULz5Du/4D/JGr/mqxvdEacQTtozHq4ifcQ/sTcti7dRu3
+        cB/dN9EFHlV+fI9q/SgfDdX6UT4aqvWjfDRU64fsZWUkCiXV+iFs/1dfpWPfwx5gQLV/mkLhDekS2r0u
+        H79HAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="button2.Text" xml:space="preserve">
-    <value> Excel تصدير ملف</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
+  </data>
+  <data name="btnExcel.Text" xml:space="preserve">
+    <value>تصدير ك excel</value>
+  </data>
+  <data name="btnNewReport.Text" xml:space="preserve">
+    <value>إضافة تقرير جديد</value>
+  </data>
+  <data name="btnPDF.Text" xml:space="preserve">
+    <value>تصدير ك pdf</value>
   </data>
 </root>

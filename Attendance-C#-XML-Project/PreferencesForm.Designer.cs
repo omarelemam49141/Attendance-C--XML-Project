@@ -74,10 +74,10 @@
             // 
             // panel3
             // 
+            resources.ApplyResources(panel3, "panel3");
             panel3.BackColor = Color.FromArgb(73, 178, 202);
             panel3.Controls.Add(btnExit);
             panel3.Controls.Add(label9);
-            resources.ApplyResources(panel3, "panel3");
             panel3.Name = "panel3";
             // 
             // picStudent
@@ -88,6 +88,7 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(panel1, "panel1");
             panel1.BackColor = Color.Gold;
             panel1.Controls.Add(lblRole);
             panel1.Controls.Add(lblRoleName);
@@ -96,7 +97,6 @@
             panel1.Controls.Add(button3);
             panel1.Controls.Add(lblUserName);
             panel1.Controls.Add(lblRoleError);
-            resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
             // 
             // lblRole
@@ -116,12 +116,13 @@
             // 
             // button3
             // 
+            resources.ApplyResources(button3, "button3");
             button3.BackColor = Color.Transparent;
             button3.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(button3, "button3");
             button3.ForeColor = Color.Black;
             button3.Name = "button3";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += UserLogout_click;
             // 
             // lblUserName
             // 
@@ -136,6 +137,7 @@
             // 
             // panelShow
             // 
+            resources.ApplyResources(panelShow, "panelShow");
             panelShow.Controls.Add(label4);
             panelShow.Controls.Add(comboThemes);
             panelShow.Controls.Add(btnSave);
@@ -147,7 +149,6 @@
             panelShow.Controls.Add(comboDateFormat);
             panelShow.Controls.Add(lblClassPicker);
             panelShow.Controls.Add(comboLanguages);
-            resources.ApplyResources(panelShow, "panelShow");
             panelShow.Name = "panelShow";
             // 
             // label4
@@ -165,9 +166,9 @@
             // 
             // btnSave
             // 
+            resources.ApplyResources(btnSave, "btnSave");
             btnSave.BackColor = Color.Teal;
             btnSave.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(btnSave, "btnSave");
             btnSave.ForeColor = SystemColors.Control;
             btnSave.Name = "btnSave";
             btnSave.UseVisualStyleBackColor = false;
@@ -210,7 +211,7 @@
             comboDateFormat.FormattingEnabled = true;
             comboDateFormat.Items.AddRange(new object[] { resources.GetString("comboDateFormat.Items"), resources.GetString("comboDateFormat.Items1") });
             comboDateFormat.Name = "comboDateFormat";
-            comboDateFormat.SelectedIndexChanged += comboDateFormat_SelectedIndexChanged;
+            comboDateFormat.SelectedIndexChanged += SelectedIndexChanged;
             // 
             // lblClassPicker
             // 
