@@ -50,6 +50,7 @@
             label9 = new Label();
             panelAttendanceTable = new Panel();
             panelShowStudents = new Panel();
+            button1 = new Button();
             toolStrip = new ToolStrip();
             toolStripButton1 = new ToolStripButton();
             toolStripButton2 = new ToolStripButton();
@@ -57,7 +58,8 @@
             dgvViewStudents = new DataGridView();
             btnSave = new Button();
             btnPrint = new Button();
-            button2 = new Button();
+            btnExcel = new Button();
+            btnPDF = new Button();
             panel3 = new Panel();
             panelShow.SuspendLayout();
             panel1.SuspendLayout();
@@ -71,17 +73,14 @@
             // 
             // panelShow
             // 
-
             panelShow.Controls.Add(btnNewReport);
-
-            resources.ApplyResources(panelShow, "panelShow");
-
             panelShow.Controls.Add(checkBox1);
             panelShow.Controls.Add(lblDatePicker);
             panelShow.Controls.Add(dateTimePicker);
             panelShow.Controls.Add(btnShowReport);
             panelShow.Controls.Add(lblClassPicker);
             panelShow.Controls.Add(comboClasses);
+            resources.ApplyResources(panelShow, "panelShow");
             panelShow.Name = "panelShow";
             panelShow.Paint += panelShow_Paint;
             // 
@@ -89,18 +88,9 @@
             // 
             btnNewReport.BackColor = Color.Blue;
             btnNewReport.FlatAppearance.BorderSize = 0;
-            btnNewReport.FlatStyle = FlatStyle.Flat;
-            btnNewReport.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(btnNewReport, "btnNewReport");
             btnNewReport.ForeColor = SystemColors.Control;
-            btnNewReport.Image = (Image)resources.GetObject("btnNewReport.Image");
-            btnNewReport.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNewReport.Location = new Point(445, 18);
-            btnNewReport.Margin = new Padding(3, 4, 3, 4);
             btnNewReport.Name = "btnNewReport";
-            btnNewReport.Size = new Size(217, 53);
-            btnNewReport.TabIndex = 32;
-            btnNewReport.Text = "Add New Report";
-            btnNewReport.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnNewReport.UseVisualStyleBackColor = false;
             btnNewReport.Click += btnNewReport_Click;
             // 
@@ -124,15 +114,10 @@
             // 
             // btnShowReport
             // 
-            resources.ApplyResources(btnShowReport, "btnShowReport");
             btnShowReport.BackColor = Color.Teal;
             btnShowReport.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnShowReport, "btnShowReport");
             btnShowReport.ForeColor = SystemColors.Control;
-
-            btnShowReport.Image = (Image)resources.GetObject("btnShowReport.Image");
-            btnShowReport.Location = new Point(685, 18);
-            btnShowReport.Margin = new Padding(3, 4, 3, 4);
-
             btnShowReport.Name = "btnShowReport";
             btnShowReport.UseVisualStyleBackColor = false;
             btnShowReport.Click += btnShowReport_Click;
@@ -165,9 +150,9 @@
             // 
             // btnSetting
             // 
-            resources.ApplyResources(btnSetting, "btnSetting");
             btnSetting.BackColor = Color.Transparent;
             btnSetting.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnSetting, "btnSetting");
             btnSetting.ForeColor = Color.Black;
             btnSetting.Name = "btnSetting";
             btnSetting.UseVisualStyleBackColor = false;
@@ -175,9 +160,9 @@
             // 
             // button3
             // 
-            resources.ApplyResources(button3, "button3");
             button3.BackColor = Color.Transparent;
             button3.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button3, "button3");
             button3.ForeColor = Color.Black;
             button3.Name = "button3";
             button3.UseVisualStyleBackColor = false;
@@ -196,7 +181,6 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(panel1, "panel1");
             panel1.BackColor = Color.Gold;
             panel1.Controls.Add(lblRole);
             panel1.Controls.Add(lblWelcome);
@@ -206,6 +190,7 @@
             panel1.Controls.Add(lblUserName);
             panel1.Controls.Add(lblRoleError);
             panel1.Controls.Add(picStudent);
+            resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
             // 
             // picStudent
@@ -230,19 +215,31 @@
             // 
             // panelAttendanceTable
             // 
-            resources.ApplyResources(panelAttendanceTable, "panelAttendanceTable");
             panelAttendanceTable.Controls.Add(panelShowStudents);
+            resources.ApplyResources(panelAttendanceTable, "panelAttendanceTable");
             panelAttendanceTable.Name = "panelAttendanceTable";
             // 
             // panelShowStudents
             // 
-            resources.ApplyResources(panelShowStudents, "panelShowStudents");
+            panelShowStudents.Controls.Add(button1);
             panelShowStudents.Controls.Add(toolStrip);
             panelShowStudents.Controls.Add(dgvViewStudents);
             panelShowStudents.Controls.Add(btnSave);
             panelShowStudents.Controls.Add(btnPrint);
-            panelShowStudents.Controls.Add(button2);
+            panelShowStudents.Controls.Add(btnExcel);
+            panelShowStudents.Controls.Add(btnPDF);
+            resources.ApplyResources(panelShowStudents, "panelShowStudents");
             panelShowStudents.Name = "panelShowStudents";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Teal;
+            button1.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button1, "button1");
+            button1.ForeColor = SystemColors.Control;
+            button1.Name = "button1";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += btnSave_Click;
             // 
             // toolStrip
             // 
@@ -253,102 +250,81 @@
             // 
             // toolStripButton1
             // 
-            resources.ApplyResources(toolStripButton1, "toolStripButton1");
             toolStripButton1.BackColor = SystemColors.Control;
             toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(toolStripButton1, "toolStripButton1");
             toolStripButton1.Name = "toolStripButton1";
             toolStripButton1.Click += prevPage_Click;
             // 
             // toolStripButton2
             // 
-            resources.ApplyResources(toolStripButton2, "toolStripButton2");
             toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(toolStripButton2, "toolStripButton2");
             toolStripButton2.Name = "toolStripButton2";
             toolStripButton2.Click += nextPage_Click;
             // 
             // toolStripPageLabel
             // 
-            resources.ApplyResources(toolStripPageLabel, "toolStripPageLabel");
             toolStripPageLabel.Name = "toolStripPageLabel";
+            resources.ApplyResources(toolStripPageLabel, "toolStripPageLabel");
             // 
             // dgvViewStudents
             // 
-            resources.ApplyResources(dgvViewStudents, "dgvViewStudents");
             dgvViewStudents.AllowUserToAddRows = false;
             dgvViewStudents.AllowUserToDeleteRows = false;
             dgvViewStudents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvViewStudents.BackgroundColor = SystemColors.Control;
             dgvViewStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(dgvViewStudents, "dgvViewStudents");
             dgvViewStudents.Name = "dgvViewStudents";
-
-            dgvViewStudents.RowHeadersWidth = 51;
-            dgvViewStudents.Size = new Size(872, 313);
-            dgvViewStudents.TabIndex = 30;
             dgvViewStudents.CellContentClick += dgvViewStudents_CellContentClick;
-
             // 
             // btnSave
             // 
-            resources.ApplyResources(btnSave, "btnSave");
             btnSave.BackColor = Color.Teal;
-
             btnSave.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnSave, "btnSave");
             btnSave.ForeColor = SystemColors.Control;
-
-            btnSave.Image = (Image)resources.GetObject("btnSave.Image");
-            btnSave.Location = new Point(694, 648);
-            btnSave.Margin = new Padding(3, 4, 3, 4);
-
             btnSave.Name = "btnSave";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
-
             // btnPrint
             // 
             btnPrint.BackColor = Color.Teal;
             btnPrint.FlatAppearance.BorderSize = 0;
-            btnPrint.FlatStyle = FlatStyle.Flat;
-            btnPrint.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(btnPrint, "btnPrint");
             btnPrint.ForeColor = SystemColors.Control;
-            btnPrint.Image = (Image)resources.GetObject("btnPrint.Image");
-            btnPrint.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPrint.Location = new Point(91, 648);
-            btnPrint.Margin = new Padding(3, 4, 3, 4);
             btnPrint.Name = "btnPrint";
-            btnPrint.Size = new Size(176, 80);
-            btnPrint.TabIndex = 27;
-            btnPrint.Text = "Export Pdf";
-            btnPrint.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnPrint.UseVisualStyleBackColor = false;
             btnPrint.Click += btnExportPDF;
-
-            // button1
             // 
-            resources.ApplyResources(button1, "button1");
-            button1.BackColor = Color.Teal;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.ForeColor = SystemColors.Control;
-            button1.Name = "button1";
-            button1.UseVisualStyleBackColor = false;
-
+            // btnExcel
             // 
-            // button2
+            btnExcel.BackColor = Color.Teal;
+            btnExcel.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnExcel, "btnExcel");
+            btnExcel.ForeColor = SystemColors.Control;
+            btnExcel.Name = "btnExcel";
+            btnExcel.UseVisualStyleBackColor = false;
+            btnExcel.Click += btnExportExcel_Click;
             // 
-            resources.ApplyResources(button2, "button2");
-            button2.BackColor = Color.Teal;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.ForeColor = SystemColors.Control;
-            button2.Name = "button2";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += btnExportExcel_Click;
+            // btnPDF
+            // 
+            btnPDF.BackColor = Color.Teal;
+            btnPDF.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnPDF, "btnPDF");
+            btnPDF.ForeColor = SystemColors.Control;
+            btnPDF.Name = "btnPDF";
+            btnPDF.UseVisualStyleBackColor = false;
+            btnPDF.Click += btnExportPDF;
             // 
             // panel3
             // 
-            resources.ApplyResources(panel3, "panel3");
             panel3.BackColor = Color.FromArgb(73, 178, 202);
             panel3.Controls.Add(btnExit);
             panel3.Controls.Add(label9);
+            resources.ApplyResources(panel3, "panel3");
             panel3.Name = "panel3";
             // 
             // TeacherForm
@@ -402,11 +378,13 @@
         private DataGridView dgvViewStudents;
         private Button btnSave;
         private Button btnPrint;
-        private Button button2;
+        private Button btnExcel;
+        private Button btnPDF;
         private ToolStrip toolStrip;
         private ToolStripButton toolStripButton1;
         private ToolStripButton toolStripButton2;
         private ToolStripLabel toolStripPageLabel;
         private Button btnNewReport;
+        private Button button1;
     }
 }

@@ -137,18 +137,19 @@
         7wbT9j8mX4jfis9E//6Y7NM/Go2/b7/lVNitOoMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnShowReport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAbNJREFUSEvt
-        lt0qRFEYhieDUShKElfg5zY4ooSJopwp+Sm5DMQlcKAccAtOJY78DfJzAeQAJYrleWd/42BqWnvNjOFg
-        nnqy+/Z6v6+2NXvtRJV/g3MuhVO4h7f4ZOp6FycxZcvLAw3TeI8+7nDUYsVDkyRuqKNxikvYi21mn9XO
-        MMc6Jq1NOIRXs22ce8d5LNhM93ABP1Cs2K0wCA5H+ezQfit7Ye2AZb5wyMrxIFCPNyhmrBwbMrNR1F1j
-        nZX9sHgiG3PuBGusHBsyeuznagBpK/th8U6UcYtWCoasNpzYtpIfFusRiW4rBUNWu11krOSHxS9RxjVZ
-        KRiyzVEL92wlPyx+jTKu0UrBkC1qcDketV4y4tJKflj8Z5ur1J9TLWbUAIJ+TqW+QJajaOALRBAo9pU5
-        jZ+oV+aglcMguIZCw+fQd0joINFQ8YgddjsMgoWOxR5sMLV784/FB/t7gcUNF4THMO6HwAi24rEKoP9z
-        l7UKh7A+fbTbt1AHwJup600cx59PH641/AhFacNDYVj+8E679fswrAVzw6+wosPbURtTHFq5MjBQww9w
-        30pVKkki8Q05ovZw/HutEgAAAABJRU5ErkJggg==
-</value>
+	<data name="btnShowReport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>
+			iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAbNJREFUSEvt
+			lt0qRFEYhieDUShKElfg5zY4ooSJopwp+Sm5DMQlcKAccAtOJY78DfJzAeQAJYrleWd/42BqWnvNjOFg
+			nnqy+/Z6v6+2NXvtRJV/g3MuhVO4h7f4ZOp6FycxZcvLAw3TeI8+7nDUYsVDkyRuqKNxikvYi21mn9XO
+			MMc6Jq1NOIRXs22ce8d5LNhM93ABP1Cs2K0wCA5H+ezQfit7Ye2AZb5wyMrxIFCPNyhmrBwbMrNR1F1j
+			nZX9sHgiG3PuBGusHBsyeuznagBpK/th8U6UcYtWCoasNpzYtpIfFusRiW4rBUNWu11krOSHxS9RxjVZ
+			KRiyzVEL92wlPyx+jTKu0UrBkC1qcDketV4y4tJKflj8Z5ur1J9TLWbUAIJ+TqW+QJajaOALRBAo9pU5
+			jZ+oV+aglcMguIZCw+fQd0joINFQ8YgddjsMgoWOxR5sMLV784/FB/t7gcUNF4THMO6HwAi24rEKoP9z
+			l7UKh7A+fbTbt1AHwJup600cx59PH641/AhFacNDYVj+8E679fswrAVzw6+wosPbURtTHFq5MjBQww9w
+			30pVKkki8Q05ovZw/HutEgAAAABJRU5ErkJggg==
+		</value>
+	</data>
 
   <data name="lblUserName.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 18</value>
@@ -663,7 +664,8 @@
 </value>
   </data>
 
-  <data name="btnPrint.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+	<data name="btnPrint.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+	</data>
 
   <data name="btnShowReport.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
