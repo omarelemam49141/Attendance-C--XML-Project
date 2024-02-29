@@ -221,13 +221,13 @@ namespace Attendance_C__XML_Project
                         Lists.teachersList.RemoveAt(index);
                         //update the teacher in the xml file
                         // Validate the teachersList against the XSD schema
-                        
+
                         //add it to the teacher list at the old index
                         Lists.teachersList.Insert(index, updatedTeacher);
-                        
+
                         bool isValid = FileManagment.ValidateAgainstXsd(Lists.teachersList, "teachers.xsd");
-                        
-                        
+
+
                         // If the classes are valid, serialize them to an XML file
                         if (isValid)
                         {
@@ -271,8 +271,8 @@ namespace Attendance_C__XML_Project
                         {
                             throw new Exception("StudentLists is not valid against XSD schema. Unable to save.");
                         }
-                        
-                        
+
+
                         //update the student in the list box
                         listUsers.Items[listUsers.SelectedIndex] = updatedStudent;
 
@@ -442,13 +442,13 @@ namespace Attendance_C__XML_Project
                     int deletedClassIndex = Lists.classes.IndexOf(selectedClass);
                     //set students' class to null if they were enroll in the deleted class
                     List<Student> students = Lists.studentsList.FindAll(student => student.ClassID == selectedClass.ID);
-                    if(students.Count > 0)
+                    if (students.Count > 0)
                     {
                         students.ForEach(student => { student.ClassID = -1; });
                     }
                     //set teachers' class to null if they were enroll in the deleted class
                     List<Teacher> teachers = Lists.teachersList.FindAll(teacher => teacher.Classes.Contains(selectedClass));
-                    if(teachers.Count > 0)
+                    if (teachers.Count > 0)
                     {
                         teachers.ForEach(teacher => teacher.Classes.Remove(selectedClass));
                     }
@@ -536,6 +536,12 @@ namespace Attendance_C__XML_Project
                 lblAddError.Text = ex.Message;
             }
 
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            PreferencesForm preferencesForm = new PreferencesForm();
+            preferencesForm.ShowDialog();
         }
     }
 }

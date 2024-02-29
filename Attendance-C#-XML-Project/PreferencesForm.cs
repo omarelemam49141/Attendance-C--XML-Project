@@ -97,8 +97,10 @@ namespace Attendance_C__XML_Project
 
         private void ApplyResources(Control control, string cultureCode)
         {
+
             var resources = new System.ComponentModel.ComponentResourceManager(this.GetType());
             resources.ApplyResources(control, control.Name, new CultureInfo(cultureCode));
+            this.Close();
 
             if (control.Controls.Count > 0)
             {
@@ -160,6 +162,7 @@ namespace Attendance_C__XML_Project
                     break;
             }
         }
+
 
         // Helper method to apply text color to controls
         private void ApplyTextColor(Color color)
@@ -278,6 +281,7 @@ namespace Attendance_C__XML_Project
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+
             System.Diagnostics.Process.GetCurrentProcess().Kill();
             Application.Exit();
             this.Close();
@@ -288,6 +292,7 @@ namespace Attendance_C__XML_Project
             SavePreferences();
             MessageBox.Show("Preferences saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
 
 
         // Method to save preferences

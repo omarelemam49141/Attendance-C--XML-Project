@@ -152,6 +152,7 @@
             // 
             resources.ApplyResources(dateTimePickerStart, "dateTimePickerStart");
             dateTimePickerStart.Name = "dateTimePickerStart";
+            dateTimePickerStart.ValueChanged += startdate_ValueChange;
             // 
             // label1
             // 
@@ -162,6 +163,7 @@
             // 
             resources.ApplyResources(dateTimePickerEnd, "dateTimePickerEnd");
             dateTimePickerEnd.Name = "dateTimePickerEnd";
+            dateTimePickerEnd.ValueChanged += enddate_ValueChange;
             // 
             // panelShow
             // 
@@ -232,6 +234,7 @@
             dgvViewReports.BackgroundColor = SystemColors.Control;
             dgvViewReports.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvViewReports.Name = "dgvViewReports";
+            dgvViewReports.ReadOnly = true;
             // 
             // btnExportPDF
             // 
