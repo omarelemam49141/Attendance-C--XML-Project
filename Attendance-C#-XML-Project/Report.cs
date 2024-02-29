@@ -57,15 +57,16 @@ namespace Attendance_C__XML_Project
         public void addAttendanceRecords(List<AttendanceRecord> _attendanceRecords)
         {
             attendanceRecords = new List<AttendanceRecord>();
-            foreach (var record in _attendanceRecords)
+            if(_attendanceRecords!=null)
             {
-                if (record != null)
+                foreach (var record in _attendanceRecords)
                 {
-                    attendanceRecords.Add(record);
+                    if (record != null)
+                    {
+                        attendanceRecords.Add(record);
+                    }
                 }
             }
-            
-
         }
 
         public void removeAttendanceRecord(int attendanceRecordID)
