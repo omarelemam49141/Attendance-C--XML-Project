@@ -27,8 +27,6 @@ namespace Attendance_C__XML_Project
         {
             InitializeComponent();
 
-
-
             myReports = new GenerateReport();
             myReports.addAttendanceRecords(attendanceRecords);
 
@@ -43,7 +41,6 @@ namespace Attendance_C__XML_Project
                 throw;
             }
 
-
             // Load Teacher Role
             try
             {
@@ -56,6 +53,11 @@ namespace Attendance_C__XML_Project
                 throw;
             }
 
+            //Load all classes
+            Lists.classes.ForEach(c =>
+            {
+                comboClassesList.Items.Add(c.Name);
+            });
         }
 
         private void btnSearchReports_Click(object sender, EventArgs e)
