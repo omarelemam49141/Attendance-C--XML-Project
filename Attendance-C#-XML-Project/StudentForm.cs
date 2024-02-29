@@ -124,6 +124,7 @@ namespace Attendance_C__XML_Project
             dgvStudentReports.Columns.Add("Column1", "Id");
             dgvStudentReports.Columns.Add("Column1", "Attendance Date");
             dgvStudentReports.Columns.Add("Column3", "Status");
+
             var _attendanceRecords = studentReport.getStudentReport(studentId);
 
 
