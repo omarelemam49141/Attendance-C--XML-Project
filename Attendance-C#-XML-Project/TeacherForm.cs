@@ -31,7 +31,6 @@ namespace Attendance_C__XML_Project
             InitializeComponent();
             // *** other dummy data ***
           
-            
 
             attendanceRecords = Lists.attendanceRecords;
             teacherReport = new GenerateReport();

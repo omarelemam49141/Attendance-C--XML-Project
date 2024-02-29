@@ -376,7 +376,7 @@
 </value>
   </data>
   <data name="btnSearchReports.Location" type="System.Drawing.Point, System.Drawing">
-    <value>371, 92</value>
+    <value>406, 93</value>
   </data>
   <data name="btnSearchReports.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
