@@ -32,6 +32,7 @@ namespace Attendance_C__XML_Project
             // *** other dummy data ***
           
 
+            attendanceRecords = Lists.attendanceRecords;
             teacherReport = new GenerateReport();
             teacherReport.addAttendanceRecords(attendanceRecords);
 
@@ -72,6 +73,7 @@ namespace Attendance_C__XML_Project
             List<string> myClasses = GetTeacherClasses();
             foreach (var cls in myClasses)
             {
+      
                 comboClasses.Items.Add(cls);
             }
             comboClasses.SelectedIndex = 0;
@@ -207,11 +209,13 @@ namespace Attendance_C__XML_Project
         }
         private List<string> GetTeacherClasses()
         {
-            //var teacher = teachersList.Find(t =>t.Username.ToLower()== MyLoggedInUser.Name.ToLower());
+            var teacher = Lists.teachersList.Find(t =>t.Username.ToLower()== LoggedInUser.Name.ToLower());
 
+            List<string> classNames = new List<string>();
             // For Now i will display all classes
-            List<string> classNames = Lists.classes.Select(c => c.Name).ToList();
-            return classNames;
+            var classes = teacher.Classes.Where(c => c.ID == classId).Select(c=>c.Name).ToList();
+
+            return classes;
         }
         private void TeacherLogout()
         {

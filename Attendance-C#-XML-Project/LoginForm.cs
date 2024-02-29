@@ -46,26 +46,13 @@ namespace Attendance_C__XML_Project
             Lists.classes = new List<Class>();
             FileManagment.LoadClassesFromFile("classes.xml", ref Lists.classes);
 
-            //Lists.attendanceRecords = new List<AttendanceRecord>();
-            //FileManagment.LoadClassesFromFile("data/attendance.xml", ref Lists.attendanceRecords);
+            Lists.attendanceRecords = new List<AttendanceRecord>();
+            FileManagment.LoadClassesFromFile("attendances.xml", ref Lists.attendanceRecords);
 
-            //Lists.teachersList = [new Teacher("Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"),
-            //new Teacher("Omar", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo"),
-            //new Teacher("Ahmed", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo")];
-            //Lists.studentsList = [new Student("Ahmed Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 1),
-            //                      new Student("Osame Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
-            //                      new Student("Hamada Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
-            //                      new Student("Mohamed Ali", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
-            //                      new Student("Omar Sharkawi", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
-            //                      new Student("Hamdy", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
-            //                      new Student("Hmaed", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo", 2),
-            //];
+    
 
             Lists.admins = [new User("admin", "Oeams7476386#", "01074845994", "Teacher@yahoo.com", "Egypt Cairo")];
-            //Lists.classes = new List<Class>(){
-            //    new Class() { ID=1,Name="A1"},
-            //    new Class() { ID=2,Name="A2"},
-            //};
+            
 
             GraphicsPath path = new GraphicsPath();
             Rectangle bounds = new Rectangle(0, 0, this.Width, this.Height);
