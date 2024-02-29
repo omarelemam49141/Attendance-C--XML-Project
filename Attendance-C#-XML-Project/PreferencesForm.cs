@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -41,9 +42,10 @@ namespace Attendance_C__XML_Project
                 UserLogout();
                 throw;
             }
-
+            SettingsManager.SettingsIntialization(this);
 
         }
+       
 
         #region User Management
 
@@ -74,7 +76,6 @@ namespace Attendance_C__XML_Project
 
         #endregion
 
-        #region Event Handlers
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -88,11 +89,48 @@ namespace Attendance_C__XML_Project
             string selectedColor = comboColors.SelectedItem.ToString();
             ApplyTextColor(GetColorFromName(selectedColor));
         }
+        private void ApplyTextColor(Color color)
+        {
+
+            var s = color.ToString();
+
+            Properties.Settings.Default.SelectedColor = color.Name.ToString();
+            Properties.Settings.Default.Save();
+
+            float defaultFontSize = Properties.Settings.Default.SelectedFontSize;
+            Font newFont = new Font(Font.FontFamily, defaultFontSize);
+            SettingsManager.ApplyFontStyleToControls(this.Controls, newFont, color);
+        }
 
         private void comboFontSize_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedFontSize = comboFontSize.SelectedItem.ToString();
             ApplyFontSize(GetFontSizeFromName(selectedFontSize));
+        }
+        private float GetFontSizeFromName(string fontSizeName)
+        {
+            switch (fontSizeName)
+            {
+                case "Small":
+                    return 10;
+                case "Medium":
+                    return 11;
+                case "Large":
+                    return 13;
+                default:
+                    MessageBox.Show("Invalid font size selection. Defaulting to medium.");
+                    return 10;
+            }
+        }
+        private void ApplyFontSize(float size)
+        {
+            Properties.Settings.Default.SelectedFontSize = size;
+            Properties.Settings.Default.Save();
+
+            Font newFont = new Font(this.Font.FontFamily, size);
+            string defaultFontColor = Properties.Settings.Default.SelectedColor;
+            Color newColor = ColorTranslator.FromHtml(defaultFontColor);
+            SettingsManager.ApplyFontStyleToControls(this.Controls, newFont, newColor);
         }
 
         private void comboDateFormat_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,7 +152,17 @@ namespace Attendance_C__XML_Project
             }
             ApplyDateFormat(formatPattern);
         }
-
+        private void ApplyDateFormat(string format)
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is DateTimePicker)
+                {
+                    ((DateTimePicker)control).CustomFormat = format;
+                    ((DateTimePicker)control).Format = DateTimePickerFormat.Custom;
+                }
+            }
+        }
         private void comboThemes_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedTheme = comboThemes.SelectedItem.ToString();
@@ -132,7 +180,30 @@ namespace Attendance_C__XML_Project
                     break;
             }
         }
-
+        private void ApplyLightTheme()
+        {
+            this.BackColor = SystemColors.Control;
+            foreach (Control control in Controls)
+            {
+                control.BackColor = SystemColors.Control;
+                if (control is Label || control is Button)
+                {
+                    control.ForeColor = SystemColors.ControlText;
+                }
+            }
+        }
+        private void ApplyDarkTheme()
+        {
+            this.BackColor = Color.FromArgb(45, 45, 48); // Dark gray background
+            foreach (Control control in Controls)
+            {
+                control.BackColor = Color.FromArgb(45, 45, 48); // Dark gray background
+                if (control is Label || control is Button)
+                {
+                    control.ForeColor = Color.White; // Light gray text
+                }
+            }
+        }
         private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -152,78 +223,6 @@ namespace Attendance_C__XML_Project
 
 
         }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            SavePreferences();
-            MessageBox.Show("Preferences saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        #endregion
-
-        #region Utility Methods
-
-
-        private void ApplyTextColor(Color color)
-        {
-            foreach (Control control in Controls)
-            {
-                if (control is Label || control is Button)
-                {
-                    control.ForeColor = color;
-                }
-            }
-        }
-
-        private void ApplyFontSize(float size)
-        {
-            foreach (Control control in Controls)
-            {
-                if (control is Label || control is Button)
-                {
-                    control.Font = new Font(control.Font.FontFamily, size);
-                }
-            }
-        }
-
-        private void ApplyDateFormat(string format)
-        {
-            foreach (Control control in Controls)
-            {
-                if (control is DateTimePicker)
-                {
-                    ((DateTimePicker)control).CustomFormat = format;
-                    ((DateTimePicker)control).Format = DateTimePickerFormat.Custom;
-                }
-            }
-        }
-
-        private void ApplyLightTheme()
-        {
-            this.BackColor = SystemColors.Control;
-            foreach (Control control in Controls)
-            {
-                control.BackColor = SystemColors.Control;
-                if (control is Label || control is Button)
-                {
-                    control.ForeColor = SystemColors.ControlText;
-                }
-            }
-        }
-
-        private void ApplyDarkTheme()
-        {
-            this.BackColor = Color.FromArgb(45, 45, 48); // Dark gray background
-            foreach (Control control in Controls)
-            {
-                control.BackColor = Color.FromArgb(45, 45, 48); // Dark gray background
-                if (control is Label || control is Button)
-                {
-                    control.ForeColor = SystemColors.ControlLightLight; // Light gray text
-                }
-            }
-        }
-
         private void SetLanguage(string cultureCode)
         {
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureCode);
@@ -234,6 +233,7 @@ namespace Attendance_C__XML_Project
                 ApplyResources(control, cultureCode);
             }
         }
+
 
         private void ApplyResources(Control control, string cultureCode)
         {
@@ -248,10 +248,15 @@ namespace Attendance_C__XML_Project
                 }
             }
         }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SavePreferences();
+            MessageBox.Show("Preferences saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
         private void SavePreferences()
         {
-            string selectedColor = comboColors.Text.ToString() ?? "Black";
+            string selectedColor = comboColors.Text.ToString() ?? "black";
             string selectedFontSize = comboFontSize.Text.ToString() ?? "11pt";
             string selectedDateFormat = comboDateFormat.Text.ToString() ?? "DD/MM/YYYY";
             string selectedTheme = comboThemes.Text.ToString() ?? "light";
@@ -261,7 +266,7 @@ namespace Attendance_C__XML_Project
                 selectedLanguage = comboLanguages.Text.ToString();
             }
             SettingsManager.SetSelectedColor(selectedColor);
-            SettingsManager.SetSelectedFontSize(selectedFontSize);
+            //SettingsManager.SetSelectedFontSize(selectedFontSize);
             SettingsManager.SetSelectedDateFormat(selectedDateFormat);
             SettingsManager.SetSelectedTheme(selectedTheme);
             SettingsManager.SetSelectedLanguage(selectedLanguage);
@@ -274,8 +279,8 @@ namespace Attendance_C__XML_Project
             string selectedColor = SettingsManager.GetSelectedColor();
             ApplyTextColor(GetColorFromName(selectedColor));
 
-            string selectedFontSize = SettingsManager.GetSelectedFontSize();
-            ApplyFontSize(GetFontSizeFromName(selectedFontSize));
+           // string selectedFontSize = SettingsManager.GetSelectedFontSize();
+          //  ApplyFontSize(GetFontSizeFromName(selectedFontSize));
 
             string selectedDateFormat = SettingsManager.GetSelectedDateFormat();
             ApplyDateFormat(selectedDateFormat);
@@ -305,7 +310,7 @@ namespace Attendance_C__XML_Project
             {
                 case "Black":
                     return Color.Black;
-                case "Gray":
+                case "Grey":
                     return Color.Gray;
                 case "Blue":
                     return Color.Blue;
@@ -315,23 +320,8 @@ namespace Attendance_C__XML_Project
             }
         }
 
-        private float GetFontSizeFromName(string fontSizeName)
-        {
-            switch (fontSizeName)
-            {
-                case "Small":
-                    return 8;
-                case "Medium":
-                    return 10;
-                case "Large":
-                    return 12;
-                default:
-                    MessageBox.Show("Invalid font size selection. Defaulting to medium.");
-                    return 10;
-            }
-        }
+     
 
-        #endregion
 
         private void SelectedIndexChanged(object sender, EventArgs e)
         {

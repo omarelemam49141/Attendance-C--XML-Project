@@ -75,6 +75,8 @@ namespace Attendance_C__XML_Project
             }
             comboClasses.SelectedIndex = 0;
 
+
+            SettingsManager.SettingsIntialization(this);
         }
 
         private void btnShowReport_Click(object sender, EventArgs e)

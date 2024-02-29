@@ -3,19 +3,19 @@
   <Profiles />
   <Settings>
     <Setting Name="SelectedColor" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">black</Value>
     </Setting>
-    <Setting Name="SelectedFontSize" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="SelectedFontSize" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">12</Value>
     </Setting>
     <Setting Name="SelectedDateFormat" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="SelectedTheme" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">light</Value>
     </Setting>
     <Setting Name="SelectedLanguage" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">en-US</Value>
     </Setting>
   </Settings>
 </SettingsFile>

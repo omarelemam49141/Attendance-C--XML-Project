@@ -25,7 +25,7 @@ namespace Attendance_C__XML_Project.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("black")]
         public string SelectedColor {
             get {
                 return ((string)(this["SelectedColor"]));
@@ -37,10 +37,10 @@ namespace Attendance_C__XML_Project.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SelectedFontSize {
+        [global::System.Configuration.DefaultSettingValueAttribute("12")]
+        public float SelectedFontSize {
             get {
-                return ((string)(this["SelectedFontSize"]));
+                return ((float)(this["SelectedFontSize"]));
             }
             set {
                 this["SelectedFontSize"] = value;
@@ -61,7 +61,7 @@ namespace Attendance_C__XML_Project.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("light")]
         public string SelectedTheme {
             get {
                 return ((string)(this["SelectedTheme"]));
@@ -73,9 +73,8 @@ namespace Attendance_C__XML_Project.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("en-US")]
         public string SelectedLanguage {
-
             get {
                 return ((string)(this["SelectedLanguage"]));
             }

@@ -292,6 +292,9 @@
   <data name="label3.Text" xml:space="preserve">
     <value>اللون</value>
   </data>
+  <data name="comboColors.Items2" xml:space="preserve">
+    <value>Gray</value>
+  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 24</value>
   </data>
