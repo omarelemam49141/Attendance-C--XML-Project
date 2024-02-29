@@ -74,7 +74,7 @@ namespace Attendance_C__XML_Project
             List<string> myClasses = GetTeacherClasses();
             foreach (var cls in myClasses)
             {
-                if(cls.)
+      
                 comboClasses.Items.Add(cls);
             }
             comboClasses.SelectedIndex = 0;
@@ -210,12 +210,13 @@ namespace Attendance_C__XML_Project
         }
         private List<string> GetTeacherClasses()
         {
-            //var teacher = teachersList.Find(t =>t.Username.ToLower()== MyLoggedInUser.Name.ToLower());
+            var teacher = Lists.teachersList.Find(t =>t.Username.ToLower()== LoggedInUser.Name.ToLower());
+
             List<string> classNames = new List<string>();
             // For Now i will display all classes
-            var classes = Lists.teachersList.Select(t => t.Classes).ToList();
+            var classes = teacher.Classes.Where(c => c.ID == classId).Select(c=>c.Name).ToList();
 
-            return classNames;
+            return classes;
         }
         private void TeacherLogout()
         {
