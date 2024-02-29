@@ -1,24 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Attendance_C__XML_Project;
 
 namespace Attendance_C__XML_Project
 {
     public partial class PreferencesForm : Form
     {
+        // Constructor
         public PreferencesForm()
         {
             InitializeComponent();
 
-            // Loading UserName and User Role   
+            // Load UserName and UserRole
             try
             {
                 lblUserName.Text = GetUserName();
@@ -30,7 +25,6 @@ namespace Attendance_C__XML_Project
                 throw;
             }
 
-            // Load Teacher Role
             try
             {
                 lblRoleName.Text = GetUserRole();
@@ -42,12 +36,11 @@ namespace Attendance_C__XML_Project
                 throw;
             }
 
-            // Loading User Settings
-            InitializeLanguageComboBox();
+
+            
         }
 
-        #region User Management
-
+        // Helper method to get UserName
         private string GetUserName()
         {
             if (LoggedInUser.Name != "")
@@ -57,6 +50,7 @@ namespace Attendance_C__XML_Project
             throw new Exception("Can't Find UserName");
         }
 
+        // Helper method to get UserRole
         private string GetUserRole()
         {
             var role = LoggedInUser.userRole.ToString();
@@ -68,32 +62,67 @@ namespace Attendance_C__XML_Project
             throw new Exception("Can't Find Teacher Role");
         }
 
+        // Helper method to handle user logout
         private void UserLogout()
         {
-            throw new NotImplementedException();
+            
         }
 
-        #endregion
-
-        #region Event Handlers
-
-        private void btnExit_Click(object sender, EventArgs e)
+        // Event handler for language selection change
+        private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //System.Diagnostics.Process.GetCurrentProcess().Kill();
-            //Application.Exit();
-            this.Close();
+            if (comboLanguages.SelectedItem != null)
+            {
+                if (comboLanguages.SelectedItem.ToString() == "English")
+                {
+                    SetLanguage("en-US"); // Set language to English
+                }
+                else if (comboLanguages.SelectedItem.ToString() == "العربية")
+                {
+                    SetLanguage("ar"); // Set language to Arabic (Saudi Arabia)
+                }
+            }
+        }
+        // Helper method to set language
+        private void SetLanguage(string cultureCode)
+        {
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureCode);
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(cultureCode);
+
+            foreach (Control control in this.Controls)
+            {
+                ApplyResources(control, cultureCode);
+            }
         }
 
+        private void ApplyResources(Control control, string cultureCode)
+        {
+
+            var resources = new System.ComponentModel.ComponentResourceManager(this.GetType());
+            resources.ApplyResources(control, control.Name, new CultureInfo(cultureCode));
+            this.Close();
+
+            if (control.Controls.Count > 0)
+            {
+                foreach (Control childControl in control.Controls)
+                {
+                    ApplyResources(childControl, cultureCode);
+                }
+            }
+        }// Event handlers for combo box selection changes
         private void comboColors_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedColor = comboColors.SelectedItem.ToString();
-            ApplyTextColor(GetColorFromName(selectedColor));
+            Color color = GetColorFromName(selectedColor);
+            ApplyTextColor(color);
+            ApplyComboBoxColor(color);
         }
 
-        private void comboFontSize_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboFontSize_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedFontSize = comboFontSize.SelectedItem.ToString();
-            ApplyFontSize(GetFontSizeFromName(selectedFontSize));
+            float fontSize = GetFontSizeFromName(selectedFontSize);
+            ApplyFontSize(fontSize);
         }
 
         private void comboDateFormat_SelectedIndexChanged(object sender, EventArgs e)
@@ -134,66 +163,32 @@ namespace Attendance_C__XML_Project
             }
         }
 
-        private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-            if (comboLanguages.SelectedItem != null)
-            {
-                if (comboLanguages.SelectedItem.ToString() == "en-US")
-                {
-                    SetLanguage("en-US"); // Set language to English
-                }
-                else if (comboLanguages.SelectedItem.ToString() == "ar")
-                {
-                    SetLanguage("ar"); // Set language to Arabic
-                }
-            }
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            SavePreferences();
-            MessageBox.Show("Preferences saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        #endregion
-
-        #region Utility Methods
-
-        private void InitializeLanguageComboBox()
-        {
-            comboLanguages = new ComboBox();
-            comboLanguages.Items.Add("English");
-            comboLanguages.Items.Add("العربية");
-            comboLanguages.SelectedIndexChanged += comboBoxLanguage_SelectedIndexChanged;
-            this.Controls.Add(comboLanguages);
-        }
-
+        // Helper method to apply text color to controls
         private void ApplyTextColor(Color color)
         {
-            foreach (Control control in Controls)
+            foreach (Control control in GetAllControls(this))
             {
-                if (control is Label || control is Button)
+                if (control is Label || control is Button || control is ComboBox)
                 {
                     control.ForeColor = color;
                 }
             }
         }
 
+        // Helper method to apply font size to controls
         private void ApplyFontSize(float size)
         {
-            foreach (Control control in Controls)
+            foreach (Control control in GetAllControls(this))
             {
-                if (control is Label || control is Button)
-                {
-                    control.Font = new Font(control.Font.FontFamily, size);
-                }
+                control.Font = new Font(control.Font.FontFamily, size);
             }
         }
 
+        // Helper method to apply date format to DateTimePicker controls
         private void ApplyDateFormat(string format)
         {
-            foreach (Control control in Controls)
+            foreach (Control control in GetAllControls(this))
             {
                 if (control is DateTimePicker)
                 {
@@ -203,6 +198,7 @@ namespace Attendance_C__XML_Project
             }
         }
 
+        // Helper method to apply light theme
         private void ApplyLightTheme()
         {
             this.BackColor = SystemColors.Control;
@@ -216,71 +212,122 @@ namespace Attendance_C__XML_Project
             }
         }
 
+        // Helper method to apply dark theme
         private void ApplyDarkTheme()
         {
-            this.BackColor = Color.FromArgb(45, 45, 48); // Dark gray background
+            this.BackColor = Color.FromArgb(45, 45, 48);
             foreach (Control control in Controls)
             {
-                control.BackColor = Color.FromArgb(45, 45, 48); // Dark gray background
+                control.BackColor = Color.FromArgb(45, 45, 48);
                 if (control is Label || control is Button)
                 {
-                    control.ForeColor = SystemColors.ControlLightLight; // Light gray text
+                    control.ForeColor = SystemColors.ControlLightLight;
                 }
             }
         }
 
-        private void SetLanguage(string cultureCode)
+        // Helper method to get all controls within a form recursively
+        private IEnumerable<Control> GetAllControls(Control container)
         {
-            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureCode);
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(cultureCode);
-
-            foreach (Control control in this.Controls)
-            {
-                ApplyResources(control, cultureCode);
-            }
+            var controls = container.Controls.Cast<Control>();
+            return controls.SelectMany(ctrl => GetAllControls(ctrl)).Concat(controls);
         }
 
-        private void ApplyResources(Control control, string cultureCode)
+        // Helper method to apply combo box background color
+        private void ApplyComboBoxColor(Color color)
         {
-            var resources = new System.ComponentModel.ComponentResourceManager(this.GetType());
-            resources.ApplyResources(control, control.Name, new CultureInfo(cultureCode));
-
-            if (control.Controls.Count > 0)
+            foreach (Control control in Controls)
             {
-                foreach (Control childControl in control.Controls)
+                if (control is ComboBox)
                 {
-                    ApplyResources(childControl, cultureCode);
+                    (control as ComboBox).BackColor = color;
                 }
             }
         }
 
+        // Helper method to get color from color name
+        private Color GetColorFromName(string colorName)
+        {
+            switch (colorName)
+            {
+                case "Black":
+                    return Color.Black;
+                case "Gray":
+                    return Color.Gray;
+                case "Blue":
+                    return Color.Blue;
+                default:
+                    MessageBox.Show("Invalid color selection. Defaulting to black.");
+                    return Color.Black;
+            }
+        }
+
+        // Helper method to get font size from font size name
+        private float GetFontSizeFromName(string fontSizeName)
+        {
+            switch (fontSizeName)
+            {
+                case "Small":
+                    return 8;
+                case "Medium":
+                    return 10;
+                case "Large":
+                    return 12;
+                default:
+                    MessageBox.Show("Invalid font size selection. Defaulting to medium.");
+                    return 10;
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+            Application.Exit();
+            this.Close();
+        }
+        // Save button click event handler
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SavePreferences();
+            MessageBox.Show("Preferences saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+
+
+        // Method to save preferences
         private void SavePreferences()
         {
-            string selectedColor = comboColors.Text.ToString() ?? "Black";
-            string selectedFontSize = comboFontSize.Text.ToString() ?? "11pt";
-            string selectedDateFormat = comboDateFormat.Text.ToString() ?? "DD/MM/YYYY";
-            string selectedTheme = comboThemes.Text.ToString() ?? "light";
-            string selectedLanguage = "en-US";
-            if (comboLanguages.Text != null)
+            if (comboColors.SelectedItem != null && comboFontSize.SelectedItem != null && comboDateFormat.SelectedItem != null && comboThemes.SelectedItem != null && comboLanguages.SelectedItem != null)
             {
-                selectedLanguage = comboLanguages.Text.ToString();
-            }
-            SettingsManager.SetSelectedColor(selectedColor);
-            SettingsManager.SetSelectedFontSize(selectedFontSize);
-            SettingsManager.SetSelectedDateFormat(selectedDateFormat);
-            SettingsManager.SetSelectedTheme(selectedTheme);
-            SettingsManager.SetSelectedLanguage(selectedLanguage);
+                string selectedLanguage = comboLanguages.SelectedItem.ToString();
+                SetLanguage(selectedLanguage); // Apply language setting first
 
-            ApplyPreferences();
+                string selectedColor = comboColors.SelectedItem.ToString();
+                string selectedFontSize = comboFontSize.SelectedItem.ToString();
+                string selectedDateFormat = comboDateFormat.SelectedItem.ToString();
+                string selectedTheme = comboThemes.SelectedItem.ToString();
+
+                // Save other preferences
+                SettingsManager.SetSelectedColor(selectedColor);
+                SettingsManager.SetSelectedFontSize(selectedFontSize);
+                SettingsManager.SetSelectedDateFormat(selectedDateFormat);
+                SettingsManager.SetSelectedTheme(selectedTheme);
+                SettingsManager.SetSelectedLanguage(selectedLanguage); // This is redundant but to make sure
+
+                ApplyPreferences();
+            }
         }
 
+        // Method to apply saved preferences
         private void ApplyPreferences()
         {
             string selectedColor = SettingsManager.GetSelectedColor();
             ApplyTextColor(GetColorFromName(selectedColor));
 
             string selectedFontSize = SettingsManager.GetSelectedFontSize();
-            ApplyFontSize(GetFontSizeFromName(selectedFontSize));
+            float fontSize = GetFontSizeFromName(selectedFontSize);
+            ApplyFontSize(fontSize);
 
             string selectedDateFormat = SettingsManager.GetSelectedDateFormat();
             ApplyDateFormat(selectedDateFormat);
@@ -303,39 +350,5 @@ namespace Attendance_C__XML_Project
             string selectedLanguage = SettingsManager.GetSelectedLanguage();
             SetLanguage(selectedLanguage);
         }
-
-        private Color GetColorFromName(string colorName)
-        {
-            switch (colorName)
-            {
-                case "Black":
-                    return Color.Black;
-                case "Gray":
-                    return Color.Gray;
-                case "Blue":
-                    return Color.Blue;
-                default:
-                    MessageBox.Show("Invalid color selection. Defaulting to black.");
-                    return Color.Black;
-            }
-        }
-
-        private float GetFontSizeFromName(string fontSizeName)
-        {
-            switch (fontSizeName)
-            {
-                case "Small":
-                    return 8;
-                case "Medium":
-                    return 10;
-                case "Large":
-                    return 12;
-                default:
-                    MessageBox.Show("Invalid font size selection. Defaulting to medium.");
-                    return 10;
-            }
-        }
-
-        #endregion
     }
 }
