@@ -11,8 +11,8 @@ namespace Attendance_C__XML_Project
         //private fields
         static int lastID = 0;
         int id;
-        List<AttendanceRecord> attendanceRecords;
-
+        
+        public List<AttendanceRecord> attendanceRecords  { get; set; }
         public GenerateReport() 
         {
             id = ++lastID;
@@ -158,11 +158,11 @@ namespace Attendance_C__XML_Project
             }
             return classReport;
         }
-        public void ChangeStudentAttendanceStatus(int recordId,ref List<AttendanceRecord> _attendanceRecords, DateTime changeDate)
+        public void ChangeStudentAttendanceStatus(int recordId, DateTime changeDate)
         {
-            if (_attendanceRecords != null)
+            if (attendanceRecords != null)
             {
-                AttendanceRecord recordToUpdate = _attendanceRecords.Find(r => r.ID == recordId);
+                AttendanceRecord recordToUpdate = attendanceRecords.Find(r => r.ID == recordId);
                 if (recordToUpdate != null)
                 {
                     if (recordToUpdate.attendanceStatus==AttendanceStatus.Absence)

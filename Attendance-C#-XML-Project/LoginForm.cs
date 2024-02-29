@@ -119,9 +119,7 @@ namespace Attendance_C__XML_Project
 
                 LoggedInUser.Name = txtUsername.Text.ToLower();
                 LoggedInUser.userRole = Role.Student;
-                //StudentForm studentForm = new StudentForm();
-                //studentForm.Show();
-                DisplayReportsForm studentForm = new DisplayReportsForm();
+                StudentForm studentForm = new StudentForm();
                 studentForm.Show();
                 this.Hide();
             }
