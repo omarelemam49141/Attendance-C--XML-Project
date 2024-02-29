@@ -434,8 +434,16 @@ namespace Attendance_C__XML_Project
             // Save Data To Xml
             
             Lists.attendanceRecords = teacherReport.attendanceRecords;
-            FileManagment.SerializeClassesToXml(Lists.attendanceRecords,"attendances.xml");
-            MessageBox.Show("Saved Successfully");
+            bool isValidFile =  FileManagment.ValidateAgainstXsd(Lists.attendanceRecords, "attendances.xsd");
+            if(isValidFile)
+            {
+                FileManagment.SerializeClassesToXml(Lists.attendanceRecords, "attendances.xml");
+                MessageBox.Show("Saved Successfully");
+            }
+            else
+            {
+                MessageBox.Show("something went wrong!");
+            }
 
             //FileManagment.ValidateAgainstXsd(attendanceRecords);
 
