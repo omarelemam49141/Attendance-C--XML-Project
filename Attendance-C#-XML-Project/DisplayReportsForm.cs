@@ -27,7 +27,7 @@ namespace Attendance_C__XML_Project
         {
             InitializeComponent();
 
-            
+
 
             myReports = new GenerateReport();
             myReports.addAttendanceRecords(attendanceRecords);
@@ -55,23 +55,24 @@ namespace Attendance_C__XML_Project
             //    UserLogout();
             //    throw;
             //}
-
+            Lists.classes.ForEach(classObject =>
+            {
+                comboClassesList.Items.Add(classObject.Name);
+            });
         }
 
         private void btnSearchReports_Click(object sender, EventArgs e)
         {
-
             start = ConvertDatePickerToDateOnly(dateTimePickerStart);
             end = ConvertDatePickerToDateOnly(dateTimePickerEnd);
 
             DisplayReportsBetweenDates(start, end);
-
         }
 
         private void DisplayReportsBetweenDates(DateTime start, DateTime end)
         {
             reports = myReports.getReportsBetween(start, end);
-            if (reports != null)
+            if (reports != null && reports.Count > 0)
             {
                 dgvViewReports.Columns.Clear();
                 dgvViewReports.Columns.Add("Column1", "Id");
@@ -97,12 +98,12 @@ namespace Attendance_C__XML_Project
                     AttendanceRecord? record = reports[i];
                     if (record != null)
                     {
-                        string classname= GetClassNameFromID(record.ClassID);
+                        string classname = GetClassNameFromID(record.ClassID);
                         //string numOfAttendance = LoadStudentAttendanceNumber(reports, record.student.Username);
                         //string numOfAbsence = LoadStudentAbsenceNumber(reports,record.student.Username);
                         //int numOfWarnings = int.Parse(numOfAbsence) / 5;
 
-                        dgvViewReports.Rows.Add(record.ID, classname, record.student?.ID ,record.student?.Username,record.attendanceStatus,record.RecordDate);
+                        dgvViewReports.Rows.Add(record.ID, classname, record.student?.ID, record.student?.Username, record.attendanceStatus, record.RecordDate);
                     }
 
                 }
@@ -112,7 +113,7 @@ namespace Attendance_C__XML_Project
             }
         }
 
-        private string LoadStudentAttendanceNumber(List<AttendanceRecord> _attendanceRecords,string studentName)
+        private string LoadStudentAttendanceNumber(List<AttendanceRecord> _attendanceRecords, string studentName)
         {
             int counter = 0;
             foreach (var record in _attendanceRecords)
@@ -341,6 +342,63 @@ namespace Attendance_C__XML_Project
             {
                 dateTimePickerStart.Value = dateTimePickerEnd.Value;
             }
+        }
+
+        private void btnSearchReportsByClass_Click(object sender, EventArgs e)
+        {
+            //get the selected Class Name
+            string classSelected = comboClassesList.Text;
+            //check if it is not empty
+            if (!string.IsNullOrEmpty(classSelected.Trim()))
+            {
+                //get the class object to get the reports based on its id
+                Class classObject = Lists.classes.Find(x => x.Name == classSelected);
+                //If the class is found then get the reports and display them
+                if (classObject != null)
+                {
+                    reports = myReports.getClassReports(classObject.ID);
+                    if (reports != null && reports.Count > 0)
+                    {
+                        dgvViewReports.Columns.Clear();
+                        dgvViewReports.Columns.Add("Column1", "Id");
+                        dgvViewReports.Columns.Add("Column2", "Class Name");
+                        dgvViewReports.Columns.Add("Column3", "Student Id");
+                        dgvViewReports.Columns.Add("Column4", "Student Name");
+                        dgvViewReports.Columns.Add("Column5", "Status");
+                        dgvViewReports.Columns.Add("Column6", "Date");
+
+
+                        dgvViewReports.Rows.Clear();
+
+
+                        // Calculate indexes of the items to display on the current page
+                        int startIndex = (currentPage - 1) * pageSize;
+                        int endIndex = Math.Min(startIndex + pageSize - 1, attendanceRecords.Count - 1);
+
+                        // Populate DataGridView with data for the current page
+
+                        for (int i = startIndex; i <= endIndex && i < reports.Count; i++)
+                        {
+
+                            AttendanceRecord? record = reports[i];
+                            if (record != null)
+                            {
+                                string classname = GetClassNameFromID(record.ClassID);
+                                //string numOfAttendance = LoadStudentAttendanceNumber(reports, record.student.Username);
+                                //string numOfAbsence = LoadStudentAbsenceNumber(reports,record.student.Username);
+                                //int numOfWarnings = int.Parse(numOfAbsence) / 5;
+
+                                dgvViewReports.Rows.Add(record.ID, classname, record.student?.ID, record.student?.Username, record.attendanceStatus, record.RecordDate);
+                            }
+
+                        }
+                        // Update pagination information
+                        toolStripPageLabel.Text = $"Page {currentPage}";
+
+                    }
+                }
+            }
+            
         }
 
         private int TotalPages

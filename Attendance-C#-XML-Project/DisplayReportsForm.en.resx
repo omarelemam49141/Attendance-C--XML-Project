@@ -129,30 +129,6 @@
         CcOZGi3acn8w20HdJQxnK2JcRlEURVEUxS5M0x+93tb4mi4xDAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 20</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>استمارة عرض التقرير</value>
-  </data>
-  <data name="lblRole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 18</value>
-  </data>
-  <data name="lblRole.Text" xml:space="preserve">
-    <value>الدور:</value>
-  </data>
-  <data name="lblRoleName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 18</value>
-  </data>
-  <data name="lblRoleName.Text" xml:space="preserve">
-    <value>اسم الدور</value>
-  </data>
-  <data name="lblWelcome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 18</value>
-  </data>
-  <data name="lblWelcome.Text" xml:space="preserve">
-    <value>مرحبا: </value>
-  </data>
   <data name="picStudent.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAFGxJREFUeF7t
@@ -262,32 +238,34 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="lblUserName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 18</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnSearchReportsByClass.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="lblUserName.Text" xml:space="preserve">
-    <value>اسم المستخدم</value>
+  <data name="btnSearchReportsByClass.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
-  <data name="lblDatePicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 18</value>
+  <data name="btnSearchReportsByClass.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="lblDatePicker.Text" xml:space="preserve">
-    <value>تاريخ البداية</value>
+  <data name="btnSearchReportsByClass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>52, 65</value>
   </data>
-  <data name="dateTimePickerStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 23</value>
+  <data name="btnSearchReportsByClass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 40</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 18</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnSearchReportsByClass.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>تاريخ النهاية</value>
+  <data name="btnSearchReportsByClass.Text" xml:space="preserve">
+    <value>Search by class</value>
   </data>
-  <data name="dateTimePickerEnd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 23</value>
+  <data name="btnSearchReportsByClass.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>TextBeforeImage</value>
   </data>
   <data name="comboClassesList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 76</value>
+    <value>234, 76</value>
   </data>
   <data name="btnSearchReports.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -303,13 +281,13 @@
 </value>
   </data>
   <data name="btnSearchReports.Location" type="System.Drawing.Point, System.Drawing">
-    <value>599, 65</value>
+    <value>542, 65</value>
   </data>
   <data name="btnSearchReports.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 40</value>
+    <value>166, 40</value>
   </data>
   <data name="btnSearchReports.Text" xml:space="preserve">
-    <value>بحث بالتاريخ</value>
+    <value>Search by date</value>
   </data>
   <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -334,9 +312,6 @@
         LRgACkAakEQW+/gwMDp+oDYgGRgANQx9GUGZsoQAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="dgvViewReports.Size" type="System.Drawing.Size, System.Drawing">
-    <value>764, 233</value>
-  </data>
   <data name="btnExportPDF.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAaZJREFUSEvt
@@ -350,9 +325,6 @@
         H79HAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnExportPDF.Text" xml:space="preserve">
-    <value>Pdf تصدير ك </value>
-  </data>
   <data name="btnExportExcel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAbhJREFUWEft
@@ -365,9 +337,6 @@
         ugcT1xJiM6uDKBcPCsWjecX+0QHgbx/H4k9+kCzjHj7ZgjLq/5MshT2b0O6AaVzHK3zDimhZfeF9ijiA
         c7iF9+hQpEGDnBQKH2b15ovmqH/MAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="btnExportExcel.Text" xml:space="preserve">
-    <value>Excel تصدير ك </value>
   </data>
   <data name="button5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

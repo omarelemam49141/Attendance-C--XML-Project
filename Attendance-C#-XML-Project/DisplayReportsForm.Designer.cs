@@ -45,6 +45,7 @@
             label1 = new Label();
             dateTimePickerEnd = new DateTimePicker();
             panelShow = new Panel();
+            comboClassesList = new ComboBox();
             btnSearchReports = new Button();
             panelShowReports = new Panel();
             toolStrip = new ToolStrip();
@@ -57,6 +58,7 @@
             button5 = new Button();
             button1 = new Button();
             button2 = new Button();
+            btnSearchReportsByClass = new Button();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picStudent).BeginInit();
@@ -168,12 +170,20 @@
             // panelShow
             // 
             resources.ApplyResources(panelShow, "panelShow");
+            panelShow.Controls.Add(btnSearchReportsByClass);
+            panelShow.Controls.Add(comboClassesList);
             panelShow.Controls.Add(label1);
             panelShow.Controls.Add(dateTimePickerEnd);
             panelShow.Controls.Add(btnSearchReports);
             panelShow.Controls.Add(lblDatePicker);
             panelShow.Controls.Add(dateTimePickerStart);
             panelShow.Name = "panelShow";
+            // 
+            // comboClassesList
+            // 
+            resources.ApplyResources(comboClassesList, "comboClassesList");
+            comboClassesList.FormattingEnabled = true;
+            comboClassesList.Name = "comboClassesList";
             // 
             // btnSearchReports
             // 
@@ -283,6 +293,16 @@
             button2.Name = "button2";
             button2.UseVisualStyleBackColor = false;
             // 
+            // btnSearchReportsByClass
+            // 
+            resources.ApplyResources(btnSearchReportsByClass, "btnSearchReportsByClass");
+            btnSearchReportsByClass.BackColor = Color.Teal;
+            btnSearchReportsByClass.FlatAppearance.BorderSize = 0;
+            btnSearchReportsByClass.ForeColor = SystemColors.Control;
+            btnSearchReportsByClass.Name = "btnSearchReportsByClass";
+            btnSearchReportsByClass.UseVisualStyleBackColor = false;
+            btnSearchReportsByClass.Click += btnSearchReportsByClass_Click;
+            // 
             // DisplayReportsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -339,5 +359,7 @@
         private ToolStripButton toolStripButton1;
         private ToolStripButton toolStripButton2;
         private ToolStripLabel toolStripPageLabel;
+        private ComboBox comboClassesList;
+        private Button btnSearchReportsByClass;
     }
 }
