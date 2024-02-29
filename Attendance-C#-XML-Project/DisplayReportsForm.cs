@@ -32,29 +32,29 @@ namespace Attendance_C__XML_Project
             myReports = new GenerateReport();
             myReports.addAttendanceRecords(attendanceRecords);
 
-            //try
-            //{
-            //    lblUserName.Text = GetUserName();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //    UserLogout();
-            //    throw;
-            //}
+            try
+            {
+                lblUserName.Text = GetUserName();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                UserLogout();
+                throw;
+            }
 
 
-            //// Load Teacher Role
-            //try
-            //{
-            //    lblRoleName.Text = GetUserRole();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //    UserLogout();
-            //    throw;
-            //}
+            // Load Teacher Role
+            try
+            {
+                lblRoleName.Text = GetUserRole();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                UserLogout();
+                throw;
+            }
 
         }
 
