@@ -11,7 +11,7 @@ namespace Attendance_C__XML_Project
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new PreferencesForm());
+            Application.Run(new LoginForm());
         }
     }
 }
