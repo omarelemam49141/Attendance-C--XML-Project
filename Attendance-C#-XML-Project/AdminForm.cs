@@ -38,6 +38,7 @@ namespace Attendance_C__XML_Project
             //get the parent form
             loginForm = _loginForm;
             InitializeComponent();
+            //SettingsManager.SettingsIntialization(this);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

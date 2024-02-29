@@ -19,6 +19,7 @@ namespace Attendance_C__XML_Project
         public ForgetPasswordForm()
         {
             InitializeComponent();
+            SettingsManager.SettingsIntialization(this);
         }
 
         private void SendPasswordByEmail(string recipientEmail, string password)

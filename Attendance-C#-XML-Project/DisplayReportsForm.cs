@@ -15,20 +15,22 @@ namespace Attendance_C__XML_Project
 {
     public partial class DisplayReportsForm : Form
     {
-        List<AttendanceRecord> attendanceRecords;
+        //List<AttendanceRecord> attendanceRecords;
         GenerateReport myReports;
 
         List<AttendanceRecord> reports;
-        private int pageSize = 3; // Number of rows per page
+        private int pageSize = 5; // Number of rows per page
         private int currentPage = 1; // Current page index
         DateTime start;
         DateTime end;
+
+        bool SearchingByClass = false;
         public DisplayReportsForm()
         {
             InitializeComponent();
 
             myReports = new GenerateReport();
-            myReports.addAttendanceRecords(attendanceRecords);
+            myReports.addAttendanceRecords(Lists.attendanceRecords);
 
             try
             {
@@ -53,13 +55,21 @@ namespace Attendance_C__XML_Project
                 throw;
             }
 
-            //Load all classes
-            Lists.classes.ForEach(c =>
+            List<string> myClasses = GetTeacherClasses();
+            foreach (var cls in myClasses)
             {
-                comboClassesList.Items.Add(c.Name);
-            });
-        }
+                comboClassesList.Items.Add(cls);
+            }
+            comboClassesList.SelectedIndex = 0;
 
+            SettingsManager.SettingsIntialization(this);
+        }
+        private List<string> GetTeacherClasses()
+        {
+            var classes = Lists.classes.Select(c=>c.Name).ToList();
+
+            return classes;
+        }
         private void btnSearchReports_Click(object sender, EventArgs e)
         {
             start = ConvertDatePickerToDateOnly(dateTimePickerStart);
@@ -70,6 +80,8 @@ namespace Attendance_C__XML_Project
 
         private void DisplayReportsBetweenDates(DateTime start, DateTime end)
         {
+            SearchingByClass = false;
+
             reports = myReports.getReportsBetween(start, end);
             if (reports != null && reports.Count > 0)
             {
@@ -87,7 +99,7 @@ namespace Attendance_C__XML_Project
 
                 // Calculate indexes of the items to display on the current page
                 int startIndex = (currentPage - 1) * pageSize;
-                int endIndex = Math.Min(startIndex + pageSize - 1, attendanceRecords.Count - 1);
+                int endIndex = Math.Min(startIndex + pageSize - 1, myReports.attendanceRecords.Count - 1);
 
                 // Populate DataGridView with data for the current page
 
@@ -169,8 +181,6 @@ namespace Attendance_C__XML_Project
         }
         private void UserLogout()
         {
-            LoggedInUser.Name = string.Empty;
-            LoggedInUser.userRole = (Role)(-1);
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
             this.Hide();
@@ -255,8 +265,6 @@ namespace Attendance_C__XML_Project
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.GetCurrentProcess().Kill();
-            Application.Exit();
             this.Close();
         }
         private void ExportToExcel(DataGridView dataGridView)
@@ -310,7 +318,14 @@ namespace Attendance_C__XML_Project
             {
                 currentPage--;
                 toolStripPageLabel.Text = currentPage.ToString();
-                DisplayReportsBetweenDates(start, end);
+                if (!SearchingByClass)
+                {
+                    DisplayReportsBetweenDates(start, end);
+                }
+                else
+                {
+                    SearchByClass();
+                }
             }
         }
 
@@ -321,7 +336,15 @@ namespace Attendance_C__XML_Project
             {
                 currentPage++;
                 toolStripPageLabel.Text = currentPage.ToString();
-                DisplayReportsBetweenDates(start, end);
+                if (!SearchingByClass)
+                {
+                    DisplayReportsBetweenDates(start, end);
+                }
+                else
+                {
+                    SearchByClass();
+                }
+                
             }
         }
 
@@ -345,6 +368,12 @@ namespace Attendance_C__XML_Project
 
         private void btnSearchReportsByClass_Click(object sender, EventArgs e)
         {
+
+            SearchByClass();
+        }
+        private void SearchByClass()
+        {
+            SearchingByClass = true;
             //get the selected Class Name
             string classSelected = comboClassesList.Text;
             //check if it is not empty
@@ -372,7 +401,7 @@ namespace Attendance_C__XML_Project
 
                         // Calculate indexes of the items to display on the current page
                         int startIndex = (currentPage - 1) * pageSize;
-                        int endIndex = Math.Min(startIndex + pageSize - 1, attendanceRecords.Count - 1);
+                        int endIndex = Math.Min(startIndex + pageSize - 1, myReports.attendanceRecords.Count - 1);
 
                         // Populate DataGridView with data for the current page
 
@@ -397,7 +426,6 @@ namespace Attendance_C__XML_Project
                     }
                 }
             }
-            
         }
 
         private int TotalPages

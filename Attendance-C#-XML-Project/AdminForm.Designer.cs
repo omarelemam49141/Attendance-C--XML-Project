@@ -55,6 +55,7 @@
             panel2 = new Panel();
             lblUsername = new Label();
             button3 = new Button();
+            button1 = new Button();
             btnDisplayReports = new Button();
             btnDisplayClasses = new Button();
             btnDisplayUsers = new Button();
@@ -103,7 +104,6 @@
             txtSearch = new MaskedTextBox();
             panel3 = new Panel();
             label9 = new Label();
-            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panelDisplayClass.SuspendLayout();
@@ -160,10 +160,9 @@
             // pictureBox6
             // 
             resources.ApplyResources(pictureBox6, "pictureBox6");
-            pictureBox6.Cursor = Cursors.Hand;
             pictureBox6.Name = "pictureBox6";
             pictureBox6.TabStop = false;
-            pictureBox6.Click += pictureBox6_Click_1;
+            pictureBox6.Click += pictureBox6_Click;
             // 
             // linkLogout
             // 
@@ -305,9 +304,9 @@
             // 
             resources.ApplyResources(panel2, "panel2");
             panel2.BackColor = Color.FromArgb(0, 7, 95);
-            panel2.Controls.Add(button1);
             panel2.Controls.Add(lblUsername);
             panel2.Controls.Add(button3);
+            panel2.Controls.Add(button1);
             panel2.Controls.Add(btnDisplayReports);
             panel2.Controls.Add(btnDisplayClasses);
             panel2.Controls.Add(btnDisplayUsers);
@@ -330,6 +329,15 @@
             button3.Name = "button3";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
+            // 
+            // button3
+            // 
+            resources.ApplyResources(button1, "button1");
+            button1.FlatAppearance.BorderSize = 0;
+            button1.ForeColor = Color.DarkGray;
+            button1.Name = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // btnDisplayReports
             // 
@@ -418,6 +426,7 @@
             panelShowClasses.Controls.Add(panel7);
             panelShowClasses.Controls.Add(lblAddError);
             panelShowClasses.Name = "panelShowClasses";
+            panelShowClasses.Tag = "";
             // 
             // tableLayoutPanel2
             // 
@@ -513,6 +522,7 @@
             resources.ApplyResources(قائمة_الفصول_المعروضة, "قائمة_الفصول_المعروضة");
             قائمة_الفصول_المعروضة.FormattingEnabled = true;
             قائمة_الفصول_المعروضة.Name = "قائمة_الفصول_المعروضة";
+            قائمة_الفصول_المعروضة.Tag = "myTheme";
             قائمة_الفصول_المعروضة.SelectedIndexChanged += liatDisplayClasses_SelectedIndexChanged;
             // 
             // btnSearchClasses
@@ -685,15 +695,6 @@
             resources.ApplyResources(label9, "label9");
             label9.ForeColor = Color.White;
             label9.Name = "label9";
-            // 
-            // button1
-            // 
-            resources.ApplyResources(button1, "button1");
-            button1.FlatAppearance.BorderSize = 0;
-            button1.ForeColor = Color.DarkGray;
-            button1.Name = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // AdminForm
             // 

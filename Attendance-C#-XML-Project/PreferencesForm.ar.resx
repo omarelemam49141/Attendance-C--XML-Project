@@ -274,6 +274,9 @@
   <data name="label4.Text" xml:space="preserve">
     <value>موضوع الصفحه</value>
   </data>
+  <data name="comboThemes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 376</value>
+  </data>
   <data name="btnSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAKlJREFUWEft
@@ -283,8 +286,15 @@
         YII=
 </value>
   </data>
+  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>689, 522</value>
+  </data>
   <data name="btnSave.Text" xml:space="preserve">
     <value>حفظ</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnSave.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 24</value>
@@ -306,6 +316,12 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>صيغة التاريخ</value>
+  </data>
+  <data name="comboDateFormat.Items" xml:space="preserve">
+    <value>dd/mm/yyyy</value>
+  </data>
+  <data name="comboDateFormat.Items1" xml:space="preserve">
+    <value>mm/dd/yyyy</value>
   </data>
   <data name="lblClassPicker.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 24</value>

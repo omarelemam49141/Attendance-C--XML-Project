@@ -18,6 +18,7 @@ namespace Attendance_C__XML_Project
         public PreferencesForm()
         {
             InitializeComponent();
+            btnSave.Hide();
 
             // Loading UserName and User Role   
             try
@@ -44,8 +45,56 @@ namespace Attendance_C__XML_Project
             }
             SettingsManager.SettingsIntialization(this);
 
+
+
+            LoadSettings();
+
+
         }
-       
+        private void LoadSettings()
+        {
+
+            comboColors.Text = Properties.Settings.Default.SelectedColor;
+
+            comboDateFormat.Text = Properties.Settings.Default.SelectedDateFormat;
+
+            switch (Properties.Settings.Default.SelectedFontSize)
+            {
+                case 10:
+                    comboFontSize.Text = "Small";
+                    break;
+                case 11:
+                    comboFontSize.Text = "Medium";
+                    break;
+                case 13:
+                    comboFontSize.Text = "Large";
+                    break;
+                default:
+                    comboFontSize.Text = "Medium";
+                    break;
+            }
+
+
+            if (Properties.Settings.Default.SelectedLanguage.ToString() == "ar")
+            {
+                comboLanguages.Text = "العربية";
+            }
+            else
+            {
+                comboLanguages.Text = "English";
+            }
+
+            // comboThemes.Text = Properties.Settings.Default.SelectedTheme.Name;
+            if (Properties.Settings.Default.SelectedTheme.Name.ToString() == "Control")
+            {
+                comboThemes.Text = "Light";
+            }
+            else
+            {
+                comboThemes.Text = "Dark";
+            }
+        }
+
 
         #region User Management
 
@@ -141,13 +190,16 @@ namespace Attendance_C__XML_Project
             {
                 case "DD/MM/YYYY":
                     formatPattern = "dd/MM/yyyy";
+                    Properties.Settings.Default.SelectedDateFormat = formatPattern;
                     break;
                 case "MM/DD/YYYY":
                     formatPattern = "MM/dd/yyyy";
+                    Properties.Settings.Default.SelectedDateFormat = formatPattern;
                     break;
                 default:
                     MessageBox.Show("Invalid date format selection. Defaulting to DD/MM/YYYY.");
                     formatPattern = "dd/MM/yyyy";
+                    Properties.Settings.Default.SelectedDateFormat = formatPattern;
                     break;
             }
             ApplyDateFormat(formatPattern);
@@ -170,6 +222,7 @@ namespace Attendance_C__XML_Project
             {
                 case "Light":
                     ApplyLightTheme();
+
                     break;
                 case "Dark":
                     ApplyDarkTheme();
@@ -182,27 +235,15 @@ namespace Attendance_C__XML_Project
         }
         private void ApplyLightTheme()
         {
-            this.BackColor = SystemColors.Control;
-            foreach (Control control in Controls)
-            {
-                control.BackColor = SystemColors.Control;
-                if (control is Label || control is Button)
-                {
-                    control.ForeColor = SystemColors.ControlText;
-                }
-            }
+
+            Properties.Settings.Default.SelectedTheme = SystemColors.Control;
+
+            SettingsManager.SettingsIntialization(this);
         }
         private void ApplyDarkTheme()
         {
-            this.BackColor = Color.FromArgb(45, 45, 48); // Dark gray background
-            foreach (Control control in Controls)
-            {
-                control.BackColor = Color.FromArgb(45, 45, 48); // Dark gray background
-                if (control is Label || control is Button)
-                {
-                    control.ForeColor = Color.White; // Light gray text
-                }
-            }
+            Properties.Settings.Default.SelectedTheme = Color.FromArgb(45, 45, 48);
+            SettingsManager.SettingsIntialization(this);
         }
         private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -213,11 +254,14 @@ namespace Attendance_C__XML_Project
                 {
                     Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
                     SetLanguage("en-US"); // Set language to English
+                    Properties.Settings.Default.SelectedLanguage ="en-US";
                 }
                 else if (comboLanguages.SelectedItem.ToString() == "العربية")
                 {
                     Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ar");
                     SetLanguage("ar"); // Set language to Arabic
+                    Properties.Settings.Default.SelectedLanguage = "ar";
+
                 }
             }
 
@@ -256,53 +300,11 @@ namespace Attendance_C__XML_Project
 
         private void SavePreferences()
         {
-            string selectedColor = comboColors.Text.ToString() ?? "black";
-            string selectedFontSize = comboFontSize.Text.ToString() ?? "11pt";
-            string selectedDateFormat = comboDateFormat.Text.ToString() ?? "DD/MM/YYYY";
-            string selectedTheme = comboThemes.Text.ToString() ?? "light";
-            string selectedLanguage = "en-US";
-            if (comboLanguages.Text != null)
-            {
-                selectedLanguage = comboLanguages.Text.ToString();
-            }
-            SettingsManager.SetSelectedColor(selectedColor);
-            //SettingsManager.SetSelectedFontSize(selectedFontSize);
-            SettingsManager.SetSelectedDateFormat(selectedDateFormat);
-            SettingsManager.SetSelectedTheme(selectedTheme);
-            SettingsManager.SetSelectedLanguage(selectedLanguage);
+            
 
-            ApplyPreferences();
         }
 
-        private void ApplyPreferences()
-        {
-            string selectedColor = SettingsManager.GetSelectedColor();
-            ApplyTextColor(GetColorFromName(selectedColor));
 
-           // string selectedFontSize = SettingsManager.GetSelectedFontSize();
-          //  ApplyFontSize(GetFontSizeFromName(selectedFontSize));
-
-            string selectedDateFormat = SettingsManager.GetSelectedDateFormat();
-            ApplyDateFormat(selectedDateFormat);
-
-            string selectedTheme = SettingsManager.GetSelectedTheme();
-            if (selectedTheme == "Light")
-            {
-                ApplyLightTheme();
-            }
-            else if (selectedTheme == "Dark")
-            {
-                ApplyDarkTheme();
-            }
-            else
-            {
-                MessageBox.Show("Invalid theme selection. Defaulting to Light theme.");
-                ApplyLightTheme();
-            }
-
-            string selectedLanguage = SettingsManager.GetSelectedLanguage();
-            SetLanguage(selectedLanguage);
-        }
 
         private Color GetColorFromName(string colorName)
         {

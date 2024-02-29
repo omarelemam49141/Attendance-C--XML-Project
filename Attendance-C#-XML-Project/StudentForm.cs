@@ -23,14 +23,16 @@ namespace Attendance_C__XML_Project
         int studentId;
         private int pageSize = 5; // Number of rows per page
         private int currentPage = 1; // Current page index
+
         public StudentForm()
         {
             InitializeComponent();
 
-
+            SettingsManager.SettingsIntialization(this);
             // *** other dummy data ***
             studentReport = new GenerateReport();
-            studentReport.addAttendanceRecords(Lists.attendanceRecords);
+            studentId = GetStudentIdByName(LoggedInUser.Name);
+            studentReport.addAttendanceRecords(Lists.attendanceRecords.Where(a=>a.student.ID==studentId).ToList());
 
 
             //**************** GUI Init *************
@@ -64,7 +66,7 @@ namespace Attendance_C__XML_Project
             }
 
             //Load Student Id
-            studentId = GetStudentIdByName(LoggedInUser.Name);
+            
 
             // Load Number Of Attendance
             lblAttendedNum.Text = LoadStudentAttendanceNumber();
@@ -122,6 +124,7 @@ namespace Attendance_C__XML_Project
             dgvStudentReports.Columns.Add("Column1", "Id");
             dgvStudentReports.Columns.Add("Column1", "Attendance Date");
             dgvStudentReports.Columns.Add("Column3", "Status");
+
             var _attendanceRecords = studentReport.getStudentReport(studentId);
 
 
@@ -273,7 +276,7 @@ namespace Attendance_C__XML_Project
                         catch (Exception ex)
                         {
                             ErrorMessage = true;
-                            MessageBox.Show("Unable to wride data in disk" + ex.Message);
+                            MessageBox.Show("Unable to write data to disk" + ex.Message);
                         }
                     }
                     if (!ErrorMessage)
@@ -289,13 +292,14 @@ namespace Attendance_C__XML_Project
                                 PdfPCell pCell = new PdfPCell(new Phrase(col.HeaderText));
                                 pTable.AddCell(pCell);
                             }
-                            foreach (DataGridViewRow viewRow in dgvStudentReports.Rows)
+                            // Iterate over all rows in the DataGridView
+                            foreach (DataGridViewRow row in dgvStudentReports.Rows)
                             {
-                                foreach (DataGridViewCell dcell in viewRow.Cells)
+                                foreach (DataGridViewCell cell in row.Cells)
                                 {
-                                    if (dcell.Value != null) // Check if the cell value is not null
+                                    if (cell.Value != null) // Check if the cell value is not null
                                     {
-                                        pTable.AddCell(dcell.Value.ToString());
+                                        pTable.AddCell(cell.Value.ToString());
                                     }
                                     else
                                     {
@@ -312,7 +316,7 @@ namespace Attendance_C__XML_Project
                                 document.Close();
                                 fileStream.Close();
                             }
-                            MessageBox.Show("Data Export Successfully", "info");
+                            MessageBox.Show("Data Exported Successfully", "Info");
                         }
                         catch (Exception ex)
                         {
@@ -323,9 +327,10 @@ namespace Attendance_C__XML_Project
             }
             else
             {
-                MessageBox.Show("No Record Found", "Info");
+                MessageBox.Show("No Records Found", "Info");
             }
         }
+
         private void btnPrintReport_Click(object sender, EventArgs e)
         {
             ExportPDF();

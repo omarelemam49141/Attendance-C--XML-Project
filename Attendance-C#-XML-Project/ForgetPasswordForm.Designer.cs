@@ -70,6 +70,7 @@
             Controls.Add(btn_send_password);
             Controls.Add(txtEmail);
             Name = "ForgetPasswordForm";
+            Tag = "myTheme";
             ResumeLayout(false);
             PerformLayout();
         }

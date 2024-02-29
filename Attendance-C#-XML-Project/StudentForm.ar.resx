@@ -460,28 +460,16 @@
   <data name="panelShow.Size" type="System.Drawing.Size, System.Drawing">
     <value>896, 125</value>
   </data>
-  <data name="panelAttendanceTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 265</value>
-  </data>
-  <data name="panelAttendanceTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>896, 523</value>
-  </data>
-  <data name="toolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 313</value>
-  </data>
-  <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>896, 27</value>
-  </data>
   <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAE+SURBVEhLzZbNSsQwFIUjKNP2+gou9C1cuXXlpqjTtD6H
-        y5thNoJr8Rl8EMHB9xCXKuIPCHrTuYMOOcy0Ywwe+OjinpxL2jSJmckW7qQmN6kzfpDn56+QDEt8U5Gr
-        NX4qKV4G5kjIBC7aJr4rMsSkIh4aP0VUjInM6lpeG7+gYkxK4mf/fWAxNv+80QbfNwXv283RIawDejey
-        5G6Ps/FWu2RFyIPo2YjP9gyva49W2BfSyViSe/U7h2bPCfkRS41HxHdVNtrV3EBoDGKhcZjzkx3wjmZC
-        oXGIxUbZHJvBeFszoeA4wFJjmbvHOucDzQ2ExiA6GvmjKtyp5K5N47+F/SGdjR5ZeVeNOSft0Qr5EL0a
-        eRL9sEqKLWhVUjZKdPAlO8qTXU50if79dWsmfwxIYSK8/zSugnyOt/kLpDFfGJ59AkvSiuoAAAAASUVO
-        RK5CYII=
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAE/SURBVEhLzZbNSsQwFIUjKNP2+gou9C1cuZ2VOAt1mtbn
+        cHkzzEZwLT6DDyI4+B7iUkX8AUFvOnfQIYeZdozBAx9d3JNzSZsmMTPZwp1U5CZVxg/y/PwVkmGJb0py
+        lcZPJcXLwBwJmcBF08R3RYaYlMRD46eIijGRWV3La+MXVIzJgPjZfx9YjM0/b7TB93XBfbs5OoR1QOdG
+        ltztcTbeapasCHkQHRvx2Z7hde3RCPtCWhkPyL36nUOz54T8iKXGI+K7Mhvtam4gNAax0DjM+cn2eEcz
+        odA4xGKjbI51b7ytmVBwHGCpcZC7xyrnfc0NhMYgWhr5oyzcqeSuTeO/hf0hrY0eWXlXtTkn7dEI+RCd
+        GnkS/bBKii1oVVI2SnTwJTvKk11OdIn+/XVrJn8MSGEivP80roJ8jrf5C6QxX+cmfPmh2RLTAAAAAElF
+        TkSuQmCC
 </value>
   </data>
   <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
@@ -491,11 +479,11 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEmSURBVEhLY4CBKK6G2GjuhpPRHPUfgPR/ijDQjCju+hOR
-        3A3RUOMhACg5HUMxlTDQA1PBloBsxaaAmjiSuz6CAeRFbJLUxEBfHQUGW/03bJLUxMHc9V9A8YNVktp4
+        3A3RUOMhACg5HUMxlTDQA1PBloBsxaaAmjiSuz6CAeRFbJLUxEBfHQUGW/03bJLUxIHc9V9A8YNVktp4
         EFrEUx8Sw1XvEcba8BKrPAFMtEXgJAoE4RzNslHcDaexqcGHSbYIBOwZ6lmiuRomYlOHC5NlEQxEcdWn
-        AeV+oqvFhimyCARiOOqtwrjrn2HTg4wptggEotjrlSI46z9h0wfDVLEonK9ZOZiz4SM2fTBMsUXRnPV+
+        AeV+oqvFhimyCARiOOqtwrjrn2HTg4wptggEotjrlSI46z9h0wfDVLEonK9ZOZCz4SM2fTBMsUXRnPV+
         hCwBYUosYgQWXw1A/A+benRMlkUxDN3cwIJyJTZ1uDDJFtE8w9KtCKIU09MiOlV8dKvK6dY4AQEgh/bN
-        LRgACkAakEQW+/gwMDp+oDYgGRgAXQR9IUruobwAAAAASUVORK5CYII=
+        LRgACkAakEQW+/gwMDp+oDYgGRgANQx9GUGZsoQAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="toolStripButton2.Size" type="System.Drawing.Size, System.Drawing">
@@ -504,8 +492,20 @@
   <data name="toolStripPageLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 24</value>
   </data>
+  <data name="toolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 313</value>
+  </data>
+  <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>896, 27</value>
+  </data>
   <data name="dgvStudentReports.Size" type="System.Drawing.Size, System.Drawing">
     <value>896, 313</value>
+  </data>
+  <data name="panelAttendanceTable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 265</value>
+  </data>
+  <data name="panelAttendanceTable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>896, 523</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 20</value>

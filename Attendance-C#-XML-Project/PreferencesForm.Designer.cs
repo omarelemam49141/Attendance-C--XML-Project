@@ -150,6 +150,7 @@
             panelShow.Controls.Add(lblClassPicker);
             panelShow.Controls.Add(comboLanguages);
             panelShow.Name = "panelShow";
+            panelShow.Tag = "myTheme";
             // 
             // label4
             // 
