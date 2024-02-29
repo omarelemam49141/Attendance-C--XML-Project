@@ -238,33 +238,12 @@ namespace Attendance_C__XML_Project
 
             Properties.Settings.Default.SelectedTheme = SystemColors.Control;
 
-            foreach (Control control in Controls)
-            {
-                if (control is Label || control is Button)
-                {
-                    control.ForeColor = SystemColors.ControlText;
-                }
-                if (control is Panel && control.Tag == "myTheme")
-                {
-                    control.BackColor = SystemColors.Control;
-                }
-               
-            }
+            SettingsManager.SettingsIntialization(this);
         }
         private void ApplyDarkTheme()
         {
             Properties.Settings.Default.SelectedTheme = Color.FromArgb(45, 45, 48);
-            foreach (Control control in Controls)
-            {
-                if (control is Label || control is Button)
-                {
-                    control.ForeColor = Color.White; // Light gray text
-                }
-                if(control is Panel&&control.Tag== "myTheme")
-                {
-                    control.BackColor = Color.FromArgb(45, 45, 48);
-                }
-            }
+            SettingsManager.SettingsIntialization(this);
         }
         private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {

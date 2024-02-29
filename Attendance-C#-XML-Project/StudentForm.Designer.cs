@@ -226,7 +226,7 @@
             panelAttendanceTable.Controls.Add(btnPrintReport);
             panelAttendanceTable.Controls.Add(btnExportExcel);
             panelAttendanceTable.Name = "panelAttendanceTable";
-            panelAttendanceTable.Tag = "myTheme";
+            panelAttendanceTable.Tag = "";
             // 
             // toolStrip
             // 
@@ -265,6 +265,7 @@
             dgvStudentReports.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvStudentReports.Name = "dgvStudentReports";
             dgvStudentReports.ReadOnly = true;
+            dgvStudentReports.Tag = "";
             // 
             // StudentForm
             // 
