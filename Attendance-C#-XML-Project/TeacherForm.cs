@@ -30,29 +30,10 @@ namespace Attendance_C__XML_Project
         {
             InitializeComponent();
             // *** other dummy data ***
-            attendanceRecords = new List<AttendanceRecord>
-            {
-                new AttendanceRecord(1,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateTime(2024, 2, 11)},
-                new AttendanceRecord(2,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateTime(2024, 2, 12) },
-                new AttendanceRecord(3,Lists.studentsList[0],AttendanceStatus.Presence){ RecordDate = new DateTime(2024, 2, 13) },
-                new AttendanceRecord(4,Lists.studentsList[0],AttendanceStatus.Presence){ RecordDate = new DateTime(2024, 2, 14) },
-                new AttendanceRecord(5,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateTime(2024, 2, 15) },
-                new AttendanceRecord(5,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateTime(2024, 2, 16) },
-                new AttendanceRecord(6,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateTime(2024, 2, 17) },
-                new AttendanceRecord(7,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateTime(2024, 2, 18) },
-                new AttendanceRecord(8,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateTime(2024, 2, 19) },
-                new AttendanceRecord(9,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateTime(2024, 2, 20) },
-                new AttendanceRecord(10,Lists.studentsList[0],AttendanceStatus.Absence) { RecordDate = new DateTime(2024, 2, 21) },
-                new AttendanceRecord(11,Lists.studentsList[0],AttendanceStatus.Absence) { RecordDate = new DateTime(2024, 2, 22) },
-                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateTime(2024, 2, 24)},
-                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateTime(2024, 2, 24)},
-                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateTime(2024, 2, 24)},
-                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateTime(2024, 2, 24)},
-                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateTime(2024, 2, 24)},
-                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateTime(2024, 2, 24)},
-            };
-            //FileManagment.SerializeClassesToXml(attendanceRecords, "data/attendances.xml");
+          
+            
 
+            attendanceRecords = Lists.attendanceRecords;
             teacherReport = new GenerateReport();
             teacherReport.addAttendanceRecords(attendanceRecords);
 
@@ -93,6 +74,7 @@ namespace Attendance_C__XML_Project
             List<string> myClasses = GetTeacherClasses();
             foreach (var cls in myClasses)
             {
+                if(cls.)
                 comboClasses.Items.Add(cls);
             }
             comboClasses.SelectedIndex = 0;
@@ -229,9 +211,10 @@ namespace Attendance_C__XML_Project
         private List<string> GetTeacherClasses()
         {
             //var teacher = teachersList.Find(t =>t.Username.ToLower()== MyLoggedInUser.Name.ToLower());
-
+            List<string> classNames = new List<string>();
             // For Now i will display all classes
-            List<string> classNames = Lists.classes.Select(c => c.Name).ToList();
+            var classes = Lists.teachersList.Select(t => t.Classes).ToList();
+
             return classNames;
         }
         private void TeacherLogout()
