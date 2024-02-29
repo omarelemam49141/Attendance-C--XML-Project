@@ -543,5 +543,17 @@ namespace Attendance_C__XML_Project
             PreferencesForm preferencesForm = new PreferencesForm();
             preferencesForm.ShowDialog();
         }
+
+        private void pictureBox6_Click_1(object sender, EventArgs e)
+        {
+            PreferencesForm prefsForm = new PreferencesForm();
+            prefsForm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Backups backupForm = new Backups();
+            backupForm.ShowDialog();
+        }
     }
 }
