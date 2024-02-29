@@ -16,7 +16,7 @@ namespace Attendance_C__XML_Project
             ID = _id;
             student = _student;
             ClassID = student.ClassID;
-            RecordDate = DateOnly.FromDateTime(DateTime.Now);
+            RecordDate = DateTime.Now;
             attendanceStatus = _attendanceStatus;
         }
         public AttendanceRecord()
@@ -24,7 +24,7 @@ namespace Attendance_C__XML_Project
         }
 
         public AttendanceStatus attendanceStatus { get; set; }
-        public DateOnly RecordDate { get; set; }
+        public DateTime RecordDate { get; set; }
         public int ClassID {  get; set; }
         public Student student { get; set; }
         public int ID

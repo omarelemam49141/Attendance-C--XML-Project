@@ -21,33 +21,13 @@ namespace Attendance_C__XML_Project
         List<AttendanceRecord> reports;
         private int pageSize = 3; // Number of rows per page
         private int currentPage = 1; // Current page index
-        DateOnly start;
-        DateOnly end;
+        DateTime start;
+        DateTime end;
         public DisplayReportsForm()
         {
             InitializeComponent();
 
-            attendanceRecords = new List<AttendanceRecord>
-            {
-                new AttendanceRecord(1,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 11)},
-                new AttendanceRecord(2,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 12) },
-                new AttendanceRecord(3,Lists.studentsList[index: 0],AttendanceStatus.Presence){ RecordDate = new DateOnly(2024, 2, 13) },
-                new AttendanceRecord(4,Lists.studentsList[0],AttendanceStatus.Presence){ RecordDate = new DateOnly(2024, 2, 14) },
-                new AttendanceRecord(5,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 15) },
-                new AttendanceRecord(5,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 16) },
-                new AttendanceRecord(6,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 17) },
-                new AttendanceRecord(7,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 18) },
-                new AttendanceRecord(8,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 19) },
-                new AttendanceRecord(9,Lists.studentsList[0],AttendanceStatus.Absence){ RecordDate = new DateOnly(2024, 2, 20) },
-                new AttendanceRecord(10,Lists.studentsList[0],AttendanceStatus.Absence) { RecordDate = new DateOnly(2024, 2, 21) },
-                new AttendanceRecord(11,Lists.studentsList[0],AttendanceStatus.Absence) { RecordDate = new DateOnly(2024, 2, 22) },
-                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
-                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
-                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
-                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
-                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
-                new AttendanceRecord(12,Lists.studentsList[0],AttendanceStatus.Absence){RecordDate=new DateOnly(2024, 2, 24)},
-            };
+            
 
             myReports = new GenerateReport();
             myReports.addAttendanceRecords(attendanceRecords);
@@ -88,7 +68,7 @@ namespace Attendance_C__XML_Project
 
         }
 
-        private void DisplayReportsBetweenDates(DateOnly start, DateOnly end)
+        private void DisplayReportsBetweenDates(DateTime start, DateTime end)
         {
             reports = myReports.getReportsBetween(start, end);
             if (reports != null)
@@ -162,9 +142,9 @@ namespace Attendance_C__XML_Project
 
             return className;
         }
-        private DateOnly ConvertDatePickerToDateOnly(DateTimePicker dateTimePicker)
+        private DateTime ConvertDatePickerToDateOnly(DateTimePicker dateTimePicker)
         {
-            return new DateOnly(dateTimePicker.Value.Year, dateTimePicker.Value.Month, dateTimePicker.Value.Day);
+            return new DateTime(dateTimePicker.Value.Year, dateTimePicker.Value.Month, dateTimePicker.Value.Day);
 
         }
 
