@@ -92,7 +92,7 @@ namespace Attendance_C__XML_Project
         }
 
         //get all the attendance records between two dates
-        public List<AttendanceRecord> getReportsBetween(DateOnly date1, DateOnly date2)
+        public List<AttendanceRecord> getReportsBetween(DateTime date1, DateTime date2)
         {
             List<AttendanceRecord> records=new List<AttendanceRecord>();
             foreach (var attendanceRecord in attendanceRecords)
@@ -106,7 +106,7 @@ namespace Attendance_C__XML_Project
         }
 
         //get all the attendance records before certain date
-        public List<AttendanceRecord> getReportsBefore(DateOnly date)
+        public List<AttendanceRecord> getReportsBefore(DateTime date)
         {
             var dateReport = new List<AttendanceRecord>();
             foreach (var attendanceRecord in attendanceRecords)
@@ -120,7 +120,7 @@ namespace Attendance_C__XML_Project
         }
 
         //get all the attendance records after certain date
-        public List<AttendanceRecord> getReportsAfter(DateOnly date)
+        public List<AttendanceRecord> getReportsAfter(DateTime date)
         {
             var dateReport = new List<AttendanceRecord>();
             foreach (var attendanceRecord in attendanceRecords)
@@ -132,7 +132,7 @@ namespace Attendance_C__XML_Project
             }
             return dateReport;
         }
-        public List<AttendanceRecord> getReportsAt(DateOnly date)
+        public List<AttendanceRecord> getReportsAt(DateTime date)
         {
             var dateReport = new List<AttendanceRecord>();
             foreach (var attendanceRecord in attendanceRecords)
@@ -158,7 +158,7 @@ namespace Attendance_C__XML_Project
             }
             return classReport;
         }
-        public void ChangeStudentAttendanceStatus(int recordId,ref List<AttendanceRecord> _attendanceRecords, DateOnly changeDate)
+        public void ChangeStudentAttendanceStatus(int recordId,ref List<AttendanceRecord> _attendanceRecords, DateTime changeDate)
         {
             if (_attendanceRecords != null)
             {
