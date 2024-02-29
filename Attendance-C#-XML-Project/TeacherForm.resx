@@ -852,6 +852,15 @@
   <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAACpSURBVFhH7Y5RCsJADET3CAXbH73/ZfyQUhD0NDGbfQoVYVN3P6rkQdhmOhMmBcEukT5cdA6c
+        3EbJd2HWGTnrp2RFWA2klZZBfumsmTPvTefIbx8l11xg0HmWuOucsNQpGV+Bd7CZT59JZzFB5GoGDwSa
+        C2T0M5cwkOrg/1jACzED6ccLtMC5KPB9AdbNEP+jAqxVsEeBKBAF2gv0hvN18HeH80GwJ1J6ANpsEFCH
+        ZtlQAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>

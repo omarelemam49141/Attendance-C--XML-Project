@@ -215,6 +215,7 @@
             resources.ApplyResources(panelShow, "panelShow");
             panelShow.Controls.Add(btnShowReport);
             panelShow.Name = "panelShow";
+            panelShow.Paint += panelShow_Paint;
             // 
             // panelAttendanceTable
             // 
