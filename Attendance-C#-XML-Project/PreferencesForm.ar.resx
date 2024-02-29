@@ -130,7 +130,7 @@
 </value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 20</value>
+    <value>156, 25</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>استمارة التفضيلات</value>
@@ -229,19 +229,19 @@
 </value>
   </data>
   <data name="lblRole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 18</value>
+    <value>52, 24</value>
   </data>
   <data name="lblRole.Text" xml:space="preserve">
     <value>الدور:</value>
   </data>
   <data name="lblRoleName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 18</value>
+    <value>66, 24</value>
   </data>
   <data name="lblRoleName.Text" xml:space="preserve">
     <value>اسم الدور</value>
   </data>
   <data name="lblWelcome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 18</value>
+    <value>62, 24</value>
   </data>
   <data name="lblWelcome.Text" xml:space="preserve">
     <value>مرحبا: </value>
@@ -263,13 +263,13 @@
 </value>
   </data>
   <data name="lblUserName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 18</value>
+    <value>87, 24</value>
   </data>
   <data name="lblUserName.Text" xml:space="preserve">
     <value>اسم المستخدم</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 18</value>
+    <value>110, 24</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>موضوع الصفحه</value>
@@ -287,25 +287,28 @@
     <value>حفظ</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 18</value>
+    <value>40, 24</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>اللون</value>
   </data>
+  <data name="comboColors.Items2" xml:space="preserve">
+    <value>Gray</value>
+  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 18</value>
+    <value>70, 24</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>حجم الخط</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 18</value>
+    <value>91, 24</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>صيغة التاريخ</value>
   </data>
   <data name="lblClassPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 18</value>
+    <value>36, 24</value>
   </data>
   <data name="lblClassPicker.Text" xml:space="preserve">
     <value>اللغة</value>

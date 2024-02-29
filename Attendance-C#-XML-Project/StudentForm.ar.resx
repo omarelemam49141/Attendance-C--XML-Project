@@ -129,11 +129,30 @@
         CcOZGi3acn8w20HdJQxnK2JcRlEURVEUxS5M0x+93tb4mi4xDAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btnExit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>851, 0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnExit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 49</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 9</value>
+  </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 20</value>
+    <value>131, 25</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>استمارة الطالب</value>
+  </data>
+  <data name="panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>896, 49</value>
   </data>
   <data name="btnShowReport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -143,20 +162,47 @@
         cAPH4zJYaN3CcZmPy/AMxIRZhjMYfxS9jRSF+DkZeMHfoNQKzAduLKRRWBwAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btnShowReport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 8</value>
+  </data>
+  <data name="btnShowReport.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="btnShowReport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 80</value>
+  </data>
   <data name="btnShowReport.Text" xml:space="preserve">
     <value>عرض التقرير</value>
   </data>
+  <data name="lblAttended.Location" type="System.Drawing.Point, System.Drawing">
+    <value>523, 16</value>
+  </data>
   <data name="lblAttended.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 18</value>
+    <value>57, 24</value>
   </data>
   <data name="lblAttended.Text" xml:space="preserve">
     <value>حضور</value>
   </data>
+  <data name="lblAbsent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>523, 51</value>
+  </data>
   <data name="lblAbsent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 18</value>
+    <value>47, 24</value>
   </data>
   <data name="lblAbsent.Text" xml:space="preserve">
     <value>غياب</value>
+  </data>
+  <data name="lblAbsentNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>642, 49</value>
+  </data>
+  <data name="lblAbsentNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 32</value>
+  </data>
+  <data name="lblAttendedNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>642, 12</value>
+  </data>
+  <data name="lblAttendedNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 32</value>
   </data>
   <data name="btnExportExcel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -170,6 +216,15 @@
         ugcT1xJiM6uDKBcPCsWjecX+0QHgbx/H4k9+kCzjHj7ZgjLq/5MshT2b0O6AaVzHK3zDimhZfeF9ijiA
         c7iF9+hQpEGDnBQKH2b15ovmqH/MAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="btnExportExcel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>609, 411</value>
+  </data>
+  <data name="btnExportExcel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="btnExportExcel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 80</value>
   </data>
   <data name="btnExportExcel.Text" xml:space="preserve">
     <value>Excel تصدير ك</value>
@@ -186,6 +241,15 @@
         cB/dN9EFHlV+fI9q/SgfDdX6UT4aqvWjfDRU64fsZWUkCiXV+iFs/1dfpWPfwx5gQLV/mkLhDekS2r0u
         H79HAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="btnPrintReport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 411</value>
+  </data>
+  <data name="btnPrintReport.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="btnPrintReport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 80</value>
   </data>
   <data name="btnPrintReport.Text" xml:space="preserve">
     <value>Pdf تصدير ك</value>
@@ -283,20 +347,35 @@
         A1OO1Kxq2KcKAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="picStudent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, -5</value>
+  </data>
+  <data name="picStudent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 96</value>
+  </data>
+  <data name="lblClass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>111, 49</value>
+  </data>
   <data name="lblClass.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 18</value>
+    <value>60, 24</value>
   </data>
   <data name="lblClass.Text" xml:space="preserve">
     <value>الفصل:</value>
   </data>
+  <data name="lblWelcome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>111, 12</value>
+  </data>
   <data name="lblWelcome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 18</value>
+    <value>62, 24</value>
   </data>
   <data name="lblWelcome.Text" xml:space="preserve">
     <value>مرحبا: </value>
   </data>
+  <data name="lblClassName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>215, 51</value>
+  </data>
   <data name="lblClassName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 18</value>
+    <value>74, 24</value>
   </data>
   <data name="lblClassName.Text" xml:space="preserve">
     <value>اسم الفصل</value>
@@ -314,6 +393,15 @@
         5VJc1aKRAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="btnSetting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>851, 49</value>
+  </data>
+  <data name="btnSetting.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="btnSetting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 36</value>
+  </data>
   <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAlVJREFUSEul
@@ -330,33 +418,99 @@
         AABJRU5ErkJggg==
 </value>
   </data>
+  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>845, 8</value>
+  </data>
+  <data name="button3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 37</value>
+  </data>
+  <data name="lblUserName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 12</value>
+  </data>
   <data name="lblUserName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 18</value>
+    <value>87, 24</value>
   </data>
   <data name="lblUserName.Text" xml:space="preserve">
     <value>اسم المستخدم</value>
   </data>
+  <data name="lblRoleError.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 563</value>
+  </data>
+  <data name="lblRoleError.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>159, 0</value>
+  </data>
+  <data name="lblRoleError.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 20</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 49</value>
+  </data>
+  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>896, 91</value>
+  </data>
+  <data name="panelShow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 140</value>
+  </data>
+  <data name="panelShow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>896, 125</value>
+  </data>
+  <data name="panelAttendanceTable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 265</value>
+  </data>
+  <data name="panelAttendanceTable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>896, 523</value>
+  </data>
+  <data name="toolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 313</value>
+  </data>
+  <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>896, 27</value>
+  </data>
   <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE+SURBVEhLzZbNSsQwFIUjKNP2+gou9C1cuXXlquo0rc/h
-        8maYjeBafAYfRHDwPcSlivgDgt507qBDDjPtGIMHPrq4J+eSNk1iZrKFO6nJTeqMH+T5+SskwxLfVORq
-        jZ9KipeBORIygYu2ie+KDDGpiIfGTxEVYyKzupbXxi+oGJOS+Nl/H1iMzT9vtMH3TcH7dnN0COuA3o0s
-        udvjbLzVLlkR8iB6NuKzPcPr2qMV9oV0MpbkXv3OodlzQn7EUuMR8V2VjXY1NxAag1hoHOb8ZAe8o5lQ
-        aBxisVE2x2Yw3tZMKDgOsNRY5u6xzvlAcwOhMYiORv6oCncquWvT+G9hf0hno0dW3lVjzkl7tEI+RK9G
-        nkQ/rJJiC1qVlI0SHXzJjvJklxNdon9/3ZrJHwNSmAjvP42rIJ/jbf4CacwXLh19Bv0FNegAAAAASUVO
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAE+SURBVEhLzZbNSsQwFIUjKNP2+gou9C1cuXXlpqjTtD6H
+        y5thNoJr8Rl8EMHB9xCXKuIPCHrTuYMOOcy0Ywwe+OjinpxL2jSJmckW7qQmN6kzfpDn56+QDEt8U5Gr
+        NX4qKV4G5kjIBC7aJr4rMsSkIh4aP0VUjInM6lpeG7+gYkxK4mf/fWAxNv+80QbfNwXv283RIawDejey
+        5G6Ps/FWu2RFyIPo2YjP9gyva49W2BfSyViSe/U7h2bPCfkRS41HxHdVNtrV3EBoDGKhcZjzkx3wjmZC
+        oXGIxUbZHJvBeFszoeA4wFJjmbvHOucDzQ2ExiA6GvmjKtyp5K5N47+F/SGdjR5ZeVeNOSft0Qr5EL0a
+        eRL9sEqKLWhVUjZKdPAlO8qTXU50if79dWsmfwxIYSK8/zSugnyOt/kLpDFfGJ59AkvSiuoAAAAASUVO
         RK5CYII=
 </value>
+  </data>
+  <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 24</value>
   </data>
   <data name="toolStripButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEmSURBVEhLY4CBKK6G2GjuhpPRHPUfgPR/ijDQjCju+hOR
-        3A3RUOMhACg5HUMxlTDQA1PBloBsxaaAmjiSuz6CAeRFbJLUxEBfHQUGW/03bJLUxCHc9V9A8YNVktp4
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEmSURBVEhLY4CBKK6G2GjuhpPRHPUfgPR/ijDQjCju+hOR
+        3A3RUOMhACg5HUMxlTDQA1PBloBsxaaAmjiSuz6CAeRFbJLUxEBfHQUGW/03bJLUxMHc9V9A8YNVktp4
         EFrEUx8Sw1XvEcba8BKrPAFMtEXgJAoE4RzNslHcDaexqcGHSbYIBOwZ6lmiuRomYlOHC5NlEQxEcdWn
-        AeV+oqvFhimyCARiOOqtwrjrn2HTg4wptggEotjrlSI46z9h0wfDVLEonK9ZOYSz4SM2fTBMsUXRnPV+
+        AeV+oqvFhimyCARiOOqtwrjrn2HTg4wptggEotjrlSI46z9h0wfDVLEonK9ZOZiz4SM2fTBMsUXRnPV+
         hCwBYUosYgQWXw1A/A+benRMlkUxDN3cwIJyJTZ1uDDJFtE8w9KtCKIU09MiOlV8dKvK6dY4AQEgh/bN
-        LRgACkAakEQW+/gwMDp+oDYgGRgAcQB9JWb5p1EAAAAASUVORK5CYII=
+        LRgACkAakEQW+/gwMDp+oDYgGRgAXQR9IUruobwAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="toolStripButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 24</value>
+  </data>
+  <data name="toolStripPageLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 24</value>
+  </data>
+  <data name="dgvStudentReports.Size" type="System.Drawing.Size, System.Drawing">
+    <value>896, 313</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 20</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>896, 788</value>
   </data>
 </root>

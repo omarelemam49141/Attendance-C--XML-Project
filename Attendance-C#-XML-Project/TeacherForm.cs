@@ -17,7 +17,7 @@ namespace Attendance_C__XML_Project
 {
     public partial class TeacherForm : Form
     {
-        List<AttendanceRecord> attendanceRecords;
+       
         List<AttendanceRecord>? filteredAttendanceRecords;
         GenerateReport teacherReport;
         int studentId;
@@ -25,16 +25,14 @@ namespace Attendance_C__XML_Project
         private int currentPage = 1; // Current page index
         int classId = 1;
         DateTime dateOnlyValue;
-        Dictionary<int, bool> checkboxStates = new Dictionary<int, bool>();
+        //Dictionary<int, bool> checkboxStates = new Dictionary<int, bool>();
         public TeacherForm()
         {
             InitializeComponent();
             // *** other dummy data ***
           
-
-            attendanceRecords = Lists.attendanceRecords;
             teacherReport = new GenerateReport();
-            teacherReport.addAttendanceRecords(attendanceRecords);
+            teacherReport.addAttendanceRecords(Lists.attendanceRecords);
 
             // *** end of  dummy data ***
 
@@ -73,11 +71,12 @@ namespace Attendance_C__XML_Project
             List<string> myClasses = GetTeacherClasses();
             foreach (var cls in myClasses)
             {
-      
                 comboClasses.Items.Add(cls);
             }
             comboClasses.SelectedIndex = 0;
 
+
+            SettingsManager.SettingsIntialization(this);
         }
 
         private void btnShowReport_Click(object sender, EventArgs e)
@@ -116,17 +115,17 @@ namespace Attendance_C__XML_Project
 
 
             // Set the readonly property based on the date
-            checkBoxColumn.ReadOnly = !(mydate.HasValue && mydate.Value.Equals(DateTime.Now));
+            checkBoxColumn.ReadOnly = !(mydate.HasValue && mydate.Value.Date == DateTime.Now.Date);
 
             if (classId != null)
             {
                 // Assuming attendanceRecords is a list of records
-                filteredAttendanceRecords = attendanceRecords.Where(record => (record.ClassID == classId && record.RecordDate == mydate)).ToList();
+                filteredAttendanceRecords = teacherReport.attendanceRecords.Where(record => (record.ClassID == classId && record.RecordDate.Date == mydate)).ToList();
 
                 if (filteredAttendanceRecords != null)
                 {
                     int startIndex = (currentPage - 1) * pageSize;
-                    int endIndex = Math.Min(startIndex + pageSize - 1, attendanceRecords.Count - 1);
+                    int endIndex = Math.Min(startIndex + pageSize - 1, teacherReport.attendanceRecords.Count - 1);
 
                     // Populate DataGridView with data for the current page
 
@@ -136,11 +135,11 @@ namespace Attendance_C__XML_Project
                         AttendanceRecord? record = filteredAttendanceRecords[i];
                         if (record != null)
                         {
-                            if (attendAll == true && mydate.Value.Equals(DateTime.Now))
-                            {
+                            if (attendAll == true && mydate.Value.Date == DateTime.Now.Date)
+                            {   
                                 dgvViewStudents.Rows.Add(record.ID, record.student?.Username, attendAll);
                             }
-                            else if (attendAll == false && mydate.Value.Equals(DateTime.Now))
+                            else if (attendAll == false && mydate.Value.Date == DateTime.Now.Date)
                             {
                                 dgvViewStudents.Rows.Add(record.ID, record.student?.Username, attendAll);
                             }
@@ -167,12 +166,12 @@ namespace Attendance_C__XML_Project
         {
 
             // Check if the clicked cell is the checkbox cell
-            if (e.ColumnIndex == dgvViewStudents.Columns["checkBoxColumn"].Index && e.RowIndex >= 0 && dateOnlyValue.Equals(DateTime.Now))
+            if (e.ColumnIndex == dgvViewStudents.Columns["checkBoxColumn"].Index && e.RowIndex >= 0 && dateOnlyValue.Date == DateTime.Now.Date)
             {
                 // Toggle the checkbox state and update the dictionary
                 int recordId = (int)dgvViewStudents.Rows[e.RowIndex].Cells["Column1"].Value;
 
-                teacherReport.ChangeStudentAttendanceStatus(recordId, ref attendanceRecords, DateTime.Now);
+                teacherReport.ChangeStudentAttendanceStatus(recordId, DateTime.Now);
             }
         }
 
@@ -211,9 +210,7 @@ namespace Attendance_C__XML_Project
         {
             var teacher = Lists.teachersList.Find(t =>t.Username.ToLower()== LoggedInUser.Name.ToLower());
 
-            List<string> classNames = new List<string>();
-            // For Now i will display all classes
-            var classes = teacher.Classes.Where(c => c.ID == classId).Select(c=>c.Name).ToList();
+            var classes = teacher.Classes.Select(c=>c.Name).ToList();
 
             return classes;
         }
@@ -367,7 +364,7 @@ namespace Attendance_C__XML_Project
             // load the students reports
             DateTime dateOnlyValue = new DateTime(dateTimePicker.Value.Year, dateTimePicker.Value.Month, dateTimePicker.Value.Day);
             int classId = getClassIdFromComboBox();
-            if (dateOnlyValue.Equals(DateTime.Now))
+            if (dateOnlyValue.Date == DateTime.Now.Date)
             {
                 if (checkBox.Checked)
                 {
@@ -435,25 +432,45 @@ namespace Attendance_C__XML_Project
         private void btnSave_Click(object sender, EventArgs e)
         {
             // Save Data To Xml
+            
+            Lists.attendanceRecords = teacherReport.attendanceRecords;
+            FileManagment.SerializeClassesToXml(Lists.attendanceRecords,"attendances.xml");
+            MessageBox.Show("Saved Successfully");
 
             //FileManagment.ValidateAgainstXsd(attendanceRecords);
 
         }
         private void btnNewReport_Click(object sender, EventArgs e)
         {
-            var TodayReports = teacherReport.getReportsAt(dateOnlyValue);
+            //dgvViewStudents.Show()
+            var TodayReports = teacherReport.getReportsAt(DateTime.Now);
             var currentClassId = getClassIdFromComboBox();
             var students = Lists.studentsList.Where(s => s.ClassID == currentClassId).ToList();
+            int newId = 0;
             if (TodayReports.Count == 0)
             {
                 foreach (var student in students)
                 {
-                    AttendanceRecord attendanceRecord = new AttendanceRecord(_id: 20, student, AttendanceStatus.Absence);
-                    attendanceRecord.RecordDate = dateOnlyValue;
-                    attendanceRecords.Add(attendanceRecord);
+                    newId = GetLastAttendanceId(Lists.attendanceRecords);
+                    AttendanceRecord attendanceRecord = new AttendanceRecord(_id: newId, student, AttendanceStatus.Absence);
+                    attendanceRecord.RecordDate = DateTime.Now;
+
+                    teacherReport.attendanceRecords.Add(attendanceRecord);
+                    Lists.attendanceRecords = teacherReport.attendanceRecords;
                 }
             }
             LoadStudentReports(dateOnlyValue, classId, false);
+        }
+
+        private int GetLastAttendanceId(List<AttendanceRecord> attendanceRecords)
+        {
+            if (attendanceRecords == null || attendanceRecords.Count == 0)
+            {
+                throw new ArgumentException("Attendance records list is null or empty.");
+            }
+
+            // Assuming the IDs are sequential integers and the list is ordered by ID
+            return attendanceRecords.Last().ID+1;
         }
     }
 }
