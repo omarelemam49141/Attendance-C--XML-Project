@@ -75,13 +75,13 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(panel1, "panel1");
             panel1.BackColor = Color.Gold;
             panel1.Controls.Add(lblRoleError);
             panel1.Controls.Add(comboRole);
             panel1.Controls.Add(lblRole);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(panel2);
+            resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
             // 
             // lblRoleError
@@ -112,9 +112,9 @@
             // 
             // panel2
             // 
-            resources.ApplyResources(panel2, "panel2");
             panel2.BackColor = Color.Teal;
             panel2.Controls.Add(label1);
+            resources.ApplyResources(panel2, "panel2");
             panel2.Name = "panel2";
             // 
             // label1
@@ -181,16 +181,16 @@
             // 
             // comboGender
             // 
-            resources.ApplyResources(comboGender, "comboGender");
             comboGender.FormattingEnabled = true;
             comboGender.Items.AddRange(new object[] { resources.GetString("comboGender.Items"), resources.GetString("comboGender.Items1") });
+            resources.ApplyResources(comboGender, "comboGender");
             comboGender.Name = "comboGender";
             comboGender.KeyPress += comboGender_KeyPress;
             // 
             // comboClass
             // 
-            resources.ApplyResources(comboClass, "comboClass");
             comboClass.FormattingEnabled = true;
+            resources.ApplyResources(comboClass, "comboClass");
             comboClass.Name = "comboClass";
             comboClass.KeyPress += comboClass_KeyPress;
             // 
@@ -201,9 +201,9 @@
             // 
             // btnAddUser
             // 
-            resources.ApplyResources(btnAddUser, "btnAddUser");
             btnAddUser.BackColor = Color.Teal;
             btnAddUser.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnAddUser, "btnAddUser");
             btnAddUser.ForeColor = SystemColors.Control;
             btnAddUser.Name = "btnAddUser";
             btnAddUser.UseVisualStyleBackColor = false;
@@ -225,13 +225,13 @@
             // 
             // panel3
             // 
-            resources.ApplyResources(panel3, "panel3");
             panel3.BackColor = Color.FromArgb(73, 178, 202);
             panel3.Controls.Add(linkLogout);
             panel3.Controls.Add(lblLoggedInRole);
             panel3.Controls.Add(label17);
             panel3.Controls.Add(label9);
             panel3.Controls.Add(btnClose);
+            resources.ApplyResources(panel3, "panel3");
             panel3.Name = "panel3";
             panel3.MouseDown += panel3_MouseDown;
             // 
@@ -258,8 +258,8 @@
             // 
             // checkedListClass
             // 
-            resources.ApplyResources(checkedListClass, "checkedListClass");
             checkedListClass.FormattingEnabled = true;
+            resources.ApplyResources(checkedListClass, "checkedListClass");
             checkedListClass.Name = "checkedListClass";
             // 
             // lblUsernameError
@@ -294,8 +294,8 @@
             // 
             // panel4
             // 
-            resources.ApplyResources(panel4, "panel4");
             panel4.BackColor = SystemColors.ActiveBorder;
+            resources.ApplyResources(panel4, "panel4");
             panel4.Name = "panel4";
             // 
             // lblGenderError
@@ -349,6 +349,7 @@
             Controls.Add(checkedListClass);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AddNewUser";
+            Tag = "myTheme";
             Load += AddNewUser_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

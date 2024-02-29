@@ -175,6 +175,7 @@
             panelShow.Controls.Add(lblDatePicker);
             panelShow.Controls.Add(dateTimePickerStart);
             panelShow.Name = "panelShow";
+            panelShow.Tag = "myTheme";
             // 
             // btnSearchReportsByClass
             // 
@@ -210,6 +211,7 @@
             panelShowReports.Controls.Add(btnExportPDF);
             panelShowReports.Controls.Add(btnExportExcel);
             panelShowReports.Name = "panelShowReports";
+            panelShowReports.Tag = "myTheme";
             panelShowReports.Paint += panelShowReports_Paint;
             // 
             // toolStrip

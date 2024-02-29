@@ -130,7 +130,7 @@
 </value>
   </data>
   <data name="btnExit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>849, 0</value>
+    <value>851, 0</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnExit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
@@ -149,7 +149,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>894, 49</value>
+    <value>896, 49</value>
   </data>
   <data name="lblRole.Location" type="System.Drawing.Point, System.Drawing">
     <value>111, 52</value>
@@ -315,7 +315,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>894, 100</value>
+    <value>896, 100</value>
   </data>
   <data name="lblDatePicker.Location" type="System.Drawing.Point, System.Drawing">
     <value>47, 47</value>
@@ -404,7 +404,7 @@
     <value>0, 149</value>
   </data>
   <data name="panelShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>894, 161</value>
+    <value>896, 161</value>
   </data>
   <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -498,15 +498,12 @@
     <value>0, 310</value>
   </data>
   <data name="panelShowReports.Size" type="System.Drawing.Size, System.Drawing">
-    <value>894, 478</value>
+    <value>896, 478</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 20</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>896, 788</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
 </root>

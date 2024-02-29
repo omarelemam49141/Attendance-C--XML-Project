@@ -118,118 +118,352 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panelShowReports.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;comboClassesList.Name" xml:space="preserve">
-    <value>comboClassesList</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblRole.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
-  </data>
-  <data name="btnExit.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;btnSearchReportsByClass.Parent" xml:space="preserve">
-    <value>panelShow</value>
-  </data>
   <data name="button2.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>TextBeforeImage</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="lblRoleName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAKlJREFUWEft
-        jlEKwkAMRPcIBdsfvf9l/JBSEPQ0MZt9ChVhU3c/quRB2GY6EyYFwS6RPlx0DpzcRsl3YdYZOeunZEVY
-        DaSVlkF+6ayZM+9N58hvHyXXXGDQeZa465yw1CkZX4F3sJlPn0lnMUHkagYPBJoLZPQzlzCQ6uD/WMAL
-        MQPpxwu0wLko8H0B1s0Q/6MCrFWwR4EoEAXaC/SG83Xwd4fzQbAnUnoA2mwQUIdm2VAAAAAASUVORK5C
-        YII=
-</value>
+  <data name="lblWelcome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 9</value>
   </data>
-  <data name="btnExportPDF.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="btnExportExcel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 60</value>
   </data>
-  <data name="&gt;&gt;button5.Name" xml:space="preserve">
-    <value>button5</value>
+  <data name="picStudent.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
   </data>
-  <data name="&gt;&gt;panelShow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;toolStripButton1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnSearchReports.Name" xml:space="preserve">
-    <value>btnSearchReports</value>
+  <data name="&gt;&gt;picStudent.Name" xml:space="preserve">
+    <value>picStudent</value>
   </data>
-  <data name="button1.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>TextBeforeImage</value>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="dgvViewReports.Size" type="System.Drawing.Size, System.Drawing">
+    <value>763, 235</value>
   </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnExportPDF.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="&gt;&gt;comboClassesList.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;button3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>745, 6</value>
+  <data name="&gt;&gt;lblRoleName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dateTimePickerStart.Parent" xml:space="preserve">
-    <value>panelShow</value>
+  <data name="button5.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>TextBeforeImage</value>
   </data>
-  <data name="lblUserName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11pt</value>
+  <data name="&gt;&gt;panelShowReports.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="comboClassesList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>265, 76</value>
+  <data name="&gt;&gt;toolStrip.Parent" xml:space="preserve">
+    <value>panelShowReports</value>
   </data>
-  <data name="&gt;&gt;panelShow.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
   </data>
-  <data name="&gt;&gt;picStudent.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="lblUserName.Text" xml:space="preserve">
-    <value>user name</value>
-  </data>
-  <data name="panelShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 121</value>
-  </data>
-  <data name="btnExportPDF.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 60</value>
   </data>
-  <data name="&gt;&gt;btnExit.Parent" xml:space="preserve">
-    <value>panel3</value>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>panelShow</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>End Date</value>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnSearchReports.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblUserName.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
   </data>
-  <data name="&gt;&gt;btnSearchReportsByClass.Name" xml:space="preserve">
-    <value>btnSearchReportsByClass</value>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>panelShowReports</value>
   </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 486</value>
   </data>
-  <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
+  <data name="toolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 242</value>
   </data>
-  <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="picStudent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 0</value>
+  </data>
+  <data name="lblUserName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblDatePicker.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>325, 486</value>
+  </data>
+  <data name="toolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;dgvViewReports.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerEnd.Parent" xml:space="preserve">
+    <value>panelShow</value>
+  </data>
+  <data name="lblRole.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 39</value>
+  </data>
+  <data name="&gt;&gt;btnExportExcel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;panelShowReports.Name" xml:space="preserve">
+    <value>panelShowReports</value>
   </data>
   <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;lblDatePicker.Parent" xml:space="preserve">
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dateTimePickerEnd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="lblRoleName.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="toolStripButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAASZJREFUSEtjgIEorobYaO6Gk9Ec9R+A9H+KMNCMKO76E5HcDdFQ4yEAKDkdQzGV
+        MNADU8GWgGzFpoCaOJK7PoIB5EVsktTEQF8dBQZb/TdsktTEgdz1X0Dxg1WS2ngQWsRTHxLDVe8Rxtrw
+        Eqs8AUy0ReAkCgThHM2yUdwNp7GpwYdJtggE7BnqWaK5GiZiU4cLk2URDERx1acB5X6iq8WGKbIIBGI4
+        6q3CuOufYdODjCm2CASi2OuVIjjrP2HTB8NUsSicr1k5kLPhIzZ9MEyxRdGc9X6ELAFhSixiBBZfDUD8
+        D5t6dEyWRTEM3dzAgnIlNnW4MMkW0TzD0q0IohTT0yI6VXx0q8rp1jgBASCH9s0tGAAKQBqQRBb7+DAw
+        On6gNiAZGAA1DH0ZQZmyhAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripButton1.Text" xml:space="preserve">
+    <value>previous</value>
+  </data>
+  <data name="btnExportPDF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 60</value>
+  </data>
+  <data name="panelShowReports.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="&gt;&gt;btnExportPDF.Name" xml:space="preserve">
+    <value>btnExportPDF</value>
+  </data>
+  <data name="&gt;&gt;lblRoleName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button1.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnExportExcel.Name" xml:space="preserve">
+    <value>btnExportExcel</value>
+  </data>
+  <data name="&gt;&gt;picStudent.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="button2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;lblRole.Name" xml:space="preserve">
+    <value>lblRole</value>
+  </data>
+  <data name="&gt;&gt;lblDatePicker.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="&gt;&gt;lblRole.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="dateTimePickerStart.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>DisplayReportsForm</value>
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>panelShowReports</value>
+  </data>
+  <data name="dateTimePickerStart.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="button3.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnSearchReportsByClass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>52, 65</value>
+  </data>
+  <data name="lblDatePicker.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="btnExportPDF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 268</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt</value>
+  </data>
+  <data name="lblWelcome.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="button5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnSearchReports.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="lblRoleName.Text" xml:space="preserve">
+    <value>role name</value>
+  </data>
+  <data name="lblDatePicker.Text" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="btnExportPDF.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;button5.Parent" xml:space="preserve">
+    <value>panelShowReports</value>
+  </data>
+  <data name="lblWelcome.Text" xml:space="preserve">
+    <value>Welcome: </value>
+  </data>
+  <data name="dgvViewReports.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 7</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnExportPDF.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>TextBeforeImage</value>
+  </data>
+  <data name="&gt;&gt;btnExportPDF.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panelShowReports.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnExit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>745, 0</value>
+  </data>
+  <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 27</value>
+  </data>
+  <data name="&gt;&gt;dgvViewReports.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panelShow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 121</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelShow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="picStudent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnExit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Print Pdf</value>
+  </data>
+  <data name="&gt;&gt;btnSearchReports.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;picStudent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRoleError.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;btnSearchReportsByClass.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>784, 591</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="comboClassesList.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="button5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>599, 486</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripButton2.Text" xml:space="preserve">
+    <value>next</value>
+  </data>
+  <data name="&gt;&gt;panelShow.Name" xml:space="preserve">
     <value>panelShow</value>
+  </data>
+  <data name="&gt;&gt;button5.Name" xml:space="preserve">
+    <value>button5</value>
+  </data>
+  <data name="btnSearchReports.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="button5.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>394, 34</value>
+  </data>
+  <data name="&gt;&gt;btnExit.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="lblDatePicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 18</value>
+  </data>
+  <data name="button1.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>TextBeforeImage</value>
+  </data>
+  <data name="lblWelcome.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="btnExportPDF.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -244,41 +478,44 @@
         H79HAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="&gt;&gt;btnExit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>DisplayReportsForm</value>
   </data>
-  <data name="&gt;&gt;lblRoleError.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="picStudent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 0</value>
+  <data name="&gt;&gt;toolStrip.Name" xml:space="preserve">
+    <value>toolStrip</value>
   </data>
-  <data name="&gt;&gt;btnSearchReportsByClass.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="dateTimePickerEnd.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
   </data>
-  <data name="panelShowReports.TabIndex" type="System.Int32, mscorlib">
-    <value>43</value>
+  <data name="toolStrip.Text" xml:space="preserve">
+    <value>toolStrip1</value>
   </data>
-  <data name="lblRole.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11pt, style=Bold</value>
+  <data name="btnSearchReports.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;btnExportPDF.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="toolStripPageLabel.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 28</value>
   </data>
   <data name="toolStripPageLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 24</value>
   </data>
-  <data name="&gt;&gt;btnExportExcel.Name" xml:space="preserve">
-    <value>btnExportExcel</value>
+  <data name="dateTimePickerEnd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 23</value>
   </data>
-  <data name="lblDatePicker.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="lblRoleError.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>139, 0</value>
   </data>
-  <data name="&gt;&gt;dateTimePickerEnd.Name" xml:space="preserve">
-    <value>dateTimePickerEnd</value>
-  </data>
-  <data name="&gt;&gt;lblWelcome.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblUserName.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -291,50 +528,434 @@
         dPAlO8qTXU50if79dWsmfwxIYSK8/zSugnyOt/kLpDFf4Lt8+A3QD44AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="&gt;&gt;panelShowReports.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panelShow.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 27</value>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 37</value>
+  </data>
+  <data name="btnExit.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAVBJREFUaEPt
+        lYuqwkAQQ/v/P6F/2puYzWCrXqvutlOYAwW7j0kOFJyKoiiKoihOzjzPVzzk0pa6g9nDMxhyT/cgzLTE
+        jbbcH8xeBIFuMpi1nn1tW2NggHKCn2UwY18JwyDlBV/L4O4xEoaByg0+lsGdYyUMg5UfbJbB2RwShgXU
+        I3grgzO5JAyLqE/wUgZ7OSUMC6lX8CCDtdwShsXULwgZ/D6HhGFB9Qwu7bknt4RhUfV9yjkkDAur94Jz
+        SRCWVvcFm/9nUoDC/31a55BB0bUE39druWVQ8EGibT3byymDYi8lDNe0FeSSQaG3EoZ7OhLkkEGRzRKG
+        Z3Q0OFYGBT6WMDyrK8ExMgj+WsLwjq4G+8og8GcJw7saEewjg6BuEoYzNCoYK4OA7hKGszQyGCfTAkw3
+        CcOZGi3acn8w20HdJQxnK2JcRlEURVEUxS5M0x+93tb4mi4xDAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnExportExcel.Parent" xml:space="preserve">
+    <value>panelShowReports</value>
+  </data>
+  <data name="panelShow.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblUserName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt</value>
+  </data>
+  <data name="btnExportExcel.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>TextBeforeImage</value>
+  </data>
+  <data name="&gt;&gt;lblRole.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton2.Name" xml:space="preserve">
+    <value>toolStripButton2</value>
   </data>
   <data name="&gt;&gt;panelShowReports.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblRoleError.Name" xml:space="preserve">
-    <value>lblRoleError</value>
-  </data>
-  <data name="&gt;&gt;dateTimePickerStart.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblUserName.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAaZJREFUSEvt
+        lk0rhFEYhsdOsrOVFbGmLGSplCj8A0pCjb2PvY+98gvExsKODRslNvwAaSLFQmExEa/reec+b+OjznnH
+        kQVXXWVO93M/vceYUfjnV0mSZBDPMZRHnNR47VBSSuvCeZXTqqiNtCofU+iWz6gmP9aUB82M4Ut6kCRz
+        aVFeNByMxmxuHN3yeR2Ho8FgNJbCy+rlCzoOQ0PBaCyDoyK633lRx34I56VXoxmczaItLuvIjzXFRLV+
+        lI+Gav0oHw3V+lE+Gqr1o7xxj33Yhf14jA/YjR0620VjEy3rLGOKav0ob9zq9SoOYTve6WwJJ7Aer3EZ
+        W3BdPmOK5YNQ3nCLT3EH6/BGZydoHxRNuIa22G7mE5YPQnnDLbYnGMVWdE9si41OXERb3IC2fBgzLB+E
+        8oZb3Iw9eIgfF7fhClZf9QZmWD4I5Y3qq3ZULz5Du/4D/JGr/mqxvdEacQTtozHq4ifcQ/sTcti7dRu3
+        cB/dN9EFHlV+fI9q/SgfDdX6UT4aqvWjfDRU64fsZWUkCiXV+iFs/1dfpWPfwx5gQLV/mkLhDekS2r0u
+        H79HAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="&gt;&gt;button3.Name" xml:space="preserve">
+    <value>button3</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 37</value>
+  </data>
+  <data name="lblDatePicker.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt</value>
+  </data>
+  <data name="&gt;&gt;lblRoleError.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;lblDatePicker.Name" xml:space="preserve">
+    <value>lblDatePicker</value>
+  </data>
+  <data name="btnExportExcel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>499, 268</value>
+  </data>
+  <data name="panelShow.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="lblRole.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="btnSearchReports.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>TextBeforeImage</value>
+  </data>
+  <data name="&gt;&gt;lblWelcome.Name" xml:space="preserve">
+    <value>lblWelcome</value>
+  </data>
+  <data name="button5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAKlJREFUWEft
+        jlEKwkAMRPcIBdsfvf9l/JBSEPQ0MZt9ChVhU3c/quRB2GY6EyYFwS6RPlx0DpzcRsl3YdYZOeunZEVY
+        DaSVlkF+6ayZM+9N58hvHyXXXGDQeZa465yw1CkZX4F3sJlPn0lnMUHkagYPBJoLZPQzlzCQ6uD/WMAL
+        MQPpxwu0wLko8H0B1s0Q/6MCrFWwR4EoEAXaC/SG83Xwd4fzQbAnUnoA2mwQUIdm2VAAAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="&gt;&gt;lblUserName.Name" xml:space="preserve">
+    <value>lblUserName</value>
+  </data>
+  <data name="btnExportExcel.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="picStudent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 72</value>
+  </data>
+  <data name="button3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="lblRole.Text" xml:space="preserve">
+    <value>Role:</value>
+  </data>
+  <data name="lblRoleError.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;lblRoleError.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnSearchReports.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAbNJREFUSEvt
+        lt0qRFEYhieDUShKElfg5zY4ooSJopwp+Sm5DMQlcKAccAtOJY78DfJzAeQAJYrleWd/42BqWnvNjOFg
+        nnqy+/Z6v6+2NXvtRJV/g3MuhVO4h7f4ZOp6FycxZcvLAw3TeI8+7nDUYsVDkyRuqKNxikvYi21mn9XO
+        MMc6Jq1NOIRXs22ce8d5LNhM93ABP1Cs2K0wCA5H+ezQfit7Ye2AZb5wyMrxIFCPNyhmrBwbMrNR1F1j
+        nZX9sHgiG3PuBGusHBsyeuznagBpK/th8U6UcYtWCoasNpzYtpIfFusRiW4rBUNWu11krOSHxS9RxjVZ
+        KRiyzVEL92wlPyx+jTKu0UrBkC1qcDketV4y4tJKflj8Z5ur1J9TLWbUAIJ+TqW+QJajaOALRBAo9pU5
+        jZ+oV+aglcMguIZCw+fQd0joINFQ8YgddjsMgoWOxR5sMLV784/FB/t7gcUNF4THMO6HwAi24rEKoP9z
+        l7UKh7A+fbTbt1AHwJup600cx59PH641/AhFacNDYVj+8E679fswrAVzw6+wosPbURtTHFq5MjBQww9w
+        30pVKkki8Q05ovZw/HutEgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="&gt;&gt;btnSearchReportsByClass.Name" xml:space="preserve">
+    <value>btnSearchReportsByClass</value>
+  </data>
+  <data name="&gt;&gt;lblUserName.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="button5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 60</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;btnSearchReportsByClass.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblUserName.Text" xml:space="preserve">
+    <value>user name</value>
+  </data>
+  <data name="&gt;&gt;btnSearchReportsByClass.Parent" xml:space="preserve">
+    <value>panelShow</value>
+  </data>
+  <data name="&gt;&gt;comboClassesList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="dgvViewReports.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
-  <data name="lblWelcome.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblRole.Name" xml:space="preserve">
-    <value>lblRole</value>
+  <data name="lblRole.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 18</value>
+  </data>
+  <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;comboClassesList.Parent" xml:space="preserve">
+    <value>panelShow</value>
+  </data>
+  <data name="&gt;&gt;btnExportExcel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dgvViewReports.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="&gt;&gt;lblRoleName.Name" xml:space="preserve">
+    <value>lblRoleName</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerStart.Name" xml:space="preserve">
+    <value>dateTimePickerStart</value>
+  </data>
+  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAlVJREFUSEul
+        lUtrFFEQhet2stBMVBI0KooPfCEorlxlL+hKFyqIiAuzEFQQsvGF/goXgj9AXYiaxI0LN/4ECWQhBFyJ
+        ZDQQhMnLr6rPTGZ0erp1DhR961Sdqtv33r5tvbDZbO+w2Z1aSh+wWew79g37jM0Qu7XJbL/SqwPRgVqW
+        vaTIGrZeYmuei+ag5L0xZHYW0Q+Jl4dTelMzu85sT2BjW81Gt5kdYnyJwi/IaSh3gbwzKtMdiG6SuCKB
+        L8FxhQqxxewouVPSrDDBCYU6oZl78VXG96FSHqmE5BrXqsk58TkgdhOoY+u85qTofwbae1EjpZ+Md4lm
+        abLsmQeGUnol6r8Re+a1suxpEBzFfRC+NA3fvCD7AHtyjFrLbr4yvrG3vaMfNeX0Dd7itdf0Q2MM3kcD
+        syuKFyLyMLmFoNY15U67aM4dzvcRxQshUWkDP97KnXXRojs7gu8NiUobbGcrlLvool/ujJrxEr0hUWkD
+        DsuIcpdc9DUcs5OKF0KiKntwSrnzLppxh/W5rHghJKrS4Kpy37ozKeed4oVQXnkDTZrad+POx4kPo+zK
+        DVFJA6/RrOe1g2y7Kj7hDgTZBRUaDHiNyMuy5+LiutgDuRBNzB6IDujHE4X/sj++frSPFKu3Zt8EwfME
+        4l/A+KFoG+HUwX2RsN3m2r8d14hfpfgF0Z0gacITPDF3c3CBjcP5ujaLNwieVjgAt4T5v+CGqO5gShdJ
+        rDPkEGwA/omK+xs+Ft0C/Dx854+mCFTeyWMw91oY1AZ+ZJzl1Aak6Q9+IWKH5VaA2W+jN6NlamID0wAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerStart.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;toolStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboClassesList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>265, 76</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 60</value>
+  </data>
+  <data name="btnExportExcel.Text" xml:space="preserve">
+    <value>Export Excel</value>
+  </data>
+  <data name="btnExportExcel.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="toolStripButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="lblWelcome.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolStripPageLabel.Name" xml:space="preserve">
+    <value>toolStripPageLabel</value>
+  </data>
+  <data name="&gt;&gt;button5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 7</value>
+  </data>
+  <data name="btnExportExcel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAbhJREFUWEft
+        lk8rRFEYh4dMiY1vQBasZEEpGzbyEZQNZWcjWWHtA8jKJxBlgbJUiFKKspCljZBP4N/1vOf87mWmmXPm
+        YpKap57u+77zO2eO0Z07hQYN8pAkSSsO4zxu4i06FPld2LcbJ3EVz/AZK6IlP4e9lnAHH2zjMl7wHNfQ
+        DtaFDi3/Odov5RF3cRFHsF2xDGa50LLqKGf0aBRE2ZrRsuooV/NHqng0r1j9DpASm1kdRLl0UQf2Y5f6
+        ITzBUyxqVkJsZnUQ5dJFK75LNtTv+zaZst5QH91YsdwH6MRXtFuyD9/xBltcGKhLiM2sDqJcFqTc9pPk
+        SNcJveTQLCM2szqIcl8PYPd/ygU26yWHH8c3VuxbBxj1E8c1Zh+/4cefxGZWB1Hu6wEO0f73BzaHGb3k
+        0CwjNrM6iHLponHfJcc46MvkDttcGPwovrFiuQ9gb2zMlvUL1hvqM2Izq4Moly6y538vur+Y6xjaF9El
+        ugcT1xJiM6uDKBcPCsWjecX+0QHgbx/H4k9+kCzjHj7ZgjLq/5MshT2b0O6AaVzHK3zDimhZfeF9ijiA
+        c7iF9+hQpEGDnBQKH2b15ovmqH/MAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="&gt;&gt;dgvViewReports.Name" xml:space="preserve">
+    <value>dgvViewReports</value>
+  </data>
+  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="dateTimePickerEnd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>489, 32</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>745, 6</value>
+  </data>
+  <data name="lblRoleName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt</value>
+  </data>
+  <data name="dateTimePickerStart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 23</value>
+  </data>
+  <data name="btnSearchReports.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="lblDatePicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 35</value>
+  </data>
+  <data name="&gt;&gt;btnExportPDF.Parent" xml:space="preserve">
+    <value>panelShowReports</value>
+  </data>
+  <data name="btnExportExcel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="button5.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;btnSearchReports.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dgvViewReports.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;dgvViewReports.Parent" xml:space="preserve">
+    <value>panelShowReports</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11pt</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 37</value>
+  </data>
+  <data name="lblRoleName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 40</value>
+  </data>
+  <data name="button5.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="lblRoleError.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;panelShow.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerEnd.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblRoleName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 18</value>
+  </data>
+  <data name="panelShowReports.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 358</value>
+  </data>
+  <data name="btnExit.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnExit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;panelShowReports.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnExit.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerEnd.Name" xml:space="preserve">
+    <value>dateTimePickerEnd</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="&gt;&gt;lblRole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSearchReports.Name" xml:space="preserve">
+    <value>btnSearchReports</value>
+  </data>
+  <data name="&gt;&gt;comboClassesList.Name" xml:space="preserve">
+    <value>comboClassesList</value>
+  </data>
+  <data name="&gt;&gt;lblWelcome.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblRoleError.Name" xml:space="preserve">
+    <value>lblRoleError</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="btnExportPDF.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="panelShow.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 112</value>
   </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="lblRole.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;btnExit.Name" xml:space="preserve">
+    <value>btnExit</value>
+  </data>
+  <data name="&gt;&gt;toolStripPageLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 18</value>
+  </data>
+  <data name="&gt;&gt;btnSearchReports.Parent" xml:space="preserve">
+    <value>panelShow</value>
+  </data>
+  <data name="&gt;&gt;picStudent.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnExit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblWelcome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>DisplayReports Form</value>
+  </data>
+  <data name="lblRole.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt, style=Bold</value>
+  </data>
   <data name="lblUserName.Location" type="System.Drawing.Point, System.Drawing">
     <value>188, 9</value>
-  </data>
-  <data name="button5.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
   </data>
   <data name="picStudent.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -429,82 +1050,50 @@
         A1OO1Kxq2KcKAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblRoleError.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 422</value>
   </data>
-  <data name="&gt;&gt;lblUserName.Name" xml:space="preserve">
-    <value>lblUserName</value>
+  <data name="btnExportPDF.Text" xml:space="preserve">
+    <value>Export Pdf</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="picStudent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+  <data name="toolStripButton2.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
-  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="button3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="btnExportPDF.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>TextBeforeImage</value>
+  <data name="&gt;&gt;toolStripButton1.Name" xml:space="preserve">
+    <value>toolStripButton1</value>
   </data>
-  <data name="button2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  <data name="btnSearchReports.Location" type="System.Drawing.Point, System.Drawing">
+    <value>325, 69</value>
   </data>
-  <data name="lblRoleName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 18</value>
+  <data name="button2.Text" xml:space="preserve">
+    <value>Export Excel</value>
   </data>
-  <data name="&gt;&gt;lblUserName.Parent" xml:space="preserve">
+  <data name="comboClassesList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 23</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnExportPDF.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;lblDatePicker.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="panelShowReports.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 233</value>
+  </data>
+  <data name="&gt;&gt;lblRoleName.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="button2.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 75</value>
   </data>
-  <data name="panelShow.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAlVJREFUSEul
-        lUtrFFEQhet2stBMVBI0KooPfCEorlxlL+hKFyqIiAuzEFQQsvGF/goXgj9AXYiaxI0LN/4ECWQhBFyJ
-        ZDQQhMnLr6rPTGZ0erp1DhR961Sdqtv33r5tvbDZbO+w2Z1aSh+wWew79g37jM0Qu7XJbL/SqwPRgVqW
-        vaTIGrZeYmuei+ag5L0xZHYW0Q+Jl4dTelMzu85sT2BjW81Gt5kdYnyJwi/IaSh3gbwzKtMdiG6SuCKB
-        L8FxhQqxxewouVPSrDDBCYU6oZl78VXG96FSHqmE5BrXqsk58TkgdhOoY+u85qTofwbae1EjpZ+Md4lm
-        abLsmQeGUnol6r8Re+a1suxpEBzFfRC+NA3fvCD7AHtyjFrLbr4yvrG3vaMfNeX0Dd7itdf0Q2MM3kcD
-        syuKFyLyMLmFoNY15U67aM4dzvcRxQshUWkDP97KnXXRojs7gu8NiUobbGcrlLvool/ujJrxEr0hUWkD
-        DsuIcpdc9DUcs5OKF0KiKntwSrnzLppxh/W5rHghJKrS4Kpy37ozKeed4oVQXnkDTZrad+POx4kPo+zK
-        DVFJA6/RrOe1g2y7Kj7hDgTZBRUaDHiNyMuy5+LiutgDuRBNzB6IDujHE4X/sj++frSPFKu3Zt8EwfME
-        4l/A+KFoG+HUwX2RsN3m2r8d14hfpfgF0Z0gacITPDF3c3CBjcP5ujaLNwieVjgAt4T5v+CGqO5gShdJ
-        rDPkEGwA/omK+xs+Ft0C/Dx854+mCFTeyWMw91oY1AZ+ZJzl1Aak6Q9+IWKH5VaA2W+jN6NlamID0wAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnExportPDF.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 268</value>
-  </data>
-  <data name="&gt;&gt;btnSearchReports.Parent" xml:space="preserve">
-    <value>panelShow</value>
-  </data>
-  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="toolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="button3.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="button5.Text" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="&gt;&gt;picStudent.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 37</value>
+  <data name="btnSearchReports.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 40</value>
   </data>
   <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -519,657 +1108,68 @@
         c7iF9+hQpEGDnBQKH2b15ovmqH/MAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnSearchReports.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 37</value>
-  </data>
-  <data name="dateTimePickerEnd.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 18</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="lblRoleName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11pt</value>
-  </data>
-  <data name="toolStripButton2.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="dateTimePickerStart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 32</value>
-  </data>
-  <data name="&gt;&gt;lblRoleName.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="btnExit.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
   </data>
   <data name="lblWelcome.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 18</value>
   </data>
-  <data name="&gt;&gt;toolStrip.Parent" xml:space="preserve">
-    <value>panelShowReports</value>
-  </data>
-  <data name="&gt;&gt;lblDatePicker.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblWelcome.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblRoleName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;lblDatePicker.Name" xml:space="preserve">
-    <value>lblDatePicker</value>
-  </data>
-  <data name="&gt;&gt;toolStripPageLabel.Name" xml:space="preserve">
-    <value>toolStripPageLabel</value>
-  </data>
-  <data name="dateTimePickerStart.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
-  </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="button2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="&gt;&gt;lblRole.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnSearchReportsByClass.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 65</value>
-  </data>
-  <data name="&gt;&gt;btnExportExcel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgvViewReports.Parent" xml:space="preserve">
-    <value>panelShowReports</value>
-  </data>
-  <data name="&gt;&gt;btnExit.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblUserName.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="lblRoleName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 40</value>
-  </data>
-  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblUserName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 18</value>
-  </data>
-  <data name="btnSearchReports.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="lblRoleError.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 15</value>
-  </data>
-  <data name="btnExportPDF.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 60</value>
-  </data>
-  <data name="panelShowReports.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 358</value>
-  </data>
-  <data name="button3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="toolStripButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAASZJREFUSEtjgIEorobYaO6Gk9Ec9R+A9H+KMNCMKO76E5HcDdFQ4yEAKDkdQzGV
-        MNADU8GWgGzFpoCaOJK7PoIB5EVsktTEQF8dBQZb/TdsktTEgdz1X0Dxg1WS2ngQWsRTHxLDVe8Rxtrw
-        Eqs8AUy0ReAkCgThHM2yUdwNp7GpwYdJtggE7BnqWaK5GiZiU4cLk2URDERx1acB5X6iq8WGKbIIBGI4
-        6q3CuOufYdODjCm2CASi2OuVIjjrP2HTB8NUsSicr1k5kLPhIzZ9MEyxRdGc9X6ELAFhSixiBBZfDUD8
-        D5t6dEyWRTEM3dzAgnIlNnW4MMkW0TzD0q0IohTT0yI6VXx0q8rp1jgBASCH9s0tGAAKQBqQRBb7+DAw
-        On6gNiAZGAA1DH0ZQZmyhAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="lblWelcome.Text" xml:space="preserve">
-    <value>Welcome: </value>
-  </data>
-  <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
-  </data>
-  <data name="&gt;&gt;dateTimePickerStart.Name" xml:space="preserve">
-    <value>dateTimePickerStart</value>
-  </data>
-  <data name="dgvViewReports.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>51</value>
-  </data>
-  <data name="&gt;&gt;lblRoleName.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblRoleName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnExportExcel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="panelShow.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.Name" xml:space="preserve">
-    <value>toolStrip</value>
-  </data>
-  <data name="btnSearchReports.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>TextBeforeImage</value>
-  </data>
-  <data name="btnSearchReportsByClass.TabIndex" type="System.Int32, mscorlib">
-    <value>43</value>
-  </data>
-  <data name="panelShowReports.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 233</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="&gt;&gt;button5.Parent" xml:space="preserve">
-    <value>panelShowReports</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="lblRole.Text" xml:space="preserve">
-    <value>Role:</value>
-  </data>
-  <data name="&gt;&gt;btnExportExcel.Parent" xml:space="preserve">
-    <value>panelShowReports</value>
-  </data>
-  <data name="comboClassesList.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
-  <data name="lblDatePicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 35</value>
-  </data>
-  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>784, 591</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 486</value>
-  </data>
-  <data name="button5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;dateTimePickerEnd.Parent" xml:space="preserve">
+  <data name="&gt;&gt;dateTimePickerStart.Parent" xml:space="preserve">
     <value>panelShow</value>
-  </data>
-  <data name="&gt;&gt;btnExportExcel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;button3.Name" xml:space="preserve">
-    <value>button3</value>
-  </data>
-  <data name="btnSearchReports.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="lblDatePicker.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11pt</value>
-  </data>
-  <data name="&gt;&gt;btnExportPDF.Parent" xml:space="preserve">
-    <value>panelShowReports</value>
-  </data>
-  <data name="&gt;&gt;picStudent.Name" xml:space="preserve">
-    <value>picStudent</value>
-  </data>
-  <data name="button1.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="lblDatePicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 18</value>
-  </data>
-  <data name="&gt;&gt;lblRoleName.Name" xml:space="preserve">
-    <value>lblRoleName</value>
-  </data>
-  <data name="&gt;&gt;button2.Name" xml:space="preserve">
-    <value>button2</value>
-  </data>
-  <data name="&gt;&gt;lblDatePicker.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;btnExportPDF.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="dgvViewReports.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 7</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton1.Name" xml:space="preserve">
-    <value>toolStripButton1</value>
-  </data>
-  <data name="lblRole.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 7</value>
-  </data>
-  <data name="&gt;&gt;lblRoleError.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;dateTimePickerEnd.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblRole.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;picStudent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panelShow</value>
-  </data>
-  <data name="btnExportExcel.Text" xml:space="preserve">
-    <value>Export Excel</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnExportExcel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAbhJREFUWEft
-        lk8rRFEYh4dMiY1vQBasZEEpGzbyEZQNZWcjWWHtA8jKJxBlgbJUiFKKspCljZBP4N/1vOf87mWmmXPm
-        YpKap57u+77zO2eO0Z07hQYN8pAkSSsO4zxu4i06FPld2LcbJ3EVz/AZK6IlP4e9lnAHH2zjMl7wHNfQ
-        DtaFDi3/Odov5RF3cRFHsF2xDGa50LLqKGf0aBRE2ZrRsuooV/NHqng0r1j9DpASm1kdRLl0UQf2Y5f6
-        ITzBUyxqVkJsZnUQ5dJFK75LNtTv+zaZst5QH91YsdwH6MRXtFuyD9/xBltcGKhLiM2sDqJcFqTc9pPk
-        SNcJveTQLCM2szqIcl8PYPd/ygU26yWHH8c3VuxbBxj1E8c1Zh+/4cefxGZWB1Hu6wEO0f73BzaHGb3k
-        0CwjNrM6iHLponHfJcc46MvkDttcGPwovrFiuQ9gb2zMlvUL1hvqM2Izq4Moly6y538vur+Y6xjaF9El
-        ugcT1xJiM6uDKBcPCsWjecX+0QHgbx/H4k9+kCzjHj7ZgjLq/5MshT2b0O6AaVzHK3zDimhZfeF9ijiA
-        c7iF9+hQpEGDnBQKH2b15ovmqH/MAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="dgvViewReports.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="&gt;&gt;button5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblRoleError.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
-  </data>
-  <data name="btnExportExcel.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>TextBeforeImage</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="toolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 242</value>
-  </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>panelShowReports</value>
-  </data>
-  <data name="&gt;&gt;btnSearchReportsByClass.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnExit.Name" xml:space="preserve">
-    <value>btnExit</value>
-  </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="btnExit.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="lblRole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 18</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;lblWelcome.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="comboClassesList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 23</value>
-  </data>
-  <data name="button3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnSearchReports.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAbNJREFUSEvt
-        lt0qRFEYhieDUShKElfg5zY4ooSJopwp+Sm5DMQlcKAccAtOJY78DfJzAeQAJYrleWd/42BqWnvNjOFg
-        nnqy+/Z6v6+2NXvtRJV/g3MuhVO4h7f4ZOp6FycxZcvLAw3TeI8+7nDUYsVDkyRuqKNxikvYi21mn9XO
-        MMc6Jq1NOIRXs22ce8d5LNhM93ABP1Cs2K0wCA5H+ezQfit7Ye2AZb5wyMrxIFCPNyhmrBwbMrNR1F1j
-        nZX9sHgiG3PuBGusHBsyeuznagBpK/th8U6UcYtWCoasNpzYtpIfFusRiW4rBUNWu11krOSHxS9RxjVZ
-        KRiyzVEL92wlPyx+jTKu0UrBkC1qcDketV4y4tJKflj8Z5ur1J9TLWbUAIJ+TqW+QJajaOALRBAo9pU5
-        jZ+oV+aglcMguIZCw+fQd0joINFQ8YgddjsMgoWOxR5sMLV784/FB/t7gcUNF4THMO6HwAi24rEKoP9z
-        l7UKh7A+fbTbt1AHwJup600cx59PH641/AhFacNDYVj+8E679fswrAVzw6+wosPbURtTHFq5MjBQww9w
-        30pVKkki8Q05ovZw/HutEgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnExportExcel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>499, 268</value>
-  </data>
-  <data name="dateTimePickerStart.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>DisplayReports Form</value>
-  </data>
-  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>325, 486</value>
-  </data>
-  <data name="button5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 60</value>
-  </data>
-  <data name="btnExit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>745, 0</value>
-  </data>
-  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblRoleName.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
-  <data name="&gt;&gt;btnSearchReports.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="panelShowReports.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="btnExportPDF.Text" xml:space="preserve">
-    <value>Export Pdf</value>
-  </data>
-  <data name="&gt;&gt;panelShowReports.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="lblRole.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 39</value>
-  </data>
-  <data name="&gt;&gt;lblUserName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Print Pdf</value>
-  </data>
-  <data name="&gt;&gt;panelShow.Name" xml:space="preserve">
-    <value>panelShow</value>
-  </data>
-  <data name="&gt;&gt;lblRole.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;dateTimePickerEnd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="button5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>599, 486</value>
-  </data>
-  <data name="&gt;&gt;btnExportPDF.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblWelcome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 9</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelShow.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnExit.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAVBJREFUaEPt
-        lYuqwkAQQ/v/P6F/2puYzWCrXqvutlOYAwW7j0kOFJyKoiiKoihOzjzPVzzk0pa6g9nDMxhyT/cgzLTE
-        jbbcH8xeBIFuMpi1nn1tW2NggHKCn2UwY18JwyDlBV/L4O4xEoaByg0+lsGdYyUMg5UfbJbB2RwShgXU
-        I3grgzO5JAyLqE/wUgZ7OSUMC6lX8CCDtdwShsXULwgZ/D6HhGFB9Qwu7bknt4RhUfV9yjkkDAur94Jz
-        SRCWVvcFm/9nUoDC/31a55BB0bUE39druWVQ8EGibT3byymDYi8lDNe0FeSSQaG3EoZ7OhLkkEGRzRKG
-        Z3Q0OFYGBT6WMDyrK8ExMgj+WsLwjq4G+8og8GcJw7saEewjg6BuEoYzNCoYK4OA7hKGszQyGCfTAkw3
-        CcOZGi3acn8w20HdJQxnK2JcRlEURVEUxS5M0x+93tb4mi4xDAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 11pt</value>
-  </data>
-  <data name="btnExit.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="dateTimePickerEnd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="btnExportPDF.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="btnExit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="toolStripButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
-  </data>
-  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
-    <value>panelShowReports</value>
-  </data>
-  <data name="&gt;&gt;dateTimePickerStart.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="lblRoleName.Text" xml:space="preserve">
-    <value>role name</value>
-  </data>
-  <data name="toolStripPageLabel.Text" xml:space="preserve">
-    <value>00</value>
-  </data>
-  <data name="&gt;&gt;comboClassesList.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblUserName.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="picStudent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 72</value>
-  </data>
-  <data name="dateTimePickerEnd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 23</value>
-  </data>
-  <data name="&gt;&gt;button2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelShowReports.Name" xml:space="preserve">
-    <value>panelShowReports</value>
-  </data>
-  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11pt</value>
-  </data>
-  <data name="lblDatePicker.Text" xml:space="preserve">
-    <value>Start Date</value>
-  </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAaZJREFUSEvt
-        lk0rhFEYhsdOsrOVFbGmLGSplCj8A0pCjb2PvY+98gvExsKODRslNvwAaSLFQmExEa/reec+b+OjznnH
-        kQVXXWVO93M/vceYUfjnV0mSZBDPMZRHnNR47VBSSuvCeZXTqqiNtCofU+iWz6gmP9aUB82M4Ut6kCRz
-        aVFeNByMxmxuHN3yeR2Ho8FgNJbCy+rlCzoOQ0PBaCyDoyK633lRx34I56VXoxmczaItLuvIjzXFRLV+
-        lI+Gav0oHw3V+lE+Gqr1o7xxj33Yhf14jA/YjR0620VjEy3rLGOKav0ob9zq9SoOYTve6WwJJ7Aer3EZ
-        W3BdPmOK5YNQ3nCLT3EH6/BGZydoHxRNuIa22G7mE5YPQnnDLbYnGMVWdE9si41OXERb3IC2fBgzLB+E
-        8oZb3Iw9eIgfF7fhClZf9QZmWD4I5Y3qq3ZULz5Du/4D/JGr/mqxvdEacQTtozHq4ifcQ/sTcti7dRu3
-        cB/dN9EFHlV+fI9q/SgfDdX6UT4aqvWjfDRU64fsZWUkCiXV+iFs/1dfpWPfwx5gQLV/mkLhDekS2r0u
-        H79HAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="&gt;&gt;dgvViewReports.Name" xml:space="preserve">
-    <value>dgvViewReports</value>
-  </data>
-  <data name="&gt;&gt;lblRoleError.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;comboClassesList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblRoleError.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripButton2.Text" xml:space="preserve">
-    <value>next</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="btnExportExcel.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="lblWelcome.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;comboClassesList.Parent" xml:space="preserve">
-    <value>panelShow</value>
-  </data>
-  <data name="toolStripButton1.Text" xml:space="preserve">
-    <value>previous</value>
-  </data>
-  <data name="&gt;&gt;dgvViewReports.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>394, 34</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>DisplayReportsForm</value>
-  </data>
-  <data name="btnSearchReports.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="btnSearchReports.Location" type="System.Drawing.Point, System.Drawing">
-    <value>325, 69</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton2.Name" xml:space="preserve">
-    <value>toolStripButton2</value>
   </data>
   <data name="panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="button2.Text" xml:space="preserve">
-    <value>Export Excel</value>
+  <data name="dateTimePickerStart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 32</value>
   </data>
-  <data name="&gt;&gt;toolStripPageLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 75</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
   </data>
-  <data name="button5.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>TextBeforeImage</value>
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 60</value>
+  <data name="panelShowReports.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
   </data>
-  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="panelShow.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btnExportPDF.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="lblUserName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 18</value>
   </data>
-  <data name="btnExportExcel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 60</value>
+  <data name="&gt;&gt;lblWelcome.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="lblRoleError.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>139, 0</value>
+  <data name="button2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
-  <data name="btnExportExcel.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+  <data name="lblRoleError.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 15</value>
   </data>
-  <data name="&gt;&gt;btnExportPDF.Name" xml:space="preserve">
-    <value>btnExportPDF</value>
+  <data name="&gt;&gt;lblDatePicker.Parent" xml:space="preserve">
+    <value>panelShow</value>
   </data>
-  <data name="lblDatePicker.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
+  <data name="btnSearchReportsByClass.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
   </data>
-  <data name="toolStripButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
+  <data name="&gt;&gt;dateTimePickerEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblWelcome.Name" xml:space="preserve">
-    <value>lblWelcome</value>
-  </data>
-  <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 37</value>
-  </data>
-  <data name="btnSearchReports.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 40</value>
-  </data>
-  <data name="panelShow.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
-  <data name="lblWelcome.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="dateTimePickerStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 23</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>DisplayReportsForm</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dgvViewReports.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="dgvViewReports.Size" type="System.Drawing.Size, System.Drawing">
-    <value>763, 235</value>
-  </data>
-  <data name="lblRoleError.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 422</value>
-  </data>
-  <data name="dateTimePickerEnd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>489, 32</value>
-  </data>
-  <data name="picStudent.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="toolStrip.Text" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="button5.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 28</value>
-  </data>
-  <data name="lblUserName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>en</value>

@@ -30,6 +30,7 @@ namespace Attendance_C__XML_Project
         {
             InitializeComponent();
             adminForm = _adminForm;
+            SettingsManager.SettingsIntialization(this);
         }
 
         private void AddNewUser_Load(object sender, EventArgs e)

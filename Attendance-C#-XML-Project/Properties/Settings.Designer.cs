@@ -37,7 +37,7 @@ namespace Attendance_C__XML_Project.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("12")]
+        [global::System.Configuration.DefaultSettingValueAttribute("11")]
         public float SelectedFontSize {
             get {
                 return ((float)(this["SelectedFontSize"]));
@@ -49,7 +49,7 @@ namespace Attendance_C__XML_Project.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("MM/dd/yyyy")]
         public string SelectedDateFormat {
             get {
                 return ((string)(this["SelectedDateFormat"]));
@@ -61,10 +61,10 @@ namespace Attendance_C__XML_Project.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("light")]
-        public string SelectedTheme {
+        [global::System.Configuration.DefaultSettingValueAttribute("Control")]
+        public global::System.Drawing.Color SelectedTheme {
             get {
-                return ((string)(this["SelectedTheme"]));
+                return ((global::System.Drawing.Color)(this["SelectedTheme"]));
             }
             set {
                 this["SelectedTheme"] = value;

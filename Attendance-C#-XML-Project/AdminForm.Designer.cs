@@ -32,6 +32,7 @@
             label4 = new Label();
             btnClose = new Button();
             panel1 = new Panel();
+            pictureBox6 = new PictureBox();
             linkLogout = new LinkLabel();
             lblRole = new Label();
             label17 = new Label();
@@ -102,8 +103,8 @@
             txtSearch = new MaskedTextBox();
             panel3 = new Panel();
             label9 = new Label();
-            pictureBox6 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panelDisplayClass.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnEditClass).BeginInit();
@@ -126,7 +127,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // label4
@@ -155,6 +155,13 @@
             panel1.Controls.Add(btnClose);
             panel1.Name = "panel1";
             panel1.MouseDown += panel1_MouseDown;
+            // 
+            // pictureBox6
+            // 
+            resources.ApplyResources(pictureBox6, "pictureBox6");
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
             // 
             // linkLogout
             // 
@@ -408,6 +415,7 @@
             panelShowClasses.Controls.Add(panel7);
             panelShowClasses.Controls.Add(lblAddError);
             panelShowClasses.Name = "panelShowClasses";
+            panelShowClasses.Tag = "";
             // 
             // tableLayoutPanel2
             // 
@@ -430,6 +438,7 @@
             label14.BackColor = Color.Teal;
             label14.ForeColor = Color.White;
             label14.Name = "label14";
+            label14.Click += label14_Click;
             // 
             // pictureBox5
             // 
@@ -503,6 +512,7 @@
             resources.ApplyResources(قائمة_الفصول_المعروضة, "قائمة_الفصول_المعروضة");
             قائمة_الفصول_المعروضة.FormattingEnabled = true;
             قائمة_الفصول_المعروضة.Name = "قائمة_الفصول_المعروضة";
+            قائمة_الفصول_المعروضة.Tag = "myTheme";
             قائمة_الفصول_المعروضة.SelectedIndexChanged += liatDisplayClasses_SelectedIndexChanged;
             // 
             // btnSearchClasses
@@ -676,13 +686,6 @@
             label9.ForeColor = Color.White;
             label9.Name = "label9";
             // 
-            // pictureBox6
-            // 
-            resources.ApplyResources(pictureBox6, "pictureBox6");
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.TabStop = false;
-            pictureBox6.Click += pictureBox6_Click;
-            // 
             // AdminForm
             // 
             resources.ApplyResources(this, "$this");
@@ -695,6 +698,7 @@
             Load += AdminForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panelDisplayClass.ResumeLayout(false);
             panelDisplayClass.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
@@ -728,7 +732,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
         }
 

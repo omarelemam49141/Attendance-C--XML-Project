@@ -118,8 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 9</value>
+  </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 20</value>
+    <value>120, 25</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>استمارة الحضور</value>
@@ -134,6 +137,16 @@
         Z3Q0OFYGBT6WMDyrK8ExMgj+WsLwjq4G+8og8GcJw7saEewjg6BuEoYzNCoYK4OA7hKGszQyGCfTAkw3
         CcOZGi3acn8w20HdJQxnK2JcRlEURVEUxS5M0x+93tb4mi4xDAAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>869, 0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnClose.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 49</value>
   </data>
   <data name="pictureBox6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -153,36 +166,86 @@
 </value>
   </data>
   <data name="pictureBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>720, 2</value>
+    <value>823, 3</value>
+  </data>
+  <data name="pictureBox6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
   </data>
   <data name="pictureBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 32</value>
+    <value>40, 43</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox6.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pictureBox6.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+  <data name="linkLogout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>496, 8</value>
   </data>
   <data name="linkLogout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 21</value>
+    <value>127, 28</value>
   </data>
   <data name="linkLogout.Text" xml:space="preserve">
     <value>تسجيل الخروج</value>
   </data>
+  <data name="lblRole.Location" type="System.Drawing.Point, System.Drawing">
+    <value>418, 9</value>
+  </data>
   <data name="lblRole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 20</value>
+    <value>49, 25</value>
   </data>
   <data name="lblRole.Text" xml:space="preserve">
     <value>مسؤل</value>
   </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>226, 8</value>
+  </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 20</value>
+    <value>157, 25</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
     <value>قمت بتسجيل الدخول ك</value>
+  </data>
+  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>914, 49</value>
+  </data>
+  <data name="label22.Location" type="System.Drawing.Point, System.Drawing">
+    <value>169, 0</value>
+  </data>
+  <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 62</value>
+  </data>
+  <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 62</value>
+  </data>
+  <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 0</value>
+  </data>
+  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 62</value>
+  </data>
+  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>501, 0</value>
+  </data>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 62</value>
+  </data>
+  <data name="txtClassName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>169, 94</value>
+  </data>
+  <data name="txtClassName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="txtClassName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 27</value>
+  </data>
+  <data name="lblClassID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 62</value>
+  </data>
+  <data name="lblClassID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 63</value>
   </data>
   <data name="btnEditClass.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -196,6 +259,15 @@
         SUVORK5CYII=
 </value>
   </data>
+  <data name="btnEditClass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 66</value>
+  </data>
+  <data name="btnEditClass.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="btnEditClass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 55</value>
+  </data>
   <data name="btnDeleteClass.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAa5JREFUaEPt
@@ -208,6 +280,24 @@
         zI1gcxjcw4gw9xT1P5K/GCkEm8IkIZiLwUcriWAu5v51SkEwFyONYMRkQ7ARY/7ISiAYZmFmNkSr1foP
         dd0P/RND/6e7j6wAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="btnDeleteClass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>501, 66</value>
+  </data>
+  <data name="btnDeleteClass.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="btnDeleteClass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 55</value>
+  </data>
+  <data name="tableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 451</value>
+  </data>
+  <data name="tableLayoutPanel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>665, 125</value>
   </data>
   <data name="pictureBox10.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4971,8 +5061,75 @@
         gg==
 </value>
   </data>
+  <data name="pictureBox10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>402, 32</value>
+  </data>
+  <data name="pictureBox10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="pictureBox10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 93</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lstClass.ItemHeight" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="lstClass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 11</value>
+  </data>
+  <data name="lstClass.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="lstClass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 404</value>
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>429, 287</value>
+  </data>
+  <data name="button2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 48</value>
+  </data>
+  <data name="btnSearchClass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 239</value>
+  </data>
+  <data name="btnSearchClass.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="btnSearchClass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>321, 27</value>
+  </data>
+  <data name="label25.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 8</value>
+  </data>
+  <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 67</value>
+  </data>
+  <data name="panel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>469, 31</value>
+  </data>
+  <data name="panel6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="panel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 93</value>
+  </data>
+  <data name="panelDisplayClass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>226, 0</value>
+  </data>
+  <data name="panelDisplayClass.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="panelDisplayClass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>688, 617</value>
+  </data>
+  <data name="lblUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 13</value>
+  </data>
   <data name="lblUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 24</value>
+    <value>126, 29</value>
   </data>
   <data name="lblUsername.Text" xml:space="preserve">
     <value>مرحبا بالمسؤل</value>
@@ -4996,7 +5153,13 @@
 </value>
   </data>
   <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-126, 384</value>
+    <value>-144, 512</value>
+  </data>
+  <data name="button3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 48</value>
   </data>
   <data name="button3.Text" xml:space="preserve">
     <value>                                           اضافة مستخدم جديد</value>
@@ -5016,7 +5179,13 @@
 </value>
   </data>
   <data name="btnDisplayReports.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-123, 320</value>
+    <value>-141, 427</value>
+  </data>
+  <data name="btnDisplayReports.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="btnDisplayReports.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 48</value>
   </data>
   <data name="btnDisplayReports.Text" xml:space="preserve">
     <value>                                       عرض التقارير</value>
@@ -5035,7 +5204,13 @@
 </value>
   </data>
   <data name="btnDisplayClasses.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-123, 255</value>
+    <value>-141, 340</value>
+  </data>
+  <data name="btnDisplayClasses.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="btnDisplayClasses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 48</value>
   </data>
   <data name="btnDisplayClasses.Text" xml:space="preserve">
     <value>                                       عرض الفصول</value>
@@ -5059,7 +5234,13 @@
 </value>
   </data>
   <data name="btnDisplayUsers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-121, 190</value>
+    <value>-138, 253</value>
+  </data>
+  <data name="btnDisplayUsers.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="btnDisplayUsers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 48</value>
   </data>
   <data name="btnDisplayUsers.Text" xml:space="preserve">
     <value>                                        عرض المستخدمين </value>
@@ -5127,6 +5308,33 @@
         o7lvJiNEiBAhQoQIESJEiBAhQgQLEyb8Hw6l7pNaF+65AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>31, 57</value>
+  </data>
+  <data name="pictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 188</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 49</value>
+  </data>
+  <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 618</value>
+  </data>
+  <data name="maskedTextBox8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 27</value>
+  </data>
+  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>571, 0</value>
+  </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 62</value>
+  </data>
   <data name="label14.Text" xml:space="preserve">
     <value>اضافة</value>
   </data>
@@ -5145,14 +5353,59 @@
         u8sZbpr+CirNln+2xTvEINZkIf9jEJhMvgAsIovtbyXHPgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="pictureBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>571, 66</value>
+  </data>
+  <data name="pictureBox5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="pictureBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 55</value>
+  </data>
+  <data name="txtNameOfClass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>193, 94</value>
+  </data>
+  <data name="txtNameOfClass.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="txtNameOfClass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 27</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>477, 0</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 62</value>
+  </data>
   <data name="label11.Text" xml:space="preserve">
     <value>مسح</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>383, 0</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 62</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>تعديل</value>
   </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>193, 0</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 62</value>
+  </data>
   <data name="label13.Text" xml:space="preserve">
     <value>اسم الفصل</value>
+  </data>
+  <data name="txtClassID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 62</value>
+  </data>
+  <data name="txtClassID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 63</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 62</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
     <value>الرقم التعريفي للفصل</value>
@@ -5169,6 +5422,15 @@
         SUVORK5CYII=
 </value>
   </data>
+  <data name="btnUpdateClass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>383, 66</value>
+  </data>
+  <data name="btnUpdateClass.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="btnUpdateClass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 55</value>
+  </data>
   <data name="btnRemoveClass.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAa5JREFUaEPt
@@ -5181,6 +5443,24 @@
         zI1gcxjcw4gw9xT1P5K/GCkEm8IkIZiLwUcriWAu5v51SkEwFyONYMRkQ7ARY/7ISiAYZmFmNkSr1foP
         dd0P/RND/6e7j6wAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="btnRemoveClass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>477, 66</value>
+  </data>
+  <data name="btnRemoveClass.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="btnRemoveClass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 55</value>
+  </data>
+  <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 451</value>
+  </data>
+  <data name="tableLayoutPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>665, 125</value>
   </data>
   <data name="pictureBox7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -9944,23 +10224,149 @@
         gg==
 </value>
   </data>
+  <data name="pictureBox7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>402, 32</value>
+  </data>
+  <data name="pictureBox7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="pictureBox7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 93</value>
+  </data>
   <data name="قائمة_الفصول_المعروضة.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="قائمة_الفصول_المعروضة.ItemHeight" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>25</value>
+  </data>
+  <data name="قائمة_الفصول_المعروضة.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 11</value>
+  </data>
+  <data name="قائمة_الفصول_المعروضة.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
   </data>
   <data name="قائمة_الفصول_المعروضة.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 304</value>
+    <value>258, 404</value>
+  </data>
+  <data name="btnSearchClasses.Location" type="System.Drawing.Point, System.Drawing">
+    <value>429, 287</value>
+  </data>
+  <data name="btnSearchClasses.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="btnSearchClasses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 48</value>
   </data>
   <data name="btnSearchClasses.Text" xml:space="preserve">
     <value>بحث</value>
   </data>
+  <data name="txtSearchClass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 239</value>
+  </data>
+  <data name="txtSearchClass.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="txtSearchClass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>321, 27</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 8</value>
+  </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 54</value>
+    <value>192, 67</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
     <value>الفصول</value>
+  </data>
+  <data name="panel7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>469, 31</value>
+  </data>
+  <data name="panel7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="panel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 93</value>
+  </data>
+  <data name="lblAddError.Location" type="System.Drawing.Point, System.Drawing">
+    <value>198, 580</value>
+  </data>
+  <data name="lblAddError.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>11, 7, 11, 7</value>
+  </data>
+  <data name="lblAddError.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 34</value>
+  </data>
+  <data name="panelShowClasses.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="panelShowClasses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>684, 617</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>601, 0</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 62</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>535, 0</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 62</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>402, 0</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 62</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 0</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 62</value>
+  </data>
+  <data name="txtPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 94</value>
+  </data>
+  <data name="txtPassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="txtPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 27</value>
+  </data>
+  <data name="txtUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 94</value>
+  </data>
+  <data name="txtUsername.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="txtUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 27</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 0</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 62</value>
+  </data>
+  <data name="txtEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>402, 94</value>
+  </data>
+  <data name="txtEmail.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="txtEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 27</value>
+  </data>
+  <data name="lblID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 62</value>
+  </data>
+  <data name="lblID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 63</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 62</value>
   </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -9974,6 +10380,15 @@
         SUVORK5CYII=
 </value>
   </data>
+  <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>535, 66</value>
+  </data>
+  <data name="pictureBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 55</value>
+  </data>
   <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAa5JREFUaEPt
@@ -9986,6 +10401,24 @@
         zI1gcxjcw4gw9xT1P5K/GCkEm8IkIZiLwUcriWAu5v51SkEwFyONYMRkQ7ARY/7ISiAYZmFmNkSr1foP
         dd0P/RND/6e7j6wAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>601, 66</value>
+  </data>
+  <data name="pictureBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 55</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 451</value>
+  </data>
+  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>665, 125</value>
   </data>
   <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -14748,5 +15181,74 @@
         zhHNK6R5upNOabxvR7yXEc0rZNWtWN2buqf5xatH/esMP354+fjZ/wAWQjkEB/aR8gAAAABJRU5ErkJg
         gg==
 </value>
+  </data>
+  <data name="pictureBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>402, 32</value>
+  </data>
+  <data name="pictureBox4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="pictureBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 93</value>
+  </data>
+  <data name="listUsers.ItemHeight" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="listUsers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 11</value>
+  </data>
+  <data name="listUsers.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="listUsers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 404</value>
+  </data>
+  <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>429, 287</value>
+  </data>
+  <data name="btnSearch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="btnSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 48</value>
+  </data>
+  <data name="txtSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 239</value>
+  </data>
+  <data name="txtSearch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>321, 27</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 8</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 67</value>
+  </data>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>469, 31</value>
+  </data>
+  <data name="panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 93</value>
+  </data>
+  <data name="panelDisplayUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 49</value>
+  </data>
+  <data name="panelDisplayUser.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="panelDisplayUser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>685, 617</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 20</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>914, 667</value>
   </data>
 </root>

@@ -6,13 +6,13 @@
       <Value Profile="(Default)">black</Value>
     </Setting>
     <Setting Name="SelectedFontSize" Type="System.Single" Scope="User">
-      <Value Profile="(Default)">12</Value>
+      <Value Profile="(Default)">11</Value>
     </Setting>
     <Setting Name="SelectedDateFormat" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">MM/dd/yyyy</Value>
     </Setting>
-    <Setting Name="SelectedTheme" Type="System.String" Scope="User">
-      <Value Profile="(Default)">light</Value>
+    <Setting Name="SelectedTheme" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Control</Value>
     </Setting>
     <Setting Name="SelectedLanguage" Type="System.String" Scope="User">
       <Value Profile="(Default)">en-US</Value>

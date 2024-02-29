@@ -65,6 +65,7 @@ namespace Attendance_C__XML_Project
             }
             comboClassesList.SelectedIndex = 0;
 
+            SettingsManager.SettingsIntialization(this);
         }
         private List<string> GetTeacherClasses()
         {

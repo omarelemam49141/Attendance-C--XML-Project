@@ -27,7 +27,7 @@ namespace Attendance_C__XML_Project
         {
             InitializeComponent();
 
-
+            SettingsManager.SettingsIntialization(this);
             // *** other dummy data ***
             studentReport = new GenerateReport();
             studentReport.addAttendanceRecords(Lists.attendanceRecords);

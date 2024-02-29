@@ -215,6 +215,7 @@
             resources.ApplyResources(panelShow, "panelShow");
             panelShow.Controls.Add(btnShowReport);
             panelShow.Name = "panelShow";
+            panelShow.Tag = "myTheme";
             panelShow.Paint += panelShow_Paint;
             // 
             // panelAttendanceTable
@@ -225,6 +226,7 @@
             panelAttendanceTable.Controls.Add(btnPrintReport);
             panelAttendanceTable.Controls.Add(btnExportExcel);
             panelAttendanceTable.Name = "panelAttendanceTable";
+            panelAttendanceTable.Tag = "myTheme";
             // 
             // toolStrip
             // 
